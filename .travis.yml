@@ -27,7 +27,7 @@ android:
  - android-$EMULATOR_API_LEVEL
  - extra-google-m2repository
  - extra-android-m2repository # for design library
- - sys-img-armeabi-v7a-addon-google_apis-google-$EMULATOR_API_LEVEL
+# - sys-img-armeabi-v7a-addon-google_apis-google-$EMULATOR_API_LEVEL
  licenses:
  - android-sdk-preview-license-.+
  - android-sdk-license-.+
@@ -39,13 +39,13 @@ before_install:
 notifications:
   email: false
 
-before_script:
-  - echo no | android create avd --force -n test -t android-21 --abi armeabi-v7a
-  - emulator -avd test -no-skin -no-audio -no-window &
-  - android-wait-for-emulator
-  - adb shell input keyevent 82 &
+#before_script:
+#  - echo no | android create avd --force -n test -t android-21 --abi armeabi-v7a
+#  - emulator -avd test -no-skin -no-audio -no-window &
+#  - android-wait-for-emulator
+#  - adb shell input keyevent 82 &
 
 script:
 - ./gradlew clean build -x test
 - ./gradlew test
-- ./gradlew connectedAndroidTest
+#- ./gradlew connectedAndroidTest
