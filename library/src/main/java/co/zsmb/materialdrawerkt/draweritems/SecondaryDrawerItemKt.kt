@@ -1,6 +1,7 @@
 package co.zsmb.materialdrawerkt.draweritems
 
 import android.graphics.drawable.Drawable
+import co.zsmb.materialdrawerkt.nonReadable
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem
 
 class SecondaryDrawerItemKt(name: String, description: String) {
@@ -12,22 +13,15 @@ class SecondaryDrawerItemKt(name: String, description: String) {
                 .withDescription(description)
     }
 
-    var icon: Int?
-        get() = null
+    var icon: Int
+        get() = nonReadable()
         set(value) {
-            if (value == null) {
-                item.withIcon(null as Drawable?)
-                return
-            }
             item.withIcon(value)
         }
 
-    var iconTintingEnabled: Boolean?
-        get() = null
+    var iconTintingEnabled: Boolean
+        get() = nonReadable()
         set(value) {
-            if (value == null) {
-                return
-            }
             item.withIconTintingEnabled(value)
         }
 

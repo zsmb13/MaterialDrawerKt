@@ -1,6 +1,8 @@
 package co.zsmb.materialdrawerkt.draweritems
 
 import android.graphics.drawable.Drawable
+import co.zsmb.materialdrawerkt.NonReadablePropertyException
+import co.zsmb.materialdrawerkt.nonReadable
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem
 
 class ProfileDrawerItemKt(name: String, email: String) {
@@ -12,13 +14,9 @@ class ProfileDrawerItemKt(name: String, email: String) {
         item.withEmail(email)
     }
 
-    var icon: Int?
-        get() = null
+    var icon: Int
+        get() = nonReadable()
         set(value) {
-            if (value == null) {
-                item.withIcon(null as Drawable?)
-                return
-            }
             item.withIcon(value)
         }
 

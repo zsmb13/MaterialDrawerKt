@@ -39,7 +39,9 @@ primaryItem("Item name") {
 
 ### `with` functions
  
-Calls to `.withXyz()` functions are replaced with properties that you can set.
+Calls to `.withXyz()` functions are replaced with properties that you can set. 
+
+(Note: do not try to read these properties. They will throw a `NonReadablePropertyException` if you attempt to do so.)
 ```
 AccountHeaderBuilder()
     .withActivity(this)
