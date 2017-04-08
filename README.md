@@ -64,3 +64,59 @@ Drawable          | headerBackgroundDrawable
 ImageHolder       | headerBackgroundImage
 
 Note that there can be defaults without suffixes for what's assumed to be the most popular use case.
+
+### Listeners
+```
+DrawerBuilder()
+        .withActivity(this)
+        .withOnDrawerItemClickListener(object : Drawer.OnDrawerItemClickListener {
+            override fun onItemClick(view: View, position: Int, drawerItem: IDrawerItem<out Any?, out RecyclerView.ViewHolder>?): Boolean {
+                Log.d("DRAWER", "Clicked!")
+                return true
+            }
+        })
+        .build()
+```
+... is replaced with ...
+```
+drawer {
+    onItemClick { view, position, drawerItem -> 
+        Log.d("DRAWER", "Clicked!")
+        true
+    }
+}
+```
+
+### Complex listeners
+```
+DrawerBuilder()
+        .withActivity(this)
+        .withOnDrawerListener(object : Drawer.OnDrawerListener {
+            override fun onDrawerSlide(drawerView: View?, slideOffset: Float) {
+                Log.d("DRAWER", "Sliding")
+            }
+
+            override fun onDrawerClosed(drawerView: View?) {
+                Log.d("DRAWER", "Closed")
+            }
+
+            override fun onDrawerOpened(drawerView: View?) {
+                Log.d("DRAWER", "Opened")
+            }
+        })
+        .build()
+```
+... is replaced with ...
+```
+drawer { 
+    onSlide { _, _ ->
+        Log.d("DRAWER", "Sliding")
+    }
+    onClosed {
+        Log.d("DRAWER", "Closed")
+    }
+    onOpened {
+        Log.d("DRAWER", "Opened")
+    }
+}
+```
