@@ -2,12 +2,20 @@ package co.zsmb.materialdrawerkt.builders
 
 import android.app.Activity
 import android.graphics.drawable.Drawable
+import co.zsmb.materialdrawerkt.DrawerMarker
 import co.zsmb.materialdrawerkt.NonReadablePropertyException
 import co.zsmb.materialdrawerkt.draweritems.ProfileDrawerItemKt
 import co.zsmb.materialdrawerkt.nonReadable
 import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.AccountHeaderBuilder
 
+fun DrawerBuilderKt.accountHeader(setup: AccountHeaderBuilderKt.() -> Unit = {}): AccountHeader {
+    val header = AccountHeaderBuilderKt(activity)
+    header.setup()
+    return header.build().apply { attachHeader(this) }
+}
+
+@DrawerMarker
 class AccountHeaderBuilderKt(activity: Activity) {
 
     private val builder = AccountHeaderBuilder()
