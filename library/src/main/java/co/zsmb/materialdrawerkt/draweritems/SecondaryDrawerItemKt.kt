@@ -15,7 +15,6 @@ fun BuilderBase.secondaryItem(
     return item.build().apply { attachItem(this) }
 }
 
-@DrawerMarker
 class SecondaryDrawerItemKt(name: String, description: String) : AbstractBadgeableDrawerItemKt() {
 
     private val item = SecondaryDrawerItem()

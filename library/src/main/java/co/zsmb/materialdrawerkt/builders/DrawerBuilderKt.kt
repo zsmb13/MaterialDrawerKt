@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
 import android.view.View
 import android.view.ViewGroup
+import co.zsmb.materialdrawerkt.DrawerMarker
 import co.zsmb.materialdrawerkt.nonReadable
 import com.mikepenz.fastadapter.FastAdapter
 import com.mikepenz.materialdrawer.AccountHeader
@@ -18,6 +19,7 @@ import com.mikepenz.materialdrawer.DrawerBuilder
 import com.mikepenz.materialdrawer.holder.DimenHolder
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 
+@DrawerMarker
 class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
 
     /* Builder basics */

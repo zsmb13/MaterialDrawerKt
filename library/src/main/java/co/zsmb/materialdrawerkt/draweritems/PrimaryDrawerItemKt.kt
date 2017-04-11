@@ -16,7 +16,6 @@ fun BuilderBase.primaryItem(
     return item.build().apply { attachItem(this) }
 }
 
-@DrawerMarker
 class PrimaryDrawerItemKt(name: String, description: String) : AbstractBadgeableDrawerItemKt() {
 
     private val item = PrimaryDrawerItem()

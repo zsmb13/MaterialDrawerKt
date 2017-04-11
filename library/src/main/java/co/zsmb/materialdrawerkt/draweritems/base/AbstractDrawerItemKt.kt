@@ -1,10 +1,12 @@
 package co.zsmb.materialdrawerkt.draweritems.base
 
 import android.view.View
+import co.zsmb.materialdrawerkt.DrawerMarker
 import co.zsmb.materialdrawerkt.nonReadable
 import com.mikepenz.materialdrawer.model.AbstractDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 
+@DrawerMarker
 abstract class AbstractDrawerItemKt {
 
     private lateinit var item: AbstractDrawerItem<*, *>
