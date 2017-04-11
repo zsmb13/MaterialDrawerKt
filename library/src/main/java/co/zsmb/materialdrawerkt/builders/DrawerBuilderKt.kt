@@ -306,8 +306,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      *
      * @param handler the handler to call when an item has been clicked. Should return true if the click has been handled.
      */
-    fun onItemClick(handler: (view: View, position: Int,
-                              drawerItem: IDrawerItem<out Any?, out RecyclerView.ViewHolder>?) -> Boolean) {
+    fun onItemClick(handler: (view: View, position: Int, drawerItem: IDrawerItem<*, *>) -> Boolean) {
         builder.withOnDrawerItemClickListener(handler)
     }
 
@@ -323,8 +322,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      *
      * @param handler the handler to call when an item has been clicked. Should return true if the click has been handled.
      */
-    fun onItemLongClick(handler: (view: View, position: Int,
-                                  drawerItem: IDrawerItem<out Any?, out RecyclerView.ViewHolder>?) -> Boolean) {
+    fun onItemLongClick(handler: (view: View, position: Int, drawerItem: IDrawerItem<*, *>) -> Boolean) {
         builder.withOnDrawerItemLongClickListener(handler)
     }
 
