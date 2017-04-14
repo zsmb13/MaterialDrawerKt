@@ -1,4 +1,6 @@
-package co.zsmb.materialdrawerkt.draweritems.base
+package co.zsmb.materialdrawerkt.draweritems.badgeable
+
+import co.zsmb.materialdrawerkt.draweritems.base.BaseDescribeableDrawerItemKt
 
 abstract class AbstractBadgeableDrawerItemKt : BaseDescribeableDrawerItemKt() {
 

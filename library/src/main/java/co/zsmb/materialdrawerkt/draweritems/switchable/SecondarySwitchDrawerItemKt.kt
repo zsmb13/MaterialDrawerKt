@@ -1,10 +1,7 @@
 package co.zsmb.materialdrawerkt.draweritems.switchable
 
 import co.zsmb.materialdrawerkt.builders.BuilderBase
-import co.zsmb.materialdrawerkt.draweritems.PrimaryDrawerItemKt
-import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
 import com.mikepenz.materialdrawer.model.SecondarySwitchDrawerItem
-import com.mikepenz.materialdrawer.model.SwitchDrawerItem
 
 fun BuilderBase.secondarySwitchItem(
         name: String = "",
