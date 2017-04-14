@@ -30,7 +30,7 @@ abstract class AbstractDrawerItemKt {
     var isExpanded: Boolean
         get() = nonReadable()
         set(value) {
-            item.withIsExpanded(true)
+            item.withIsExpanded(value)
         }
 
     fun onClick(handler: (view: View, position: Int, drawerItem: IDrawerItem<*, *>) -> Boolean) {

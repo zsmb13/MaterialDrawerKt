@@ -15,13 +15,13 @@ abstract class BaseDescribeableDrawerItemKt : BaseDrawerItemKt() {
     var description: String
         get() = nonReadable()
         set(value) {
-            item.withDescription(description)
+            item.withDescription(value)
         }
 
     var descriptionRes: Int
         get() = nonReadable()
         set(value) {
-            item.withDescription(descriptionRes)
+            item.withDescription(value)
         }
 
     var descriptionTextColor: Int
