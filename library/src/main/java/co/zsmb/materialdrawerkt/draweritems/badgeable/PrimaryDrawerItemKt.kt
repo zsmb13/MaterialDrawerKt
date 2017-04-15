@@ -3,6 +3,10 @@ package co.zsmb.materialdrawerkt.draweritems.badgeable
 import co.zsmb.materialdrawerkt.builders.BuilderBase
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
 
+/**
+ * Adds a new PrimaryDrawerItem with the given [name] and [description].
+ * @return The created PrimaryDrawerItem instance
+ */
 fun BuilderBase.primaryItem(
         name: String = "",
         description: String = "",

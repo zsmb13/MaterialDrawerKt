@@ -58,14 +58,14 @@ class BadgeKt(text: String) {
         }
 
     /**
-     * The color of the badge, given as an Int in argb format.
+     * The color of the badge, given as a Long in argb format.
      *
      * Wraps the withColor function. Non readable property.
      */
-    var color: Int
+    var color: Long
         get() = nonReadable()
         set(value) {
-            style.withColor(value)
+            style.withColor(value.toInt())
         }
 
     /**
@@ -80,14 +80,14 @@ class BadgeKt(text: String) {
         }
 
     /**
-     * The color of the badge when it's tapped, given as an Int in argb format.
+     * The color of the badge when it's tapped, given as a Long in argb format.
      *
      * Wraps the withColorPressed function. Non readable property.
      */
-    var colorPressed: Int
+    var colorPressed: Long
         get() = nonReadable()
         set(value) {
-            style.withColorPressed(value)
+            style.withColorPressed(value.toInt())
         }
 
     /**
@@ -269,14 +269,14 @@ class BadgeKt(text: String) {
         }
 
     /**
-     * The color of the badge's text, given as an argb Int.
+     * The color of the badge's text, given as an argb Long.
      *
      * Wraps the withTextColor function. Non readable property.
      */
-    var textColor: Int
+    var textColor: Long
         get() = nonReadable()
         set(value) {
-            style.withTextColor(value)
+            style.withTextColor(value.toInt())
         }
 
     /**

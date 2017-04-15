@@ -6,7 +6,7 @@ import com.mikepenz.materialdrawer.holder.BadgeStyle
 import com.mikepenz.materialdrawer.holder.StringHolder
 import com.mikepenz.materialdrawer.model.AbstractBadgeableDrawerItem
 
-abstract class AbstractBadgeableDrawerItemKt : BaseDescribeableDrawerItemKt() {
+abstract class AbstractBadgeableDrawerItemKt : BaseDescribeableDrawerItemKt(), BadgeableKt {
 
     private lateinit var item: AbstractBadgeableDrawerItem<*>
 
@@ -15,25 +15,22 @@ abstract class AbstractBadgeableDrawerItemKt : BaseDescribeableDrawerItemKt() {
         this.item = item
     }
 
-    var badge: String
+    // Documentation inherited
+    override var badgeRes: Int
         get() = nonReadable()
         set(value) {
             item.withBadge(value)
         }
 
-    var badgeRes: Int
+    // Documentation inherited
+    override var badgeHolder: StringHolder
         get() = nonReadable()
         set(value) {
             item.withBadge(value)
         }
 
-    var badgeHolder: StringHolder
-        get() = nonReadable()
-        set(value) {
-            item.withBadge(value)
-        }
-
-    var badgeStyle: BadgeStyle
+    // Documentation inherited
+    override var badgeStyle: BadgeStyle
         get() = nonReadable()
         set(value) {
             item.withBadgeStyle(value)
