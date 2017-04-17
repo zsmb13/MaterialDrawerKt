@@ -161,10 +161,9 @@ class BadgeKt(text: String) {
      *
      * Wraps the withPaddingLeftRightDp function. Non readable property.
      */
-    @Deprecated(
-            message = "Use paddingHorizontalDp instead",
-            level = DeprecationLevel.WARNING,
-            replaceWith = ReplaceWith("paddingHorizontalDp"))
+    @Deprecated(level = DeprecationLevel.WARNING,
+            replaceWith = ReplaceWith("paddingHorizontalDp"),
+            message = "Use paddingHorizontalDp instead")
     var paddingLeftRightDp: Int
         get() = nonReadable()
         set(value) {
@@ -176,10 +175,9 @@ class BadgeKt(text: String) {
      *
      * Wraps the withPaddingLeftRightPx function. Non readable property.
      */
-    @Deprecated(
-            message = "Use paddingHorizontalPx instead",
-            level = DeprecationLevel.WARNING,
-            replaceWith = ReplaceWith("paddingHorizontalPx"))
+    @Deprecated(level = DeprecationLevel.WARNING,
+            replaceWith = ReplaceWith("paddingHorizontalPx"),
+            message = "Use paddingHorizontalPx instead")
     var paddingLeftRightPx: Int
         get() = nonReadable()
         set(value) {
@@ -217,10 +215,9 @@ class BadgeKt(text: String) {
      *
      * Wraps the withPaddingTopBottomDp function. Non readable property.
      */
-    @Deprecated(
-            message = "Use paddingVerticalDp instead",
-            level = DeprecationLevel.WARNING,
-            replaceWith = ReplaceWith("paddingVerticalDp"))
+    @Deprecated(level = DeprecationLevel.WARNING,
+            replaceWith = ReplaceWith("paddingVerticalDp"),
+            message = "Use paddingVerticalDp instead")
     var paddingTopBottomDp: Int
         get() = nonReadable()
         set(value) {
@@ -232,10 +229,9 @@ class BadgeKt(text: String) {
      *
      * Wraps the withPaddingTopBottomPx function. Non readable property.
      */
-    @Deprecated(
-            message = "Use paddingVerticalPx instead",
-            level = DeprecationLevel.WARNING,
-            replaceWith = ReplaceWith("paddingVerticalPx"))
+    @Deprecated(level = DeprecationLevel.WARNING,
+            replaceWith = ReplaceWith("paddingVerticalPx"),
+            message = "Use paddingVerticalPx instead")
     var paddingTopBottomPx: Int
         get() = nonReadable()
         set(value) {

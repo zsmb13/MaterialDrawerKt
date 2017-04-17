@@ -22,11 +22,11 @@ fun BuilderBase.expandableBadgeItem(name: String = "",
 class ExpandableBadgeDrawerItemKt(name: String, description: String) : BaseDescribeableDrawerItemKt(), BadgeableKt {
 
     private val item = ExpandableBadgeDrawerItem()
+            .withName(name)
+            .withDescription(description)
 
     init {
         super.setItem(item)
-        item.withName(name)
-                .withDescription(description)
     }
 
     internal fun build() = item

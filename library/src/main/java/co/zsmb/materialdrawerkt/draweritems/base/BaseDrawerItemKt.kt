@@ -128,7 +128,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
         }
 
     /**
-     * The color of the drawer item's icon when it's disabled, given as a color resource.
+     * The color of the drawer item's icon when it's enabled, given as a color resource.
      *
      * Wraps the withIconColorRes function. Non readable property.
      */
