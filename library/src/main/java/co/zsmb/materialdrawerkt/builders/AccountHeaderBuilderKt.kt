@@ -2,10 +2,10 @@ package co.zsmb.materialdrawerkt.builders
 
 import android.app.Activity
 import co.zsmb.materialdrawerkt.DrawerMarker
-import co.zsmb.materialdrawerkt.draweritems.ProfileDrawerItemKt
 import co.zsmb.materialdrawerkt.nonReadable
 import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.AccountHeaderBuilder
+import com.mikepenz.materialdrawer.model.interfaces.IProfile
 
 fun DrawerBuilderKt.accountHeader(setup: AccountHeaderBuilderKt.() -> Unit = {}): AccountHeader {
     val header = AccountHeaderBuilderKt(activity)
@@ -24,11 +24,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
             builder.withHeaderBackground(value)
         }
 
-    fun profile(name: String = "", email: String = "", setup: ProfileDrawerItemKt.() -> Unit = {}) {
-        val item = ProfileDrawerItemKt(name, email)
-        item.setup()
-        builder.addProfiles(item.build())
-    }
+    internal fun addItem(profile: IProfile<*>) = builder.addProfiles(profile)
 
     internal fun build(): AccountHeader = builder.build()
 
