@@ -84,6 +84,15 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
             builder.withAdapterWrapper(value)
         }
 
+    /**
+     *
+     *
+     * Wraps the append function.
+     */
+    fun append(drawer: Drawer) {
+        builder.append(drawer)
+    }
+
     var closeOnClick: Boolean
         get() = nonReadable()
         set(value) {
@@ -377,6 +386,19 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
         get() = nonReadable()
         set(value) {
             builder.withPositionBasedStateManagement(value)
+        }
+
+    /**
+     *
+     *
+     * Convenience for append.
+     *
+     * Non readable property.
+     */
+    var primaryDrawer: Drawer
+        get() = nonReadable()
+        set(value) {
+            builder.append(value)
         }
 
     var recyclerView: RecyclerView
