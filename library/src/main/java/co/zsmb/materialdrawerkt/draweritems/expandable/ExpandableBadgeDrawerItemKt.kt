@@ -3,7 +3,6 @@ package co.zsmb.materialdrawerkt.draweritems.expandable
 import co.zsmb.materialdrawerkt.builders.BuilderBase
 import co.zsmb.materialdrawerkt.draweritems.badgeable.BadgeableKt
 import co.zsmb.materialdrawerkt.draweritems.base.BaseDescribeableDrawerItemKt
-import co.zsmb.materialdrawerkt.nonReadable
 import com.mikepenz.materialdrawer.holder.BadgeStyle
 import com.mikepenz.materialdrawer.holder.StringHolder
 import com.mikepenz.materialdrawer.model.ExpandableBadgeDrawerItem

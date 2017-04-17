@@ -1,8 +1,5 @@
 package co.zsmb.materialdrawerkt.draweritems
 
-import android.graphics.drawable.Drawable
-import co.zsmb.materialdrawerkt.DrawerMarker
-import co.zsmb.materialdrawerkt.NonReadablePropertyException
 import co.zsmb.materialdrawerkt.nonReadable
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem
 

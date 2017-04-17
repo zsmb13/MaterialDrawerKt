@@ -1,10 +1,7 @@
 package co.zsmb.materialdrawerkt.draweritems
 
-import co.zsmb.materialdrawerkt.DrawerMarker
 import co.zsmb.materialdrawerkt.builders.BuilderBase
 import co.zsmb.materialdrawerkt.draweritems.base.AbstractDrawerItemKt
-import com.mikepenz.materialdrawer.model.AbstractDrawerItem
-import com.mikepenz.materialdrawer.model.BaseDrawerItem
 import com.mikepenz.materialdrawer.model.DividerDrawerItem
 
 fun BuilderBase.divider(setup: DividerDrawerItemKt.() -> Unit = {}): DividerDrawerItem {
@@ -13,7 +10,7 @@ fun BuilderBase.divider(setup: DividerDrawerItemKt.() -> Unit = {}): DividerDraw
     return item.build().apply { attachItem(this) }
 }
 
-class DividerDrawerItemKt: AbstractDrawerItemKt() {
+class DividerDrawerItemKt : AbstractDrawerItemKt() {
 
     private val item = DividerDrawerItem()
 
