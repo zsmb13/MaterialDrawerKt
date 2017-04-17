@@ -2,11 +2,10 @@ package co.zsmb.materialdrawerkt.draweritems.toggleable
 
 import android.widget.CompoundButton
 import co.zsmb.materialdrawerkt.draweritems.base.BaseDescribeableDrawerItemKt
-import co.zsmb.materialdrawerkt.nonReadable
 import com.mikepenz.materialdrawer.model.AbstractToggleableDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 
-abstract class AbstractToggleableDrawerItemKt: BaseDescribeableDrawerItemKt() {
+abstract class AbstractToggleableDrawerItemKt : BaseDescribeableDrawerItemKt() {
 
     private lateinit var item: AbstractToggleableDrawerItem<*>
 
@@ -15,37 +14,70 @@ abstract class AbstractToggleableDrawerItemKt: BaseDescribeableDrawerItemKt() {
         this.item = item
     }
 
+    /**
+     * Whether the drawer item's toggle is currently in its "on" state.
+     *
+     * Wraps the withChecked and isChecked functions.
+     */
     var checked: Boolean
-        get() = nonReadable()
+        get() = item.isChecked
         set(value) {
             item.withChecked(value)
         }
 
-    @Deprecated(level = DeprecationLevel.ERROR,
-            replaceWith = ReplaceWith("onCheckedChanged(handler)"),
-            message = "Use onCheckedChanged instead.")
-    fun onCheckedChange(handler: (drawerItem: IDrawerItem<*, *>, button: CompoundButton, isChecked: Boolean) -> Unit) {
-        onCheckedChanged(handler)
-    }
-
     /**
-     * Replacement for onCheckedChange
+     * Adds an event [handler] to the drawer item that's called when the toggle's state is changed.
+     *
+     * Wraps the withOnCheckedChangeListener function.
+     *
+     * @param drawerItem The drawer item itself
+     * @param button The CompoundButton View whose state has changed
+     * @param isChecked True if the toggle is now in an "on" state
      */
-    fun onCheckedChanged(handler: (drawerItem: IDrawerItem<*, *>, button: CompoundButton, isChecked: Boolean) -> Unit) {
+    @Deprecated(level = DeprecationLevel.ERROR,
+            replaceWith = ReplaceWith("onToggledChanged(handler)"),
+            message = "Use onToggledChanged instead.")
+    fun onCheckedChange(handler: (drawerItem: IDrawerItem<*, *>, button: CompoundButton, isChecked: Boolean) -> Unit) {
         item.withOnCheckedChangeListener(handler)
     }
 
     /**
-     * Alternative to onCheckedChanged
+     * Adds an event [handler] to the drawer item that's called when the toggle's state is changed.
+     *
+     * Replacement for onCheckedChange.
+     *
+     * Wraps the withOnCheckedChangeListener function.
+     *
+     * @param drawerItem The drawer item itself
+     * @param button The CompoundButton View whose state has changed
+     * @param isEnabled True if the toggle is now in an "on" state
      */
-    fun onChecked(handler: (isChecked: Boolean) -> Unit) {
-        item.withOnCheckedChangeListener { _, _, isChecked ->
-            handler(isChecked)
+    fun onToggleChanged(handler: (drawerItem: IDrawerItem<*, *>, button: CompoundButton, isEnabled: Boolean) -> Unit) {
+        item.withOnCheckedChangeListener(handler)
+    }
+
+    /**
+     * Adds an event [handler] to the drawer item that's called when the toggle's state is changed.
+     *
+     * Alternative to the 3 parameter onToggleChanged method, to be used when you don't need all its parameters.
+     *
+     * Wraps the withOnCheckedChangeListener function.
+     *
+     * @param isEnabled True if the toggle is now in an "on" state
+     */
+    fun onToggled(handler: (isEnabled: Boolean) -> Unit) {
+        item.withOnCheckedChangeListener { _, _, isEnabled ->
+            handler(isEnabled)
         }
     }
 
+    /**
+     * Whether the drawer item's toggle can be toggled by the user.
+     *
+     * Wraps the withToggleEnabled and isToggleEnabled functions.
+     */
     var toggleEnabled: Boolean
-        get() = nonReadable()
+        get() = item.isToggleEnabled
         set(value) {
             item.withToggleEnabled(value)
         }

@@ -3,6 +3,10 @@ package co.zsmb.materialdrawerkt.draweritems.switchable
 import co.zsmb.materialdrawerkt.builders.BuilderBase
 import com.mikepenz.materialdrawer.model.SwitchDrawerItem
 
+/**
+ * Adds a new SwitchDrawerItem with the given [name] and [description].
+ * @return The created SwitchDrawerItem instance
+ */
 fun BuilderBase.switchItem(
         name: String = "",
         description: String = "",

@@ -3,6 +3,10 @@ package co.zsmb.materialdrawerkt.draweritems.switchable
 import co.zsmb.materialdrawerkt.builders.BuilderBase
 import com.mikepenz.materialdrawer.model.SecondarySwitchDrawerItem
 
+/**
+ * Adds a new SecondarySwitchDrawerItem with the given [name] and [description].
+ * @return The created SecondarySwitchDrawerItem instance
+ */
 fun BuilderBase.secondarySwitchItem(
         name: String = "",
         description: String = "",
