@@ -3,6 +3,10 @@ package co.zsmb.materialdrawerkt.draweritems.toggleable
 import co.zsmb.materialdrawerkt.builders.BuilderBase
 import com.mikepenz.materialdrawer.model.SecondaryToggleDrawerItem
 
+/**
+ * Adds a new SecondaryToggleDrawerItem with the given [name] and [description].
+ * @return The created SecondaryToggleDrawerItem instance
+ */
 fun BuilderBase.secondaryToggleItem(
         name: String = "",
         description: String = "",
