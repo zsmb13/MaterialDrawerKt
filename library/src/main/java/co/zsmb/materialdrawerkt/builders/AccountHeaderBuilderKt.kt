@@ -16,11 +16,7 @@ fun DrawerBuilderKt.accountHeader(setup: AccountHeaderBuilderKt.() -> Unit = {})
 @DrawerMarker
 class AccountHeaderBuilderKt(activity: Activity) {
 
-    private val builder = AccountHeaderBuilder()
-
-    init {
-        builder.withActivity(activity)
-    }
+    private val builder = AccountHeaderBuilder().withActivity(activity)
 
     var background: Int
         get() = nonReadable()

@@ -20,11 +20,11 @@ fun BuilderBase.expandableItem(name: String = "",
 class ExpandableDrawerItemKt(name: String, description: String) : BaseDescribeableDrawerItemKt() {
 
     private val item = ExpandableDrawerItem()
+            .withName(name)
+            .withDescription(description)
 
     init {
         super.setItem(item)
-        item.withName(name)
-                .withDescription(description)
     }
 
     internal fun build() = item

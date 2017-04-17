@@ -19,11 +19,11 @@ fun BuilderBase.switchItem(
 class SwitchDrawerItemKt(name: String, description: String) : AbstractSwitchableDrawerItemKt() {
 
     private val item = SwitchDrawerItem()
+            .withName(name)
+            .withDescription(description)
 
     init {
         super.setItem(item)
-        item.withName(name)
-                .withDescription(description)
     }
 
     internal fun build() = item

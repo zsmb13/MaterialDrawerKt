@@ -24,11 +24,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
 
     /* Builder basics */
 
-    private val builder = DrawerBuilder()
-
-    init {
-        builder.withActivity(activity)
-    }
+    private val builder = DrawerBuilder(activity)
 
     internal fun build(): Drawer = builder
             .withOnDrawerListener(onDrawerListener)

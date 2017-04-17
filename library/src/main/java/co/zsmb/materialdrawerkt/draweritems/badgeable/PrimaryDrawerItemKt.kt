@@ -19,11 +19,11 @@ fun BuilderBase.primaryItem(
 class PrimaryDrawerItemKt(name: String, description: String) : AbstractBadgeableDrawerItemKt() {
 
     private val item = PrimaryDrawerItem()
+            .withName(name)
+            .withDescription(description)
 
     init {
         super.setItem(item)
-        item.withName(name)
-                .withDescription(description)
     }
 
     internal fun build() = item

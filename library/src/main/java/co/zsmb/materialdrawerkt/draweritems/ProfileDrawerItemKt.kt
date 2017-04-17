@@ -6,11 +6,8 @@ import com.mikepenz.materialdrawer.model.ProfileDrawerItem
 class ProfileDrawerItemKt(name: String, email: String) {
 
     private val item = ProfileDrawerItem()
-
-    init {
-        item.withName(name)
-        item.withEmail(email)
-    }
+            .withName(name)
+            .withEmail(email)
 
     var icon: Int
         get() = nonReadable()
