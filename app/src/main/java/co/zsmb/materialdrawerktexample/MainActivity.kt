@@ -3,7 +3,7 @@ package co.zsmb.materialdrawerktexample
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import co.zsmb.materialdrawerkt.builders.accountHeader
-import co.zsmb.materialdrawerkt.drawer
+import co.zsmb.materialdrawerkt.builders.drawer
 import co.zsmb.materialdrawerkt.draweritems.badgeable.primaryItem
 import co.zsmb.materialdrawerkt.draweritems.badgeable.secondaryItem
 import co.zsmb.materialdrawerkt.draweritems.divider
