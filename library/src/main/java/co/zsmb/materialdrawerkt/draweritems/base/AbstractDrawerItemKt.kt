@@ -2,17 +2,23 @@ package co.zsmb.materialdrawerkt.draweritems.base
 
 import android.view.View
 import co.zsmb.materialdrawerkt.DrawerMarker
+import co.zsmb.materialdrawerkt.builders.BuilderBase
 import co.zsmb.materialdrawerkt.nonReadable
 import com.mikepenz.materialdrawer.model.AbstractDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 
 @DrawerMarker
-abstract class AbstractDrawerItemKt {
+abstract class AbstractDrawerItemKt : BuilderBase() {
 
     private lateinit var item: AbstractDrawerItem<*, *>
 
     protected fun setItem(item: AbstractDrawerItem<*, *>) {
         this.item = item
+    }
+
+    @Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
+    override fun attachItem(subItem: IDrawerItem<*, *>) {
+        item.withSubItems(subItem)
     }
 
     /**

@@ -19,6 +19,12 @@ import com.mikepenz.materialdrawer.DrawerBuilder
 import com.mikepenz.materialdrawer.holder.DimenHolder
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 
+fun Activity.drawer(setup: DrawerBuilderKt.() -> Unit = {}): Drawer {
+    val builder = DrawerBuilderKt(this)
+    builder.setup()
+    return builder.build()
+}
+
 @DrawerMarker
 class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
 
@@ -30,13 +36,18 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
             .withOnDrawerListener(onDrawerListener)
             .build()
 
+    @Deprecated(level = DeprecationLevel.ERROR,
+            message = "Drawers can't be nested.")
+    fun drawer(param: () -> Unit = {}) {
+    }
+
     /* Special things */
 
     override fun attachItem(item: IDrawerItem<*, *>) {
         builder.addDrawerItems(item)
     }
 
-    override fun attachHeader(header: AccountHeader) {
+    fun attachHeader(header: AccountHeader) {
         builder.withAccountHeader(header)
     }
 
@@ -197,10 +208,10 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
             builder.withFireOnInitialOnClick(value)
         }
 
-    var footer: View
+    var footerView: View
         get() = nonReadable()
         set(value) {
-            builder.withFooter(footer)
+            builder.withFooter(value)
         }
 
     var footerRes: Int
