@@ -36,6 +36,11 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
             .withOnDrawerListener(onDrawerListener)
             .build()
 
+    @Deprecated(level = DeprecationLevel.ERROR,
+            message = "Drawers can't be nested.")
+    fun drawer(param: () -> Unit = {}) {
+    }
+
     /* Special things */
 
     override fun attachItem(item: IDrawerItem<*, *>) {
