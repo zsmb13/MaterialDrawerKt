@@ -4,6 +4,10 @@ import co.zsmb.materialdrawerkt.builders.BuilderBase
 import co.zsmb.materialdrawerkt.draweritems.base.AbstractDrawerItemKt
 import com.mikepenz.materialdrawer.model.DividerDrawerItem
 
+/**
+ * Adds a new DividerDrawerItem.
+ * @return The created DividerDrawerItem instance
+ */
 fun BuilderBase.divider(setup: DividerDrawerItemKt.() -> Unit = {}): DividerDrawerItem {
     val item = DividerDrawerItemKt()
     item.setup()
@@ -11,6 +15,8 @@ fun BuilderBase.divider(setup: DividerDrawerItemKt.() -> Unit = {}): DividerDraw
 }
 
 class DividerDrawerItemKt : AbstractDrawerItemKt() {
+
+    /* Builder basics */
 
     private val item = DividerDrawerItem()
 
