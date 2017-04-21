@@ -371,6 +371,18 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
         }
 
     /**
+     * Whether to generate a mini drawer for this drawer as well.
+     * Default value is false.
+     *
+     * Non readable property. Wraps the withGenerateMiniDrawer method.
+     */
+    var generateMiniDrawer: Boolean
+        get() = nonReadable()
+        set(value) {
+            builder.withGenerateMiniDrawer(value)
+        }
+
+    /**
      * Whether the generated adapter should have its `hasStableIds` set to true. Only enable if you have set unique
      * identifiers for all of your items.
      * Default value is false.
