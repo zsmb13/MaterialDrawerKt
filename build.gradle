@@ -1,7 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.1.2-eap-73'
+    ext.kotlin_version = '1.1.2-eap-77'
     repositories {
         jcenter()
         maven { url "https://dl.bintray.com/kotlin/kotlin-eap-1.1/" }
