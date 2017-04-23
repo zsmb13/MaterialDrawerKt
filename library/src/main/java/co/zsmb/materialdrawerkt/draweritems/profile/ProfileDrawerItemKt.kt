@@ -124,6 +124,8 @@ class ProfileDrawerItemKt(name: String, email: String) : AbstractDrawerItemKt() 
      *
      * Non readable property. Wraps the [ProfileDrawerItem.withIcon] method.
      */
+    @Deprecated(level = DeprecationLevel.WARNING,
+            message = "Alternatives are available, check the documentation.")
     var iconRes: Int
         get() = nonReadable()
         set(value) {

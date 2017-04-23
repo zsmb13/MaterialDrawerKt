@@ -159,6 +159,8 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
      *
      * Non readable property. Wraps the [ProfileSettingDrawerItem.withIcon] method.
      */
+    @Deprecated(level = DeprecationLevel.WARNING,
+            message = "Alternatives are available, check the documentation.")
     var iconRes: Int
         get() = nonReadable()
         set(value) {

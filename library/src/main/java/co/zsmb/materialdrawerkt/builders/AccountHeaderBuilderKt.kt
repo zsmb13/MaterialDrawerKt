@@ -113,6 +113,8 @@ class AccountHeaderBuilderKt(activity: Activity) {
      *
      * Non readable property. Wraps the [AccountHeaderBuilder.withHeaderBackground] method.
      */
+    @Deprecated(level = DeprecationLevel.WARNING,
+            message = "Alternatives are available, check the documentation.")
     var backgroundRes: Int
         get() = nonReadable()
         set(value) {
@@ -138,6 +140,8 @@ class AccountHeaderBuilderKt(activity: Activity) {
      *
      * Non readable property. Wraps the [AccountHeaderBuilder.withCloseDrawerOnProfileListClick] method.
      */
+    @Deprecated(level = DeprecationLevel.WARNING,
+            message = "Alternatives are available, check the documentation.")
     var closeDrawerOnProfileListClick: Boolean
         get() = nonReadable()
         set(value) {
@@ -203,6 +207,8 @@ class AccountHeaderBuilderKt(activity: Activity) {
      *
      * Non readable property. Wraps the [AccountHeaderBuilder.withCurrentProfileHiddenInList] method.
      */
+    @Deprecated(level = DeprecationLevel.WARNING,
+            message = "Alternatives are available, check the documentation.")
     var currentProfileHiddenInList: Boolean
         get() = nonReadable()
         set(value) {
@@ -466,6 +472,8 @@ class AccountHeaderBuilderKt(activity: Activity) {
      *
      * Non readable property. Wraps the [AccountHeaderBuilder.withResetDrawerOnProfileListClick] method.
      */
+    @Deprecated(level = DeprecationLevel.WARNING,
+            message = "Alternatives are available, check the documentation.")
     var resetDrawerOnProfileListClick: Boolean
         get() = nonReadable()
         set(value) {

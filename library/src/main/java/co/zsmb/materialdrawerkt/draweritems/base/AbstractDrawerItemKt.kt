@@ -138,6 +138,8 @@ abstract class AbstractDrawerItemKt : BuilderBase() {
      *
      * Wraps the [AbstractDrawerItem.withSetSelected] and [AbstractDrawerItem.isSelected] methods.
      */
+    @Deprecated(level = DeprecationLevel.WARNING,
+            message = "Alternatives are available, check the documentation.")
     var setSelected: Boolean
         get() = item.isSelected
         set(value) {

@@ -243,6 +243,8 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      *
      * Non readable property. Wraps the [DrawerBuilder.withDrawerGravity] method.
      */
+    @Deprecated(level = DeprecationLevel.WARNING,
+            message = "Alternatives are available, check the documentation.")
     var drawerGravity: Int
         get() = nonReadable()
         set(value) {
@@ -278,6 +280,8 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      *
      * Non readable property. Wraps the [DrawerBuilder.withDrawerWidthDp] method.
      */
+    @Deprecated(level = DeprecationLevel.WARNING,
+            message = "Alternatives are available, check the documentation.")
     var drawerWidthDp: Int
         get() = nonReadable()
         set(value) {
@@ -291,6 +295,8 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      *
      * Non readable property. Wraps the [DrawerBuilder.withDrawerWidthPx] method.
      */
+    @Deprecated(level = DeprecationLevel.WARNING,
+            message = "Alternatives are available, check the documentation.")
     var drawerWidthPx: Int
         get() = nonReadable()
         set(value) {
@@ -304,6 +310,8 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      *
      * Non readable property. Wraps the [DrawerBuilder.withDrawerWidthRes] method.
      */
+    @Deprecated(level = DeprecationLevel.WARNING,
+            message = "Alternatives are available, check the documentation.")
     var drawerWidthRes: Int
         get() = nonReadable()
         set(value) {
@@ -782,6 +790,8 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      *
      * Non readable property. Wraps the [DrawerBuilder.withShowDrawerOnFirstLaunch] method.
      */
+    @Deprecated(level = DeprecationLevel.WARNING,
+            message = "Alternatives are available, check the documentation.")
     var showDrawerOnFirstLaunch: Boolean
         get() = nonReadable()
         set(value) {
@@ -797,6 +807,8 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      *
      * Non readable property. Wraps the [DrawerBuilder.withShowDrawerUntilDraggedOpened] method.
      */
+    @Deprecated(level = DeprecationLevel.WARNING,
+            message = "Alternatives are available, check the documentation.")
     var showDrawerUntilDraggedOpened: Boolean
         get() = nonReadable()
         set(value) {
@@ -882,6 +894,8 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      *
      * Non readable property. Wraps the [DrawerBuilder.withSliderBackgroundDrawableRes] method.
      */
+    @Deprecated(level = DeprecationLevel.WARNING,
+            message = "Alternatives are available, check the documentation.")
     var sliderBackgroundRes: Int
         get() = nonReadable()
         set(value) {
@@ -1026,6 +1040,8 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      *
      * Non readable property. Wraps the [DrawerBuilder.withTranslucentNavigationBar] method.
      */
+    @Deprecated(level = DeprecationLevel.WARNING,
+            message = "Alternatives are available, check the documentation.")
     var translucentNavigationBar: Boolean
         get() = nonReadable()
         set(value) {
@@ -1040,6 +1056,8 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      *
      * Non readable property. Wraps the [DrawerBuilder.withTranslucentNavigationBarProgrammatically] method.
      */
+    @Deprecated(level = DeprecationLevel.WARNING,
+            message = "Alternatives are available, check the documentation.")
     var translucentNavigationBarProgrammatically: Boolean
         get() = nonReadable()
         set(value) {

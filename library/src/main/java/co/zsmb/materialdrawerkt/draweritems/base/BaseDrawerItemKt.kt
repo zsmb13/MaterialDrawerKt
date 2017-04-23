@@ -114,6 +114,8 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      *
      * Wraps the [BaseDrawerItem.withIcon] method. Non readable property.
      */
+    @Deprecated(level = DeprecationLevel.WARNING,
+            message = "Alternatives are available, check the documentation.")
     var iconRes: Int
         get() = nonReadable()
         set(value) {
@@ -249,6 +251,8 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      *
      * Wraps the [BaseDrawerItem.withSelectedIcon] method. Non readable property.
      */
+    @Deprecated(level = DeprecationLevel.WARNING,
+            message = "Alternatives are available, check the documentation.")
     var selectedIconRes: Int
         get() = nonReadable()
         set(value) {
