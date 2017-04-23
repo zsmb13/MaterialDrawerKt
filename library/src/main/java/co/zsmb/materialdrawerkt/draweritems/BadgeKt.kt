@@ -76,7 +76,7 @@ class BadgeKt(text: String) {
     var colorRes: Int
         get() = nonReadable()
         set(value) {
-            style.withColor(value)
+            style.withColorRes(value)
         }
 
     /**

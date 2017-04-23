@@ -60,7 +60,7 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
     var descriptionTextColorRes: Int
         get() = nonReadable()
         set(value) {
-            item.withDescriptionTextColor(value)
+            item.withDescriptionTextColorRes(value)
         }
 
     /**
@@ -173,7 +173,7 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
     var iconColorRes: Int
         get() = nonReadable()
         set(value) {
-            item.withIconColor(value)
+            item.withIconColorRes(value)
         }
 
     /**

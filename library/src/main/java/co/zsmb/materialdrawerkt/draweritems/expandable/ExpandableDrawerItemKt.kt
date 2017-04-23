@@ -41,7 +41,7 @@ class ExpandableDrawerItemKt(name: String, description: String) : BaseDescribeab
         }
 
     /**
-     * The color of the expand arrow, given with a color resource.
+     * The color of the expand arrow, given as a color resource.
      *
      * Wraps the withArrowColorRes function. Non readable property.
      */
