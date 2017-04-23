@@ -42,22 +42,22 @@ class AccountHeaderBuilderKt(activity: Activity) {
     /* AccountHeaderBuilder methods */
 
     /**
-     * A completely custom view for the header, as a layout resource.
+     * A completely custom View for the header.
      *
      * Non readable property. Wraps the withAccountHeader method.
      */
-    var customViewRes: Int
+    var customView: View
         get() = nonReadable()
         set(value) {
             builder.withAccountHeader(value)
         }
 
     /**
-     * A completely custom View for the header.
+     * A completely custom view for the header, as a layout resource.
      *
      * Non readable property. Wraps the withAccountHeader method.
      */
-    var customView: View
+    var customViewRes: Int
         get() = nonReadable()
         set(value) {
             builder.withAccountHeader(value)
