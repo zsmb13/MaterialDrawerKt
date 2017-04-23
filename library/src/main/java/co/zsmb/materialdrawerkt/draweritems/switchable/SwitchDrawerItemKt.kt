@@ -18,6 +18,8 @@ fun BuilderBase.switchItem(
 
 class SwitchDrawerItemKt(name: String, description: String) : AbstractSwitchableDrawerItemKt() {
 
+    /* Builder basics */
+
     private val item = SwitchDrawerItem()
             .withName(name)
             .withDescription(description)

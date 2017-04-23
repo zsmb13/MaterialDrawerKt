@@ -25,11 +25,15 @@ fun AccountHeaderBuilderKt.profile(
 
 class ProfileDrawerItemKt(name: String, email: String) : AbstractDrawerItemKt() {
 
+    /* Builder basics */
+
     private val item = ProfileDrawerItem()
             .withName(name)
             .withEmail(email)
 
     internal fun build() = item
+
+    /* ProfileDrawerItem methods */
 
     /**
      * The color of the profile item's text when it's disabled, as an argb Long.

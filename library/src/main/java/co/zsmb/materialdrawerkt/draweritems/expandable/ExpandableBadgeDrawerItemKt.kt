@@ -21,6 +21,8 @@ fun BuilderBase.expandableBadgeItem(name: String = "",
 
 class ExpandableBadgeDrawerItemKt(name: String, description: String) : BaseDescribeableDrawerItemKt(), BadgeableKt {
 
+    /* Builder basics */
+
     private val item = ExpandableBadgeDrawerItem()
             .withName(name)
             .withDescription(description)
@@ -30,6 +32,8 @@ class ExpandableBadgeDrawerItemKt(name: String, description: String) : BaseDescr
     }
 
     internal fun build() = item
+
+    /* ExpandableBadgeDrawerItem methods */
 
     // Documentation inherited
     override var badgeRes: Int

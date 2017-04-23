@@ -34,8 +34,6 @@ class AccountHeaderBuilderKt(activity: Activity) {
             .withOnAccountHeaderProfileImageListener(onProfileImageListener)
             .build()
 
-    /* Special things */
-
     internal fun addItem(profile: IProfile<*>) = builder.addProfiles(profile)
 
     /* AccountHeaderBuilder methods */

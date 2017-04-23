@@ -18,6 +18,8 @@ fun BuilderBase.secondaryItem(
 
 class SecondaryDrawerItemKt(name: String, description: String) : AbstractBadgeableDrawerItemKt() {
 
+    /* Builder basics */
+
     private val item = SecondaryDrawerItem()
             .withName(name)
             .withDescription(description)

@@ -24,11 +24,15 @@ fun AccountHeaderBuilderKt.profileSetting(
 
 class ProfileSettingDrawerItemKt(name: String, description: String) {
 
+    /* Builder basics */
+
     private val item = ProfileSettingDrawerItem()
             .withName(name)
             .withDescription(description)
 
     internal fun build() = item
+
+    /* ProfileSettingDrawerItem methods */
 
     /**
      * The description of the profile setting item.

@@ -5,12 +5,16 @@ import com.mikepenz.materialdrawer.model.BaseDescribeableDrawerItem
 
 abstract class BaseDescribeableDrawerItemKt : BaseDrawerItemKt() {
 
+    /* Builder basics */
+
     private lateinit var item: BaseDescribeableDrawerItem<*, *>
 
     protected fun setItem(item: BaseDescribeableDrawerItem<*, *>) {
         super.setItem(item)
         this.item = item
     }
+
+    /* BaseDescribeableDrawerItem methods */
 
     /**
      * The description of the drawer item.

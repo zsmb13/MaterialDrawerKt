@@ -19,6 +19,8 @@ fun BuilderBase.expandableItem(name: String = "",
 
 class ExpandableDrawerItemKt(name: String, description: String) : BaseDescribeableDrawerItemKt() {
 
+    /* Builder basics */
+
     private val item = ExpandableDrawerItem()
             .withName(name)
             .withDescription(description)
@@ -28,6 +30,8 @@ class ExpandableDrawerItemKt(name: String, description: String) : BaseDescribeab
     }
 
     internal fun build() = item
+
+    /* ExpandableDrawerItem methods */
 
     /**
      * The color of the expand arrow given as an argb Long.

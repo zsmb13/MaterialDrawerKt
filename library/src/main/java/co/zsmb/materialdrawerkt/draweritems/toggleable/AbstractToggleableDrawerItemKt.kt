@@ -7,12 +7,16 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 
 abstract class AbstractToggleableDrawerItemKt : BaseDescribeableDrawerItemKt() {
 
+    /* Builder basics */
+
     private lateinit var item: AbstractToggleableDrawerItem<*>
 
     protected fun setItem(item: AbstractToggleableDrawerItem<*>) {
         super.setItem(item)
         this.item = item
     }
+
+    /* AbstractToggleableDrawerItem methods */
 
     /**
      * Whether the drawer item's toggle is currently in its "on" state.

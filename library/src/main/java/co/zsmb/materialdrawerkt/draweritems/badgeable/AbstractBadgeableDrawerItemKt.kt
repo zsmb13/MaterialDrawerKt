@@ -8,12 +8,16 @@ import com.mikepenz.materialdrawer.model.AbstractBadgeableDrawerItem
 
 abstract class AbstractBadgeableDrawerItemKt : BaseDescribeableDrawerItemKt(), BadgeableKt {
 
+    /* Builder basics */
+
     private lateinit var item: AbstractBadgeableDrawerItem<*>
 
     protected fun setItem(item: AbstractBadgeableDrawerItem<*>) {
         super.setItem(item)
         this.item = item
     }
+
+    /* AbstractBadgeableDrawerItem methods */
 
     // Documentation inherited
     override var badgeRes: Int

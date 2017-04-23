@@ -10,6 +10,8 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 @DrawerMarker
 abstract class AbstractDrawerItemKt : BuilderBase() {
 
+    /* Builder basics */
+
     private lateinit var item: AbstractDrawerItem<*, *>
 
     protected fun setItem(item: AbstractDrawerItem<*, *>) {
@@ -20,6 +22,8 @@ abstract class AbstractDrawerItemKt : BuilderBase() {
     override fun attachItem(subItem: IDrawerItem<*, *>) {
         item.withSubItems(subItem)
     }
+
+    /* AbstractDrawerItem methods */
 
     /**
      * Whether the drawer item is enabled (clickable, etc.).

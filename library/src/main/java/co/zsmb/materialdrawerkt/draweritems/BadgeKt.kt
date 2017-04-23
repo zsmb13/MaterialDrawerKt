@@ -21,8 +21,12 @@ fun BadgeableKt.badge(text: String = "", setup: BadgeKt.() -> Unit = {}) {
 @DrawerMarker
 class BadgeKt(text: String) {
 
+    /* Builder basics */
+
     internal val style = BadgeStyle()
     internal val holder = StringHolder(text)
+
+    /* BadgeStyle methods */
 
     /**
      * The text of the badge given by a String.

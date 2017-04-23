@@ -18,6 +18,8 @@ fun BuilderBase.toggleItem(
 
 class ToggleDrawerItemKt(name: String, description: String) : AbstractToggleableDrawerItemKt() {
 
+    /* Builder basics */
+
     private val item = ToggleDrawerItem()
             .withName(name)
             .withDescription(description)

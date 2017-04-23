@@ -7,6 +7,8 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 @DrawerMarker
 class StickyFooterKt(val builder: DrawerBuilder) : BuilderBase() {
 
+    /* Builder basics */
+
     override fun attachItem(item: IDrawerItem<*, *>) {
         builder.addStickyDrawerItems(item)
     }

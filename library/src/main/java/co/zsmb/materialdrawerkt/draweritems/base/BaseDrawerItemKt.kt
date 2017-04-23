@@ -8,12 +8,16 @@ import com.mikepenz.materialdrawer.model.BaseDrawerItem
 
 abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
 
+    /* Builder basics */
+
     private lateinit var item: BaseDrawerItem<*, *>
 
     protected fun setItem(item: BaseDrawerItem<*, *>) {
         super.setItem(item)
         this.item = item
     }
+
+    /* BaseDrawerItem methods */
 
     /**
      * The color of the drawer item's icon when it's disabled, given as an argb Long.

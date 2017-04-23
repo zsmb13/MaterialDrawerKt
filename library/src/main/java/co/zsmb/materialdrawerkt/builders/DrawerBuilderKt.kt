@@ -45,12 +45,14 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
         return builder.build()
     }
 
+    /**
+     * A shadowing method to prevent nesting `drawer` calls.
+     * ( Credits to hotkey for this solution http://stackoverflow.com/a/43470027/4465208 )
+     */
     @Deprecated(level = DeprecationLevel.ERROR,
             message = "Drawers can't be nested.")
     fun drawer(param: () -> Unit = {}) {
     }
-
-    /* Special things */
 
     override fun attachItem(item: IDrawerItem<*, *>) {
         builder.addDrawerItems(item)
