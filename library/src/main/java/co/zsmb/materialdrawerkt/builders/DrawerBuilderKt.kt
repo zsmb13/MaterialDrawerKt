@@ -326,7 +326,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      *
      * Non readable property. Wraps the withFooter function.
      */
-    var footerRes: Int
+    var footerViewRes: Int
         get() = nonReadable()
         set(value) {
             builder.withFooter(value)
@@ -400,7 +400,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      *
      * Non readable property. Wraps the withHeader function.
      */
-    var header: View
+    var headerView: View
         get() = nonReadable()
         set(value) {
             builder.withHeader(value)
@@ -411,7 +411,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      *
      * Non readable property. Wraps the withHeader function.
      */
-    var headerRes: Int
+    var headerViewRes: Int
         get() = nonReadable()
         set(value) {
             builder.withHeader(value)

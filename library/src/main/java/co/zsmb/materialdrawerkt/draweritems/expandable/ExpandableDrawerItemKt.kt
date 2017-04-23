@@ -30,14 +30,14 @@ class ExpandableDrawerItemKt(name: String, description: String) : BaseDescribeab
     internal fun build() = item
 
     /**
-     * The color of the expand arrow given as an Int in argb format.
+     * The color of the expand arrow given as an argb Long.
      *
      * Wraps the withArrowColor function. Non readable property.
      */
-    var arrowColor: Int
+    var arrowColor: Long
         get() = nonReadable()
         set(value) {
-            item.withArrowColor(value)
+            item.withArrowColor(value.toInt())
         }
 
     /**

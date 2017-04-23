@@ -188,7 +188,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      *
      * Wraps the withName function. Non readable property.
      */
-    var nameString: StringHolder
+    var nameHolder: StringHolder
         get() = nonReadable()
         set(value) {
             item.withName(value)
