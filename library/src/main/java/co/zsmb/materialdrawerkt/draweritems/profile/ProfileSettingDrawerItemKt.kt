@@ -130,17 +130,6 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
         }
 
     /**
-     * The icon of the profile setting, as an IIcon.
-     *
-     * Non readable property. Wraps the [ProfileSettingDrawerItem.withIcon] method.
-     */
-    var iicon: IIcon
-        get() = nonReadable()
-        set(value) {
-            item.withIcon(value)
-        }
-
-    /**
      * The icon of the profile setting, as a drawable resource.
      *
      * Non readable property. Wraps the [ProfileSettingDrawerItem.withIcon] method.
@@ -168,6 +157,17 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
      * Non readable property. Wraps the [ProfileSettingDrawerItem.withIcon] method.
      */
     var iconUrl: String
+        get() = nonReadable()
+        set(value) {
+            item.withIcon(value)
+        }
+
+    /**
+     * The icon of the profile setting, as an IIcon.
+     *
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.withIcon] method.
+     */
+    var iicon: IIcon
         get() = nonReadable()
         set(value) {
             item.withIcon(value)

@@ -117,17 +117,6 @@ class ProfileDrawerItemKt(name: String, email: String) : AbstractDrawerItemKt() 
         }
 
     /**
-     * The icon of the profile, as an IIcon.
-     *
-     * Non readable property. Wraps the [ProfileDrawerItem.withIcon] method.
-     */
-    var iicon: IIcon
-        get() = nonReadable()
-        set(value) {
-            item.withIcon(value)
-        }
-
-    /**
      * The icon of the profile, as a drawable resource.
      *
      * Non readable property. Wraps the [ProfileDrawerItem.withIcon] method.
@@ -155,6 +144,17 @@ class ProfileDrawerItemKt(name: String, email: String) : AbstractDrawerItemKt() 
      * Non readable property. Wraps the [ProfileDrawerItem.withIcon] method.
      */
     var iconUrl: String
+        get() = nonReadable()
+        set(value) {
+            item.withIcon(value)
+        }
+
+    /**
+     * The icon of the profile, as an IIcon.
+     *
+     * Non readable property. Wraps the [ProfileDrawerItem.withIcon] method.
+     */
+    var iicon: IIcon
         get() = nonReadable()
         set(value) {
             item.withIcon(value)

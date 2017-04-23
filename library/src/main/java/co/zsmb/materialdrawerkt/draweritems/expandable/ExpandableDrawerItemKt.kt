@@ -56,15 +56,17 @@ class ExpandableDrawerItemKt(name: String, description: String) : BaseDescribeab
         }
 
     /**
-     * The rotation of the expand arrow when the item is closed, in degrees. The default value is 0, which corresponds
-     * to a downward pointing arrow.
+     * Convenience for setting both `arrowRotationAngleStart` and `arrowRotationAngleEnd` at the same time. See those
+     * properties for details.
      *
-     * Non readable property. Wraps the [ExpandableDrawerItem.withArrowRotationAngleStart] method.
+     * Non readable property. Wraps the [ExpandableDrawerItem.withArrowRotationAngleStart] and
+     * [ExpandableDrawerItem.withArrowRotationAngleEnd] methods.
      */
-    var arrowRotationAngleStart: Int
+    var arrowRotationAngle: Pair<Int, Int>
         get() = nonReadable()
         set(value) {
-            item.withArrowRotationAngleStart(value)
+            item.withArrowRotationAngleStart(value.first)
+                    .withArrowRotationAngleEnd(value.second)
         }
 
     /**
@@ -80,17 +82,15 @@ class ExpandableDrawerItemKt(name: String, description: String) : BaseDescribeab
         }
 
     /**
-     * Convenience for setting both `arrowRotationAngleStart` and `arrowRotationAngleEnd` at the same time. See those
-     * properties for details.
+     * The rotation of the expand arrow when the item is closed, in degrees. The default value is 0, which corresponds
+     * to a downward pointing arrow.
      *
-     * Non readable property. Wraps the [ExpandableDrawerItem.withArrowRotationAngleStart] and
-     * [ExpandableDrawerItem.withArrowRotationAngleEnd] methods.
+     * Non readable property. Wraps the [ExpandableDrawerItem.withArrowRotationAngleStart] method.
      */
-    var arrowRotationAngle: Pair<Int, Int>
+    var arrowRotationAngleStart: Int
         get() = nonReadable()
         set(value) {
-            item.withArrowRotationAngleStart(value.first)
-                    .withArrowRotationAngleEnd(value.second)
+            item.withArrowRotationAngleStart(value)
         }
 
 }

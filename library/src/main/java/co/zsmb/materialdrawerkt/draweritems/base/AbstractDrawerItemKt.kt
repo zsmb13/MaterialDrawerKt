@@ -58,16 +58,16 @@ abstract class AbstractDrawerItemKt : BuilderBase() {
         }
 
     /**
-     * Adds an event [handler] to the drawer item that's called when the item is clicked.
+     * Adds an event [handler] to the drawer item that's called after the view for the drawer item is created.
+     * This is to allow further modifications of the view before it's shown.
      *
-     * Wraps the [AbstractDrawerItem.withOnDrawerItemClickListener] method.
+     * Wraps the [AbstractDrawerItem.withPostOnBindViewListener] method.
      *
-     * @param view The View that was clicked
-     * @param position The position of the item within the drawer
      * @param drawerItem The drawer item itself
+     * @param view The view which has been created for the drawer item
      */
-    fun onClick(handler: (view: View, position: Int, drawerItem: IDrawerItem<*, *>) -> Boolean) {
-        item.withOnDrawerItemClickListener(handler)
+    fun onBindView(handler: (drawerItem: IDrawerItem<*, *>, view: View) -> Unit) {
+        item.withPostOnBindViewListener(handler)
     }
 
     /**
@@ -82,16 +82,16 @@ abstract class AbstractDrawerItemKt : BuilderBase() {
     }
 
     /**
-     * Adds an event [handler] to the drawer item that's called after the view for the drawer item is created.
-     * This is to allow further modifications of the view before it's shown.
+     * Adds an event [handler] to the drawer item that's called when the item is clicked.
      *
-     * Wraps the [AbstractDrawerItem.withPostOnBindViewListener] method.
+     * Wraps the [AbstractDrawerItem.withOnDrawerItemClickListener] method.
      *
+     * @param view The View that was clicked
+     * @param position The position of the item within the drawer
      * @param drawerItem The drawer item itself
-     * @param view The view which has been created for the drawer item
      */
-    fun onBindView(handler: (drawerItem: IDrawerItem<*, *>, view: View) -> Unit) {
-        item.withPostOnBindViewListener(handler)
+    fun onClick(handler: (view: View, position: Int, drawerItem: IDrawerItem<*, *>) -> Boolean) {
+        item.withOnDrawerItemClickListener(handler)
     }
 
     /**
@@ -103,6 +103,18 @@ abstract class AbstractDrawerItemKt : BuilderBase() {
         get() = item.isSelectable
         set(value) {
             item.withSelectable(value)
+        }
+
+    /**
+     * Whether the drawer item is selected.
+     *
+     * Convenience for `setSelected`. Wraps the [AbstractDrawerItem.withSetSelected] and [AbstractDrawerItem.isSelected]
+     * methods.
+     */
+    var selected: Boolean
+        get() = item.isSelected
+        set(value) {
+            item.withSetSelected(value)
         }
 
     /**
@@ -123,18 +135,6 @@ abstract class AbstractDrawerItemKt : BuilderBase() {
      * Wraps the [AbstractDrawerItem.withSetSelected] and [AbstractDrawerItem.isSelected] methods.
      */
     var setSelected: Boolean
-        get() = item.isSelected
-        set(value) {
-            item.withSetSelected(value)
-        }
-
-    /**
-     * Whether the drawer item is selected.
-     *
-     * Convenience for `setSelected`. Wraps the [AbstractDrawerItem.withSetSelected] and [AbstractDrawerItem.isSelected]
-     * methods.
-     */
-    var selected: Boolean
         get() = item.isSelected
         set(value) {
             item.withSetSelected(value)

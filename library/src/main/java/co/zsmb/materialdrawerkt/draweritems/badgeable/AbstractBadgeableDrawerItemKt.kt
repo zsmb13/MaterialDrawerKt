@@ -20,14 +20,14 @@ abstract class AbstractBadgeableDrawerItemKt : BaseDescribeableDrawerItemKt(), B
     /* AbstractBadgeableDrawerItem methods */
 
     // Documentation inherited
-    override var badgeRes: Int
+    override var badgeHolder: StringHolder
         get() = nonReadable()
         set(value) {
             item.withBadge(value)
         }
 
     // Documentation inherited
-    override var badgeHolder: StringHolder
+    override var badgeRes: Int
         get() = nonReadable()
         set(value) {
             item.withBadge(value)

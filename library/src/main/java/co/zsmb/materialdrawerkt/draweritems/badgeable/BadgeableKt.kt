@@ -6,13 +6,6 @@ import com.mikepenz.materialdrawer.holder.StringHolder
 interface BadgeableKt {
 
     /**
-     * The text of the displayed badge given by a String resource.
-     *
-     * Non readable property. Wraps the [com.mikepenz.materialdrawer.model.interfaces.Badgeable.withBadge] method.
-     */
-    var badgeRes: Int
-
-    /**
      * The text of the displayed badge given by a StringHolder.
      *
      * Non readable property. Wraps the [com.mikepenz.materialdrawer.model.interfaces.Badgeable.withBadge] method.
@@ -20,6 +13,13 @@ interface BadgeableKt {
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "This property is for internal use. Use the badgeRes property or the badge method instead.")
     var badgeHolder: StringHolder
+
+    /**
+     * The text of the displayed badge given by a String resource.
+     *
+     * Non readable property. Wraps the [com.mikepenz.materialdrawer.model.interfaces.Badgeable.withBadge] method.
+     */
+    var badgeRes: Int
 
     /**
      * The style of the displayed badge given by a BadgeStyle.

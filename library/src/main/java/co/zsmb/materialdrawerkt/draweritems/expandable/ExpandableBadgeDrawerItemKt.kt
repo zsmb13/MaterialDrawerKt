@@ -36,15 +36,15 @@ class ExpandableBadgeDrawerItemKt(name: String, description: String) : BaseDescr
     /* ExpandableBadgeDrawerItem methods */
 
     // Documentation inherited
-    override var badgeRes: Int
-        get() = item.badge.textRes
+    override var badgeHolder: StringHolder
+        get() = item.badge
         set(value) {
             item.withBadge(value)
         }
 
     // Documentation inherited
-    override var badgeHolder: StringHolder
-        get() = item.badge
+    override var badgeRes: Int
+        get() = item.badge.textRes
         set(value) {
             item.withBadge(value)
         }

@@ -30,35 +30,43 @@ class AccountHeaderBuilderKt(activity: Activity) {
 
     private val builder = AccountHeaderBuilder().withActivity(activity)
 
-    internal fun build(): AccountHeader = builder
-            .withOnAccountHeaderProfileImageListener(onProfileImageListener)
-            .build()
+    internal fun build(): AccountHeader {
+        if (onProfileImageListener.isInitialized) {
+            builder.withOnAccountHeaderProfileImageListener(onProfileImageListener)
+        }
+
+        return builder.build()
+    }
 
     internal fun addItem(profile: IProfile<*>) = builder.addProfiles(profile)
 
+    /* Listener helper */
+
+    private val onProfileImageListener = object : AccountHeader.OnAccountHeaderProfileImageListener {
+        var isInitialized = false
+
+        var onClick: ((view: View, profile: IProfile<*>, current: Boolean) -> Boolean)? = null
+            set(value) {
+                isInitialized = true
+                field = value
+            }
+
+        override fun onProfileImageClick(view: View, profile: IProfile<*>, current: Boolean): Boolean {
+            return onClick?.invoke(view, profile, current) ?: false
+        }
+
+        var onLongClick: ((view: View, profile: IProfile<*>, current: Boolean) -> Boolean)? = null
+            set(value) {
+                isInitialized = true
+                field = value
+            }
+
+        override fun onProfileImageLongClick(view: View, profile: IProfile<*>, current: Boolean): Boolean {
+            return onLongClick?.invoke(view, profile, current) ?: false
+        }
+    }
+
     /* AccountHeaderBuilder methods */
-
-    /**
-     * A completely custom View for the header.
-     *
-     * Non readable property. Wraps the [AccountHeaderBuilder.withAccountHeader] method.
-     */
-    var customView: View
-        get() = nonReadable()
-        set(value) {
-            builder.withAccountHeader(value)
-        }
-
-    /**
-     * A completely custom view for the header, as a layout resource.
-     *
-     * Non readable property. Wraps the [AccountHeaderBuilder.withAccountHeader] method.
-     */
-    var customViewRes: Int
-        get() = nonReadable()
-        set(value) {
-            builder.withAccountHeader(value)
-        }
 
     /**
      * By default, the small profile icons in the header show the most recently used profiles, the leftmost being the
@@ -73,108 +81,6 @@ class AccountHeaderBuilderKt(activity: Activity) {
         get() = nonReadable()
         set(value) {
             builder.withAlternativeProfileHeaderSwitching(value)
-        }
-
-    /**
-     * Whether the drawer should be closed when a profile item is clicked.
-     * Default value is true.
-     *
-     * See `closeOnClick` as an alternative.
-     *
-     * Non readable property. Wraps the [AccountHeaderBuilder.withCloseDrawerOnProfileListClick] method.
-     */
-    var closeDrawerOnProfileListClick: Boolean
-        get() = nonReadable()
-        set(value) {
-            builder.withCloseDrawerOnProfileListClick(value)
-        }
-
-    /**
-     * Whether the drawer should be closed when a profile item is clicked.
-     * Default value is true.
-     *
-     * Convenience for `closeDrawerOnProfileListClick`. Non readable property. Wraps the
-     * [AccountHeaderBuilder.withCloseDrawerOnProfileListClick] method.
-     */
-    var closeOnClick: Boolean
-        get() = nonReadable()
-        set(value) {
-            builder.withCloseDrawerOnProfileListClick(value)
-        }
-
-    /**
-     * Whether to use a smaller, compact style drawer.
-     * Default value is false.
-     *
-     * Non readable property. Wraps the [AccountHeaderBuilder.withCompactStyle] method.
-     */
-    var compactStyle: Boolean
-        get() = nonReadable()
-        set(value) {
-            builder.withCompactStyle(value)
-        }
-
-    /**
-     * Whether the current profile should be hidden from the profile selection list.
-     * Default value is false.
-     *
-     * See `currentHidden` as an alternative.
-     *
-     * Non readable property. Wraps the [AccountHeaderBuilder.withCurrentProfileHiddenInList] method.
-     */
-    var currentProfileHiddenInList: Boolean
-        get() = nonReadable()
-        set(value) {
-            builder.withCurrentProfileHiddenInList(value)
-        }
-
-    /**
-     * Whether the current profile should be hidden from the profile selection list.
-     * Default value is false.
-     *
-     * Convenience for `currentProfileHiddenInList`. Non readable property. Wraps the
-     * [AccountHeaderBuilder.withCurrentProfileHiddenInList] method.
-     */
-    var currentHidden: Boolean
-        get() = nonReadable()
-        set(value) {
-            builder.withCurrentProfileHiddenInList(value)
-        }
-
-    /**
-     * Whether there should be a divider below the header.
-     * True by default.
-     *
-     * Non readable property. Wraps the [AccountHeaderBuilder.withDividerBelowHeader] method.
-     */
-    var dividerBelow: Boolean
-        get() = nonReadable()
-        set(value) {
-            builder.withDividerBelowHeader(value)
-        }
-
-    /**
-     * The drawer this header belongs to. Not recommended since it will be automatically set to the right drawer anyway.
-     *
-     * Non readable property. Wraps the [AccountHeaderBuilder.withDrawer] method.
-     */
-    @Deprecated(level = DeprecationLevel.WARNING,
-            message = "Setting this manually is not recommended.")
-    var drawer: Drawer
-        get() = nonReadable()
-        set(value) {
-            builder.withDrawer(value)
-        }
-
-    /**
-     * The typeface used for displaying the email of the currently selected profile.
-     *
-     * Non readable property. Wraps the [AccountHeaderBuilder.withEmailTypeface] method.
-     */
-    var emailTypeface: Typeface
-        get() = nonReadable()
-        set(value) {
-            builder.withEmailTypeface(value)
         }
 
     /**
@@ -223,6 +129,158 @@ class AccountHeaderBuilderKt(activity: Activity) {
         set(value) {
             builder.withHeaderBackgroundScaleType(value)
         }
+
+    /**
+     * Whether the drawer should be closed when a profile item is clicked.
+     * Default value is true.
+     *
+     * See `closeOnClick` as an alternative.
+     *
+     * Non readable property. Wraps the [AccountHeaderBuilder.withCloseDrawerOnProfileListClick] method.
+     */
+    var closeDrawerOnProfileListClick: Boolean
+        get() = nonReadable()
+        set(value) {
+            builder.withCloseDrawerOnProfileListClick(value)
+        }
+
+    /**
+     * Whether to close the profile selection list after a profile in it has been selected.
+     * Default value is true.
+     *
+     * Convenience for `resetDrawerOnProfileListClick`. Non readable property. Wraps the
+     * [AccountHeaderBuilder.withResetDrawerOnProfileListClick] method.
+     */
+    var closeListAfterSelection: Boolean
+        get() = nonReadable()
+        set(value) {
+            builder.withResetDrawerOnProfileListClick(value)
+        }
+
+    /**
+     * Whether the drawer should be closed when a profile item is clicked.
+     * Default value is true.
+     *
+     * Convenience for `closeDrawerOnProfileListClick`. Non readable property. Wraps the
+     * [AccountHeaderBuilder.withCloseDrawerOnProfileListClick] method.
+     */
+    var closeOnClick: Boolean
+        get() = nonReadable()
+        set(value) {
+            builder.withCloseDrawerOnProfileListClick(value)
+        }
+
+    /**
+     * Whether to use a smaller, compact style drawer.
+     * Default value is false.
+     *
+     * Non readable property. Wraps the [AccountHeaderBuilder.withCompactStyle] method.
+     */
+    var compactStyle: Boolean
+        get() = nonReadable()
+        set(value) {
+            builder.withCompactStyle(value)
+        }
+
+    /**
+     * Whether the current profile should be hidden from the profile selection list.
+     * Default value is false.
+     *
+     * Convenience for `currentProfileHiddenInList`. Non readable property. Wraps the
+     * [AccountHeaderBuilder.withCurrentProfileHiddenInList] method.
+     */
+    var currentHidden: Boolean
+        get() = nonReadable()
+        set(value) {
+            builder.withCurrentProfileHiddenInList(value)
+        }
+
+    /**
+     * Whether the current profile should be hidden from the profile selection list.
+     * Default value is false.
+     *
+     * See `currentHidden` as an alternative.
+     *
+     * Non readable property. Wraps the [AccountHeaderBuilder.withCurrentProfileHiddenInList] method.
+     */
+    var currentProfileHiddenInList: Boolean
+        get() = nonReadable()
+        set(value) {
+            builder.withCurrentProfileHiddenInList(value)
+        }
+
+    /**
+     * A completely custom View for the header.
+     *
+     * Non readable property. Wraps the [AccountHeaderBuilder.withAccountHeader] method.
+     */
+    var customView: View
+        get() = nonReadable()
+        set(value) {
+            builder.withAccountHeader(value)
+        }
+
+    /**
+     * A completely custom view for the header, as a layout resource.
+     *
+     * Non readable property. Wraps the [AccountHeaderBuilder.withAccountHeader] method.
+     */
+    var customViewRes: Int
+        get() = nonReadable()
+        set(value) {
+            builder.withAccountHeader(value)
+        }
+
+    /**
+     * The delay (in milliseconds) for the drawer close operation after a click. This is a small trick to improve
+     * performance and prevent lag if you open a new Activity after a drawer item was selected. Set to -1 to disable
+     * this behavior entirely.
+     * The default value is 100.
+     *
+     * Non readable property. Wraps the [AccountHeaderBuilder.withOnProfileClickDrawerCloseDelay] method.
+     */
+    var delayOnDrawerClose: Int
+        get() = nonReadable()
+        set(value) {
+            builder.withOnProfileClickDrawerCloseDelay(value)
+        }
+
+    /**
+     * Whether there should be a divider below the header.
+     * True by default.
+     *
+     * Non readable property. Wraps the [AccountHeaderBuilder.withDividerBelowHeader] method.
+     */
+    var dividerBelow: Boolean
+        get() = nonReadable()
+        set(value) {
+            builder.withDividerBelowHeader(value)
+        }
+
+    /**
+     * The drawer this header belongs to. Not recommended since it will be automatically set to the right drawer anyway.
+     *
+     * Non readable property. Wraps the [AccountHeaderBuilder.withDrawer] method.
+     */
+    @Deprecated(level = DeprecationLevel.WARNING,
+            message = "Setting this manually is not recommended.")
+    var drawer: Drawer
+        get() = nonReadable()
+        set(value) {
+            builder.withDrawer(value)
+        }
+
+    /**
+     * The typeface used for displaying the email of the currently selected profile.
+     *
+     * Non readable property. Wraps the [AccountHeaderBuilder.withEmailTypeface] method.
+     */
+    var emailTypeface: Typeface
+        get() = nonReadable()
+        set(value) {
+            builder.withEmailTypeface(value)
+        }
+
 
     /**
      * The height of the header, in dps.
@@ -283,6 +341,32 @@ class AccountHeaderBuilderKt(activity: Activity) {
     }
 
     /**
+     * If set to true, hides the small profile images. If you want to hide all profile images, see the
+     * `profileImagesVisible` property.
+     * Default value is false.
+     *
+     * Non readable property. Wraps the [AccountHeaderBuilder.withOnlyMainProfileImageVisible] method.
+     */
+    var onlyMainProfileImageVisible: Boolean
+        get() = nonReadable()
+        set(value) {
+            builder.withOnlyMainProfileImageVisible(value)
+        }
+
+    /**
+     * If set to true, hides the profile image of the selected user. If you want to hide all profile images, see the
+     * `profileImagesVisible` property.
+     * Default value is false.
+     *
+     * Non readable property. Wraps the [AccountHeaderBuilder.withOnlySmallProfileImagesVisible] method.
+     */
+    var onlySmallProfileImagesVisible: Boolean
+        get() = nonReadable()
+        set(value) {
+            builder.withOnlySmallProfileImagesVisible(value)
+        }
+
+    /**
      * Adds an event [handler] to the header that's called when one of the profile items in the list is selected.
      * The handler should return true if the event has been completely handled.
      *
@@ -294,18 +378,6 @@ class AccountHeaderBuilderKt(activity: Activity) {
      */
     fun onProfileChanged(handler: (view: View, profile: IProfile<*>, current: Boolean) -> Boolean) {
         builder.withOnAccountHeaderListener(handler)
-    }
-
-    private val onProfileImageListener = object : AccountHeader.OnAccountHeaderProfileImageListener {
-        var onClick: ((view: View, profile: IProfile<*>, current: Boolean) -> Boolean)? = null
-        override fun onProfileImageClick(view: View, profile: IProfile<*>, current: Boolean): Boolean {
-            return onClick?.invoke(view, profile, current) ?: false
-        }
-
-        var onLongClick: ((view: View, profile: IProfile<*>, current: Boolean) -> Boolean)? = null
-        override fun onProfileImageLongClick(view: View, profile: IProfile<*>, current: Boolean): Boolean {
-            return onLongClick?.invoke(view, profile, current) ?: false
-        }
     }
 
     /**
@@ -349,46 +421,6 @@ class AccountHeaderBuilderKt(activity: Activity) {
     fun onSelectionViewClick(handler: (view: View, profile: IProfile<*>) -> Boolean) {
         builder.withOnAccountHeaderSelectionViewClickListener(handler)
     }
-
-    /**
-     * If set to true, hides the small profile images. If you want to hide all profile images, see the
-     * `profileImagesVisible` property.
-     * Default value is false.
-     *
-     * Non readable property. Wraps the [AccountHeaderBuilder.withOnlyMainProfileImageVisible] method.
-     */
-    var onlyMainProfileImageVisible: Boolean
-        get() = nonReadable()
-        set(value) {
-            builder.withOnlyMainProfileImageVisible(value)
-        }
-
-    /**
-     * If set to true, hides the profile image of the selected user. If you want to hide all profile images, see the
-     * `profileImagesVisible` property.
-     * Default value is false.
-     *
-     * Non readable property. Wraps the [AccountHeaderBuilder.withOnlySmallProfileImagesVisible] method.
-     */
-    var onlySmallProfileImagesVisible: Boolean
-        get() = nonReadable()
-        set(value) {
-            builder.withOnlySmallProfileImagesVisible(value)
-        }
-
-    /**
-     * The delay (in milliseconds) for the drawer close operation after a click. This is a small trick to improve
-     * performance and prevent lag if you open a new Activity after a drawer item was selected. Set to -1 to disable
-     * this behavior entirely.
-     * The default value is 100.
-     *
-     * Non readable property. Wraps the [AccountHeaderBuilder.withOnProfileClickDrawerCloseDelay] method.
-     */
-    var delayOnDrawerClose: Int
-        get() = nonReadable()
-        set(value) {
-            builder.withOnProfileClickDrawerCloseDelay(value)
-        }
 
     /**
      * Whether to include padding below the header.
@@ -440,18 +472,6 @@ class AccountHeaderBuilderKt(activity: Activity) {
             builder.withResetDrawerOnProfileListClick(value)
         }
 
-    /**
-     * Whether to close the profile selection list after a profile in it has been selected.
-     * Default value is true.
-     *
-     * Convenience for `resetDrawerOnProfileListClick`. Non readable property. Wraps the
-     * [AccountHeaderBuilder.withResetDrawerOnProfileListClick] method.
-     */
-    var closeListAfterSelection: Boolean
-        get() = nonReadable()
-        set(value) {
-            builder.withResetDrawerOnProfileListClick(value)
-        }
 
     /**
      * The bundle to restore state from after a configuration change. Remember to store the AccountHeader instance and

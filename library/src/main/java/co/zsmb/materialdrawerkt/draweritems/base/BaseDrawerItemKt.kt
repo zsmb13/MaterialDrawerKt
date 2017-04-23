@@ -75,39 +75,6 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
         }
 
     /**
-     * The icon of the drawer item, as a drawable resource.
-     *
-     * Wraps the [BaseDrawerItem.withIcon] method. Non readable property.
-     */
-    var iconRes: Int
-        get() = nonReadable()
-        set(value) {
-            item.withIcon(value)
-        }
-
-    /**
-     * The icon of the drawer item, as a Drawable.
-     *
-     * Wraps the [BaseDrawerItem.withIcon] method. Non readable property.
-     */
-    var iconDrawable: Drawable
-        get() = nonReadable()
-        set(value) {
-            item.withIcon(value)
-        }
-
-    /**
-     * The icon of the drawer item, as an IIcon.
-     *
-     * Wraps the [BaseDrawerItem.withIcon] method. Non readable property.
-     */
-    var iicon: IIcon
-        get() = nonReadable()
-        set(value) {
-            item.withIcon(value)
-        }
-
-    /**
      * The color of the drawer item's icon when it's enabled, as an argb Long.
      *
      * Wraps the [BaseDrawerItem.withIconColor] method. Non readable property.
@@ -130,6 +97,28 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
         }
 
     /**
+     * The icon of the drawer item, as a Drawable.
+     *
+     * Wraps the [BaseDrawerItem.withIcon] method. Non readable property.
+     */
+    var iconDrawable: Drawable
+        get() = nonReadable()
+        set(value) {
+            item.withIcon(value)
+        }
+
+    /**
+     * The icon of the drawer item, as a drawable resource.
+     *
+     * Wraps the [BaseDrawerItem.withIcon] method. Non readable property.
+     */
+    var iconRes: Int
+        get() = nonReadable()
+        set(value) {
+            item.withIcon(value)
+        }
+
+    /**
      * Whether the icon of the drawer item should be tinted with the enabled/disabled/selected color. If set to false,
      * your icon will always be displayed with its default colors.
      *
@@ -139,6 +128,17 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
         get() = nonReadable()
         set(value) {
             item.withIconTintingEnabled(value)
+        }
+
+    /**
+     * The icon of the drawer item, as an IIcon.
+     *
+     * Wraps the [BaseDrawerItem.withIcon] method. Non readable property.
+     */
+    var iicon: IIcon
+        get() = nonReadable()
+        set(value) {
+            item.withIcon(value)
         }
 
     /**
@@ -208,28 +208,6 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
         }
 
     /**
-     * The icon of the drawer item when it's selected, as a drawable resource.
-     *
-     * Wraps the [BaseDrawerItem.withSelectedIcon] method. Non readable property.
-     */
-    var selectedIconRes: Int
-        get() = nonReadable()
-        set(value) {
-            item.withSelectedIcon(value)
-        }
-
-    /**
-     * The icon of the drawer item when it's selected, as a Drawable.
-     *
-     * Wraps the [BaseDrawerItem.withSelectedIcon] method. Non readable property.
-     */
-    var selectedIconDrawable: Drawable
-        get() = nonReadable()
-        set(value) {
-            item.withSelectedIcon(value)
-        }
-
-    /**
      * The color of the drawer item's icon when it's selected, as an argb Long.
      *
      * Wraps the [BaseDrawerItem.withSelectedIconColor] method. Non readable property.
@@ -249,6 +227,28 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
         get() = nonReadable()
         set(value) {
             item.withSelectedIconColorRes(value)
+        }
+
+    /**
+     * The icon of the drawer item when it's selected, as a Drawable.
+     *
+     * Wraps the [BaseDrawerItem.withSelectedIcon] method. Non readable property.
+     */
+    var selectedIconDrawable: Drawable
+        get() = nonReadable()
+        set(value) {
+            item.withSelectedIcon(value)
+        }
+
+    /**
+     * The icon of the drawer item when it's selected, as a drawable resource.
+     *
+     * Wraps the [BaseDrawerItem.withSelectedIcon] method. Non readable property.
+     */
+    var selectedIconRes: Int
+        get() = nonReadable()
+        set(value) {
+            item.withSelectedIcon(value)
         }
 
     /**
