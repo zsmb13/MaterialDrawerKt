@@ -20,7 +20,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
     /* BaseDrawerItem methods */
 
     /**
-     * The color of the drawer item's icon when it's disabled, given as an argb Long.
+     * The color of the drawer item's icon when it's disabled, as an argb Long.
      *
      * Wraps the [BaseDrawerItem.withDisabledIconColor] method. Non readable property.
      */
@@ -31,7 +31,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
         }
 
     /**
-     * The color of the drawer item's icon when it's disabled, given as a color resource.
+     * The color of the drawer item's icon when it's disabled, as a color resource.
      *
      * Wraps the [BaseDrawerItem.withDisabledIconColorRes] method. Non readable property.
      */
@@ -42,7 +42,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
         }
 
     /**
-     * The color of the drawer item's text when it's disabled, given as an argb Long.
+     * The color of the drawer item's text when it's disabled, as an argb Long.
      *
      * Wraps the [BaseDrawerItem.withDisabledTextColor] method. Non readable property.
      */
@@ -53,7 +53,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
         }
 
     /**
-     * The color of the drawer item's text when it's disabled, given as a color resource.
+     * The color of the drawer item's text when it's disabled, as a color resource.
      *
      * Wraps the [BaseDrawerItem.withDisabledTextColorRes] method. Non readable property.
      */
@@ -64,7 +64,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
         }
 
     /**
-     * The icon of the drawer item, given as a drawable resource.
+     * The icon of the drawer item, as a drawable resource.
      *
      * Convenience for `iconRes`. Wraps the [BaseDrawerItem.withIcon] method. Non readable property.
      */
@@ -75,7 +75,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
         }
 
     /**
-     * The icon of the drawer item, given as a drawable resource.
+     * The icon of the drawer item, as a drawable resource.
      *
      * Wraps the [BaseDrawerItem.withIcon] method. Non readable property.
      */
@@ -86,7 +86,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
         }
 
     /**
-     * The icon of the drawer item, given as a Drawable.
+     * The icon of the drawer item, as a Drawable.
      *
      * Wraps the [BaseDrawerItem.withIcon] method. Non readable property.
      */
@@ -97,7 +97,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
         }
 
     /**
-     * The icon of the drawer item, given as an IIcon.
+     * The icon of the drawer item, as an IIcon.
      *
      * Wraps the [BaseDrawerItem.withIcon] method. Non readable property.
      */
@@ -108,7 +108,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
         }
 
     /**
-     * The color of the drawer item's icon when it's enabled, given as an argb Long.
+     * The color of the drawer item's icon when it's enabled, as an argb Long.
      *
      * Wraps the [BaseDrawerItem.withIconColor] method. Non readable property.
      */
@@ -119,7 +119,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
         }
 
     /**
-     * The color of the drawer item's icon when it's enabled, given as a color resource.
+     * The color of the drawer item's icon when it's enabled, as a color resource.
      *
      * Wraps the [BaseDrawerItem.withIconColorRes] method. Non readable property.
      */
@@ -164,7 +164,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
         }
 
     /**
-     * The title/name of the drawer item, given as a String resource.
+     * The title/name of the drawer item, as a String resource.
      *
      * Wraps the [BaseDrawerItem.withName] method. Non readable property.
      */
@@ -175,7 +175,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
         }
 
     /**
-     * The color of the drawer item when it's selected, given as an argb Long.
+     * The color of the drawer item when it's selected, as an argb Long.
      *
      * Wraps the [BaseDrawerItem.withSelectedColor] method. Non readable property.
      */
@@ -186,7 +186,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
         }
 
     /**
-     * The color of the drawer item when it's selected, given as a color resource.
+     * The color of the drawer item when it's selected, as a color resource.
      *
      * Wraps the [BaseDrawerItem.withSelectedColorRes] method. Non readable property.
      */
@@ -197,7 +197,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
         }
 
     /**
-     * The icon of the drawer when it's selected, given as a drawable resource.
+     * The icon of the drawer when it's selected, as a drawable resource.
      *
      * Convenience for `selectedIconRes`. Wraps the [BaseDrawerItem.withSelectedIcon] method. Non readable property.
      */
@@ -208,7 +208,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
         }
 
     /**
-     * The icon of the drawer item when it's selected, given as a drawable resource.
+     * The icon of the drawer item when it's selected, as a drawable resource.
      *
      * Wraps the [BaseDrawerItem.withSelectedIcon] method. Non readable property.
      */
@@ -219,7 +219,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
         }
 
     /**
-     * The icon of the drawer item when it's selected, given as a Drawable.
+     * The icon of the drawer item when it's selected, as a Drawable.
      *
      * Wraps the [BaseDrawerItem.withSelectedIcon] method. Non readable property.
      */
@@ -230,7 +230,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
         }
 
     /**
-     * The color of the drawer item's icon when it's selected, given as an argb Long.
+     * The color of the drawer item's icon when it's selected, as an argb Long.
      *
      * Wraps the [BaseDrawerItem.withSelectedIconColor] method. Non readable property.
      */
@@ -241,7 +241,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
         }
 
     /**
-     * The color of the drawer item's icon when it's selected, given as a color resource.
+     * The color of the drawer item's icon when it's selected, as a color resource.
      *
      * Wraps the [BaseDrawerItem.withSelectedIconColorRes] method. Non readable property.
      */
@@ -252,7 +252,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
         }
 
     /**
-     * The color of the drawer item's text when it's selected, given as an argb Long.
+     * The color of the drawer item's text when it's selected, as an argb Long.
      *
      * Wraps the [BaseDrawerItem.withSelectedTextColor] method. Non readable property.
      */
@@ -263,7 +263,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
         }
 
     /**
-     * The color of the drawer item's text when it's selected, given as a color resource.
+     * The color of the drawer item's text when it's selected, as a color resource.
      *
      * Wraps the [BaseDrawerItem.withSelectedTextColorRes] method. Non readable property.
      */
@@ -274,7 +274,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
         }
 
     /**
-     * The color of the drawer item's text, given as an argb Long.
+     * The color of the drawer item's text, as an argb Long.
      *
      * Wraps the [BaseDrawerItem.withTextColor] method. Non readable property.
      */
@@ -285,7 +285,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
         }
 
     /**
-     * The color of the drawer item's text, given as a color resource.
+     * The color of the drawer item's text, as a color resource.
      *
      * Wraps the [BaseDrawerItem.withTextColorRes] method. Non readable property.
      */

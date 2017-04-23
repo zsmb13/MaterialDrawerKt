@@ -34,7 +34,7 @@ class ExpandableDrawerItemKt(name: String, description: String) : BaseDescribeab
     /* ExpandableDrawerItem methods */
 
     /**
-     * The color of the expand arrow given as an argb Long.
+     * The color of the expand arrow, as an argb Long.
      *
      * Non readable property. Wraps the [ExpandableDrawerItem.withArrowColor] method.
      */
@@ -45,7 +45,7 @@ class ExpandableDrawerItemKt(name: String, description: String) : BaseDescribeab
         }
 
     /**
-     * The color of the expand arrow, given as a color resource.
+     * The color of the expand arrow, as a color resource.
      *
      * Non readable property. Wraps the [ExpandableDrawerItem.withArrowColorRes] method.
      */

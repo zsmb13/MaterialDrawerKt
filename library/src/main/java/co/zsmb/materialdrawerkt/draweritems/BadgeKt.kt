@@ -62,7 +62,7 @@ class BadgeKt(text: String) {
         }
 
     /**
-     * The color of the badge, given as a Long in argb format.
+     * The color of the badge, as an argb Long.
      *
      * Non readable property. Wraps the [BadgeStyle.withColor] method.
      */
@@ -84,7 +84,7 @@ class BadgeKt(text: String) {
         }
 
     /**
-     * The color of the badge when it's tapped, given as a Long in argb format.
+     * The color of the badge when it's tapped, as an argb Long.
      *
      * Non readable property. Wraps the [BadgeStyle.withColorPressed] method.
      */
@@ -367,7 +367,7 @@ class BadgeKt(text: String) {
         }
 
     /**
-     * The color of the badge's text, given as an argb Long.
+     * The color of the badge's text, as an argb Long.
      *
      * Non readable property. Wraps the [BadgeStyle.withTextColor] method.
      */
@@ -378,7 +378,7 @@ class BadgeKt(text: String) {
         }
 
     /**
-     * The color of the badge's text, given as a color resource.
+     * The color of the badge's text, as a color resource.
      *
      * Non readable property. Wraps the [BadgeStyle.withTextColorRes] method.
      */

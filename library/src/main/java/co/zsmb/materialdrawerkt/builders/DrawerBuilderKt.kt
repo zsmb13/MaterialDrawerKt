@@ -828,7 +828,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
         }
 
     /**
-     * The background color of the drawer item list, given as an argb Long.
+     * The background color of the drawer item list, as an argb Long.
      *
      * Non readable property. Wraps the [DrawerBuilder.withSliderBackgroundColor] method.
      */
@@ -839,7 +839,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
         }
 
     /**
-     * The background color of the drawer item list, given as a color resource.
+     * The background color of the drawer item list, as a color resource.
      *
      * Non readable property. Wraps the [DrawerBuilder.withSliderBackgroundColorRes] method.
      */
@@ -850,7 +850,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
         }
 
     /**
-     * The background of the drawer item list, given as a drawable resource.
+     * The background of the drawer item list, as a drawable resource.
      *
      * Convenience for `sliderBackgroundRes`. Non readable property. Wraps the
      * [DrawerBuilder.withSliderBackgroundDrawableRes] method.
@@ -862,7 +862,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
         }
 
     /**
-     * The background of the drawer item list, given as a Drawable.
+     * The background of the drawer item list, as a Drawable.
      *
      * Non readable property. Wraps the [DrawerBuilder.withSliderBackgroundDrawable] method.
      */
@@ -873,7 +873,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
         }
 
     /**
-     * The background of the drawer item list, given as a drawable resource.
+     * The background of the drawer item list, as a drawable resource.
      *
      * See `sliderBackground` as an alternative.
      *

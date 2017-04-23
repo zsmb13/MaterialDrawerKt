@@ -46,7 +46,7 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
         }
 
     /**
-     * The color of the profile setting item's description, given as an argb Long.
+     * The color of the profile setting item's description, as an argb Long.
      *
      * Non readable property. Wraps the [ProfileSettingDrawerItem.withDescriptionTextColor] method.
      */
@@ -57,7 +57,7 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
         }
 
     /**
-     * The color of the profile setting item's description, given as a color resource.
+     * The color of the profile setting item's description, as a color resource.
      *
      * Non readable property. Wraps the [ProfileSettingDrawerItem.withDescriptionTextColor] method.
      */
@@ -159,7 +159,7 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
         }
 
     /**
-     * The color of the profile setting item's icon, given as an argb Long.
+     * The color of the profile setting item's icon, as an argb Long.
      *
      * Non readable property. Wraps the [ProfileSettingDrawerItem.withIconColor] method.
      */
@@ -170,7 +170,7 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
         }
 
     /**
-     * The color of the profile setting item's icon, given as a color resource.
+     * The color of the profile setting item's icon, as a color resource.
      *
      * Non readable property. Wraps the [ProfileSettingDrawerItem.withIconColor] method.
      */

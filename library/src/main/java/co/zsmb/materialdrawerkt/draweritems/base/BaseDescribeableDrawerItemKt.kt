@@ -39,7 +39,7 @@ abstract class BaseDescribeableDrawerItemKt : BaseDrawerItemKt() {
         }
 
     /**
-     * The color of the description text, given as an argb Long.
+     * The color of the description text, as an argb Long.
      *
      * Wraps the [BaseDescribeableDrawerItem.withDescriptionTextColor] method. Non readable property.
      */
@@ -50,7 +50,7 @@ abstract class BaseDescribeableDrawerItemKt : BaseDrawerItemKt() {
         }
 
     /**
-     * The color of the description text, given as a color resource.
+     * The color of the description text, as a color resource.
      *
      * Wraps the [BaseDescribeableDrawerItem.withDescriptionTextColorRes] method. Non readable property.
      */
