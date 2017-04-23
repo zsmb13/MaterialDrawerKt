@@ -7,6 +7,7 @@ import android.net.Uri
 import co.zsmb.materialdrawerkt.builders.AccountHeaderBuilderKt
 import co.zsmb.materialdrawerkt.nonReadable
 import com.mikepenz.iconics.typeface.IIcon
+import com.mikepenz.materialdrawer.holder.StringHolder
 import com.mikepenz.materialdrawer.model.ProfileSettingDrawerItem
 
 /**
@@ -43,6 +44,20 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
         get() = nonReadable()
         set(value) {
             item.withDescription(value)
+        }
+
+    /**
+     * The description of the profile setting item, as a String resource.
+     *
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.withDescription] method.
+     */
+    var descriptionRes: Int
+        get() = nonReadable()
+        set(value) {
+            item.javaClass.declaredFields.find { it.name == "description" }?.let {
+                it.isAccessible = true
+                it.set(item, StringHolder(value))
+            }
         }
 
     /**
@@ -201,6 +216,20 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
         get() = nonReadable()
         set(value) {
             item.withName(value)
+        }
+
+    /**
+     * The name of the profile setting, as a String resource.
+     *
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.withName] method.
+     */
+    var nameRes: Int
+        get() = nonReadable()
+        set(value) {
+            item.javaClass.declaredFields.find { it.name == "name" }?.let {
+                it.isAccessible = true
+                it.set(item, StringHolder(value))
+            }
         }
 
     /**
