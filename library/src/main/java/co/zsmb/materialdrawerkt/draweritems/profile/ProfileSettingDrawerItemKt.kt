@@ -37,7 +37,7 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
     /**
      * The description of the profile setting item.
      *
-     * Non readable property. Wraps the `withDescription` function.
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.withDescription] function.
      */
     var description: String
         get() = nonReadable()
@@ -48,7 +48,7 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
     /**
      * The color of the profile setting item's description, given as an argb Long.
      *
-     * Non readable property. Wraps the `withDescriptionTextColor` function.
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.withDescriptionTextColor] function.
      */
     var descriptionTextColor: Long
         get() = nonReadable()
@@ -59,7 +59,7 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
     /**
      * The color of the profile setting item's description, given as a color resource.
      *
-     * Non readable property. Wraps the `withDescriptionTextColor` function.
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.withDescriptionTextColor] function.
      */
     var descriptionTextColorRes: Int
         get() = nonReadable()
@@ -70,7 +70,7 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
     /**
      * The description of the profile setting.
      *
-     * Non readable property. Wraps the `withEmail` function.
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.withEmail] function.
      */
     @Deprecated(level = DeprecationLevel.ERROR,
             message = "Only here for discoverability. Use the description property instead",
@@ -84,7 +84,7 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
     /**
      * The icon of the profile setting, as a drawable resource.
      *
-     * Non readable property. Convenience for `iconRes`. Wraps the `withIcon` function.
+     * Non readable property. Convenience for `iconRes`. Wraps the [ProfileSettingDrawerItem.withIcon] function.
      */
     var icon: Int
         get() = nonReadable()
@@ -95,7 +95,7 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
     /**
      * The icon of the profile setting, as a Bitmap.
      *
-     * Non readable property. Wraps the `withIcon` function.
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.withIcon] function.
      */
     var iconBitmap: Bitmap
         get() = nonReadable()
@@ -106,7 +106,7 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
     /**
      * The icon of the profile setting, as a Drawable.
      *
-     * Non readable property. Wraps the `withIcon` function.
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.withIcon] function.
      */
     var iconDrawable: Drawable
         get() = nonReadable()
@@ -117,7 +117,7 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
     /**
      * The icon of the profile setting, as an IIcon.
      *
-     * Non readable property. Wraps the `withIcon` function.
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.withIcon] function.
      */
     var iicon: IIcon
         get() = nonReadable()
@@ -128,7 +128,7 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
     /**
      * The icon of the profile setting, as a drawable resource.
      *
-     * Non readable property. Wraps the `withIcon` function.
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.withIcon] function.
      */
     var iconRes: Int
         get() = nonReadable()
@@ -139,7 +139,7 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
     /**
      * The icon of the profile setting, as an Uri.
      *
-     * Non readable property. Wraps the `withIcon` function.
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.withIcon] function.
      */
     var iconUri: Uri
         get() = nonReadable()
@@ -150,7 +150,7 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
     /**
      * The icon of the profile setting, given by a url String.
      *
-     * Non readable property. Wraps the `withIcon` function.
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.withIcon] function.
      */
     var iconUrl: String
         get() = nonReadable()
@@ -161,7 +161,7 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
     /**
      * The color of the profile setting item's icon, given as an argb Long.
      *
-     * Non readable property. Wraps the `withIconColor` function.
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.withIconColor] function.
      */
     var iconColor: Long
         get() = nonReadable()
@@ -172,7 +172,7 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
     /**
      * The color of the profile setting item's icon, given as a color resource.
      *
-     * Non readable property. Wraps the `withIconColor` function.
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.withIconColor] function.
      */
     var iconColorRes: Int
         get() = nonReadable()
@@ -184,7 +184,7 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
      * Whether the icon of the profile setting item should be tinted with the enabled/disabled/selected color. If set to
      * false, your icon will always be displayed with its default colors.
      *
-     * Non readable property. Wraps the `withIconTinted` function.
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.withIconTinted] function.
      */
     var iconTinted: Boolean
         get() = nonReadable()
@@ -195,7 +195,7 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
     /**
      * The name of the profile setting.
      *
-     * Non readable property. Wraps the `withName` function.
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.withName] function.
      */
     var name: String
         get() = nonReadable()
@@ -206,7 +206,7 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
     /**
      * The color of the profile setting item in the profile switcher list when it's selected, as an argb Long.
      *
-     * Non readable property. Wraps the `withSelectedColor` function.
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.withSelectedColor] function.
      */
     var selectedColor: Long
         get() = nonReadable()
@@ -217,7 +217,7 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
     /**
      * The color of the profile setting item in the profile switcher list when it's selected, as a color resource.
      *
-     * Non readable property. Wraps the `withSelectedColorRes` function.
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.withSelectedColorRes] function.
      */
     var selectedColorRes: Int
         get() = nonReadable()
@@ -228,7 +228,7 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
     /**
      *The color of the profile setting item's text in the profile switcher list, as an argb Long.
      *
-     * Non readable property. Wraps the `withTextColor` function.
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.withTextColor] function.
      */
     var textColor: Long
         get() = nonReadable()
@@ -239,7 +239,7 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
     /**
      * The color of the profile setting item's text in the profile switcher list, as a color resource.
      *
-     * Non readable property. Wraps the `withTextColorRes` function.
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.withTextColorRes] function.
      */
     var textColorRes: Int
         get() = nonReadable()
@@ -250,7 +250,7 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
     /**
      * The typeface to use for the profile setting item's text.
      *
-     * Non readable property. Wraps the `withTypeface` function.
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.withTypeface] function.
      */
     var typeface: Typeface
         get() = nonReadable()

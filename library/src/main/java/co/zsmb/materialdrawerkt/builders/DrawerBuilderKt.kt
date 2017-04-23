@@ -67,7 +67,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * A custom ActionBarDrawerToggle to be used in with this drawer.
      *
-     * Non readable property. Wraps the `withActionBarDrawerToggle` function.
+     * Non readable property. Wraps the [DrawerBuilder.withActionBarDrawerToggle] function.
      */
     var actionBarDrawerToggle: ActionBarDrawerToggle
         get() = nonReadable()
@@ -79,7 +79,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * Whether the toolbar should have a toggle on it. Note that this requires the toolbar property to be set.
      * Default value is true.
      *
-     * Non readable property. Wraps the `withActionBarDrawerToggle` function.
+     * Non readable property. Wraps the [DrawerBuilder.withActionBarDrawerToggle] function.
      */
     var actionBarDrawerToggleEnabled: Boolean
         get() = nonReadable()
@@ -91,7 +91,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * Whether the toolbar toggle should be animated when the drawer opens/closes.
      * Default value is false.
      *
-     * Non readable property. Wraps the `withActionBarDrawerToggleAnimated` function.
+     * Non readable property. Wraps the [DrawerBuilder.withActionBarDrawerToggleAnimated] function.
      */
     var actionBarDrawerToggleAnimated: Boolean
         get() = nonReadable()
@@ -102,7 +102,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * A custom adapter for the drawer items. Not recommended.
      *
-     * Non readable property. Wraps the `withAdapter` function.
+     * Non readable property. Wraps the [DrawerBuilder.withAdapter] function.
      */
     var adapter: FastAdapter<IDrawerItem<out Any?, out RecyclerView.ViewHolder>>
         get() = nonReadable()
@@ -114,7 +114,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * An adapter which wraps the main adapter used in the RecyclerView to allow extended navigation. Can only be used
      * if the normal adapter property is set. Not recommended.
      *
-     * Non readable property. Wraps the `withAdapterWrapper` function.
+     * Non readable property. Wraps the [DrawerBuilder.withAdapterWrapper] function.
      */
     var adapterWrapper: RecyclerView.Adapter<out RecyclerView.ViewHolder>
         get() = nonReadable()
@@ -126,7 +126,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * Whether the drawer should close if an item is clicked.
      * Default value is true.
      *
-     * Non readable property. Wraps the `withCloseOnClick` function.
+     * Non readable property. Wraps the [DrawerBuilder.withCloseOnClick] function.
      */
     var closeOnClick: Boolean
         get() = nonReadable()
@@ -137,7 +137,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * Override for the entire drawer view.
      *
-     * Non readable property. Wraps the `withCustomView` function.
+     * Non readable property. Wraps the [DrawerBuilder.withCustomView] function.
      */
     var customView: View
         get() = nonReadable()
@@ -148,7 +148,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * Override for the entire drawer view, as a layout resource.
      *
-     * Non readable property. Wraps the `withCustomView` function.
+     * Non readable property. Wraps the [DrawerBuilder.withCustomView] function.
      */
     var customViewRes: Int
         get() = nonReadable()
@@ -163,7 +163,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * you can return in the listener, as the listener is called after the drawer was closed.
      * The default value is -1, which disables this setting entirely.
      *
-     * Non readable property. Wraps the `withDelayDrawerClickEvent` function.
+     * Non readable property. Wraps the [DrawerBuilder.withDelayDrawerClickEvent] function.
      */
     var delayDrawerClickEvent: Int
         get() = nonReadable()
@@ -177,7 +177,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * this behavior entirely.
      * The default value is 50.
      *
-     * Non readable property. Wraps the `withDelayOnDrawerClose` function.
+     * Non readable property. Wraps the [DrawerBuilder.withDelayOnDrawerClose] function.
      */
     var delayOnDrawerClose: Int
         get() = nonReadable()
@@ -189,7 +189,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * Whether the drawer should be displayed below the status bar.
      * Default value is true.
      *
-     * Non readable property. Wraps the `withDisplayBelowStatusBar` function.
+     * Non readable property. Wraps the [DrawerBuilder.withDisplayBelowStatusBar] function.
      */
     var displayBelowStatusBar: Boolean
         get() = nonReadable()
@@ -201,7 +201,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * Sets the position of the drawer. Valid values are Gravity.START/LEFT and Gravity.END/RIGHT.
      * Default value is Gravity.START.
      *
-     * Non readable property. Wraps the `withDrawerGravity` function.
+     * Non readable property. Wraps the [DrawerBuilder.withDrawerGravity] function.
      */
     var drawerGravity: Int
         get() = nonReadable()
@@ -213,7 +213,8 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * Sets the position of the drawer. Valid values are Gravity.START/LEFT and Gravity.END/RIGHT.
      * Default value is Gravity.START.
      *
-     * Convenience for the `drawerGravity` property. Non readable property. Wraps the `withDrawerGravity` function.
+     * Convenience for the `drawerGravity` property. Non readable property. Wraps the [DrawerBuilder.withDrawerGravity]
+     * function.
      */
     var gravity: Int
         get() = nonReadable()
@@ -224,7 +225,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * Override of the entire drawer's layout with a DrawerLayout.
      *
-     * Non readable property. Wraps the `withDrawerLayout` function.
+     * Non readable property. Wraps the [DrawerBuilder.withDrawerLayout] function.
      */
     var drawerLayout: DrawerLayout
         get() = nonReadable()
@@ -235,7 +236,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * Override the entire drawer's layout with a DrawerLayout from a layout resource file.
      *
-     * Non readable property. Wraps the `withDrawerLayout` function.
+     * Non readable property. Wraps the [DrawerBuilder.withDrawerLayout] function.
      */
     var drawerLayoutRes: Int
         get() = nonReadable()
@@ -246,7 +247,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * The width of the drawer in dps.
      *
-     * Non readable property. Wraps the `withDrawerWidthDp` function.
+     * Non readable property. Wraps the [DrawerBuilder.withDrawerWidthDp] function.
      */
     var drawerWidthDp: Int
         get() = nonReadable()
@@ -257,7 +258,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * The width of the drawer in dps.
      *
-     * Convenience for `drawerWidthDp`. Non readable property. Wraps the `withDrawerWidthDp` function.
+     * Convenience for `drawerWidthDp`. Non readable property. Wraps the [DrawerBuilder.withDrawerWidthDp] function.
      */
     var widthDp: Int
         get() = nonReadable()
@@ -268,7 +269,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * The width of the drawer in pixels.
      *
-     * Non readable property. Wraps the `withDrawerWidthPx` function.
+     * Non readable property. Wraps the [DrawerBuilder.withDrawerWidthPx] function.
      */
     var drawerWidthPx: Int
         get() = nonReadable()
@@ -279,7 +280,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * The width of the drawer in pixels.
      *
-     * Convenience for `drawerWidthPx`. Non readable property. Wraps the `withDrawerWidthPx` function.
+     * Convenience for `drawerWidthPx`. Non readable property. Wraps the [DrawerBuilder.withDrawerWidthPx] function.
      */
     var widthPx: Int
         get() = nonReadable()
@@ -290,7 +291,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * The width of the drawer as a dimension resource.
      *
-     * Non readable property. Wraps the `withDrawerWidthRes` function.
+     * Non readable property. Wraps the [DrawerBuilder.withDrawerWidthRes] function.
      */
     var drawerWidthRes: Int
         get() = nonReadable()
@@ -301,7 +302,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * The width of the drawer as a dimension resource.
      *
-     * Convenience for `drawerWidthRes`. Non readable property. Wraps the `withDrawerWidthRes` function.
+     * Convenience for `drawerWidthRes`. Non readable property. Wraps the [DrawerBuilder.withDrawerWidthRes] function.
      */
     var widthRes: Int
         get() = nonReadable()
@@ -312,7 +313,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * If set to true, you'll receive a click event on the item that's selected by default when the drawer is created.
      *
-     * Non readable property. Wraps the `withFireOnInitialOnClick` function.
+     * Non readable property. Wraps the [DrawerBuilder.withFireOnInitialOnClick] function.
      */
     var fireOnInitialOnClick: Boolean
         get() = nonReadable()
@@ -327,7 +328,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * An arbitrary View to use as the scrolling footer of the drawer item list.
      *
-     * Non readable property. Wraps the `withFooter` function.
+     * Non readable property. Wraps the [DrawerBuilder.withFooter] function.
      */
     var footerView: View
         get() = nonReadable()
@@ -338,7 +339,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * An arbitrary layout resource to use as the scrolling footer of the drawer item list.
      *
-     * Non readable property. Wraps the `withFooter` function.
+     * Non readable property. Wraps the [DrawerBuilder.withFooter] function.
      */
     var footerViewRes: Int
         get() = nonReadable()
@@ -349,7 +350,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * Whether the footer of the drawer is clickable.
      *
-     * Non readable property. Wraps the `withFooterClickable` function.
+     * Non readable property. Wraps the [DrawerBuilder.withFooterClickable] function.
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "This has no effect as of Material Drawer version 5.9.0")
@@ -363,7 +364,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * Whether there should be a divider above the footer.
      * Default value is true.
      *
-     * Non readable property. Wraps the `withFooterDivider` function.
+     * Non readable property. Wraps the [DrawerBuilder.withFooterDivider] function.
      */
     var footerDivider: Boolean
         get() = nonReadable()
@@ -376,7 +377,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * on your own. (Documentation inherited from original library. Not sure if it makes any difference.)
      * Default value is false.
      *
-     * Non readable property. Wraps the `withFullscreen` function.
+     * Non readable property. Wraps the [DrawerBuilder.withFullscreen] function.
      */
     var fullscreen: Boolean
         get() = nonReadable()
@@ -388,7 +389,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * Whether to generate a mini drawer for this drawer as well.
      * Default value is false.
      *
-     * Non readable property. Wraps the `withGenerateMiniDrawer` method.
+     * Non readable property. Wraps the [DrawerBuilder.withGenerateMiniDrawer] method.
      */
     var generateMiniDrawer: Boolean
         get() = nonReadable()
@@ -401,7 +402,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * identifiers for all of your items.
      * Default value is false.
      *
-     * Non readable property. Wraps the `withHasStableIds` function.
+     * Non readable property. Wraps the [DrawerBuilder.withHasStableIds] function.
      */
     var hasStableIds: Boolean
         get() = nonReadable()
@@ -412,7 +413,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * An arbitrary View to use as the header of the drawer.
      *
-     * Non readable property. Wraps the `withHeader` function.
+     * Non readable property. Wraps the [DrawerBuilder.withHeader] function.
      */
     var headerView: View
         get() = nonReadable()
@@ -423,7 +424,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * An arbitrary View to use as the header of the drawer, as a layout resource.
      *
-     * Non readable property. Wraps the `withHeader` function.
+     * Non readable property. Wraps the [DrawerBuilder.withHeader] function.
      */
     var headerViewRes: Int
         get() = nonReadable()
@@ -435,7 +436,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * Whether there should be a divider below the header.
      * Default value is true.
      *
-     * Non readable property. Wraps the `withHeaderDivider` function.
+     * Non readable property. Wraps the [DrawerBuilder.withHeaderDivider] function.
      */
     var headerDivider: Boolean
         get() = nonReadable()
@@ -446,7 +447,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * The height of the header provided with the `headerView` or `headerRes` properties, as a DimenHolder.
      *
-     * Non readable property. Wraps the `withHeaderHeight` function.
+     * Non readable property. Wraps the [DrawerBuilder.withHeaderHeight] function.
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "Use px, dp, or a dimension resource instead.")
@@ -459,7 +460,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * The height of the header provided with the `headerView` or `headerRes` properties, in dps.
      *
-     * Convenience for `headerHeight`. Non readable property. Wraps the `withHeaderHeight` function.
+     * Convenience for `headerHeight`. Non readable property. Wraps the [DrawerBuilder.withHeaderHeight] function.
      */
     var headerHeightDp: Int
         get() = nonReadable()
@@ -470,7 +471,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * The height of the header provided with the `headerView` or `headerRes` properties, in pixels.
      *
-     * Convenience for `headerHeight`. Non readable property. Wraps the `withHeaderHeight` function.
+     * Convenience for `headerHeight`. Non readable property. Wraps the [DrawerBuilder.withHeaderHeight] function.
      */
     var headerHeightPx: Int
         get() = nonReadable()
@@ -481,7 +482,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * The height of the header provided with the `headerView` or `headerRes` properties, as a dimension resource.
      *
-     * Convenience for `headerHeight`. Non readable property. Wraps the `withHeaderHeight` function.
+     * Convenience for `headerHeight`. Non readable property. Wraps the [DrawerBuilder.withHeaderHeight] function.
      */
     var headerHeightRes: Int
         get() = nonReadable()
@@ -493,7 +494,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * Whether there should be padding below the header of the drawer.
      * Default value is true.
      *
-     * Non readable property. Wraps the `withHeaderPadding` function.
+     * Non readable property. Wraps the [DrawerBuilder.withHeaderPadding] function.
      */
     var headerPadding: Boolean
         get() = nonReadable()
@@ -505,7 +506,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * Whether the drawer should have an inner shadow on its edge. Recommended to be used with mini drawer.
      * Default value is false.
      *
-     * Non readable property. Wraps the `withInnerShadow` function.
+     * Non readable property. Wraps the [DrawerBuilder.withInnerShadow] function.
      */
     var innerShadow: Boolean
         get() = nonReadable()
@@ -516,7 +517,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * The ItemAnimator of the internal RecyclerView.
      *
-     * Non readable property. Wraps the `withItemAnimator` function.
+     * Non readable property. Wraps the [DrawerBuilder.withItemAnimator] function.
      */
     var itemAnimator: RecyclerView.ItemAnimator
         get() = nonReadable()
@@ -527,7 +528,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * Inflates DrawerItems from the given menu resource and adds them to the drawer.
      *
-     * Non readable property. Wraps the inflateMenu method.
+     * Non readable property. Wraps the [DrawerBuilder.inflateMenu] method.
      */
     var menuItemsRes: Int
         get() = nonReadable()
@@ -538,7 +539,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * Enables multiple selections amongst drawer items.
      *
-     * Non readable property. Wraps the `withMultiSelect` function.
+     * Non readable property. Wraps the [DrawerBuilder.withMultiSelect] function.
      */
     var multiSelect: Boolean
         get() = nonReadable()
@@ -550,7 +551,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * Adds an event [handler] to the drawer that's called when an item is clicked. The handler should return true if
      * the event has been completely handled.
      *
-     * Wraps the `withOnDrawerItemClickListener` method.
+     * Wraps the [DrawerBuilder.withOnDrawerItemClickListener] method.
      *
      * @param view The View that was clicked
      * @param position The position of the clicked item within the drawer
@@ -565,7 +566,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * the event has been completely handled.
      *
      * Convenience for the three parameter `onItemClick` method, to be used when you don't need all its parameters.
-     * Wraps the `withOnDrawerItemClickListener` method.
+     * Wraps the [DrawerBuilder.withOnDrawerItemClickListener] method.
      *
      * @param position The position of the clicked item within the drawer
      */
@@ -577,7 +578,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * Adds an event [handler] to the drawer that's called when an item is long clicked. The handler should return true
      * if the event has been completely handled.
      *
-     * Wraps the `withOnDrawerItemLongClickListener` method.
+     * Wraps the [DrawerBuilder.withOnDrawerItemLongClickListener] method.
      *
      * @param view The View that was clicked
      * @param position The position of the clicked item within the drawer
@@ -592,7 +593,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * if the event has been completely handled.
      *
      * Convenience for the three parameter `onItemLongClick` method, to be used when you don't need all its parameters.
-     * Wraps the `withOnDrawerItemLongClickListener` method.
+     * Wraps the [DrawerBuilder.withOnDrawerItemLongClickListener] method.
      *
      * @param position The position of the clicked item within the drawer
      */
@@ -620,7 +621,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * Adds an event [handler] to the drawer that's called when the drawer is sliding.
      *
-     * Wraps the `withOnDrawerListener` method.
+     * Wraps the [DrawerBuilder.withOnDrawerListener] method.
      *
      * @param drawerView The root View of the drawer
      * @param slideOffset The amount to which the drawer is open, as a number between 0 (closed) and 1 (open)
@@ -632,7 +633,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * Adds an event [handler] to the drawer that's called when the drawer is closed.
      *
-     * Wraps the `withOnDrawerListener` method.
+     * Wraps the [DrawerBuilder.withOnDrawerListener] method.
      *
      * @param drawerView The root View of the drawer
      */
@@ -643,7 +644,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * Adds an event [handler] to the drawer that's called when the drawer is opened.
      *
-     * Wraps the `withOnDrawerListener` method.
+     * Wraps the [DrawerBuilder.withOnDrawerListener] method.
      *
      * @param drawerView The root View of the drawer
      */
@@ -652,7 +653,9 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     }
 
     /**
-     * Defines a navigation listener for the drawer
+     * Defines a navigation listener for the drawer.
+     *
+     * Wraps the [DrawerBuilder.withOnDrawerNavigationListener] method.
      *
      * @param handler the handler to call on navigation. Should return true if the event has been handled.
      */
@@ -666,7 +669,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * flexibility, but has worse performance with long lists.
      * Default value is true.
      *
-     * Non readable property. Wraps the `withPositionBasedStateManagement` function.
+     * Non readable property. Wraps the [DrawerBuilder.withPositionBasedStateManagement] function.
      */
     var positionBasedStateManagement: Boolean
         get() = nonReadable()
@@ -678,7 +681,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * The primary drawer that's already present in the Activity. This is to be set when the current drawer is the
      * second drawer in an Activity.
      *
-     * Non readable property. Wraps the append(value) function.
+     * Non readable property. Wraps the [DrawerBuilder.append] method.
      */
     var primaryDrawer: Drawer? = null
         get() = field
@@ -691,7 +694,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * A custom RecyclerView for the drawer items. Not recommended.
      *
-     * Non readable property. Wraps the `withRecyclerView` function.
+     * Non readable property. Wraps the [DrawerBuilder.withRecyclerView] function.
      */
     var recyclerView: RecyclerView
         get() = nonReadable()
@@ -703,7 +706,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * The ViewGroup which will host the DrawerLayout. The content of this view will be extracted and added as the new
      * content inside the DrawerLayout.
      *
-     * Non readable property. Wraps the `withRootView` function.
+     * Non readable property. Wraps the [DrawerBuilder.withRootView] function.
      */
     var rootView: ViewGroup
         get() = nonReadable()
@@ -715,7 +718,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * The ViewGroup which will host the DrawerLayout, given by its layout id. The content of this view will be
      * extracted and added as the new content inside the DrawerLayout.
      *
-     * Non readable property. Wraps the `withRootView` function.
+     * Non readable property. Wraps the [DrawerBuilder.withRootView] function.
      */
     var rootViewRes: Int
         get() = nonReadable()
@@ -728,7 +731,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * its `saveInstanceState` method in the Activity's `onSaveInstanceState` method, before calling super, to store
      * the current state of the drawer.
      *
-     * Non readable property. Wraps the `withSavedInstance` function.
+     * Non readable property. Wraps the [DrawerBuilder.withSavedInstance] function.
      */
     var savedInstance: Bundle?
         get() = nonReadable()
@@ -740,7 +743,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * Whether the drawer should scroll to the top after an item has been clicked.
      * Default value is false.
      *
-     * Non readable property. Wraps the `withScrollToTopAfterClick` function.
+     * Non readable property. Wraps the [DrawerBuilder.withScrollToTopAfterClick] function.
      */
     var scrollToTopAfterClick: Boolean
         get() = nonReadable()
@@ -752,7 +755,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * The identifier of the item that should be selected by default.
      * Default value is 0L.
      *
-     * Non readable property. Wraps the `withSelectedItem` function.
+     * Non readable property. Wraps the [DrawerBuilder.withSelectedItem] function.
      */
     var selectedItem: Long
         get() = nonReadable()
@@ -764,7 +767,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * The position of the item that should be selected by default.
      * Default value is 0.
      *
-     * Non readable property. Wraps the `withSelectedItemByPosition` function.
+     * Non readable property. Wraps the [DrawerBuilder.withSelectedItemByPosition] function.
      */
     var selectedItemByPosition: Int
         get() = nonReadable()
@@ -776,7 +779,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * Whether to automatically open the drawer the first time the user opens this Activity.
      * Default value is false.
      *
-     * Non readable property. Wraps the `withShowDrawerOnFirstLaunch` function.
+     * Non readable property. Wraps the [DrawerBuilder.withShowDrawerOnFirstLaunch] function.
      */
     var showDrawerOnFirstLaunch: Boolean
         get() = nonReadable()
@@ -789,7 +792,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * Default value is false.
      *
      * Convenience for the `showDrawerOnFirstLaunch` property. Non readable property. Wraps the
-     * `withShowDrawerOnFirstLaunch` method.
+     * [DrawerBuilder.withShowDrawerOnFirstLaunch] method.
      */
     var showOnFirstLaunch: Boolean
         get() = nonReadable()
@@ -802,7 +805,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * themselves.
      * Default value is false.
      *
-     * Non readable property. Wraps the `withShowDrawerUntilDraggedOpened` function.
+     * Non readable property. Wraps the [DrawerBuilder.withShowDrawerUntilDraggedOpened] function.
      */
     var showDrawerUntilDraggedOpened: Boolean
         get() = nonReadable()
@@ -816,7 +819,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * Default value is false.
      *
      * Convenience for `showDrawerUntilDraggedOpened`. Non readable property. Wraps the
-     * `withShowDrawerUntilDraggedOpened` method.
+     * [DrawerBuilder.withShowDrawerUntilDraggedOpened] method.
      */
     var showUntilDraggedOpened: Boolean
         get() = nonReadable()
@@ -827,7 +830,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * The background color of the drawer item list, given as an argb Long.
      *
-     * Non readable property. Wraps the `withSliderBackgroundColor` function.
+     * Non readable property. Wraps the [DrawerBuilder.withSliderBackgroundColor] function.
      */
     var sliderBackgroundColor: Long
         get() = nonReadable()
@@ -838,7 +841,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * The background color of the drawer item list, given as a color resource.
      *
-     * Non readable property. Wraps the `withSliderBackgroundColorRes` function.
+     * Non readable property. Wraps the [DrawerBuilder.withSliderBackgroundColorRes] function.
      */
     var sliderBackgroundColorRes: Int
         get() = nonReadable()
@@ -849,7 +852,8 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * The background of the drawer item list, given as a drawable resource.
      *
-     * Convenience for `sliderBackgroundRes`. Non readable property. Wraps the `withSliderBackgroundDrawableRes` function.
+     * Convenience for `sliderBackgroundRes`. Non readable property. Wraps the
+     * [DrawerBuilder.withSliderBackgroundDrawableRes] function.
      */
     var sliderBackground: Int
         get() = nonReadable()
@@ -860,7 +864,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * The background of the drawer item list, given as a Drawable.
      *
-     * Non readable property. Wraps the `withSliderBackgroundDrawable` function.
+     * Non readable property. Wraps the [DrawerBuilder.withSliderBackgroundDrawable] function.
      */
     var sliderBackgroundDrawable: Drawable
         get() = nonReadable()
@@ -873,7 +877,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      *
      * See `sliderBackground` as an alternative.
      *
-     * Non readable property. Wraps the `withSliderBackgroundDrawableRes` function.
+     * Non readable property. Wraps the [DrawerBuilder.withSliderBackgroundDrawableRes] function.
      */
     var sliderBackgroundRes: Int
         get() = nonReadable()
@@ -884,7 +888,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * An arbitrary View to use as the always visible footer of the drawer itself.
      *
-     * Non readable property. Wraps the `withStickyFooter` function.
+     * Non readable property. Wraps the [DrawerBuilder.withStickyFooter] function.
      */
     var stickyFooter: ViewGroup
         get() = nonReadable()
@@ -895,7 +899,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * An arbitrary layout resource to use as the always visible footer of the drawer itself.
      *
-     * Non readable property. Wraps the `withStickyFooter` function.
+     * Non readable property. Wraps the [DrawerBuilder.withStickyFooter] function.
      */
     var stickyFooterRes: Int
         get() = nonReadable()
@@ -907,7 +911,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * Whether there should be a divider above the sticky footer.
      * Default value is false.
      *
-     * Non readable property. Wraps the `withStickyFooterDivider` function.
+     * Non readable property. Wraps the [DrawerBuilder.withStickyFooterDivider] function.
      */
     var stickyFooterDivider: Boolean
         get() = nonReadable()
@@ -919,7 +923,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * Whether the sticky footer should cast a shadow on the drawer item list.
      * Default value is true.
      *
-     * Non readable property. Wraps the `withStickyFooterShadow` function.
+     * Non readable property. Wraps the [DrawerBuilder.withStickyFooterShadow] function.
      */
     var stickyFooterShadow: Boolean
         get() = nonReadable()
@@ -930,7 +934,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * An arbitrary View to use as the always visible header of the drawer itself.
      *
-     * Non readable property. Wraps the `withStickyHeader` function.
+     * Non readable property. Wraps the [DrawerBuilder.withStickyHeader] function.
      */
     var stickyHeader: ViewGroup
         get() = nonReadable()
@@ -941,7 +945,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * An arbitrary layout resource to use as the always visible header of the drawer itself.
      *
-     * Non readable property. Wraps the `withStickyHeader` function.
+     * Non readable property. Wraps the [DrawerBuilder.withStickyHeader] function.
      */
     var stickyHeaderRes: Int
         get() = nonReadable()
@@ -953,7 +957,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * Whether the sticky header should cast a shadow on the drawer item list (or the account header, if present).
      * Default value is true.
      *
-     * Non readable property. Wraps the `withStickyHeaderShadow` function.
+     * Non readable property. Wraps the [DrawerBuilder.withStickyHeaderShadow] function.
      */
     var stickyHeaderShadow: Boolean
         get() = nonReadable()
@@ -965,7 +969,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * To be used when you run your Activity in full screen mode, with hidden status bar and toolbar.
      * Default value is false.
      *
-     * Non readable property. Wraps the `withSystemUIHidden` function.
+     * Non readable property. Wraps the [DrawerBuilder.withSystemUIHidden] function.
      */
     var systemUIHidden: Boolean
         get() = nonReadable()
@@ -977,7 +981,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * The Toolbar in the Activity that's to be used with the drawer. This will handle creating the toggle for opening
      * and closing the drawer.
      *
-     * Non readable property. Wraps the `withToolbar` function.
+     * Non readable property. Wraps the [DrawerBuilder.withToolbar] function.
      */
     var toolbar: Toolbar
         get() = nonReadable()
@@ -989,7 +993,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * To be used when you have a translucent navigation bar.
      * Default value is false.
      *
-     * Non readable property. Wraps the `withTranslucentNavigationBar` function.
+     * Non readable property. Wraps the [DrawerBuilder.withTranslucentNavigationBar] function.
      */
     var translucentNavigationBar: Boolean
         get() = nonReadable()
@@ -1002,7 +1006,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * Default value is false.
      *
      * Convenience for `translucentNavigationBar`. Non readable property. Wraps the
-     * `withTranslucentNavigationBar` method.
+     * [DrawerBuilder.withTranslucentNavigationBar] method.
      */
     var supportTranslucentNavBar: Boolean
         get() = nonReadable()
@@ -1011,10 +1015,10 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
         }
 
     /**
-     * If set to true, it makes the navigation bar translucent programatically.
+     * If set to true, it makes the navigation bar translucent programmatically.
      * Default value is false.
      *
-     * Non readable property. Wraps the `withTranslucentNavigationBarProgrammatically` function.
+     * Non readable property. Wraps the [DrawerBuilder.withTranslucentNavigationBarProgrammatically] function.
      */
     var translucentNavigationBarProgrammatically: Boolean
         get() = nonReadable()
@@ -1023,11 +1027,11 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
         }
 
     /**
-     * If set to true, it makes the navigation bar translucent programatically.
+     * If set to true, it makes the navigation bar translucent programmatically.
      * Default value is false.
      *
      * Convenience for `translucentNavigationBarProgrammatically`. Non readable property. Wraps the
-     * `withTranslucentNavigationBarProgrammatically` function.
+     * [DrawerBuilder.withTranslucentNavigationBarProgrammatically] function.
      */
     var translucentNavBar: Boolean
         get() = nonReadable()
@@ -1040,7 +1044,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * drawer under the status bar.
      * Default value is true.
      *
-     * Non readable property. Wraps the `withTranslucentStatusBar` function.
+     * Non readable property. Wraps the [DrawerBuilder.withTranslucentStatusBar] function.
      */
     var translucentStatusBar: Boolean
         get() = nonReadable()

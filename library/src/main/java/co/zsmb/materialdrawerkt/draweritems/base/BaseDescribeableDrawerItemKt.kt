@@ -19,7 +19,7 @@ abstract class BaseDescribeableDrawerItemKt : BaseDrawerItemKt() {
     /**
      * The description of the drawer item.
      *
-     * Wraps the `withDescription` function. Non readable property.
+     * Wraps the [BaseDescribeableDrawerItem.withDescription] function. Non readable property.
      */
     var description: String
         get() = nonReadable()
@@ -30,7 +30,7 @@ abstract class BaseDescribeableDrawerItemKt : BaseDrawerItemKt() {
     /**
      * The description of the drawer item, as a String resource.
      *
-     * Wraps the `withDescription` function. Non readable property.
+     * Wraps the [BaseDescribeableDrawerItem.withDescription] function. Non readable property.
      */
     var descriptionRes: Int
         get() = nonReadable()
@@ -41,7 +41,7 @@ abstract class BaseDescribeableDrawerItemKt : BaseDrawerItemKt() {
     /**
      * The color of the description text, given as an argb Long.
      *
-     * Wraps the `withDescriptionTextColor` function. Non readable property.
+     * Wraps the [BaseDescribeableDrawerItem.withDescriptionTextColor] function. Non readable property.
      */
     var descriptionTextColor: Long
         get() = nonReadable()
@@ -52,7 +52,7 @@ abstract class BaseDescribeableDrawerItemKt : BaseDrawerItemKt() {
     /**
      * The color of the description text, given as a color resource.
      *
-     * Wraps the `withDescriptionTextColorRes` function. Non readable property.
+     * Wraps the [BaseDescribeableDrawerItem.withDescriptionTextColorRes] function. Non readable property.
      */
     var descriptionTextColorRes: Int
         get() = nonReadable()

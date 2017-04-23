@@ -14,8 +14,8 @@ import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.model.interfaces.IProfile
 
 /**
- * Adds an AccountHeader to the drawer.
- * @return The created AccountHeader instance
+ * Adds an [AccountHeader] to the drawer.
+ * @return The created [AccountHeader] instance
  */
 fun DrawerBuilderKt.accountHeader(setup: AccountHeaderBuilderKt.() -> Unit = {}): AccountHeader {
     val header = AccountHeaderBuilderKt(activity)
@@ -41,7 +41,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
     /**
      * A completely custom View for the header.
      *
-     * Non readable property. Wraps the `withAccountHeader` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withAccountHeader] method.
      */
     var customView: View
         get() = nonReadable()
@@ -52,7 +52,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
     /**
      * A completely custom view for the header, as a layout resource.
      *
-     * Non readable property. Wraps the `withAccountHeader` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withAccountHeader] method.
      */
     var customViewRes: Int
         get() = nonReadable()
@@ -67,7 +67,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * position as long as possible.
      * Default value is false.
      *
-     * Non readable property. Wraps the `withAlternativeProfileHeaderSwitching` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withAlternativeProfileHeaderSwitching] method.
      */
     var alternativeSwitching: Boolean
         get() = nonReadable()
@@ -81,7 +81,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      *
      * See `closeOnClick` as an alternative.
      *
-     * Non readable property. Wraps the `withCloseDrawerOnProfileListClick` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withCloseDrawerOnProfileListClick] method.
      */
     var closeDrawerOnProfileListClick: Boolean
         get() = nonReadable()
@@ -94,7 +94,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Default value is true.
      *
      * Convenience for `closeDrawerOnProfileListClick`. Non readable property. Wraps the
-     * `withCloseDrawerOnProfileListClick` method.
+     * [AccountHeaderBuilder.withCloseDrawerOnProfileListClick] method.
      */
     var closeOnClick: Boolean
         get() = nonReadable()
@@ -106,7 +106,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Whether to use a smaller, compact style drawer.
      * Default value is false.
      *
-     * Non readable property. Wraps the `withCompactStyle` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withCompactStyle] method.
      */
     var compactStyle: Boolean
         get() = nonReadable()
@@ -120,7 +120,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      *
      * See `currentHidden` as an alternative.
      *
-     * Non readable property. Wraps the `withCurrentProfileHiddenInList` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withCurrentProfileHiddenInList] method.
      */
     var currentProfileHiddenInList: Boolean
         get() = nonReadable()
@@ -132,8 +132,8 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Whether the current profile should be hidden from the profile selection list.
      * Default value is false.
      *
-     * Convenience for `currentProfileHiddenInList`. Non readable property. Wraps the `withCurrentProfileHiddenInList`
-     * method.
+     * Convenience for `currentProfileHiddenInList`. Non readable property. Wraps the
+     * [AccountHeaderBuilder.withCurrentProfileHiddenInList] method.
      */
     var currentHidden: Boolean
         get() = nonReadable()
@@ -145,7 +145,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Whether there should be a divider below the header.
      * True by default.
      *
-     * Non readable property. Wraps the `withDividerBelowHeader` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withDividerBelowHeader] method.
      */
     var dividerBelow: Boolean
         get() = nonReadable()
@@ -156,7 +156,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
     /**
      * The drawer this header belongs to. Not recommended since it will be automatically set to the right drawer anyway.
      *
-     * Non readable property. Wraps the `withDrawer` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withDrawer] method.
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "Setting this manually is not recommended.")
@@ -169,7 +169,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
     /**
      * The typeface used for displaying the email of the currently selected profile.
      *
-     * Non readable property. Wraps the `withEmailTypeface` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withEmailTypeface] method.
      */
     var emailTypeface: Typeface
         get() = nonReadable()
@@ -180,7 +180,8 @@ class AccountHeaderBuilderKt(activity: Activity) {
     /**
      * The background of the header, as a drawable resource.
      *
-     * Convenience for `backgroundRes`. Non readable property. Wraps the `withHeaderBackground` method.
+     * Convenience for `backgroundRes`. Non readable property. Wraps the [AccountHeaderBuilder.withHeaderBackground]
+     * method.
      */
     var background: Int
         get() = nonReadable()
@@ -191,7 +192,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
     /**
      * The background of the header, as a Drawable.
      *
-     * Non readable property. Wraps the `withHeaderBackground` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withHeaderBackground] method.
      */
     var backgroundDrawable: Drawable
         get() = nonReadable()
@@ -204,7 +205,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      *
      * See `background` as an alternative.
      *
-     * Non readable property. Wraps the `withHeaderBackground` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withHeaderBackground] method.
      */
     var backgroundRes: Int
         get() = nonReadable()
@@ -215,7 +216,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
     /**
      * Defines the way the background drawable will scale.
      *
-     * Non readable property. Wraps the `withHeaderBackgroundScaleType` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withHeaderBackgroundScaleType] method.
      */
     var backgroundScaleType: ImageView.ScaleType
         get() = nonReadable()
@@ -226,7 +227,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
     /**
      * The height of the header, in dps.
      *
-     * Non readable property. Wraps the `withHeightDp` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withHeightDp] method.
      */
     var heightDp: Int
         get() = nonReadable()
@@ -237,7 +238,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
     /**
      * The height of the header, in pixels.
      *
-     * Non readable property. Wraps the `withHeightPx` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withHeightPx] method.
      */
     var heightPx: Int
         get() = nonReadable()
@@ -248,7 +249,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
     /**
      * The height of the header, as a dimension resource.
      *
-     * Non readable property. Wraps the `withHeightRes` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withHeightRes] method.
      */
     var heightRes: Int
         get() = nonReadable()
@@ -259,7 +260,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
     /**
      * The typeface used for displaying the name of the currently selected profile.
      *
-     * Non readable property. Wraps the `withNameTypeface` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withNameTypeface] method.
      */
     var nameTypeface: Typeface
         get() = nonReadable()
@@ -271,7 +272,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Adds an event [handler] to the header that's called when one of the profile items in the list is long clicked.
      * The handler should return true if the event has been completely handled.
      *
-     * Wraps the `withOnAccountHeaderItemLongClickListener` method.
+     * Wraps the [AccountHeaderBuilder.withOnAccountHeaderItemLongClickListener] method.
      *
      * @param view The View that was clicked
      * @param profile The profile that was clicked
@@ -285,7 +286,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Adds an event [handler] to the header that's called when one of the profile items in the list is selected.
      * The handler should return true if the event has been completely handled.
      *
-     * Wraps the `withOnAccountHeaderListener` method.
+     * Wraps the [AccountHeaderBuilder.withOnAccountHeaderListener] method.
      *
      * @param view The View that was clicked
      * @param profile The profile that was clicked
@@ -311,7 +312,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Adds an event [handler] to the header that's called when one of the profile images is clicked.
      * The handler should return true if the event has been completely handled.
      *
-     * Wraps the `withOnAccountHeaderProfileImageListener` method.
+     * Wraps the [AccountHeaderBuilder.withOnAccountHeaderProfileImageListener] method.
      *
      * @param view The View that was clicked
      * @param profile The profile that was clicked
@@ -325,7 +326,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Adds an event [handler] to the header that's called when one of the profile images is long clicked.
      * The handler should return true if the event has been completely handled.
      *
-     * Wraps the `withOnAccountHeaderProfileImageListener` method.
+     * Wraps the [AccountHeaderBuilder.withOnAccountHeaderProfileImageListener] method.
      *
      * @param view The View that was clicked
      * @param profile The profile that was clicked
@@ -340,7 +341,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * and closing the list view (anywhere other than the profile icons).
      * The handler should return true if the event has been completely handled.
      *
-     * Wraps the `withOnAccountHeaderSelectionViewClickListener` method.
+     * Wraps the [AccountHeaderBuilder.withOnAccountHeaderSelectionViewClickListener] method.
      *
      * @param view The View containing the header
      * @param profile The currently selected profile
@@ -354,7 +355,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * `profileImagesVisible` property.
      * Default value is false.
      *
-     * Non readable property. Wraps the `withOnlyMainProfileImageVisible` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withOnlyMainProfileImageVisible] method.
      */
     var onlyMainProfileImageVisible: Boolean
         get() = nonReadable()
@@ -367,7 +368,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * `profileImagesVisible` property.
      * Default value is false.
      *
-     * Non readable property. Wraps the `withOnlySmallProfileImagesVisible` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withOnlySmallProfileImagesVisible] method.
      */
     var onlySmallProfileImagesVisible: Boolean
         get() = nonReadable()
@@ -381,7 +382,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * this behavior entirely.
      * The default value is 100.
      *
-     * Non readable property. Wraps the `withOnProfileClickDrawerCloseDelay` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withOnProfileClickDrawerCloseDelay] method.
      */
     var delayOnDrawerClose: Int
         get() = nonReadable()
@@ -393,7 +394,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Whether to include padding below the header.
      * Default value is true.
      *
-     * Non readable property. Wraps the `withPaddingBelowHeader` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withPaddingBelowHeader] method.
      */
     var paddingBelow: Boolean
         get() = nonReadable()
@@ -404,7 +405,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
     /**
      * Whether the profile images can be clicked to change profiles.
      *
-     * Non readable property. Wraps the `withProfileImagesClickable` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withProfileImagesClickable] method.
      */
     var profileImagesClickable: Boolean
         get() = nonReadable()
@@ -417,7 +418,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * images, see the `onlyMainProfileImageVisible` and `onlySmallProfileImagesVisible` properties.
      * Default value is true.
      *
-     * Non readable property. Wraps the `withProfileImagesVisible` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withProfileImagesVisible] method.
      */
     var profileImagesVisible: Boolean
         get() = nonReadable()
@@ -431,7 +432,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      *
      * See `closeListAfterSelection` as an alternative.
      *
-     * Non readable property. Wraps the `withResetDrawerOnProfileListClick` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withResetDrawerOnProfileListClick] method.
      */
     var resetDrawerOnProfileListClick: Boolean
         get() = nonReadable()
@@ -444,7 +445,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Default value is true.
      *
      * Convenience for `resetDrawerOnProfileListClick`. Non readable property. Wraps the
-     * `withResetDrawerOnProfileListClick` method.
+     * [AccountHeaderBuilder.withResetDrawerOnProfileListClick] method.
      */
     var closeListAfterSelection: Boolean
         get() = nonReadable()
@@ -457,7 +458,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * call its `saveInstanceState` method in the Activity's `onSaveInstanceState` method, before calling super, to
      * store the current state of the header. Note that this has to be done in addition to doing it for the Drawer.
      *
-     * Non readable property. Wraps the `withSavedInstance` function.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withSavedInstance] function.
      */
     var savedInstance: Bundle?
         get() = nonReadable()
@@ -469,7 +470,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Overrides the currently selected user's name display.
      * Default value is the user's name.
      *
-     * Non readable property. Wraps the `withSelectionFirstLine` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withSelectionFirstLine] method.
      */
     var selectionFirstLine: String
         get() = nonReadable()
@@ -481,7 +482,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Whether to display the currently selected user's name.
      * Default value is true.
      *
-     * Non readable property. Wraps the `withSelectionFirstLineShown` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withSelectionFirstLineShown] method.
      */
     var selectionFirstLineShown: Boolean
         get() = nonReadable()
@@ -493,7 +494,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Whether the profile selection list can be opened.
      * Default value is true.
      *
-     * Non readable property. Wraps the `withSelectionListEnabled` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withSelectionListEnabled] method.
      */
     var selectionListEnabled: Boolean
         get() = nonReadable()
@@ -505,7 +506,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Whether the profile selection list can be opened if there is only one profile in the header.
      * Default value is true.
      *
-     * Non readable property. Wraps the `withSelectionListEnabledForSingleProfile` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withSelectionListEnabledForSingleProfile] method.
      */
     var selectionListEnabledForSingleProfile: Boolean
         get() = nonReadable()
@@ -517,7 +518,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Overrides the currently selected user's email display.
      * Default value is the user's email.
      *
-     * Non readable property. Wraps the `withSelectionSecondLine` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withSelectionSecondLine] method.
      */
     var selectionSecondLine: String
         get() = nonReadable()
@@ -529,7 +530,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Whether to display the currently selected user's email.
      * Default value is true.
      *
-     * Non readable property. Wraps the `withSelectionSecondLineShown` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withSelectionSecondLineShown] method.
      */
     var selectionSecondLineShown: Boolean
         get() = nonReadable()
@@ -540,7 +541,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
     /**
      * The color of the currently selected user's name, email, and the list's toggle arrow, as an argb Long.
      *
-     * Non readable property. Wraps the `withTextColor` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withTextColor] method.
      */
     var textColor: Long
         get() = nonReadable()
@@ -551,7 +552,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
     /**
      * The color of the currently selected user's name, email, and the list's toggle arrow, as a color resource.
      *
-     * Non readable property. Wraps the `withTextColorRes` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withTextColorRes] method.
      */
     var textColorRes: Int
         get() = nonReadable()
@@ -563,7 +564,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Whether to display three small profile images instead of the default two.
      * Default value is false.
      *
-     * Non readable property. Wraps the `withThreeSmallProfileImages` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withThreeSmallProfileImages] method.
      */
     var threeSmallProfileImages: Boolean
         get() = nonReadable()
@@ -575,7 +576,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * This should be enabled if you're using a translucent status bar.
      * Default value is true.
      *
-     * Non readable property. Wraps the `withTranslucentStatusBar` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withTranslucentStatusBar] method.
      */
     var translucentStatusBar: Boolean
         get() = nonReadable()
@@ -587,7 +588,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * The typeface used for displaying the name and email of the currently selected profile. This is overriden by the
      * `nameTypeface` and `emailTypeface` properties if they are set.
      *
-     * Non readable property. Wraps the `withTypeface` method.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withTypeface] method.
      */
     var typeface: Typeface
         get() = nonReadable()

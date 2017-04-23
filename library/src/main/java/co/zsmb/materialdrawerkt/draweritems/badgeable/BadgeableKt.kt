@@ -8,14 +8,14 @@ interface BadgeableKt {
     /**
      * The text of the displayed badge given by a String resource.
      *
-     * Wraps the `withBadge` function. Non readable property.
+     * Non readable property. Wraps the [com.mikepenz.materialdrawer.model.interfaces.Badgeable.withBadge] method.
      */
     var badgeRes: Int
 
     /**
      * The text of the displayed badge given by a StringHolder.
      *
-     * Wraps the `withBadge` function. Non readable property.
+     * Non readable property. Wraps the [com.mikepenz.materialdrawer.model.interfaces.Badgeable.withBadge] method.
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "This property is for internal use. Use the badgeRes property or the badge method instead.")
@@ -24,7 +24,8 @@ interface BadgeableKt {
     /**
      * The style of the displayed badge given by a BadgeStyle.
      *
-     * Wraps the `withBadgeStyle` function. Non readable property.
+     * Non readable property. Wraps the [com.mikepenz.materialdrawer.model.interfaces.ColorfulBadgeable.withBadgeStyle]
+     * method.
      */
     var badgeStyle: BadgeStyle
 
