@@ -75,7 +75,7 @@ abstract class AbstractDrawerItemKt : BuilderBase() {
      *
      * Wraps the [AbstractDrawerItem.withOnDrawerItemClickListener] method.
      *
-     * Convenience for the three parameter `onClick` method, to be used when you don't need all its parameters.
+     * Convenience for the three parameter [onClick] method, to be used when you don't need all its parameters.
      */
     fun onClick(handler: (view: View) -> Boolean) {
         item.withOnDrawerItemClickListener { view, _, _ -> handler(view) }
@@ -83,6 +83,8 @@ abstract class AbstractDrawerItemKt : BuilderBase() {
 
     /**
      * Adds an event [handler] to the drawer item that's called when the item is clicked.
+     *
+     * See the one parameter [onClick] method as an alternative.
      *
      * Wraps the [AbstractDrawerItem.withOnDrawerItemClickListener] method.
      *
@@ -108,7 +110,7 @@ abstract class AbstractDrawerItemKt : BuilderBase() {
     /**
      * Whether the drawer item is selected.
      *
-     * Convenience for `setSelected`. Wraps the [AbstractDrawerItem.withSetSelected] and [AbstractDrawerItem.isSelected]
+     * Convenience for [setSelected]. Wraps the [AbstractDrawerItem.withSetSelected] and [AbstractDrawerItem.isSelected]
      * methods.
      */
     var selected: Boolean
@@ -131,6 +133,8 @@ abstract class AbstractDrawerItemKt : BuilderBase() {
 
     /**
      * Whether the drawer item should be set as selected.
+     *
+     * See [selected] as an alternative.
      *
      * Wraps the [AbstractDrawerItem.withSetSelected] and [AbstractDrawerItem.isSelected] methods.
      */

@@ -66,7 +66,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * The icon of the drawer item, as a drawable resource.
      *
-     * Convenience for `iconRes`. Wraps the [BaseDrawerItem.withIcon] method. Non readable property.
+     * Convenience for [iconRes]. Wraps the [BaseDrawerItem.withIcon] method. Non readable property.
      */
     var icon: Int
         get() = nonReadable()
@@ -109,6 +109,8 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
 
     /**
      * The icon of the drawer item, as a drawable resource.
+     *
+     * See [icon] as an alternative.
      *
      * Wraps the [BaseDrawerItem.withIcon] method. Non readable property.
      */
@@ -199,7 +201,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * The icon of the drawer when it's selected, as a drawable resource.
      *
-     * Convenience for `selectedIconRes`. Wraps the [BaseDrawerItem.withSelectedIcon] method. Non readable property.
+     * Convenience for [selectedIconRes]. Wraps the [BaseDrawerItem.withSelectedIcon] method. Non readable property.
      */
     var selectedIcon: Int
         get() = nonReadable()
@@ -242,6 +244,8 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
 
     /**
      * The icon of the drawer item when it's selected, as a drawable resource.
+     *
+     * See [selectedIcon] as an alternative.
      *
      * Wraps the [BaseDrawerItem.withSelectedIcon] method. Non readable property.
      */

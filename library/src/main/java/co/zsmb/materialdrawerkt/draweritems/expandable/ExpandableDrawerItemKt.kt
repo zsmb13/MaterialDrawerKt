@@ -56,7 +56,7 @@ class ExpandableDrawerItemKt(name: String, description: String) : BaseDescribeab
         }
 
     /**
-     * Convenience for setting both `arrowRotationAngleStart` and `arrowRotationAngleEnd` at the same time. See those
+     * Convenience for setting both [arrowRotationAngleStart] and [arrowRotationAngleEnd] at the same time. See those
      * properties for details.
      *
      * Non readable property. Wraps the [ExpandableDrawerItem.withArrowRotationAngleStart] and
@@ -73,6 +73,8 @@ class ExpandableDrawerItemKt(name: String, description: String) : BaseDescribeab
      * The rotation of the expand arrow when the item is open, in degrees. The default value is 180, which corresponds
      * to an upward pointing arrow.
      *
+     * See [arrowRotationAngle] as an alternative.
+     *
      * Non readable property. Wraps the [ExpandableDrawerItem.withArrowRotationAngleEnd] method.
      */
     var arrowRotationAngleEnd: Int
@@ -84,6 +86,8 @@ class ExpandableDrawerItemKt(name: String, description: String) : BaseDescribeab
     /**
      * The rotation of the expand arrow when the item is closed, in degrees. The default value is 0, which corresponds
      * to a downward pointing arrow.
+     *
+     * See [arrowRotationAngle] as an alternative.
      *
      * Non readable property. Wraps the [ExpandableDrawerItem.withArrowRotationAngleStart] method.
      */

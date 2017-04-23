@@ -87,7 +87,7 @@ class ProfileDrawerItemKt(name: String, email: String) : AbstractDrawerItemKt() 
     /**
      * The icon of the profile, as a drawable resource.
      *
-     * Non readable property. Convenience for `iconRes`. Wraps the [ProfileDrawerItem.withIcon] method.
+     * Convenience for [iconRes]. Non readable property. Wraps the [ProfileDrawerItem.withIcon] method.
      */
     var icon: Int
         get() = nonReadable()
@@ -119,6 +119,8 @@ class ProfileDrawerItemKt(name: String, email: String) : AbstractDrawerItemKt() 
 
     /**
      * The icon of the profile, as a drawable resource.
+     *
+     * See [icon] as an alternative.
      *
      * Non readable property. Wraps the [ProfileDrawerItem.withIcon] method.
      */

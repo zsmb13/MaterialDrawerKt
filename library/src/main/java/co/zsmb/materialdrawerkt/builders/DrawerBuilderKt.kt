@@ -48,7 +48,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     }
 
     /**
-     * A shadowing method to prevent nesting `drawer` calls.
+     * A shadowing method to prevent nesting [drawer][co.zsmb.materialdrawerkt.builders.drawer] calls.
      * ( Credits to hotkey for this solution http://stackoverflow.com/a/43470027/4465208 )
      */
     @Deprecated(level = DeprecationLevel.ERROR,
@@ -239,6 +239,8 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * Sets the position of the drawer. Valid values are Gravity.START/LEFT and Gravity.END/RIGHT.
      * Default value is Gravity.START.
      *
+     * See [gravity] as an alternative.
+     *
      * Non readable property. Wraps the [DrawerBuilder.withDrawerGravity] method.
      */
     var drawerGravity: Int
@@ -272,6 +274,8 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * The width of the drawer in dps.
      *
+     * See [widthDp] as an alternative.
+     *
      * Non readable property. Wraps the [DrawerBuilder.withDrawerWidthDp] method.
      */
     var drawerWidthDp: Int
@@ -283,6 +287,8 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * The width of the drawer in pixels.
      *
+     * See [widthPx] as an alternative.
+     *
      * Non readable property. Wraps the [DrawerBuilder.withDrawerWidthPx] method.
      */
     var drawerWidthPx: Int
@@ -293,6 +299,8 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
 
     /**
      * The width of the drawer as a dimension resource.
+     *
+     * See [widthRes] as an alternative.
      *
      * Non readable property. Wraps the [DrawerBuilder.withDrawerWidthRes] method.
      */
@@ -389,7 +397,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * Sets the position of the drawer. Valid values are Gravity.START/LEFT and Gravity.END/RIGHT.
      * Default value is Gravity.START.
      *
-     * Convenience for the `drawerGravity` property. Non readable property. Wraps the [DrawerBuilder.withDrawerGravity]
+     * Convenience for [drawerGravity]. Non readable property. Wraps the [DrawerBuilder.withDrawerGravity]
      * method.
      */
     var gravity: Int
@@ -424,7 +432,9 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
         }
 
     /**
-     * The height of the header provided with the `headerView` or `headerRes` properties, as a DimenHolder.
+     * The height of the header provided with the [headerView] or [headerViewRes] properties, as a DimenHolder.
+     *
+     * See [headerHeightDp], [headerHeightPx], and [headerHeightRes] as alternatives.
      *
      * Non readable property. Wraps the [DrawerBuilder.withHeaderHeight] method.
      */
@@ -437,9 +447,9 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
         }
 
     /**
-     * The height of the header provided with the `headerView` or `headerRes` properties, in dps.
+     * The height of the header provided with the [headerView] or [headerViewRes] properties, in dps.
      *
-     * Convenience for `headerHeight`. Non readable property. Wraps the [DrawerBuilder.withHeaderHeight] method.
+     * Convenience for [headerHeight]. Non readable property. Wraps the [DrawerBuilder.withHeaderHeight] method.
      */
     var headerHeightDp: Int
         get() = nonReadable()
@@ -448,9 +458,9 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
         }
 
     /**
-     * The height of the header provided with the `headerView` or `headerRes` properties, in pixels.
+     * The height of the header provided with the [headerView] or [headerViewRes] properties, in pixels.
      *
-     * Convenience for `headerHeight`. Non readable property. Wraps the [DrawerBuilder.withHeaderHeight] method.
+     * Convenience for [headerHeight]. Non readable property. Wraps the [DrawerBuilder.withHeaderHeight] method.
      */
     var headerHeightPx: Int
         get() = nonReadable()
@@ -459,9 +469,9 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
         }
 
     /**
-     * The height of the header provided with the `headerView` or `headerRes` properties, as a dimension resource.
+     * The height of the header provided with the [headerView] or [headerViewRes] properties, as a dimension resource.
      *
-     * Convenience for `headerHeight`. Non readable property. Wraps the [DrawerBuilder.withHeaderHeight] method.
+     * Convenience for [headerHeight]. Non readable property. Wraps the [DrawerBuilder.withHeaderHeight] method.
      */
     var headerHeightRes: Int
         get() = nonReadable()
@@ -563,7 +573,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * Adds an event [handler] to the drawer that's called when an item is clicked. The handler should return true if
      * the event has been completely handled.
      *
-     * Convenience for the three parameter `onItemClick` method, to be used when you don't need all its parameters.
+     * Convenience for the three parameter [onItemClick] method, to be used when you don't need all its parameters.
      * Wraps the [DrawerBuilder.withOnDrawerItemClickListener] method.
      *
      * @param position The position of the clicked item within the drawer
@@ -575,6 +585,8 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * Adds an event [handler] to the drawer that's called when an item is clicked. The handler should return true if
      * the event has been completely handled.
+     *
+     * See the one parameter [onItemClick] as an alternative.
      *
      * Wraps the [DrawerBuilder.withOnDrawerItemClickListener] method.
      *
@@ -590,7 +602,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * Adds an event [handler] to the drawer that's called when an item is long clicked. The handler should return true
      * if the event has been completely handled.
      *
-     * Convenience for the three parameter `onItemLongClick` method, to be used when you don't need all its parameters.
+     * Convenience for the three parameter [onItemLongClick] method, to be used when you don't need all its parameters.
      * Wraps the [DrawerBuilder.withOnDrawerItemLongClickListener] method.
      *
      * @param position The position of the clicked item within the drawer
@@ -602,6 +614,8 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * Adds an event [handler] to the drawer that's called when an item is long clicked. The handler should return true
      * if the event has been completely handled.
+     *
+     * See the one parameter [onItemLongClick] as an alternative.
      *
      * Wraps the [DrawerBuilder.withOnDrawerItemLongClickListener] method.
      *
@@ -712,8 +726,9 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
 
     /**
      * The bundle to restore state from after a configuration change. Remember to store the Drawer instance and call
-     * its `saveInstanceState` method in the Activity's `onSaveInstanceState` method, before calling super, to store
-     * the current state of the drawer.
+     * its [saveInstanceState][com.mikepenz.materialdrawer.Drawer.saveInstanceState] method in the Activity's
+     * [onSaveInstanceState][Activity.onSaveInstanceState] method, before calling super, to store the current state of
+     * the drawer.
      *
      * Non readable property. Wraps the [DrawerBuilder.withSavedInstance] method.
      */
@@ -763,6 +778,8 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * Whether to automatically open the drawer the first time the user opens this Activity.
      * Default value is false.
      *
+     * See [showOnFirstLaunch] as an alternative.
+     *
      * Non readable property. Wraps the [DrawerBuilder.withShowDrawerOnFirstLaunch] method.
      */
     var showDrawerOnFirstLaunch: Boolean
@@ -776,6 +793,8 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * themselves.
      * Default value is false.
      *
+     * See [showUntilDraggedOpened] as an alternative.
+     *
      * Non readable property. Wraps the [DrawerBuilder.withShowDrawerUntilDraggedOpened] method.
      */
     var showDrawerUntilDraggedOpened: Boolean
@@ -788,7 +807,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * Whether to automatically open the drawer the first time the user opens this Activity.
      * Default value is false.
      *
-     * Convenience for the `showDrawerOnFirstLaunch` property. Non readable property. Wraps the
+     * Convenience for the [showDrawerOnFirstLaunch] property. Non readable property. Wraps the
      * [DrawerBuilder.withShowDrawerOnFirstLaunch] method.
      */
     var showOnFirstLaunch: Boolean
@@ -802,7 +821,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * themselves.
      * Default value is false.
      *
-     * Convenience for `showDrawerUntilDraggedOpened`. Non readable property. Wraps the
+     * Convenience for [showDrawerUntilDraggedOpened]. Non readable property. Wraps the
      * [DrawerBuilder.withShowDrawerUntilDraggedOpened] method.
      */
     var showUntilDraggedOpened: Boolean
@@ -814,7 +833,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * The background of the drawer item list, as a drawable resource.
      *
-     * Convenience for `sliderBackgroundRes`. Non readable property. Wraps the
+     * Convenience for [sliderBackgroundRes]. Non readable property. Wraps the
      * [DrawerBuilder.withSliderBackgroundDrawableRes] method.
      */
     var sliderBackground: Int
@@ -859,7 +878,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * The background of the drawer item list, as a drawable resource.
      *
-     * See `sliderBackground` as an alternative.
+     * See [sliderBackground] as an alternative.
      *
      * Non readable property. Wraps the [DrawerBuilder.withSliderBackgroundDrawableRes] method.
      */
@@ -953,7 +972,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * To be used when you have a translucent navigation bar.
      * Default value is false.
      *
-     * Convenience for `translucentNavigationBar`. Non readable property. Wraps the
+     * Convenience for [translucentNavigationBar]. Non readable property. Wraps the
      * [DrawerBuilder.withTranslucentNavigationBar] method.
      */
     var supportTranslucentNavBar: Boolean
@@ -990,7 +1009,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * If set to true, it makes the navigation bar translucent programmatically.
      * Default value is false.
      *
-     * Convenience for `translucentNavigationBarProgrammatically`. Non readable property. Wraps the
+     * Convenience for [translucentNavigationBarProgrammatically]. Non readable property. Wraps the
      * [DrawerBuilder.withTranslucentNavigationBarProgrammatically] method.
      */
     var translucentNavBar: Boolean
@@ -1003,6 +1022,8 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * To be used when you have a translucent navigation bar.
      * Default value is false.
      *
+     * See [supportTranslucentNavBar] as an alternative.
+     *
      * Non readable property. Wraps the [DrawerBuilder.withTranslucentNavigationBar] method.
      */
     var translucentNavigationBar: Boolean
@@ -1014,6 +1035,8 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * If set to true, it makes the navigation bar translucent programmatically.
      * Default value is false.
+     *
+     * See [translucentNavBar] as an alternative.
      *
      * Non readable property. Wraps the [DrawerBuilder.withTranslucentNavigationBarProgrammatically] method.
      */
@@ -1039,7 +1062,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * The width of the drawer in dps.
      *
-     * Convenience for `drawerWidthDp`. Non readable property. Wraps the [DrawerBuilder.withDrawerWidthDp] method.
+     * Convenience for [drawerWidthDp]. Non readable property. Wraps the [DrawerBuilder.withDrawerWidthDp] method.
      */
     var widthDp: Int
         get() = nonReadable()
@@ -1050,7 +1073,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * The width of the drawer in pixels.
      *
-     * Convenience for `drawerWidthPx`. Non readable property. Wraps the [DrawerBuilder.withDrawerWidthPx] method.
+     * Convenience for [drawerWidthPx]. Non readable property. Wraps the [DrawerBuilder.withDrawerWidthPx] method.
      */
     var widthPx: Int
         get() = nonReadable()
@@ -1061,7 +1084,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * The width of the drawer as a dimension resource.
      *
-     * Convenience for `drawerWidthRes`. Non readable property. Wraps the [DrawerBuilder.withDrawerWidthRes] method.
+     * Convenience for [drawerWidthRes]. Non readable property. Wraps the [DrawerBuilder.withDrawerWidthRes] method.
      */
     var widthRes: Int
         get() = nonReadable()

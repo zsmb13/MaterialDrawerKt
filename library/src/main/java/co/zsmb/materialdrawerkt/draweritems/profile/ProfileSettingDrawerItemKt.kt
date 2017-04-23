@@ -100,7 +100,7 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
     /**
      * The icon of the profile setting, as a drawable resource.
      *
-     * Non readable property. Convenience for `iconRes`. Wraps the [ProfileSettingDrawerItem.withIcon] method.
+     * Convenience for [iconRes]. Non readable property. Wraps the [ProfileSettingDrawerItem.withIcon] method.
      */
     var icon: Int
         get() = nonReadable()
@@ -120,6 +120,28 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
         }
 
     /**
+     * The color of the profile setting item's icon, as an argb Long.
+     *
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.withIconColor] method.
+     */
+    var iconColor: Long
+        get() = nonReadable()
+        set(value) {
+            item.withIconColor(value.toInt())
+        }
+
+    /**
+     * The color of the profile setting item's icon, as a color resource.
+     *
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.withIconColor] method.
+     */
+    var iconColorRes: Int
+        get() = nonReadable()
+        set(value) {
+            item.withIconColorRes(value)
+        }
+
+    /**
      * The icon of the profile setting, as a Drawable.
      *
      * Non readable property. Wraps the [ProfileSettingDrawerItem.withIcon] method.
@@ -132,6 +154,8 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
 
     /**
      * The icon of the profile setting, as a drawable resource.
+     *
+     * See [icon] as an alternative.
      *
      * Non readable property. Wraps the [ProfileSettingDrawerItem.withIcon] method.
      */
@@ -172,28 +196,6 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
         get() = nonReadable()
         set(value) {
             item.withIcon(value)
-        }
-
-    /**
-     * The color of the profile setting item's icon, as an argb Long.
-     *
-     * Non readable property. Wraps the [ProfileSettingDrawerItem.withIconColor] method.
-     */
-    var iconColor: Long
-        get() = nonReadable()
-        set(value) {
-            item.withIconColor(value.toInt())
-        }
-
-    /**
-     * The color of the profile setting item's icon, as a color resource.
-     *
-     * Non readable property. Wraps the [ProfileSettingDrawerItem.withIconColor] method.
-     */
-    var iconColorRes: Int
-        get() = nonReadable()
-        set(value) {
-            item.withIconColorRes(value)
         }
 
     /**

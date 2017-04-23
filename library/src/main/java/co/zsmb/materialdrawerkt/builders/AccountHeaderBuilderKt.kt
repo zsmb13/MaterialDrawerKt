@@ -86,7 +86,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
     /**
      * The background of the header, as a drawable resource.
      *
-     * Convenience for `backgroundRes`. Non readable property. Wraps the [AccountHeaderBuilder.withHeaderBackground]
+     * Convenience for [backgroundRes]. Non readable property. Wraps the [AccountHeaderBuilder.withHeaderBackground]
      * method.
      */
     var background: Int
@@ -109,7 +109,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
     /**
      * The background of the header, as a drawable resource.
      *
-     * See `background` as an alternative.
+     * See [background] as an alternative.
      *
      * Non readable property. Wraps the [AccountHeaderBuilder.withHeaderBackground] method.
      */
@@ -134,7 +134,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Whether the drawer should be closed when a profile item is clicked.
      * Default value is true.
      *
-     * See `closeOnClick` as an alternative.
+     * See [closeOnClick] as an alternative.
      *
      * Non readable property. Wraps the [AccountHeaderBuilder.withCloseDrawerOnProfileListClick] method.
      */
@@ -148,7 +148,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Whether to close the profile selection list after a profile in it has been selected.
      * Default value is true.
      *
-     * Convenience for `resetDrawerOnProfileListClick`. Non readable property. Wraps the
+     * Convenience for [resetDrawerOnProfileListClick]. Non readable property. Wraps the
      * [AccountHeaderBuilder.withResetDrawerOnProfileListClick] method.
      */
     var closeListAfterSelection: Boolean
@@ -161,7 +161,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Whether the drawer should be closed when a profile item is clicked.
      * Default value is true.
      *
-     * Convenience for `closeDrawerOnProfileListClick`. Non readable property. Wraps the
+     * Convenience for [closeDrawerOnProfileListClick]. Non readable property. Wraps the
      * [AccountHeaderBuilder.withCloseDrawerOnProfileListClick] method.
      */
     var closeOnClick: Boolean
@@ -186,7 +186,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Whether the current profile should be hidden from the profile selection list.
      * Default value is false.
      *
-     * Convenience for `currentProfileHiddenInList`. Non readable property. Wraps the
+     * Convenience for [currentProfileHiddenInList]. Non readable property. Wraps the
      * [AccountHeaderBuilder.withCurrentProfileHiddenInList] method.
      */
     var currentHidden: Boolean
@@ -199,7 +199,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Whether the current profile should be hidden from the profile selection list.
      * Default value is false.
      *
-     * See `currentHidden` as an alternative.
+     * See [currentHidden] as an alternative.
      *
      * Non readable property. Wraps the [AccountHeaderBuilder.withCurrentProfileHiddenInList] method.
      */
@@ -342,7 +342,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
 
     /**
      * If set to true, hides the small profile images. If you want to hide all profile images, see the
-     * `profileImagesVisible` property.
+     * [profileImagesVisible] property.
      * Default value is false.
      *
      * Non readable property. Wraps the [AccountHeaderBuilder.withOnlyMainProfileImageVisible] method.
@@ -355,7 +355,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
 
     /**
      * If set to true, hides the profile image of the selected user. If you want to hide all profile images, see the
-     * `profileImagesVisible` property.
+     * [profileImagesVisible] property.
      * Default value is false.
      *
      * Non readable property. Wraps the [AccountHeaderBuilder.withOnlySmallProfileImagesVisible] method.
@@ -447,7 +447,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
 
     /**
      * Whether any of the profile images (large and small) are visible. If you only want to hide only some profile
-     * images, see the `onlyMainProfileImageVisible` and `onlySmallProfileImagesVisible` properties.
+     * images, see the [onlyMainProfileImageVisible] and [onlySmallProfileImagesVisible] properties.
      * Default value is true.
      *
      * Non readable property. Wraps the [AccountHeaderBuilder.withProfileImagesVisible] method.
@@ -462,7 +462,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Whether to close the profile selection list after a profile in it has been selected.
      * Default value is true.
      *
-     * See `closeListAfterSelection` as an alternative.
+     * See [closeListAfterSelection] as an alternative.
      *
      * Non readable property. Wraps the [AccountHeaderBuilder.withResetDrawerOnProfileListClick] method.
      */
@@ -475,8 +475,9 @@ class AccountHeaderBuilderKt(activity: Activity) {
 
     /**
      * The bundle to restore state from after a configuration change. Remember to store the AccountHeader instance and
-     * call its `saveInstanceState` method in the Activity's `onSaveInstanceState` method, before calling super, to
-     * store the current state of the header. Note that this has to be done in addition to doing it for the Drawer.
+     * call its [saveInstanceState][com.mikepenz.materialdrawer.AccountHeader.saveInstanceState] method in the
+     * Activity's [onSaveInstanceState][Activity.onSaveInstanceState] method, before calling super, to store the current
+     * state of the header. Note that this has to be done in addition to doing it for the Drawer.
      *
      * Non readable property. Wraps the [AccountHeaderBuilder.withSavedInstance] method.
      */
@@ -606,7 +607,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
 
     /**
      * The typeface used for displaying the name and email of the currently selected profile. This is overriden by the
-     * `nameTypeface` and `emailTypeface` properties if they are set.
+     * [nameTypeface] and [emailTypeface] properties if they are set.
      *
      * Non readable property. Wraps the [AccountHeaderBuilder.withTypeface] method.
      */
