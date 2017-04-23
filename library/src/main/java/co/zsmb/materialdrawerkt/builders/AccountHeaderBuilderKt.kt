@@ -11,7 +11,6 @@ import co.zsmb.materialdrawerkt.nonReadable
 import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.AccountHeaderBuilder
 import com.mikepenz.materialdrawer.Drawer
-import com.mikepenz.materialdrawer.holder.ImageHolder
 import com.mikepenz.materialdrawer.model.interfaces.IProfile
 
 /**
@@ -197,17 +196,6 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Non readable property. Wraps the `withHeaderBackground` method.
      */
     var backgroundDrawable: Drawable
-        get() = nonReadable()
-        set(value) {
-            builder.withHeaderBackground(value)
-        }
-
-    /**
-     * The background of the header, as an ImageHolder.
-     *
-     * Non readable property. Wraps the `withHeaderBackground` method.
-     */
-    var backgroundImage: ImageHolder
         get() = nonReadable()
         set(value) {
             builder.withHeaderBackground(value)

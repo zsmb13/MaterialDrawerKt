@@ -843,6 +843,17 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
         }
 
     /**
+     * The background of the drawer item list, given as a drawable resource.
+     *
+     * Convenience for `sliderBackgroundRes`. Non readable property. Wraps the withSliderBackgroundDrawableRes function.
+     */
+    var sliderBackground: Int
+        get() = nonReadable()
+        set(value) {
+            builder.withSliderBackgroundDrawableRes(value)
+        }
+
+    /**
      * The background of the drawer item list, given as a Drawable.
      *
      * Non readable property. Wraps the withSliderBackgroundDrawable function.
@@ -856,9 +867,11 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * The background of the drawer item list, given as a drawable resource.
      *
+     * See `sliderBackground` as an alternative.
+     *
      * Non readable property. Wraps the withSliderBackgroundDrawableRes function.
      */
-    var sliderBackgroundDrawableRes: Int
+    var sliderBackgroundRes: Int
         get() = nonReadable()
         set(value) {
             builder.withSliderBackgroundDrawableRes(value)
