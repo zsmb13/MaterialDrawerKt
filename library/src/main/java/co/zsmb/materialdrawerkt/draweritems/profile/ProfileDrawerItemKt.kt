@@ -38,7 +38,7 @@ class ProfileDrawerItemKt(name: String, email: String) : AbstractDrawerItemKt() 
     /**
      * The color of the profile item's text when it's disabled, as an argb Long.
      *
-     * Non readable property. Wraps the [ProfileDrawerItem.withDisabledTextColor] function.
+     * Non readable property. Wraps the [ProfileDrawerItem.withDisabledTextColor] method.
      */
     var disabledTextColor: Long
         get() = nonReadable()
@@ -49,7 +49,7 @@ class ProfileDrawerItemKt(name: String, email: String) : AbstractDrawerItemKt() 
     /**
      * The color of the profile item's text when it's disabled, as a color resource.
      *
-     * Non readable property. Wraps the [ProfileDrawerItem.withDisabledTextColorRes] function.
+     * Non readable property. Wraps the [ProfileDrawerItem.withDisabledTextColorRes] method.
      */
     var disabledTextColorRes: Int
         get() = nonReadable()
@@ -60,7 +60,7 @@ class ProfileDrawerItemKt(name: String, email: String) : AbstractDrawerItemKt() 
     /**
      * The email associated with the profile.
      *
-     * Non readable property. Wraps the [ProfileDrawerItem.withEmail] function.
+     * Non readable property. Wraps the [ProfileDrawerItem.withEmail] method.
      */
     var email: String
         get() = nonReadable()
@@ -71,7 +71,7 @@ class ProfileDrawerItemKt(name: String, email: String) : AbstractDrawerItemKt() 
     /**
      * The icon of the profile, as a drawable resource.
      *
-     * Non readable property. Convenience for `iconRes`. Wraps the [ProfileDrawerItem.withIcon] function.
+     * Non readable property. Convenience for `iconRes`. Wraps the [ProfileDrawerItem.withIcon] method.
      */
     var icon: Int
         get() = nonReadable()
@@ -82,7 +82,7 @@ class ProfileDrawerItemKt(name: String, email: String) : AbstractDrawerItemKt() 
     /**
      * The icon of the profile, as a Bitmap.
      *
-     * Non readable property. Wraps the [ProfileDrawerItem.withIcon] function.
+     * Non readable property. Wraps the [ProfileDrawerItem.withIcon] method.
      */
     var iconBitmap: Bitmap
         get() = nonReadable()
@@ -93,7 +93,7 @@ class ProfileDrawerItemKt(name: String, email: String) : AbstractDrawerItemKt() 
     /**
      * The icon of the profile, as a Drawable.
      *
-     * Non readable property. Wraps the [ProfileDrawerItem.withIcon] function.
+     * Non readable property. Wraps the [ProfileDrawerItem.withIcon] method.
      */
     var iconDrawable: Drawable
         get() = nonReadable()
@@ -104,7 +104,7 @@ class ProfileDrawerItemKt(name: String, email: String) : AbstractDrawerItemKt() 
     /**
      * The icon of the profile, as an IIcon.
      *
-     * Non readable property. Wraps the [ProfileDrawerItem.withIcon] function.
+     * Non readable property. Wraps the [ProfileDrawerItem.withIcon] method.
      */
     var iicon: IIcon
         get() = nonReadable()
@@ -115,7 +115,7 @@ class ProfileDrawerItemKt(name: String, email: String) : AbstractDrawerItemKt() 
     /**
      * The icon of the profile, as a drawable resource.
      *
-     * Non readable property. Wraps the [ProfileDrawerItem.withIcon] function.
+     * Non readable property. Wraps the [ProfileDrawerItem.withIcon] method.
      */
     var iconRes: Int
         get() = nonReadable()
@@ -126,7 +126,7 @@ class ProfileDrawerItemKt(name: String, email: String) : AbstractDrawerItemKt() 
     /**
      * The icon of the profile, as an Uri.
      *
-     * Non readable property. Wraps the [ProfileDrawerItem.withIcon] function.
+     * Non readable property. Wraps the [ProfileDrawerItem.withIcon] method.
      */
     var iconUri: Uri
         get() = nonReadable()
@@ -137,7 +137,7 @@ class ProfileDrawerItemKt(name: String, email: String) : AbstractDrawerItemKt() 
     /**
      * The icon of the profile, given by a url String.
      *
-     * Non readable property. Wraps the [ProfileDrawerItem.withIcon] function.
+     * Non readable property. Wraps the [ProfileDrawerItem.withIcon] method.
      */
     var iconUrl: String
         get() = nonReadable()
@@ -148,7 +148,7 @@ class ProfileDrawerItemKt(name: String, email: String) : AbstractDrawerItemKt() 
     /**
      * The name of the profile.
      *
-     * Non readable property. Wraps the [ProfileDrawerItem.withName] function.
+     * Non readable property. Wraps the [ProfileDrawerItem.withName] method.
      */
     var name: String
         get() = nonReadable()
@@ -160,7 +160,7 @@ class ProfileDrawerItemKt(name: String, email: String) : AbstractDrawerItemKt() 
      * Whether the name of the profile should be displayed in the profile switcher in addition to the email.
      * False by default.
      *
-     * Non readable property. Wraps the [ProfileDrawerItem.withNameShown] function.
+     * Non readable property. Wraps the [ProfileDrawerItem.withNameShown] method.
      */
     var nameShown: Boolean
         get() = nonReadable()
@@ -171,7 +171,7 @@ class ProfileDrawerItemKt(name: String, email: String) : AbstractDrawerItemKt() 
     /**
      * The color of the profile item in the profile switcher list when it's selected, as an argb Long.
      *
-     * Non readable property. Wraps the [ProfileDrawerItem.withSelectedColor] function.
+     * Non readable property. Wraps the [ProfileDrawerItem.withSelectedColor] method.
      */
     var selectedColor: Long
         get() = nonReadable()
@@ -182,7 +182,7 @@ class ProfileDrawerItemKt(name: String, email: String) : AbstractDrawerItemKt() 
     /**
      * The color of the profile item in the profile switcher list when it's selected, as a color resource.
      *
-     * Non readable property. Wraps the [ProfileDrawerItem.withSelectedColorRes] function.
+     * Non readable property. Wraps the [ProfileDrawerItem.withSelectedColorRes] method.
      */
     var selectedColorRes: Int
         get() = nonReadable()
@@ -193,7 +193,7 @@ class ProfileDrawerItemKt(name: String, email: String) : AbstractDrawerItemKt() 
     /**
      * The color of the profile item's text in the profile switcher list when it's selected, as an argb Long.
      *
-     * Non readable property. Wraps the [ProfileDrawerItem.withSelectedTextColor] function.
+     * Non readable property. Wraps the [ProfileDrawerItem.withSelectedTextColor] method.
      */
     var selectedTextColor: Long
         get() = nonReadable()
@@ -204,7 +204,7 @@ class ProfileDrawerItemKt(name: String, email: String) : AbstractDrawerItemKt() 
     /**
      * The color of the profile item's text in the profile switcher list when it's selected, as a color resource.
      *
-     * Non readable property. Wraps the [ProfileDrawerItem.withSelectedTextColorRes] function.
+     * Non readable property. Wraps the [ProfileDrawerItem.withSelectedTextColorRes] method.
      */
     var selectedTextColorRes: Int
         get() = nonReadable()
@@ -215,7 +215,7 @@ class ProfileDrawerItemKt(name: String, email: String) : AbstractDrawerItemKt() 
     /**
      *The color of the profile item's text in the profile switcher list, as an argb Long.
      *
-     * Non readable property. Wraps the [ProfileDrawerItem.withTextColor] function.
+     * Non readable property. Wraps the [ProfileDrawerItem.withTextColor] method.
      */
     var textColor: Long
         get() = nonReadable()
@@ -226,7 +226,7 @@ class ProfileDrawerItemKt(name: String, email: String) : AbstractDrawerItemKt() 
     /**
      * The color of the profile item's text in the profile switcher list, as a color resource.
      *
-     * Non readable property. Wraps the [ProfileDrawerItem.withTextColorRes] function.
+     * Non readable property. Wraps the [ProfileDrawerItem.withTextColorRes] method.
      */
     var textColorRes: Int
         get() = nonReadable()
@@ -237,7 +237,7 @@ class ProfileDrawerItemKt(name: String, email: String) : AbstractDrawerItemKt() 
     /**
      * The typeface to use for the profile item's text.
      *
-     * Non readable property. Wraps the [ProfileDrawerItem.withTypeface] function.
+     * Non readable property. Wraps the [ProfileDrawerItem.withTypeface] method.
      */
     var typeface: Typeface
         get() = nonReadable()

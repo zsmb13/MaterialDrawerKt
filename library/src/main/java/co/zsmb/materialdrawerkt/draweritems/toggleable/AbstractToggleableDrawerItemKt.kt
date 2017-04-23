@@ -32,7 +32,7 @@ abstract class AbstractToggleableDrawerItemKt : BaseDescribeableDrawerItemKt() {
     /**
      * Adds an event [handler] to the drawer item that's called when the toggle's state is changed.
      *
-     * Wraps the [AbstractToggleableDrawerItem.withOnCheckedChangeListener] function.
+     * Wraps the [AbstractToggleableDrawerItem.withOnCheckedChangeListener] method.
      *
      * @param drawerItem The drawer item itself
      * @param button The CompoundButton View whose state has changed
@@ -50,7 +50,7 @@ abstract class AbstractToggleableDrawerItemKt : BaseDescribeableDrawerItemKt() {
      *
      * Replacement for onCheckedChange.
      *
-     * Wraps the [AbstractToggleableDrawerItem.withOnCheckedChangeListener] function.
+     * Wraps the [AbstractToggleableDrawerItem.withOnCheckedChangeListener] method.
      *
      * @param drawerItem The drawer item itself
      * @param button The CompoundButton View whose state has changed
@@ -65,7 +65,7 @@ abstract class AbstractToggleableDrawerItemKt : BaseDescribeableDrawerItemKt() {
      *
      * Alternative to the 3 parameter onToggleChanged method, to be used when you don't need all its parameters.
      *
-     * Wraps the [AbstractToggleableDrawerItem.withOnCheckedChangeListener] function.
+     * Wraps the [AbstractToggleableDrawerItem.withOnCheckedChangeListener] method.
      *
      * @param isEnabled True if the toggle is now in an "on" state
      */

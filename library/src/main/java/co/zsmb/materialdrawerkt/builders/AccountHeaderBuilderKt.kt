@@ -458,7 +458,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * call its `saveInstanceState` method in the Activity's `onSaveInstanceState` method, before calling super, to
      * store the current state of the header. Note that this has to be done in addition to doing it for the Drawer.
      *
-     * Non readable property. Wraps the [AccountHeaderBuilder.withSavedInstance] function.
+     * Non readable property. Wraps the [AccountHeaderBuilder.withSavedInstance] method.
      */
     var savedInstance: Bundle?
         get() = nonReadable()

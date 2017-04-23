@@ -38,7 +38,7 @@ abstract class AbstractDrawerItemKt : BuilderBase() {
     /**
      * The identifier of the drawer item. Default value is -1L.
      *
-     * Wraps the [AbstractDrawerItem.withIdentifier] and [AbstractDrawerItem.getIdentifier] functions.
+     * Wraps the [AbstractDrawerItem.withIdentifier] and [AbstractDrawerItem.getIdentifier] methods.
      */
     var identifier: Long
         get() = item.identifier
@@ -49,7 +49,7 @@ abstract class AbstractDrawerItemKt : BuilderBase() {
     /**
      * Whether the subitems of this item are visible.
      *
-     * Wraps the [AbstractDrawerItem.withIsExpanded] and [AbstractDrawerItem.isExpanded] functions.
+     * Wraps the [AbstractDrawerItem.withIsExpanded] and [AbstractDrawerItem.isExpanded] methods.
      */
     var isExpanded: Boolean
         get() = item.isExpanded
@@ -60,7 +60,7 @@ abstract class AbstractDrawerItemKt : BuilderBase() {
     /**
      * Adds an event [handler] to the drawer item that's called when the item is clicked.
      *
-     * Wraps the [AbstractDrawerItem.withOnDrawerItemClickListener] function.
+     * Wraps the [AbstractDrawerItem.withOnDrawerItemClickListener] method.
      *
      * @param view The View that was clicked
      * @param position The position of the item within the drawer
@@ -73,7 +73,7 @@ abstract class AbstractDrawerItemKt : BuilderBase() {
     /**
      * Adds an event [handler] to the drawer item that's called when the item is clicked.
      *
-     * Wraps the [AbstractDrawerItem.withOnDrawerItemClickListener] function.
+     * Wraps the [AbstractDrawerItem.withOnDrawerItemClickListener] method.
      *
      * Convenience for the three parameter `onClick` method, to be used when you don't need all its parameters.
      */
@@ -85,7 +85,7 @@ abstract class AbstractDrawerItemKt : BuilderBase() {
      * Adds an event [handler] to the drawer item that's called after the view for the drawer item is created.
      * This is to allow further modifications of the view before it's shown.
      *
-     * Wraps the [AbstractDrawerItem.withPostOnBindViewListener] function.
+     * Wraps the [AbstractDrawerItem.withPostOnBindViewListener] method.
      *
      * @param drawerItem The drawer item itself
      * @param view The view which has been created for the drawer item
@@ -97,7 +97,7 @@ abstract class AbstractDrawerItemKt : BuilderBase() {
     /**
      * Whether the drawer item is selectable.
      *
-     * Wraps the [AbstractDrawerItem.withSelectable] and [AbstractDrawerItem.isSelectable] functions.
+     * Wraps the [AbstractDrawerItem.withSelectable] and [AbstractDrawerItem.isSelectable] methods.
      */
     var selectable: Boolean
         get() = item.isSelectable
@@ -109,7 +109,7 @@ abstract class AbstractDrawerItemKt : BuilderBase() {
      * Whether the drawer item's background should have a fade animation between the selected and unselected states.
      *
      * Wraps the [AbstractDrawerItem.withSelectedBackgroundAnimated] and
-     * [AbstractDrawerItem.isSelectedBackgroundAnimated] functions.
+     * [AbstractDrawerItem.isSelectedBackgroundAnimated] methods.
      */
     var selectedBackgroundAnimated: Boolean
         get() = item.isSelectedBackgroundAnimated
@@ -120,7 +120,7 @@ abstract class AbstractDrawerItemKt : BuilderBase() {
     /**
      * Whether the drawer item should be set as selected.
      *
-     * Wraps the [AbstractDrawerItem.withSetSelected] and [AbstractDrawerItem.isSelected] functions.
+     * Wraps the [AbstractDrawerItem.withSetSelected] and [AbstractDrawerItem.isSelected] methods.
      */
     var setSelected: Boolean
         get() = item.isSelected
@@ -132,7 +132,7 @@ abstract class AbstractDrawerItemKt : BuilderBase() {
      * Whether the drawer item is selected.
      *
      * Convenience for `setSelected`. Wraps the [AbstractDrawerItem.withSetSelected] and [AbstractDrawerItem.isSelected]
-     * functions.
+     * methods.
      */
     var selected: Boolean
         get() = item.isSelected
@@ -143,7 +143,7 @@ abstract class AbstractDrawerItemKt : BuilderBase() {
     /**
      * An arbitrary object you can attach to the drawer item.
      *
-     * Wraps the [AbstractDrawerItem.withTag] and [AbstractDrawerItem.getTag] functions.
+     * Wraps the [AbstractDrawerItem.withTag] and [AbstractDrawerItem.getTag] methods.
      */
     var tag: Any?
         get() = item.tag

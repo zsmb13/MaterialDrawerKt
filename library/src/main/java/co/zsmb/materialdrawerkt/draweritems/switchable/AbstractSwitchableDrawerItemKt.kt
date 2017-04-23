@@ -22,7 +22,7 @@ abstract class AbstractSwitchableDrawerItemKt : BaseDescribeableDrawerItemKt() {
     /**
      * Whether the drawer item is selectable.
      *
-     * Wraps the [AbstractSwitchableDrawerItem.withCheckable] function.
+     * Wraps the [AbstractSwitchableDrawerItem.withCheckable] method.
      */
     @Deprecated(level = DeprecationLevel.ERROR,
             replaceWith = ReplaceWith("selectable"),
@@ -47,7 +47,7 @@ abstract class AbstractSwitchableDrawerItemKt : BaseDescribeableDrawerItemKt() {
     /**
      * Adds an event [handler] to the drawer item that's called when the switch's state is changed.
      *
-     * Wraps the [AbstractSwitchableDrawerItem.withOnCheckedChangeListener] function.
+     * Wraps the [AbstractSwitchableDrawerItem.withOnCheckedChangeListener] method.
      *
      * @param drawerItem The drawer item itself
      * @param button The CompoundButton View whose state has changed
@@ -65,7 +65,7 @@ abstract class AbstractSwitchableDrawerItemKt : BaseDescribeableDrawerItemKt() {
      *
      * Replacement for onCheckedChange.
      *
-     * Wraps the [AbstractSwitchableDrawerItem.withOnCheckedChangeListener] function.
+     * Wraps the [AbstractSwitchableDrawerItem.withOnCheckedChangeListener] method.
      *
      * @param drawerItem The drawer item itself
      * @param button The CompoundButton View whose state has changed
@@ -80,7 +80,7 @@ abstract class AbstractSwitchableDrawerItemKt : BaseDescribeableDrawerItemKt() {
      *
      * Alternative to the 3 parameter onToggleChanged method, to be used when you don't need all its parameters.
      *
-     * Wraps the [AbstractSwitchableDrawerItem.withOnCheckedChangeListener] function.
+     * Wraps the [AbstractSwitchableDrawerItem.withOnCheckedChangeListener] method.
      *
      * @param isEnabled True if the switch is now in an "on" state
      */

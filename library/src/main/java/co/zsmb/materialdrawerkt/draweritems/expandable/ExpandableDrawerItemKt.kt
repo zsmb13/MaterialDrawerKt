@@ -36,7 +36,7 @@ class ExpandableDrawerItemKt(name: String, description: String) : BaseDescribeab
     /**
      * The color of the expand arrow given as an argb Long.
      *
-     * Non readable property. Wraps the [ExpandableDrawerItem.withArrowColor] function.
+     * Non readable property. Wraps the [ExpandableDrawerItem.withArrowColor] method.
      */
     var arrowColor: Long
         get() = nonReadable()
@@ -47,7 +47,7 @@ class ExpandableDrawerItemKt(name: String, description: String) : BaseDescribeab
     /**
      * The color of the expand arrow, given as a color resource.
      *
-     * Non readable property. Wraps the [ExpandableDrawerItem.withArrowColorRes] function.
+     * Non readable property. Wraps the [ExpandableDrawerItem.withArrowColorRes] method.
      */
     var arrowColorRes: Int
         get() = nonReadable()
@@ -59,7 +59,7 @@ class ExpandableDrawerItemKt(name: String, description: String) : BaseDescribeab
      * The rotation of the expand arrow when the item is closed, in degrees. The default value is 0, which corresponds
      * to a downward pointing arrow.
      *
-     * Non readable property. Wraps the [ExpandableDrawerItem.withArrowRotationAngleStart] function.
+     * Non readable property. Wraps the [ExpandableDrawerItem.withArrowRotationAngleStart] method.
      */
     var arrowRotationAngleStart: Int
         get() = nonReadable()
@@ -71,7 +71,7 @@ class ExpandableDrawerItemKt(name: String, description: String) : BaseDescribeab
      * The rotation of the expand arrow when the item is open, in degrees. The default value is 180, which corresponds
      * to an upward pointing arrow.
      *
-     * Non readable property. Wraps the [ExpandableDrawerItem.withArrowRotationAngleEnd] function.
+     * Non readable property. Wraps the [ExpandableDrawerItem.withArrowRotationAngleEnd] method.
      */
     var arrowRotationAngleEnd: Int
         get() = nonReadable()
