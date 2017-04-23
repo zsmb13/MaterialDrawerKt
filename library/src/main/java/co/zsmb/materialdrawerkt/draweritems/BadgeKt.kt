@@ -5,6 +5,7 @@ import co.zsmb.materialdrawerkt.DrawerMarker
 import co.zsmb.materialdrawerkt.draweritems.badgeable.BadgeableKt
 import co.zsmb.materialdrawerkt.nonReadable
 import com.mikepenz.materialdrawer.holder.BadgeStyle
+import com.mikepenz.materialdrawer.holder.DimenHolder
 import com.mikepenz.materialdrawer.holder.StringHolder
 
 /**
@@ -47,11 +48,10 @@ class BadgeKt(text: String) {
 
     /**
      * The background of the badge as a Drawable.
-     */
-    /**
+     *
      * Wraps the withBadgeBackground function. Non readable property.
      */
-    var background: Drawable
+    var backgroundDrawable: Drawable
         get() = nonReadable()
         set(value) {
             style.withBadgeBackground(value)
@@ -76,7 +76,7 @@ class BadgeKt(text: String) {
     var colorRes: Int
         get() = nonReadable()
         set(value) {
-            style.withColor(value)
+            style.withColorRes(value)
         }
 
     /**
@@ -124,6 +124,20 @@ class BadgeKt(text: String) {
         }
 
     /**
+     * The corner radius of the badge, as a dimension resource.
+     *
+     * Wraps the withCornersDp function. Non readable property.
+     */
+    var cornersRes: Int
+        get() = nonReadable()
+        set(value) {
+            style.javaClass.declaredFields.find { it.name == "mCorners" }?.let {
+                it.isAccessible = true
+                it.set(style, DimenHolder.fromResource(value))
+            }
+        }
+
+    /**
      * The background of the badge as a GradientDrawable resource.
      *
      * Wraps the withGradientDrawable function. Non readable property.
@@ -146,6 +160,34 @@ class BadgeKt(text: String) {
         }
 
     /**
+     * The minimum width of the badge (more precisely, the badge's text), in dps.
+     *
+     * Wraps the withMinWidth function. Non readable property.
+     */
+    var minWidthDp: Int
+        get() = nonReadable()
+        set(value) {
+            style.javaClass.declaredFields.find { it.name == "mMinWidth" }?.let {
+                it.isAccessible = true
+                it.set(style, DimenHolder.fromDp(value))
+            }
+        }
+
+    /**
+     * The minimum width of the badge (more precisely, the badge's text), as a dimension resource.
+     *
+     * Wraps the withMinWidth function. Non readable property.
+     */
+    var minWidthRes: Int
+        get() = nonReadable()
+        set(value) {
+            style.javaClass.declaredFields.find { it.name == "mMinWidth" }?.let {
+                it.isAccessible = true
+                it.set(style, DimenHolder.fromResource(value))
+            }
+        }
+
+    /**
      * The padding of all sides of the badge, in pixels.
      *
      * Wraps the withPadding function. Non readable property.
@@ -154,6 +196,30 @@ class BadgeKt(text: String) {
         get() = nonReadable()
         set(value) {
             style.withPadding(value)
+        }
+
+    /**
+     * The padding of all sides of the badge, in dps.
+     *
+     * Wraps the withPadding function. Non readable property.
+     */
+    var paddingDp: Int
+        get() = nonReadable()
+        set(value) {
+            paddingHorizontalDp = value
+            paddingVerticalDp = value
+        }
+
+    /**
+     * The padding of all sides of the badge, as a dimension resource.
+     *
+     * Wraps the withPadding function. Non readable property.
+     */
+    var paddingRes: Int
+        get() = nonReadable()
+        set(value) {
+            paddingHorizontalRes = value
+            paddingVerticalRes = value
         }
 
     /**
@@ -211,6 +277,22 @@ class BadgeKt(text: String) {
         }
 
     /**
+     * The horizontal padding of the badge, as a dimension resource.
+     *
+     * Replacement for paddingLeftRightPx.
+     *
+     * Wraps the withPaddingLeftRightPx function. Non readable property.
+     */
+    var paddingHorizontalRes: Int
+        get() = nonReadable()
+        set(value) {
+            style.javaClass.declaredFields.find { it.name == "mPaddingLeftRight" }?.let {
+                it.isAccessible = true
+                it.set(style, DimenHolder.fromResource(value))
+            }
+        }
+
+    /**
      * The padding of the top and bottom of the badge, in dps.
      *
      * Wraps the withPaddingTopBottomDp function. Non readable property.
@@ -262,6 +344,22 @@ class BadgeKt(text: String) {
         get() = nonReadable()
         set(value) {
             style.withPaddingTopBottomPx(value)
+        }
+
+    /**
+     * The vertical padding of the badge, as a dimension resource.
+     *
+     * Replacement for paddingTopBottomPx.
+     *
+     * Wraps the withPaddingTopBottomPx function. Non readable property.
+     */
+    var paddingVerticalRes: Int
+        get() = nonReadable()
+        set(value) {
+            style.javaClass.declaredFields.find { it.name == "mPaddingTopBottom" }?.let {
+                it.isAccessible = true
+                it.set(style, DimenHolder.fromResource(value))
+            }
         }
 
     /**

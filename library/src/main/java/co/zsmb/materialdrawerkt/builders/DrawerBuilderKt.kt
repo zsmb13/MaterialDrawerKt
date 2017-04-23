@@ -144,6 +144,18 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
         }
 
     /**
+     * Override for the entire drawer view, as a layout resource.
+     *
+     * Non readable property. Wraps the withCustomView function.
+     */
+    var customViewRes: Int
+        get() = nonReadable()
+        set(value) {
+            val view = activity.layoutInflater.inflate(value, null)
+            builder.withCustomView(view)
+        }
+
+    /**
      * The delay (in milliseconds) for the drawer click event after a click. This can be used to improve performance
      * and prevent lag, especially when you switch fragments inside the listener. This will ignore the Boolean value
      * you can return in the listener, as the listener is called after the drawer was closed.
@@ -208,7 +220,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
         }
 
     /**
-     * Override of the entire drawer with a DrawerLayout.
+     * Override of the entire drawer's layout with a DrawerLayout.
      *
      * Non readable property. Wraps the withDrawerLayout function.
      */
@@ -219,7 +231,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
         }
 
     /**
-     * Override the entire drawer with a layout from a layout resource file.
+     * Override the entire drawer's layout with a DrawerLayout from a layout resource file.
      *
      * Non readable property. Wraps the withDrawerLayout function.
      */
@@ -326,7 +338,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      *
      * Non readable property. Wraps the withFooter function.
      */
-    var footerRes: Int
+    var footerViewRes: Int
         get() = nonReadable()
         set(value) {
             builder.withFooter(value)
@@ -400,7 +412,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      *
      * Non readable property. Wraps the withHeader function.
      */
-    var header: View
+    var headerView: View
         get() = nonReadable()
         set(value) {
             builder.withHeader(value)
@@ -411,7 +423,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      *
      * Non readable property. Wraps the withHeader function.
      */
-    var headerRes: Int
+    var headerViewRes: Int
         get() = nonReadable()
         set(value) {
             builder.withHeader(value)
@@ -696,8 +708,8 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
         }
 
     /**
-     * The ViewGroup which will host the DrawerLayout, as a layout resource. The content of this view will be extracted
-     * and added as the new content inside the DrawerLayout.
+     * The ViewGroup which will host the DrawerLayout, given by its layout id. The content of this view will be
+     * extracted and added as the new content inside the DrawerLayout.
      *
      * Non readable property. Wraps the withRootView function.
      */
@@ -831,6 +843,17 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
         }
 
     /**
+     * The background of the drawer item list, given as a drawable resource.
+     *
+     * Convenience for `sliderBackgroundRes`. Non readable property. Wraps the withSliderBackgroundDrawableRes function.
+     */
+    var sliderBackground: Int
+        get() = nonReadable()
+        set(value) {
+            builder.withSliderBackgroundDrawableRes(value)
+        }
+
+    /**
      * The background of the drawer item list, given as a Drawable.
      *
      * Non readable property. Wraps the withSliderBackgroundDrawable function.
@@ -844,9 +867,11 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     /**
      * The background of the drawer item list, given as a drawable resource.
      *
+     * See `sliderBackground` as an alternative.
+     *
      * Non readable property. Wraps the withSliderBackgroundDrawableRes function.
      */
-    var sliderBackgroundDrawableRes: Int
+    var sliderBackgroundRes: Int
         get() = nonReadable()
         set(value) {
             builder.withSliderBackgroundDrawableRes(value)

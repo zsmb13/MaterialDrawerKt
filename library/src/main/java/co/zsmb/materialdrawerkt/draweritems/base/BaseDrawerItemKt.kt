@@ -4,8 +4,6 @@ import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import co.zsmb.materialdrawerkt.nonReadable
 import com.mikepenz.iconics.typeface.IIcon
-import com.mikepenz.materialdrawer.holder.ImageHolder
-import com.mikepenz.materialdrawer.holder.StringHolder
 import com.mikepenz.materialdrawer.model.BaseDrawerItem
 
 abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
@@ -106,17 +104,6 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
         }
 
     /**
-     * The icon of the drawer item, given as an ImageHolder.
-     *
-     * Wraps the withIcon function. Non readable property.
-     */
-    var iconImage: ImageHolder
-        get() = nonReadable()
-        set(value) {
-            item.withIcon(value)
-        }
-
-    /**
      * The color of the drawer item's icon when it's enabled, given as an argb Long.
      *
      * Wraps the withIconColor function. Non readable property.
@@ -178,17 +165,6 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      * Wraps the withName function. Non readable property.
      */
     var nameRes: Int
-        get() = nonReadable()
-        set(value) {
-            item.withName(value)
-        }
-
-    /**
-     * The title/name of the drawer item, given as a StringHolder.
-     *
-     * Wraps the withName function. Non readable property.
-     */
-    var nameString: StringHolder
         get() = nonReadable()
         set(value) {
             item.withName(value)

@@ -17,6 +17,8 @@ interface BadgeableKt {
      *
      * Wraps the withBadge function. Non readable property.
      */
+    @Deprecated(level = DeprecationLevel.WARNING,
+            message = "This property is for internal use. Use the badgeRes property or the badge method instead.")
     var badgeHolder: StringHolder
 
     /**
