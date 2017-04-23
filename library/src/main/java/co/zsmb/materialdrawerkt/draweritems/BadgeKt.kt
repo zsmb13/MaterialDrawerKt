@@ -124,6 +124,20 @@ class BadgeKt(text: String) {
         }
 
     /**
+     * The corner radius of the badge, as a dimension resource.
+     *
+     * Wraps the withCornersDp function. Non readable property.
+     */
+    var cornersRes: Int
+        get() = nonReadable()
+        set(value) {
+            style.javaClass.declaredFields.find { it.name == "mCorners" }?.let {
+                it.isAccessible = true
+                it.set(style, DimenHolder.fromResource(value))
+            }
+        }
+
+    /**
      * The background of the badge as a GradientDrawable resource.
      *
      * Wraps the withGradientDrawable function. Non readable property.
