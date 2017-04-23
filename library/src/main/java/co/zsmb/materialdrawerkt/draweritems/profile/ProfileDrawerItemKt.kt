@@ -72,7 +72,8 @@ class ProfileDrawerItemKt(name: String, email: String) : AbstractDrawerItemKt() 
     /**
      * The email associated with the profile, as a String resource.
      *
-     * Non readable property. Wraps the [ProfileDrawerItem.withEmail] method.
+     * Non readable property. Uses reflection to provide similar functionality to the [ProfileDrawerItem.withEmail]
+     * method.
      */
     var emailRes: Int
         get() = nonReadable()
@@ -174,7 +175,8 @@ class ProfileDrawerItemKt(name: String, email: String) : AbstractDrawerItemKt() 
     /**
      * The name of the profile, as a String resource.
      *
-     * Non readable property. Wraps the [ProfileDrawerItem.withName] method.
+     * Non readable property. Uses reflection to provide similar functionality to the [ProfileDrawerItem.withName]
+     * method.
      */
     var nameRes: Int
         get() = nonReadable()

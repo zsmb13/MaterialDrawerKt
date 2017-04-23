@@ -49,7 +49,8 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
     /**
      * The description of the profile setting item, as a String resource.
      *
-     * Non readable property. Wraps the [ProfileSettingDrawerItem.withDescription] method.
+     * Non readable property. Uses reflection to provide similar functionality to the
+     * [ProfileSettingDrawerItem.withDescription] method.
      */
     var descriptionRes: Int
         get() = nonReadable()
@@ -221,7 +222,8 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
     /**
      * The name of the profile setting, as a String resource.
      *
-     * Non readable property. Wraps the [ProfileSettingDrawerItem.withName] method.
+     * Non readable property. Uses reflection to provide similar functionality to the
+     * [ProfileSettingDrawerItem.withName] method.
      */
     var nameRes: Int
         get() = nonReadable()

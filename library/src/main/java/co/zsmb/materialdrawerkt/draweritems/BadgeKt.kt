@@ -108,7 +108,7 @@ class BadgeKt(text: String) {
     /**
      * The corner radius of the badge, as a dimension resource.
      *
-     * Non readable property. Wraps the [BadgeStyle.withCornersDp] method.
+     * Non readable property. Uses reflection to provide similar functionality to the [BadgeStyle.withCorners] method.
      */
     var cornersRes: Int
         get() = nonReadable()
@@ -133,7 +133,7 @@ class BadgeKt(text: String) {
     /**
      * The minimum width of the badge (more precisely, the badge's text), in dps.
      *
-     * Non readable property. Wraps the [BadgeStyle.withMinWidth] method.
+     * Non readable property. Uses reflection to provide similar functionality to the [BadgeStyle.withMinWidth] method.
      */
     var minWidthDp: Int
         get() = nonReadable()
@@ -158,7 +158,7 @@ class BadgeKt(text: String) {
     /**
      * The minimum width of the badge (more precisely, the badge's text), as a dimension resource.
      *
-     * Non readable property. Wraps the [BadgeStyle.withMinWidth] method.
+     * Non readable property. Uses reflection to provide similar functionality to the [BadgeStyle.withMinWidth] method.
      */
     var minWidthRes: Int
         get() = nonReadable()
@@ -210,9 +210,8 @@ class BadgeKt(text: String) {
     /**
      * The horizontal padding of the badge, as a dimension resource.
      *
-     * Replacement for paddingLeftRightPx.
-     *
-     * Non readable property. Wraps the [BadgeStyle.withPaddingLeftRightPx] method.
+     * Non readable property. Uses reflection to provide similar functionality to the
+     * [BadgeStyle.withPaddingLeftRightPx] method.
      */
     var paddingHorizontalRes: Int
         get() = nonReadable()
@@ -331,9 +330,8 @@ class BadgeKt(text: String) {
     /**
      * The vertical padding of the badge, as a dimension resource.
      *
-     * Replacement for paddingTopBottomPx.
-     *
-     * Non readable property. Wraps the [BadgeStyle.withPaddingTopBottomPx] method.
+     * Non readable property. Uses reflection to provide similar functionality to the
+     * [BadgeStyle.withPaddingTopBottomPx] method.
      */
     var paddingVerticalRes: Int
         get() = nonReadable()
