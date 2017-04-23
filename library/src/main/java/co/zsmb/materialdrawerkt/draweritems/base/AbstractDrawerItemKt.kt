@@ -28,7 +28,7 @@ abstract class AbstractDrawerItemKt : BuilderBase() {
     /**
      * Whether the drawer item is enabled (clickable, etc.).
      *
-     * Wraps the withEnabled function. Non-readable property.
+     * Wraps the `withEnabled` function. Non-readable property.
      */
     var enabled: Boolean
         get() = nonReadable()
@@ -39,7 +39,7 @@ abstract class AbstractDrawerItemKt : BuilderBase() {
     /**
      * The identifier of the drawer item. Default value is -1L.
      *
-     * Wraps the withIdentifier and getIdentifier functions.
+     * Wraps the `withIdentifier` and `getIdentifier` functions.
      */
     var identifier: Long
         get() = item.identifier
@@ -50,7 +50,7 @@ abstract class AbstractDrawerItemKt : BuilderBase() {
     /**
      * Whether the subitems of this item are visible.
      *
-     * Wraps the withIsExpanded and isExpanded functions.
+     * Wraps the `withIsExpanded` and `isExpanded` functions.
      */
     var isExpanded: Boolean
         get() = item.isExpanded
@@ -61,7 +61,7 @@ abstract class AbstractDrawerItemKt : BuilderBase() {
     /**
      * Adds an event [handler] to the drawer item that's called when the item is clicked.
      *
-     * Wraps the withOnDrawerItemClickListener function.
+     * Wraps the `withOnDrawerItemClickListener` function.
      *
      * @param view The View that was clicked
      * @param position The position of the item within the drawer
@@ -74,7 +74,7 @@ abstract class AbstractDrawerItemKt : BuilderBase() {
     /**
      * Adds an event [handler] to the drawer item that's called when the item is clicked.
      *
-     * Convenience for the three parameter onClick() method, to be used when you don't need all its parameters.
+     * Convenience for the three parameter `onClick` method, to be used when you don't need all its parameters.
      */
     fun onClick(handler: (view: View) -> Boolean) {
         item.withOnDrawerItemClickListener { view, _, _ -> handler(view) }
@@ -84,7 +84,7 @@ abstract class AbstractDrawerItemKt : BuilderBase() {
      * Adds an event [handler] to the drawer item that's called after the view for the drawer item is created.
      * This is to allow further modifications of the view before it's shown.
      *
-     * Wraps the withPostOnBindViewListener function.
+     * Wraps the `withPostOnBindViewListener` function.
      *
      * @param drawerItem The drawer item itself
      * @param view The view which has been created for the drawer item
@@ -96,7 +96,7 @@ abstract class AbstractDrawerItemKt : BuilderBase() {
     /**
      * Whether the drawer item is selectable.
      *
-     * Wraps the withSelectable and isSelectable functions.
+     * Wraps the `withSelectable` and `isSelectable` functions.
      */
     var selectable: Boolean
         get() = item.isSelectable
@@ -107,7 +107,7 @@ abstract class AbstractDrawerItemKt : BuilderBase() {
     /**
      * Whether the drawer item's background should have a fade animation between the selected and unselected states.
      *
-     * Wraps the withSelectedBackgroundAnimated and isSelectedBackgroundAnimated functions.
+     * Wraps the `withSelectedBackgroundAnimated` and `isSelectedBackgroundAnimated` functions.
      */
     var selectedBackgroundAnimated: Boolean
         get() = item.isSelectedBackgroundAnimated
@@ -118,7 +118,7 @@ abstract class AbstractDrawerItemKt : BuilderBase() {
     /**
      * Whether the drawer item should be set as selected.
      *
-     * Wraps the withSetSelected and isSelected functions.
+     * Wraps the `withSetSelected` and `isSelected` functions.
      */
     var setSelected: Boolean
         get() = item.isSelected
@@ -129,7 +129,7 @@ abstract class AbstractDrawerItemKt : BuilderBase() {
     /**
      * Whether the drawer item is selected.
      *
-     * Convenience for the setSelected property. Wraps the withSetSelected and isSelected functions.
+     * Convenience for `setSelected`. Wraps the `withSetSelected` and `isSelected` functions.
      */
     var selected: Boolean
         get() = item.isSelected
@@ -140,7 +140,7 @@ abstract class AbstractDrawerItemKt : BuilderBase() {
     /**
      * An arbitrary object you can attach to the drawer item.
      *
-     * Wraps the withTag and getTag functions.
+     * Wraps the `withTag` and `getTag` functions.
      */
     var tag: Any?
         get() = item.tag

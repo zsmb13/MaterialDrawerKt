@@ -41,7 +41,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
     /**
      * A completely custom View for the header.
      *
-     * Non readable property. Wraps the withAccountHeader method.
+     * Non readable property. Wraps the `withAccountHeader` method.
      */
     var customView: View
         get() = nonReadable()
@@ -52,7 +52,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
     /**
      * A completely custom view for the header, as a layout resource.
      *
-     * Non readable property. Wraps the withAccountHeader method.
+     * Non readable property. Wraps the `withAccountHeader` method.
      */
     var customViewRes: Int
         get() = nonReadable()
@@ -67,7 +67,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * position as long as possible.
      * Default value is false.
      *
-     * Non readable property. Wraps the withAlternativeProfileHeaderSwitching method.
+     * Non readable property. Wraps the `withAlternativeProfileHeaderSwitching` method.
      */
     var alternativeSwitching: Boolean
         get() = nonReadable()
@@ -81,7 +81,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      *
      * See `closeOnClick` as an alternative.
      *
-     * Non readable property. Wraps the withCloseDrawerOnProfileListClick method.
+     * Non readable property. Wraps the `withCloseDrawerOnProfileListClick` method.
      */
     var closeDrawerOnProfileListClick: Boolean
         get() = nonReadable()
@@ -93,8 +93,8 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Whether the drawer should be closed when a profile item is clicked.
      * Default value is true.
      *
-     * Convenience for closeDrawerOnProfileListClick. Non readable property. Wraps the
-     * withCloseDrawerOnProfileListClick method.
+     * Convenience for `closeDrawerOnProfileListClick`. Non readable property. Wraps the
+     * `withCloseDrawerOnProfileListClick` method.
      */
     var closeOnClick: Boolean
         get() = nonReadable()
@@ -106,7 +106,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Whether to use a smaller, compact style drawer.
      * Default value is false.
      *
-     * Non readable property. Wraps the withCompactStyle method.
+     * Non readable property. Wraps the `withCompactStyle` method.
      */
     var compactStyle: Boolean
         get() = nonReadable()
@@ -120,7 +120,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      *
      * See `currentHidden` as an alternative.
      *
-     * Non readable property. Wraps the withCurrentProfileHiddenInList method.
+     * Non readable property. Wraps the `withCurrentProfileHiddenInList` method.
      */
     var currentProfileHiddenInList: Boolean
         get() = nonReadable()
@@ -132,7 +132,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Whether the current profile should be hidden from the profile selection list.
      * Default value is false.
      *
-     * Convenience for `currentProfileHiddenInList`. Non readable property. Wraps the withCurrentProfileHiddenInList
+     * Convenience for `currentProfileHiddenInList`. Non readable property. Wraps the `withCurrentProfileHiddenInList`
      * method.
      */
     var currentHidden: Boolean
@@ -457,7 +457,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * call its `saveInstanceState` method in the Activity's `onSaveInstanceState` method, before calling super, to
      * store the current state of the header. Note that this has to be done in addition to doing it for the Drawer.
      *
-     * Non readable property. Wraps the withSavedInstance function.
+     * Non readable property. Wraps the `withSavedInstance` function.
      */
     var savedInstance: Bundle?
         get() = nonReadable()

@@ -21,7 +21,7 @@ abstract class AbstractToggleableDrawerItemKt : BaseDescribeableDrawerItemKt() {
     /**
      * Whether the drawer item's toggle is currently in its "on" state.
      *
-     * Wraps the withChecked and isChecked functions.
+     * Wraps the `withChecked` and `isChecked` functions.
      */
     var checked: Boolean
         get() = item.isChecked
@@ -32,7 +32,7 @@ abstract class AbstractToggleableDrawerItemKt : BaseDescribeableDrawerItemKt() {
     /**
      * Adds an event [handler] to the drawer item that's called when the toggle's state is changed.
      *
-     * Wraps the withOnCheckedChangeListener function.
+     * Wraps the `withOnCheckedChangeListener` function.
      *
      * @param drawerItem The drawer item itself
      * @param button The CompoundButton View whose state has changed
@@ -50,7 +50,7 @@ abstract class AbstractToggleableDrawerItemKt : BaseDescribeableDrawerItemKt() {
      *
      * Replacement for onCheckedChange.
      *
-     * Wraps the withOnCheckedChangeListener function.
+     * Wraps the `withOnCheckedChangeListener` function.
      *
      * @param drawerItem The drawer item itself
      * @param button The CompoundButton View whose state has changed
@@ -65,7 +65,7 @@ abstract class AbstractToggleableDrawerItemKt : BaseDescribeableDrawerItemKt() {
      *
      * Alternative to the 3 parameter onToggleChanged method, to be used when you don't need all its parameters.
      *
-     * Wraps the withOnCheckedChangeListener function.
+     * Wraps the `withOnCheckedChangeListener` function.
      *
      * @param isEnabled True if the toggle is now in an "on" state
      */
@@ -78,7 +78,7 @@ abstract class AbstractToggleableDrawerItemKt : BaseDescribeableDrawerItemKt() {
     /**
      * Whether the drawer item's toggle can be toggled by the user.
      *
-     * Wraps the withToggleEnabled and isToggleEnabled functions.
+     * Wraps the `withToggleEnabled` and `isToggleEnabled` functions.
      */
     var toggleEnabled: Boolean
         get() = item.isToggleEnabled

@@ -36,7 +36,7 @@ class ExpandableDrawerItemKt(name: String, description: String) : BaseDescribeab
     /**
      * The color of the expand arrow given as an argb Long.
      *
-     * Wraps the withArrowColor function. Non readable property.
+     * Wraps the `withArrowColor` function. Non readable property.
      */
     var arrowColor: Long
         get() = nonReadable()
@@ -47,7 +47,7 @@ class ExpandableDrawerItemKt(name: String, description: String) : BaseDescribeab
     /**
      * The color of the expand arrow, given as a color resource.
      *
-     * Wraps the withArrowColorRes function. Non readable property.
+     * Wraps the `withArrowColorRes` function. Non readable property.
      */
     var arrowColorRes: Int
         get() = nonReadable()
@@ -59,7 +59,7 @@ class ExpandableDrawerItemKt(name: String, description: String) : BaseDescribeab
      * The rotation of the expand arrow when the item is closed, in degrees. The default value is 0, which corresponds
      * to a downward pointing arrow.
      *
-     * Wraps the withArrowRotationAngleStart function. Non readable property.
+     * Wraps the `withArrowRotationAngleStart` function. Non readable property.
      */
     var arrowRotationAngleStart: Int
         get() = nonReadable()
@@ -71,7 +71,7 @@ class ExpandableDrawerItemKt(name: String, description: String) : BaseDescribeab
      * The rotation of the expand arrow when the item is open, in degrees. The default value is 180, which corresponds
      * to an upward pointing arrow.
      *
-     * Wraps the withArrowRotationAngleEnd function. Non readable property.
+     * Wraps the `withArrowRotationAngleEnd` function. Non readable property.
      */
     var arrowRotationAngleEnd: Int
         get() = nonReadable()
@@ -80,7 +80,7 @@ class ExpandableDrawerItemKt(name: String, description: String) : BaseDescribeab
         }
 
     /**
-     * Convenience for setting both arrowRotationAngleStart and arrowRotationAngleEnd at the same time. See those
+     * Convenience for setting both `arrowRotationAngleStart` and `arrowRotationAngleEnd` at the same time. See those
      * properties for details.
      *
      * Non readable property.

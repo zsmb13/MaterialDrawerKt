@@ -22,7 +22,7 @@ abstract class AbstractSwitchableDrawerItemKt : BaseDescribeableDrawerItemKt() {
     /**
      * Whether the drawer item is selectable.
      *
-     * Wraps the withCheckable function.
+     * Wraps the `withCheckable` function.
      */
     @Deprecated(level = DeprecationLevel.ERROR,
             replaceWith = ReplaceWith("selectable"),
@@ -36,7 +36,7 @@ abstract class AbstractSwitchableDrawerItemKt : BaseDescribeableDrawerItemKt() {
     /**
      * Whether the drawer item's switch is currently in its "on" state.
      *
-     * Wraps the withChecked and isChecked functions.
+     * Wraps the `withChecked` and `isChecked` functions.
      */
     var checked: Boolean
         get() = item.isChecked
@@ -47,7 +47,7 @@ abstract class AbstractSwitchableDrawerItemKt : BaseDescribeableDrawerItemKt() {
     /**
      * Adds an event [handler] to the drawer item that's called when the switch's state is changed.
      *
-     * Wraps the withOnCheckedChangeListener function.
+     * Wraps the `withOnCheckedChangeListener` function.
      *
      * @param drawerItem The drawer item itself
      * @param button The CompoundButton View whose state has changed
@@ -65,7 +65,7 @@ abstract class AbstractSwitchableDrawerItemKt : BaseDescribeableDrawerItemKt() {
      *
      * Replacement for onCheckedChange.
      *
-     * Wraps the withOnCheckedChangeListener function.
+     * Wraps the `withOnCheckedChangeListener` function.
      *
      * @param drawerItem The drawer item itself
      * @param button The CompoundButton View whose state has changed
@@ -80,7 +80,7 @@ abstract class AbstractSwitchableDrawerItemKt : BaseDescribeableDrawerItemKt() {
      *
      * Alternative to the 3 parameter onToggleChanged method, to be used when you don't need all its parameters.
      *
-     * Wraps the withOnCheckedChangeListener function.
+     * Wraps the `withOnCheckedChangeListener` function.
      *
      * @param isEnabled True if the switch is now in an "on" state
      */
@@ -93,7 +93,7 @@ abstract class AbstractSwitchableDrawerItemKt : BaseDescribeableDrawerItemKt() {
     /**
      * Whether the drawer item's switch can be toggled by the user.
      *
-     * Wraps the withSwitchEnabled and isSwitchEnabled functions.
+     * Wraps the `withSwitchEnabled` and `isSwitchEnabled` functions.
      */
     var switchEnabled: Boolean
         get() = item.isSwitchEnabled
