@@ -20,6 +20,7 @@ abstract class AbstractToggleableDrawerItemKt : BaseDescribeableDrawerItemKt() {
 
     /**
      * Whether the drawer item's toggle is currently in its "on" state.
+     * Default value is false.
      *
      * Wraps the [AbstractToggleableDrawerItem.withChecked] and [AbstractToggleableDrawerItem.isChecked] methods.
      */
@@ -77,6 +78,7 @@ abstract class AbstractToggleableDrawerItemKt : BaseDescribeableDrawerItemKt() {
 
     /**
      * Whether the drawer item's toggle can be toggled by the user.
+     * Default value is true.
      *
      * Wraps the [AbstractToggleableDrawerItem.withToggleEnabled] and [AbstractToggleableDrawerItem.isToggleEnabled]
      * methods.

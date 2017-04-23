@@ -35,6 +35,7 @@ abstract class AbstractSwitchableDrawerItemKt : BaseDescribeableDrawerItemKt() {
 
     /**
      * Whether the drawer item's switch is currently in its "on" state.
+     * Default value is false.
      *
      * Wraps the [AbstractSwitchableDrawerItem.withChecked] and [AbstractSwitchableDrawerItem.isChecked] methods.
      */
@@ -92,6 +93,7 @@ abstract class AbstractSwitchableDrawerItemKt : BaseDescribeableDrawerItemKt() {
 
     /**
      * Whether the drawer item's switch can be toggled by the user.
+     * Default value is true.
      *
      * Wraps the [AbstractSwitchableDrawerItem.withSwitchEnabled] and [AbstractSwitchableDrawerItem.isSwitchEnabled]
      * methods.

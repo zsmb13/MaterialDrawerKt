@@ -253,7 +253,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
 
     /**
      * Whether there should be a divider below the header.
-     * True by default.
+     * Default value is true.
      *
      * Non readable property. Wraps the [AccountHeaderBuilder.withDividerBelowHeader] method.
      */
@@ -286,7 +286,6 @@ class AccountHeaderBuilderKt(activity: Activity) {
         set(value) {
             builder.withEmailTypeface(value)
         }
-
 
     /**
      * The height of the header, in dps.
@@ -442,6 +441,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
 
     /**
      * Whether the profile images can be clicked to change profiles.
+     * Default value is true.
      *
      * Non readable property. Wraps the [AccountHeaderBuilder.withProfileImagesClickable] method.
      */

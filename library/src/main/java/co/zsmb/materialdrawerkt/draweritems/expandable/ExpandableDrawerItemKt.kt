@@ -70,8 +70,8 @@ class ExpandableDrawerItemKt(name: String, description: String) : BaseDescribeab
         }
 
     /**
-     * The rotation of the expand arrow when the item is open, in degrees. The default value is 180, which corresponds
-     * to an upward pointing arrow.
+     * The rotation of the expand arrow when the item is open, in degrees.
+     * Default value is 180, which corresponds to an upward pointing arrow.
      *
      * See [arrowRotationAngle] as an alternative.
      *
@@ -84,8 +84,8 @@ class ExpandableDrawerItemKt(name: String, description: String) : BaseDescribeab
         }
 
     /**
-     * The rotation of the expand arrow when the item is closed, in degrees. The default value is 0, which corresponds
-     * to a downward pointing arrow.
+     * The rotation of the expand arrow when the item is closed, in degrees.
+     * Default value is 0, which corresponds to a downward pointing arrow.
      *
      * See [arrowRotationAngle] as an alternative.
      *

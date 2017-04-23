@@ -199,7 +199,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * The delay (in milliseconds) for the drawer click event after a click. This can be used to improve performance
      * and prevent lag, especially when you switch fragments inside the listener. This will ignore the Boolean value
      * you can return in the listener, as the listener is called after the drawer was closed.
-     * The default value is -1, which disables this setting entirely.
+     * Default value is -1, which disables this setting entirely.
      *
      * Non readable property. Wraps the [DrawerBuilder.withDelayDrawerClickEvent] method.
      */
@@ -213,7 +213,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
      * The delay (in milliseconds) for the drawer close operation after a click. This is a small trick to improve
      * performance and prevent lag if you open a new Activity after a drawer item was selected. Set to -1 to disable
      * this behavior entirely.
-     * The default value is 50.
+     * Default value is 50.
      *
      * Non readable property. Wraps the [DrawerBuilder.withDelayOnDrawerClose] method.
      */
@@ -320,6 +320,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
 
     /**
      * If set to true, you'll receive a click event on the item that's selected by default when the drawer is created.
+     * Default value is false.
      *
      * Non readable property. Wraps the [DrawerBuilder.withFireOnInitialOnClick] method.
      */
@@ -331,6 +332,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
 
     /**
      * Whether the footer of the drawer is clickable.
+     * Default value is false.
      *
      * Non readable property. Wraps the [DrawerBuilder.withFooterClickable] method.
      */
@@ -557,6 +559,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
 
     /**
      * Enables multiple selections amongst drawer items.
+     * Default value is false.
      *
      * Non readable property. Wraps the [DrawerBuilder.withMultiSelect] method.
      */

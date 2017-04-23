@@ -203,6 +203,7 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
     /**
      * Whether the icon of the profile setting item should be tinted with the enabled/disabled/selected color. If set to
      * false, your icon will always be displayed with its default colors.
+     * Default value is false.
      *
      * Non readable property. Wraps the [ProfileSettingDrawerItem.withIconTinted] method.
      */
