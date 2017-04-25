@@ -5,6 +5,7 @@ import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import android.net.Uri
 import co.zsmb.materialdrawerkt.builders.AccountHeaderBuilderKt
+import co.zsmb.materialdrawerkt.draweritems.base.AbstractDrawerItemKt
 import co.zsmb.materialdrawerkt.nonReadable
 import com.mikepenz.iconics.typeface.IIcon
 import com.mikepenz.materialdrawer.holder.StringHolder
@@ -23,7 +24,7 @@ fun AccountHeaderBuilderKt.profileSetting(
     return item.build().apply { addItem(this) }
 }
 
-class ProfileSettingDrawerItemKt(name: String, description: String) {
+class ProfileSettingDrawerItemKt(name: String, description: String) : AbstractDrawerItemKt() {
 
     /* Builder basics */
 
@@ -32,6 +33,10 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
             .withDescription(description)
 
     internal fun build() = item
+
+    init {
+        super.setItem(item)
+    }
 
     /* ProfileSettingDrawerItem methods */
 

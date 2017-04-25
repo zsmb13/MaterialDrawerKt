@@ -34,6 +34,10 @@ class ProfileDrawerItemKt(name: String, email: String) : AbstractDrawerItemKt() 
 
     internal fun build() = item
 
+    init {
+        super.setItem(item)
+    }
+
     /* ProfileDrawerItem methods */
 
     /**
