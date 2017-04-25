@@ -9,22 +9,21 @@ import com.mikepenz.materialdrawer.model.ToggleDrawerItem
  */
 fun BuilderBase.toggleItem(
         name: String = "",
-        description: String = "",
+        description: String? = null,
         setup: ToggleDrawerItemKt.() -> Unit = {}): ToggleDrawerItem {
     val item = ToggleDrawerItemKt(name, description)
     item.setup()
     return item.build().apply { attachItem(this) }
 }
 
-class ToggleDrawerItemKt(name: String, description: String) : AbstractToggleableDrawerItemKt() {
+class ToggleDrawerItemKt(name: String, description: String?) : AbstractToggleableDrawerItemKt() {
 
     /* Builder basics */
 
-    private val item = ToggleDrawerItem()
-            .withName(name)
-            .withDescription(description)
+    private val item = ToggleDrawerItem().withName(name)
 
     init {
+        description?.let { item.withDescription(it) }
         super.setItem(item)
     }
 

@@ -9,22 +9,21 @@ import com.mikepenz.materialdrawer.model.SecondaryToggleDrawerItem
  */
 fun BuilderBase.secondaryToggleItem(
         name: String = "",
-        description: String = "",
+        description: String? = null,
         setup: SecondaryToggleDrawerItemKt.() -> Unit = {}): SecondaryToggleDrawerItem {
     val item = SecondaryToggleDrawerItemKt(name, description)
     item.setup()
     return item.build().apply { attachItem(this) }
 }
 
-class SecondaryToggleDrawerItemKt(name: String, description: String) : AbstractToggleableDrawerItemKt() {
+class SecondaryToggleDrawerItemKt(name: String, description: String?) : AbstractToggleableDrawerItemKt() {
 
     /* Builder basics */
 
-    private val item = SecondaryToggleDrawerItem()
-            .withName(name)
-            .withDescription(description)
+    private val item = SecondaryToggleDrawerItem().withName(name)
 
     init {
+        description?.let { item.withDescription(it) }
         super.setItem(item)
     }
 

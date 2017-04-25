@@ -9,22 +9,21 @@ import com.mikepenz.materialdrawer.model.SecondaryDrawerItem
  */
 fun BuilderBase.secondaryItem(
         name: String = "",
-        description: String = "",
+        description: String? = null,
         setup: SecondaryDrawerItemKt.() -> Unit = {}): SecondaryDrawerItem {
     val item = SecondaryDrawerItemKt(name, description)
     item.setup()
     return item.build().apply { attachItem(this) }
 }
 
-class SecondaryDrawerItemKt(name: String, description: String) : AbstractBadgeableDrawerItemKt() {
+class SecondaryDrawerItemKt(name: String, description: String?) : AbstractBadgeableDrawerItemKt() {
 
     /* Builder basics */
 
-    private val item = SecondaryDrawerItem()
-            .withName(name)
-            .withDescription(description)
+    private val item = SecondaryDrawerItem().withName(name)
 
     init {
+        description?.let { item.withDescription(it) }
         super.setItem(item)
     }
 

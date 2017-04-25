@@ -17,24 +17,23 @@ import com.mikepenz.materialdrawer.model.ProfileDrawerItem
  */
 fun AccountHeaderBuilderKt.profile(
         name: String = "",
-        email: String = "",
+        email: String? = null,
         setup: ProfileDrawerItemKt.() -> Unit = {}): ProfileDrawerItem {
     val item = ProfileDrawerItemKt(name, email)
     item.setup()
     return item.build().apply { addItem(this) }
 }
 
-class ProfileDrawerItemKt(name: String, email: String) : AbstractDrawerItemKt() {
+class ProfileDrawerItemKt(name: String, email: String?) : AbstractDrawerItemKt() {
 
     /* Builder basics */
 
-    private val item = ProfileDrawerItem()
-            .withName(name)
-            .withEmail(email)
+    private val item = ProfileDrawerItem().withName(name)
 
     internal fun build() = item
 
     init {
+        email?.let { item.withEmail(it) }
         super.setItem(item)
     }
 

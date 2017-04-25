@@ -10,22 +10,21 @@ import com.mikepenz.materialdrawer.model.ExpandableDrawerItem
  * @return The created ExpandableDrawerItem instance
  */
 fun BuilderBase.expandableItem(name: String = "",
-                               description: String = "",
+                               description: String? = null,
                                setup: ExpandableDrawerItemKt.() -> Unit = {}): ExpandableDrawerItem {
     val item = ExpandableDrawerItemKt(name, description)
     item.setup()
     return item.build().apply { attachItem(this) }
 }
 
-class ExpandableDrawerItemKt(name: String, description: String) : BaseDescribeableDrawerItemKt() {
+class ExpandableDrawerItemKt(name: String, description: String?) : BaseDescribeableDrawerItemKt() {
 
     /* Builder basics */
 
-    private val item = ExpandableDrawerItem()
-            .withName(name)
-            .withDescription(description)
+    private val item = ExpandableDrawerItem().withName(name)
 
     init {
+        description?.let { item.withDescription(it) }
         super.setItem(item)
     }
 
