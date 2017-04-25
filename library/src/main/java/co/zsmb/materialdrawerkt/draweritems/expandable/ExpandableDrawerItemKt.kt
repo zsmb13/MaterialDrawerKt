@@ -19,6 +19,8 @@ fun BuilderBase.expandableItem(name: String = "",
 
 class ExpandableDrawerItemKt(name: String, description: String) : BaseDescribeableDrawerItemKt() {
 
+    /* Builder basics */
+
     private val item = ExpandableDrawerItem()
             .withName(name)
             .withDescription(description)
@@ -29,10 +31,12 @@ class ExpandableDrawerItemKt(name: String, description: String) : BaseDescribeab
 
     internal fun build() = item
 
+    /* ExpandableDrawerItem methods */
+
     /**
-     * The color of the expand arrow given as an argb Long.
+     * The color of the expand arrow, as an argb Long.
      *
-     * Wraps the withArrowColor function. Non readable property.
+     * Non readable property. Wraps the [ExpandableDrawerItem.withArrowColor] method.
      */
     var arrowColor: Long
         get() = nonReadable()
@@ -41,9 +45,9 @@ class ExpandableDrawerItemKt(name: String, description: String) : BaseDescribeab
         }
 
     /**
-     * The color of the expand arrow, given as a color resource.
+     * The color of the expand arrow, as a color resource.
      *
-     * Wraps the withArrowColorRes function. Non readable property.
+     * Non readable property. Wraps the [ExpandableDrawerItem.withArrowColorRes] method.
      */
     var arrowColorRes: Int
         get() = nonReadable()
@@ -52,22 +56,26 @@ class ExpandableDrawerItemKt(name: String, description: String) : BaseDescribeab
         }
 
     /**
-     * The rotation of the expand arrow when the item is closed, in degrees. The default value is 0, which corresponds
-     * to a downward pointing arrow.
+     * Convenience for setting both [arrowRotationAngleStart] and [arrowRotationAngleEnd] at the same time. See those
+     * properties for details.
      *
-     * Wraps the withArrowRotationAngleStart function. Non readable property.
+     * Non readable property. Wraps the [ExpandableDrawerItem.withArrowRotationAngleStart] and
+     * [ExpandableDrawerItem.withArrowRotationAngleEnd] methods.
      */
-    var arrowRotationAngleStart: Int
+    var arrowRotationAngle: Pair<Int, Int>
         get() = nonReadable()
         set(value) {
-            item.withArrowRotationAngleStart(value)
+            item.withArrowRotationAngleStart(value.first)
+                    .withArrowRotationAngleEnd(value.second)
         }
 
     /**
-     * The rotation of the expand arrow when the item is open, in degrees. The default value is 180, which corresponds
-     * to an upward pointing arrow.
+     * The rotation of the expand arrow when the item is open, in degrees.
+     * Default value is 180, which corresponds to an upward pointing arrow.
      *
-     * Wraps the withArrowRotationAngleEnd function. Non readable property.
+     * See [arrowRotationAngle] as an alternative.
+     *
+     * Non readable property. Wraps the [ExpandableDrawerItem.withArrowRotationAngleEnd] method.
      */
     var arrowRotationAngleEnd: Int
         get() = nonReadable()
@@ -76,16 +84,17 @@ class ExpandableDrawerItemKt(name: String, description: String) : BaseDescribeab
         }
 
     /**
-     * Convenience for setting both arrowRotationAngleStart and arrowRotationAngleEnd at the same time. See those
-     * properties for details.
+     * The rotation of the expand arrow when the item is closed, in degrees.
+     * Default value is 0, which corresponds to a downward pointing arrow.
      *
-     * Non readable property.
+     * See [arrowRotationAngle] as an alternative.
+     *
+     * Non readable property. Wraps the [ExpandableDrawerItem.withArrowRotationAngleStart] method.
      */
-    var arrowRotationAngle: Pair<Int, Int>
+    var arrowRotationAngleStart: Int
         get() = nonReadable()
         set(value) {
-            item.withArrowRotationAngleStart(value.first)
-                    .withArrowRotationAngleEnd(value.second)
+            item.withArrowRotationAngleStart(value)
         }
 
 }

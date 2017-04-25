@@ -7,6 +7,8 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 
 abstract class AbstractToggleableDrawerItemKt : BaseDescribeableDrawerItemKt() {
 
+    /* Builder basics */
+
     private lateinit var item: AbstractToggleableDrawerItem<*>
 
     protected fun setItem(item: AbstractToggleableDrawerItem<*>) {
@@ -14,10 +16,13 @@ abstract class AbstractToggleableDrawerItemKt : BaseDescribeableDrawerItemKt() {
         this.item = item
     }
 
+    /* AbstractToggleableDrawerItem methods */
+
     /**
      * Whether the drawer item's toggle is currently in its "on" state.
+     * Default value is false.
      *
-     * Wraps the withChecked and isChecked functions.
+     * Wraps the [AbstractToggleableDrawerItem.withChecked] and [AbstractToggleableDrawerItem.isChecked] methods.
      */
     var checked: Boolean
         get() = item.isChecked
@@ -28,7 +33,7 @@ abstract class AbstractToggleableDrawerItemKt : BaseDescribeableDrawerItemKt() {
     /**
      * Adds an event [handler] to the drawer item that's called when the toggle's state is changed.
      *
-     * Wraps the withOnCheckedChangeListener function.
+     * Wraps the [AbstractToggleableDrawerItem.withOnCheckedChangeListener] method.
      *
      * @param drawerItem The drawer item itself
      * @param button The CompoundButton View whose state has changed
@@ -44,9 +49,7 @@ abstract class AbstractToggleableDrawerItemKt : BaseDescribeableDrawerItemKt() {
     /**
      * Adds an event [handler] to the drawer item that's called when the toggle's state is changed.
      *
-     * Replacement for onCheckedChange.
-     *
-     * Wraps the withOnCheckedChangeListener function.
+     * Replacement for [onCheckedChange]. Wraps the [AbstractToggleableDrawerItem.withOnCheckedChangeListener] method.
      *
      * @param drawerItem The drawer item itself
      * @param button The CompoundButton View whose state has changed
@@ -59,9 +62,9 @@ abstract class AbstractToggleableDrawerItemKt : BaseDescribeableDrawerItemKt() {
     /**
      * Adds an event [handler] to the drawer item that's called when the toggle's state is changed.
      *
-     * Alternative to the 3 parameter onToggleChanged method, to be used when you don't need all its parameters.
+     * Alternative to the three parameter [onToggleChanged] method, to be used when you don't need all its parameters.
      *
-     * Wraps the withOnCheckedChangeListener function.
+     * Wraps the [AbstractToggleableDrawerItem.withOnCheckedChangeListener] method.
      *
      * @param isEnabled True if the toggle is now in an "on" state
      */
@@ -73,8 +76,10 @@ abstract class AbstractToggleableDrawerItemKt : BaseDescribeableDrawerItemKt() {
 
     /**
      * Whether the drawer item's toggle can be toggled by the user.
+     * Default value is true.
      *
-     * Wraps the withToggleEnabled and isToggleEnabled functions.
+     * Wraps the [AbstractToggleableDrawerItem.withToggleEnabled] and [AbstractToggleableDrawerItem.isToggleEnabled]
+     * methods.
      */
     var toggleEnabled: Boolean
         get() = item.isToggleEnabled

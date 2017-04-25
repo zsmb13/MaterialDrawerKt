@@ -21,35 +21,17 @@ fun BadgeableKt.badge(text: String = "", setup: BadgeKt.() -> Unit = {}) {
 @DrawerMarker
 class BadgeKt(text: String) {
 
+    /* Builder basics */
+
     internal val style = BadgeStyle()
     internal val holder = StringHolder(text)
 
-    /**
-     * The text of the badge given by a String.
-     *
-     * Wraps the withBadge function. Non readable property.
-     */
-    var text: String
-        get() = nonReadable()
-        set(value) {
-            holder.text = value
-        }
-
-    /**
-     * The text of the badge given by a String resource.
-     *
-     * Wraps the withBadge function. Non readable property.
-     */
-    var textRes: Int
-        get() = nonReadable()
-        set(value) {
-            holder.textRes = value
-        }
+    /* BadgeStyle methods */
 
     /**
      * The background of the badge as a Drawable.
      *
-     * Wraps the withBadgeBackground function. Non readable property.
+     * Non readable property. Wraps the [BadgeStyle.withBadgeBackground] method.
      */
     var backgroundDrawable: Drawable
         get() = nonReadable()
@@ -58,9 +40,9 @@ class BadgeKt(text: String) {
         }
 
     /**
-     * The color of the badge, given as a Long in argb format.
+     * The color of the badge, as an argb Long.
      *
-     * Wraps the withColor function. Non readable property.
+     * Non readable property. Wraps the [BadgeStyle.withColor] method.
      */
     var color: Long
         get() = nonReadable()
@@ -69,20 +51,9 @@ class BadgeKt(text: String) {
         }
 
     /**
-     * The color of the badge, given with a color resource.
+     * The color of the badge when it's tapped, as an argb Long.
      *
-     * Wraps the withColor function. Non readable property.
-     */
-    var colorRes: Int
-        get() = nonReadable()
-        set(value) {
-            style.withColorRes(value)
-        }
-
-    /**
-     * The color of the badge when it's tapped, given as a Long in argb format.
-     *
-     * Wraps the withColorPressed function. Non readable property.
+     * Non readable property. Wraps the [BadgeStyle.withColorPressed] method.
      */
     var colorPressed: Long
         get() = nonReadable()
@@ -91,9 +62,9 @@ class BadgeKt(text: String) {
         }
 
     /**
-     * The color of the badge when it's tapped, given with a color resource.
+     * The color of the badge when it's tapped, as a a color resource.
      *
-     * Wraps the withColorPressedRes function. Non readable property.
+     * Non readable property. Wraps the [BadgeStyle.withColorPressedRes] method.
      */
     var colorPressedRes: Int
         get() = nonReadable()
@@ -102,20 +73,20 @@ class BadgeKt(text: String) {
         }
 
     /**
-     * The corner radius of the badge, in pixels.
+     * The color of the badge, as a color resource.
      *
-     * Wraps the withCorners function. Non readable property.
+     * Non readable property. Wraps the [BadgeStyle.withColor] method.
      */
-    var cornersPx: Int
+    var colorRes: Int
         get() = nonReadable()
         set(value) {
-            style.withCorners(value)
+            style.withColorRes(value)
         }
 
     /**
      * The corner radius of the badge, in dps.
      *
-     * Wraps the withCornersDp function. Non readable property.
+     * Non readable property. Wraps the [BadgeStyle.withCornersDp] method.
      */
     var cornersDp: Int
         get() = nonReadable()
@@ -124,9 +95,20 @@ class BadgeKt(text: String) {
         }
 
     /**
+     * The corner radius of the badge, in pixels.
+     *
+     * Non readable property. Wraps the [BadgeStyle.withCorners] method.
+     */
+    var cornersPx: Int
+        get() = nonReadable()
+        set(value) {
+            style.withCorners(value)
+        }
+
+    /**
      * The corner radius of the badge, as a dimension resource.
      *
-     * Wraps the withCornersDp function. Non readable property.
+     * Non readable property. Uses reflection to provide similar functionality to the [BadgeStyle.withCorners] method.
      */
     var cornersRes: Int
         get() = nonReadable()
@@ -140,7 +122,7 @@ class BadgeKt(text: String) {
     /**
      * The background of the badge as a GradientDrawable resource.
      *
-     * Wraps the withGradientDrawable function. Non readable property.
+     * Non readable property. Wraps the [BadgeStyle.withGradientDrawable] method.
      */
     var gradientDrawableRes: Int
         get() = nonReadable()
@@ -149,20 +131,9 @@ class BadgeKt(text: String) {
         }
 
     /**
-     * The minimum width of the badge (more precisely, the badge's text), in pixels.
-     *
-     * Wraps the withMinWidth function. Non readable property.
-     */
-    var minWidthPx: Int
-        get() = nonReadable()
-        set(value) {
-            style.withMinWidth(value)
-        }
-
-    /**
      * The minimum width of the badge (more precisely, the badge's text), in dps.
      *
-     * Wraps the withMinWidth function. Non readable property.
+     * Non readable property. Uses reflection to provide similar functionality to the [BadgeStyle.withMinWidth] method.
      */
     var minWidthDp: Int
         get() = nonReadable()
@@ -174,9 +145,20 @@ class BadgeKt(text: String) {
         }
 
     /**
+     * The minimum width of the badge (more precisely, the badge's text), in pixels.
+     *
+     * Non readable property. Wraps the [BadgeStyle.withMinWidth] method.
+     */
+    var minWidthPx: Int
+        get() = nonReadable()
+        set(value) {
+            style.withMinWidth(value)
+        }
+
+    /**
      * The minimum width of the badge (more precisely, the badge's text), as a dimension resource.
      *
-     * Wraps the withMinWidth function. Non readable property.
+     * Non readable property. Uses reflection to provide similar functionality to the [BadgeStyle.withMinWidth] method.
      */
     var minWidthRes: Int
         get() = nonReadable()
@@ -188,20 +170,9 @@ class BadgeKt(text: String) {
         }
 
     /**
-     * The padding of all sides of the badge, in pixels.
-     *
-     * Wraps the withPadding function. Non readable property.
-     */
-    var paddingPx: Int
-        get() = nonReadable()
-        set(value) {
-            style.withPadding(value)
-        }
-
-    /**
      * The padding of all sides of the badge, in dps.
      *
-     * Wraps the withPadding function. Non readable property.
+     * Non readable property. Wraps the [BadgeStyle.withPadding] method.
      */
     var paddingDp: Int
         get() = nonReadable()
@@ -211,21 +182,50 @@ class BadgeKt(text: String) {
         }
 
     /**
-     * The padding of all sides of the badge, as a dimension resource.
+     * The horizontal padding of the badge, in dps.
      *
-     * Wraps the withPadding function. Non readable property.
+     * Replacement for paddingLeftRightDp.
+     *
+     * Non readable property. Wraps the [BadgeStyle.withPaddingLeftRightDp] method.
      */
-    var paddingRes: Int
+    var paddingHorizontalDp: Int
         get() = nonReadable()
         set(value) {
-            paddingHorizontalRes = value
-            paddingVerticalRes = value
+            style.withPaddingLeftRightDp(value)
+        }
+
+    /**
+     * The horizontal padding of the badge, in pixels.
+     *
+     * Replacement for paddingLeftRightPx.
+     *
+     * Non readable property. Wraps the [BadgeStyle.withPaddingLeftRightPx] method.
+     */
+    var paddingHorizontalPx: Int
+        get() = nonReadable()
+        set(value) {
+            style.withPaddingLeftRightPx(value)
+        }
+
+    /**
+     * The horizontal padding of the badge, as a dimension resource.
+     *
+     * Non readable property. Uses reflection to provide similar functionality to the
+     * [BadgeStyle.withPaddingLeftRightPx] method.
+     */
+    var paddingHorizontalRes: Int
+        get() = nonReadable()
+        set(value) {
+            style.javaClass.declaredFields.find { it.name == "mPaddingLeftRight" }?.let {
+                it.isAccessible = true
+                it.set(style, DimenHolder.fromResource(value))
+            }
         }
 
     /**
      * The padding of the left and right sides of the badge, in dps.
      *
-     * Wraps the withPaddingLeftRightDp function. Non readable property.
+     * Non readable property. Wraps the [BadgeStyle.withPaddingLeftRightDp] method.
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             replaceWith = ReplaceWith("paddingHorizontalDp"),
@@ -239,7 +239,7 @@ class BadgeKt(text: String) {
     /**
      * The padding of the left and right sides of the badge, in pixels.
      *
-     * Wraps the withPaddingLeftRightPx function. Non readable property.
+     * Non readable property. Wraps the [BadgeStyle.withPaddingLeftRightPx] method.
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             replaceWith = ReplaceWith("paddingHorizontalPx"),
@@ -251,51 +251,32 @@ class BadgeKt(text: String) {
         }
 
     /**
-     * The horizontal padding of the badge, in dps.
+     * The padding of all sides of the badge, in pixels.
      *
-     * Replacement for paddingLeftRightDp.
-     *
-     * Wraps the withPaddingLeftRightDp function. Non readable property.
+     * Non readable property. Wraps the [BadgeStyle.withPadding] method.
      */
-    var paddingHorizontalDp: Int
+    var paddingPx: Int
         get() = nonReadable()
         set(value) {
-            style.withPaddingLeftRightDp(value)
+            style.withPadding(value)
         }
 
     /**
-     * The horizontal padding of the badge, in pixels.
+     * The padding of all sides of the badge, as a dimension resource.
      *
-     * Replacement for paddingLeftRightPx.
-     *
-     * Wraps the withPaddingLeftRightPx function. Non readable property.
+     * Non readable property. Wraps the [BadgeStyle.withPadding] method.
      */
-    var paddingHorizontalPx: Int
+    var paddingRes: Int
         get() = nonReadable()
         set(value) {
-            style.withPaddingLeftRightPx(value)
-        }
-
-    /**
-     * The horizontal padding of the badge, as a dimension resource.
-     *
-     * Replacement for paddingLeftRightPx.
-     *
-     * Wraps the withPaddingLeftRightPx function. Non readable property.
-     */
-    var paddingHorizontalRes: Int
-        get() = nonReadable()
-        set(value) {
-            style.javaClass.declaredFields.find { it.name == "mPaddingLeftRight" }?.let {
-                it.isAccessible = true
-                it.set(style, DimenHolder.fromResource(value))
-            }
+            paddingHorizontalRes = value
+            paddingVerticalRes = value
         }
 
     /**
      * The padding of the top and bottom of the badge, in dps.
      *
-     * Wraps the withPaddingTopBottomDp function. Non readable property.
+     * Non readable property. Wraps the [BadgeStyle.withPaddingTopBottomDp] method.
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             replaceWith = ReplaceWith("paddingVerticalDp"),
@@ -309,7 +290,7 @@ class BadgeKt(text: String) {
     /**
      * The padding of the top and bottom of the badge, in pixels.
      *
-     * Wraps the withPaddingTopBottomPx function. Non readable property.
+     * Non readable property. Wraps the [BadgeStyle.withPaddingTopBottomPx] method.
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             replaceWith = ReplaceWith("paddingVerticalPx"),
@@ -325,7 +306,7 @@ class BadgeKt(text: String) {
      *
      * Replacement for paddingTopBottomDp.
      *
-     * Wraps the withPaddingTopBottomDp function. Non readable property.
+     * Non readable property. Wraps the [BadgeStyle.withPaddingTopBottomDp] method.
      */
     var paddingVerticalDp: Int
         get() = nonReadable()
@@ -338,7 +319,7 @@ class BadgeKt(text: String) {
      *
      * Replacement for paddingTopBottomPx.
      *
-     * Wraps the withPaddingTopBottomPx function. Non readable property.
+     * Non readable property. Wraps the [BadgeStyle.withPaddingTopBottomPx] method.
      */
     var paddingVerticalPx: Int
         get() = nonReadable()
@@ -349,9 +330,8 @@ class BadgeKt(text: String) {
     /**
      * The vertical padding of the badge, as a dimension resource.
      *
-     * Replacement for paddingTopBottomPx.
-     *
-     * Wraps the withPaddingTopBottomPx function. Non readable property.
+     * Non readable property. Uses reflection to provide similar functionality to the
+     * [BadgeStyle.withPaddingTopBottomPx] method.
      */
     var paddingVerticalRes: Int
         get() = nonReadable()
@@ -363,9 +343,20 @@ class BadgeKt(text: String) {
         }
 
     /**
-     * The color of the badge's text, given as an argb Long.
+     * The text of the badge as a String.
      *
-     * Wraps the withTextColor function. Non readable property.
+     * Non readable property. Wraps the [com.mikepenz.materialdrawer.model.interfaces.Badgeable.withBadge] method.
+     */
+    var text: String
+        get() = nonReadable()
+        set(value) {
+            holder.text = value
+        }
+
+    /**
+     * The color of the badge's text, as an argb Long.
+     *
+     * Non readable property. Wraps the [BadgeStyle.withTextColor] method.
      */
     var textColor: Long
         get() = nonReadable()
@@ -374,14 +365,25 @@ class BadgeKt(text: String) {
         }
 
     /**
-     * The color of the badge's text, given as a color resource.
+     * The color of the badge's text, as a color resource.
      *
-     * Wraps the withTextColorRes function. Non readable property.
+     * Non readable property. Wraps the [BadgeStyle.withTextColorRes] method.
      */
     var textColorRes: Int
         get() = nonReadable()
         set(value) {
             style.withTextColorRes(value)
+        }
+
+    /**
+     * The text of the badge as a String resource.
+     *
+     * Non readable property. Wraps the [com.mikepenz.materialdrawer.model.interfaces.Badgeable.withBadge] method.
+     */
+    var textRes: Int
+        get() = nonReadable()
+        set(value) {
+            holder.textRes = value
         }
 
 }

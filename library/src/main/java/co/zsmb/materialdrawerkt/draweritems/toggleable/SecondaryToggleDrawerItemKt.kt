@@ -18,6 +18,8 @@ fun BuilderBase.secondaryToggleItem(
 
 class SecondaryToggleDrawerItemKt(name: String, description: String) : AbstractToggleableDrawerItemKt() {
 
+    /* Builder basics */
+
     private val item = SecondaryToggleDrawerItem()
             .withName(name)
             .withDescription(description)
