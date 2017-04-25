@@ -19,21 +19,22 @@ fun AccountHeaderBuilderKt.profile(
         name: String = "",
         email: String? = null,
         setup: ProfileDrawerItemKt.() -> Unit = {}): ProfileDrawerItem {
-    val item = ProfileDrawerItemKt(name, email)
+    val item = ProfileDrawerItemKt()
+    item.name = name
+    email?.let { item.email = it }
     item.setup()
     return item.build().apply { addItem(this) }
 }
 
-class ProfileDrawerItemKt(name: String, email: String?) : AbstractDrawerItemKt() {
+class ProfileDrawerItemKt : AbstractDrawerItemKt() {
 
     /* Builder basics */
 
-    private val item = ProfileDrawerItem().withName(name)
+    private val item = ProfileDrawerItem()
 
     internal fun build() = item
 
     init {
-        email?.let { item.withEmail(it) }
         super.setItem(item)
     }
 

@@ -20,6 +20,8 @@ fun AccountHeaderBuilderKt.profileSetting(
         description: String? = null,
         setup: ProfileSettingDrawerItemKt.() -> Unit = {}): ProfileSettingDrawerItem {
     val item = ProfileSettingDrawerItemKt(name, description)
+    item.name = name
+    description?.let { item.description = it }
     item.setup()
     return item.build().apply { addItem(this) }
 }

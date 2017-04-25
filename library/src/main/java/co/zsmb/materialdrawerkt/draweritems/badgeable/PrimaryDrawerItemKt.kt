@@ -11,19 +11,20 @@ fun BuilderBase.primaryItem(
         name: String = "",
         description: String? = null,
         setup: PrimaryDrawerItemKt.() -> Unit = {}): PrimaryDrawerItem {
-    val item = PrimaryDrawerItemKt(name, description)
+    val item = PrimaryDrawerItemKt()
+    item.name = name
+    description?.let { item.description = it }
     item.setup()
     return item.build().apply { attachItem(this) }
 }
 
-class PrimaryDrawerItemKt(name: String, description: String?) : AbstractBadgeableDrawerItemKt() {
+class PrimaryDrawerItemKt : AbstractBadgeableDrawerItemKt() {
 
     /* Builder basics */
 
-    private val item = PrimaryDrawerItem().withName(name)
+    private val item = PrimaryDrawerItem()
 
     init {
-        description?.let { item.withDescription(it) }
         super.setItem(item)
     }
 

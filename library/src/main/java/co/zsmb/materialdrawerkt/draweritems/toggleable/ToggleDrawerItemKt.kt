@@ -11,19 +11,20 @@ fun BuilderBase.toggleItem(
         name: String = "",
         description: String? = null,
         setup: ToggleDrawerItemKt.() -> Unit = {}): ToggleDrawerItem {
-    val item = ToggleDrawerItemKt(name, description)
+    val item = ToggleDrawerItemKt()
+    item.name = name
+    description?.let { item.description = it }
     item.setup()
     return item.build().apply { attachItem(this) }
 }
 
-class ToggleDrawerItemKt(name: String, description: String?) : AbstractToggleableDrawerItemKt() {
+class ToggleDrawerItemKt : AbstractToggleableDrawerItemKt() {
 
     /* Builder basics */
 
-    private val item = ToggleDrawerItem().withName(name)
+    private val item = ToggleDrawerItem()
 
     init {
-        description?.let { item.withDescription(it) }
         super.setItem(item)
     }
 

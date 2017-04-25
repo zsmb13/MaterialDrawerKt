@@ -11,19 +11,20 @@ fun BuilderBase.secondarySwitchItem(
         name: String = "",
         description: String? = null,
         setup: SecondarySwitchDrawerItemKt.() -> Unit = {}): SecondarySwitchDrawerItem {
-    val item = SecondarySwitchDrawerItemKt(name, description)
+    val item = SecondarySwitchDrawerItemKt()
+    item.name = name
+    description?.let { item.description = it }
     item.setup()
     return item.build().apply { attachItem(this) }
 }
 
-class SecondarySwitchDrawerItemKt(name: String, description: String?) : AbstractSwitchableDrawerItemKt() {
+class SecondarySwitchDrawerItemKt : AbstractSwitchableDrawerItemKt() {
 
     /* Builder basics */
 
-    private val item = SecondarySwitchDrawerItem().withName(name)
+    private val item = SecondarySwitchDrawerItem()
 
     init {
-        description?.let { item.withDescription(it) }
         super.setItem(item)
     }
 

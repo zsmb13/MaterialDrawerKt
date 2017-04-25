@@ -11,19 +11,20 @@ fun BuilderBase.secondaryItem(
         name: String = "",
         description: String? = null,
         setup: SecondaryDrawerItemKt.() -> Unit = {}): SecondaryDrawerItem {
-    val item = SecondaryDrawerItemKt(name, description)
+    val item = SecondaryDrawerItemKt()
+    item.name = name
+    description?.let { item.description = it }
     item.setup()
     return item.build().apply { attachItem(this) }
 }
 
-class SecondaryDrawerItemKt(name: String, description: String?) : AbstractBadgeableDrawerItemKt() {
+class SecondaryDrawerItemKt : AbstractBadgeableDrawerItemKt() {
 
     /* Builder basics */
 
-    private val item = SecondaryDrawerItem().withName(name)
+    private val item = SecondaryDrawerItem()
 
     init {
-        description?.let { item.withDescription(it) }
         super.setItem(item)
     }
 

@@ -11,19 +11,20 @@ fun BuilderBase.secondaryToggleItem(
         name: String = "",
         description: String? = null,
         setup: SecondaryToggleDrawerItemKt.() -> Unit = {}): SecondaryToggleDrawerItem {
-    val item = SecondaryToggleDrawerItemKt(name, description)
+    val item = SecondaryToggleDrawerItemKt()
+    item.name = name
+    description?.let { item.description = it }
     item.setup()
     return item.build().apply { attachItem(this) }
 }
 
-class SecondaryToggleDrawerItemKt(name: String, description: String?) : AbstractToggleableDrawerItemKt() {
+class SecondaryToggleDrawerItemKt : AbstractToggleableDrawerItemKt() {
 
     /* Builder basics */
 
-    private val item = SecondaryToggleDrawerItem().withName(name)
+    private val item = SecondaryToggleDrawerItem()
 
     init {
-        description?.let { item.withDescription(it) }
         super.setItem(item)
     }
 

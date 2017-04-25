@@ -14,7 +14,8 @@ import com.mikepenz.materialdrawer.model.SectionDrawerItem
  * @return The created SectionDrawerItem instance
  */
 fun BuilderBase.sectionItem(name: String = "", setup: SectionDrawerItemKt.() -> Unit = {}): SectionDrawerItem {
-    val item = SectionDrawerItemKt(name)
+    val item = SectionDrawerItemKt()
+    item.name = name
     item.setup()
     return item.build().apply { attachItem(this) }
 }
@@ -27,16 +28,17 @@ fun BuilderBase.sectionItem(name: String = "", setup: SectionDrawerItemKt.() -> 
  * @return The created SectionDrawerItem instance
  */
 fun BuilderBase.sectionHeader(name: String = "", setup: SectionDrawerItemKt.() -> Unit = {}): SectionDrawerItem {
-    val item = SectionDrawerItemKt(name)
+    val item = SectionDrawerItemKt()
+    item.name = name
     item.setup()
     return item.build().apply { attachItem(this) }
 }
 
-class SectionDrawerItemKt(name: String) : AbstractDrawerItemKt() {
+class SectionDrawerItemKt : AbstractDrawerItemKt() {
 
     /* Builder basics */
 
-    private val item = SectionDrawerItem().withName(name)
+    private val item = SectionDrawerItem()
 
     init {
         super.setItem(item)
