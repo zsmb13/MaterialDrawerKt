@@ -251,7 +251,7 @@ class ProfileDrawerItemKt(name: String, email: String?) : AbstractDrawerItemKt()
         }
 
     /**
-     *The color of the profile item's text in the profile switcher list, as an argb Long.
+     * The color of the profile item's text in the profile switcher list, as an argb Long.
      *
      * Non readable property. Wraps the [ProfileDrawerItem.withTextColor] method.
      */
