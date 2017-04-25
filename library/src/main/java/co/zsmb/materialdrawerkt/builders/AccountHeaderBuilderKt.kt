@@ -482,10 +482,12 @@ class AccountHeaderBuilderKt(activity: Activity) {
 
 
     /**
-     * The bundle to restore state from after a configuration change. Remember to store the AccountHeader instance and
-     * call its [saveInstanceState][com.mikepenz.materialdrawer.AccountHeader.saveInstanceState] method in the
-     * Activity's [onSaveInstanceState][Activity.onSaveInstanceState] method, before calling super, to store the current
-     * state of the header. Note that this has to be done in addition to doing it for the Drawer.
+     * The bundle to restore state from after a configuration change.
+     *
+     * Remember to store the AccountHeader instance and call its
+     * [saveInstanceState][com.mikepenz.materialdrawer.AccountHeader.saveInstanceState] method in the Activity's
+     * [onSaveInstanceState][Activity.onSaveInstanceState] method, before calling super, to store the current state of
+     * the header. Note that this has to be done in addition to doing it for the Drawer.
      *
      * Non readable property. Wraps the [AccountHeaderBuilder.withSavedInstance] method.
      */

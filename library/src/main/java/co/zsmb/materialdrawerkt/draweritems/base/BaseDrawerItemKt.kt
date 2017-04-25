@@ -22,7 +22,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * The color of the drawer item's icon when it's disabled, as an argb Long.
      *
-     * Wraps the [BaseDrawerItem.withDisabledIconColor] method. Non readable property.
+     * Non readable property. Wraps the [BaseDrawerItem.withDisabledIconColor] method.
      */
     var disabledIconColor: Long
         get() = nonReadable()
@@ -33,7 +33,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * The color of the drawer item's icon when it's disabled, as a color resource.
      *
-     * Wraps the [BaseDrawerItem.withDisabledIconColorRes] method. Non readable property.
+     * Non readable property. Wraps the [BaseDrawerItem.withDisabledIconColorRes] method.
      */
     var disabledIconColorRes: Int
         get() = nonReadable()
@@ -44,7 +44,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * The color of the drawer item's text when it's disabled, as an argb Long.
      *
-     * Wraps the [BaseDrawerItem.withDisabledTextColor] method. Non readable property.
+     * Non readable property. Wraps the [BaseDrawerItem.withDisabledTextColor] method.
      */
     var disabledTextColor: Long
         get() = nonReadable()
@@ -55,7 +55,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * The color of the drawer item's text when it's disabled, as a color resource.
      *
-     * Wraps the [BaseDrawerItem.withDisabledTextColorRes] method. Non readable property.
+     * Non readable property. Wraps the [BaseDrawerItem.withDisabledTextColorRes] method.
      */
     var disabledTextColorRes: Int
         get() = nonReadable()
@@ -66,7 +66,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * The icon of the drawer item, as a drawable resource.
      *
-     * Convenience for [iconRes]. Wraps the [BaseDrawerItem.withIcon] method. Non readable property.
+     * Non readable property. Convenience for [iconRes]. Wraps the [BaseDrawerItem.withIcon] method.
      */
     var icon: Int
         get() = nonReadable()
@@ -77,7 +77,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * The color of the drawer item's icon when it's enabled, as an argb Long.
      *
-     * Wraps the [BaseDrawerItem.withIconColor] method. Non readable property.
+     * Non readable property. Wraps the [BaseDrawerItem.withIconColor] method.
      */
     var iconColor: Long
         get() = nonReadable()
@@ -88,7 +88,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * The color of the drawer item's icon when it's enabled, as a color resource.
      *
-     * Wraps the [BaseDrawerItem.withIconColorRes] method. Non readable property.
+     * Non readable property. Wraps the [BaseDrawerItem.withIconColorRes] method.
      */
     var iconColorRes: Int
         get() = nonReadable()
@@ -99,7 +99,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * The icon of the drawer item, as a Drawable.
      *
-     * Wraps the [BaseDrawerItem.withIcon] method. Non readable property.
+     * Non readable property. Wraps the [BaseDrawerItem.withIcon] method.
      */
     var iconDrawable: Drawable
         get() = nonReadable()
@@ -112,7 +112,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      *
      * See [icon] as an alternative.
      *
-     * Wraps the [BaseDrawerItem.withIcon] method. Non readable property.
+     * Non readable property. Wraps the [BaseDrawerItem.withIcon] method.
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "Alternatives are available, check the documentation.")
@@ -126,7 +126,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      * Whether the icon of the drawer item should be tinted with the enabled/disabled/selected color. If set to false,
      * your icon will always be displayed with its default colors.
      *
-     * Wraps the [BaseDrawerItem.withIconTintingEnabled] method. Non readable property.
+     * Non readable property. Wraps the [BaseDrawerItem.withIconTintingEnabled] method.
      */
     var iconTintingEnabled: Boolean
         get() = nonReadable()
@@ -137,7 +137,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * The icon of the drawer item, as an IIcon.
      *
-     * Wraps the [BaseDrawerItem.withIcon] method. Non readable property.
+     * Non readable property. Wraps the [BaseDrawerItem.withIcon] method.
      */
     var iicon: IIcon
         get() = nonReadable()
@@ -148,7 +148,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * How far the drawer item should be indented. Default value is 1.
      *
-     * Wraps the [BaseDrawerItem.withLevel] method. Non readable property.
+     * Non readable property. Wraps the [BaseDrawerItem.withLevel] method.
      */
     var level: Int
         get() = nonReadable()
@@ -159,7 +159,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * The title/name of the drawer item.
      *
-     * Wraps the [BaseDrawerItem.withName] method. Non readable property.
+     * Non readable property. Wraps the [BaseDrawerItem.withName] method.
      */
     var name: String
         get() = nonReadable()
@@ -170,7 +170,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * The title/name of the drawer item, as a String resource.
      *
-     * Wraps the [BaseDrawerItem.withName] method. Non readable property.
+     * Non readable property. Wraps the [BaseDrawerItem.withName] method.
      */
     var nameRes: Int
         get() = nonReadable()
@@ -181,7 +181,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * The color of the drawer item when it's selected, as an argb Long.
      *
-     * Wraps the [BaseDrawerItem.withSelectedColor] method. Non readable property.
+     * Non readable property. Wraps the [BaseDrawerItem.withSelectedColor] method.
      */
     var selectedColor: Long
         get() = nonReadable()
@@ -192,7 +192,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * The color of the drawer item when it's selected, as a color resource.
      *
-     * Wraps the [BaseDrawerItem.withSelectedColorRes] method. Non readable property.
+     * Non readable property. Wraps the [BaseDrawerItem.withSelectedColorRes] method.
      */
     var selectedColorRes: Int
         get() = nonReadable()
@@ -203,7 +203,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * The icon of the drawer when it's selected, as a drawable resource.
      *
-     * Convenience for [selectedIconRes]. Wraps the [BaseDrawerItem.withSelectedIcon] method. Non readable property.
+     * Non readable property. Convenience for [selectedIconRes]. Wraps the [BaseDrawerItem.withSelectedIcon] method.
      */
     var selectedIcon: Int
         get() = nonReadable()
@@ -214,7 +214,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * The color of the drawer item's icon when it's selected, as an argb Long.
      *
-     * Wraps the [BaseDrawerItem.withSelectedIconColor] method. Non readable property.
+     * Non readable property. Wraps the [BaseDrawerItem.withSelectedIconColor] method.
      */
     var selectedIconColor: Long
         get() = nonReadable()
@@ -225,7 +225,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * The color of the drawer item's icon when it's selected, as a color resource.
      *
-     * Wraps the [BaseDrawerItem.withSelectedIconColorRes] method. Non readable property.
+     * Non readable property. Wraps the [BaseDrawerItem.withSelectedIconColorRes] method.
      */
     var selectedIconColorRes: Int
         get() = nonReadable()
@@ -236,7 +236,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * The icon of the drawer item when it's selected, as a Drawable.
      *
-     * Wraps the [BaseDrawerItem.withSelectedIcon] method. Non readable property.
+     * Non readable property. Wraps the [BaseDrawerItem.withSelectedIcon] method.
      */
     var selectedIconDrawable: Drawable
         get() = nonReadable()
@@ -249,7 +249,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      *
      * See [selectedIcon] as an alternative.
      *
-     * Wraps the [BaseDrawerItem.withSelectedIcon] method. Non readable property.
+     * Non readable property. Wraps the [BaseDrawerItem.withSelectedIcon] method.
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "Alternatives are available, check the documentation.")
@@ -262,7 +262,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * The color of the drawer item's text when it's selected, as an argb Long.
      *
-     * Wraps the [BaseDrawerItem.withSelectedTextColor] method. Non readable property.
+     * Non readable property. Wraps the [BaseDrawerItem.withSelectedTextColor] method.
      */
     var selectedTextColor: Long
         get() = nonReadable()
@@ -273,7 +273,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * The color of the drawer item's text when it's selected, as a color resource.
      *
-     * Wraps the [BaseDrawerItem.withSelectedTextColorRes] method. Non readable property.
+     * Non readable property. Wraps the [BaseDrawerItem.withSelectedTextColorRes] method.
      */
     var selectedTextColorRes: Int
         get() = nonReadable()
@@ -284,7 +284,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * The color of the drawer item's text, as an argb Long.
      *
-     * Wraps the [BaseDrawerItem.withTextColor] method. Non readable property.
+     * Non readable property. Wraps the [BaseDrawerItem.withTextColor] method.
      */
     var textColor: Long
         get() = nonReadable()
@@ -295,7 +295,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * The color of the drawer item's text, as a color resource.
      *
-     * Wraps the [BaseDrawerItem.withTextColorRes] method. Non readable property.
+     * Non readable property. Wraps the [BaseDrawerItem.withTextColorRes] method.
      */
     var textColorRes: Int
         get() = nonReadable()
@@ -306,7 +306,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * The typeface to use for the drawer item's text.
      *
-     * Wraps the [BaseDrawerItem.withTypeface] method. Non readable property.
+     * Non readable property. Wraps the [BaseDrawerItem.withTypeface] method.
      */
     var typeface: Typeface
         get() = nonReadable()

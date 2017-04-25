@@ -196,9 +196,11 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
         }
 
     /**
-     * The delay (in milliseconds) for the drawer click event after a click. This can be used to improve performance
-     * and prevent lag, especially when you switch fragments inside the listener. This will ignore the Boolean value
-     * you can return in the listener, as the listener is called after the drawer was closed.
+     * The delay (in milliseconds) for the drawer click event after a click.
+     *
+     * This can be used to improve performance and prevent lag, especially when you switch fragments inside the
+     * listener. This will ignore the Boolean value you can return in the listener, as the listener is called after the
+     * drawer was closed.
      * Default value is -1, which disables this setting entirely.
      *
      * Non readable property. Wraps the [DrawerBuilder.withDelayDrawerClickEvent] method.
@@ -210,9 +212,10 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
         }
 
     /**
-     * The delay (in milliseconds) for the drawer close operation after a click. This is a small trick to improve
-     * performance and prevent lag if you open a new Activity after a drawer item was selected. Set to -1 to disable
-     * this behavior entirely.
+     * The delay (in milliseconds) for the drawer close operation after a click.
+     *
+     * This is a small trick to improve performance and prevent lag if you open a new Activity after a drawer item was
+     * selected. Set to -1 to disable this behavior entirely.
      * Default value is 50.
      *
      * Non readable property. Wraps the [DrawerBuilder.withDelayOnDrawerClose] method.
@@ -736,8 +739,10 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
         }
 
     /**
-     * The bundle to restore state from after a configuration change. Remember to store the Drawer instance and call
-     * its [saveInstanceState][com.mikepenz.materialdrawer.Drawer.saveInstanceState] method in the Activity's
+     * The bundle to restore state from after a configuration change.
+     *
+     * Remember to store the Drawer instance and call its
+     * [saveInstanceState][com.mikepenz.materialdrawer.Drawer.saveInstanceState] method in the Activity's
      * [onSaveInstanceState][Activity.onSaveInstanceState] method, before calling super, to store the current state of
      * the drawer.
      *
