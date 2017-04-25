@@ -179,7 +179,7 @@ class ProfileSettingDrawerItemKt(name: String, description: String) {
         }
 
     /**
-     * The icon of the profile setting, given by a url String.
+     * The icon of the profile setting, as a url String.
      *
      * Non readable property. Wraps the [ProfileSettingDrawerItem.withIcon] method.
      */

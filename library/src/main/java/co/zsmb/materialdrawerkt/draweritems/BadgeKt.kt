@@ -62,7 +62,7 @@ class BadgeKt(text: String) {
         }
 
     /**
-     * The color of the badge when it's tapped, given with a color resource.
+     * The color of the badge when it's tapped, as a a color resource.
      *
      * Non readable property. Wraps the [BadgeStyle.withColorPressedRes] method.
      */
@@ -73,7 +73,7 @@ class BadgeKt(text: String) {
         }
 
     /**
-     * The color of the badge, given with a color resource.
+     * The color of the badge, as a color resource.
      *
      * Non readable property. Wraps the [BadgeStyle.withColor] method.
      */
@@ -343,7 +343,7 @@ class BadgeKt(text: String) {
         }
 
     /**
-     * The text of the badge given by a String.
+     * The text of the badge as a String.
      *
      * Non readable property. Wraps the [com.mikepenz.materialdrawer.model.interfaces.Badgeable.withBadge] method.
      */
@@ -376,7 +376,7 @@ class BadgeKt(text: String) {
         }
 
     /**
-     * The text of the badge given by a String resource.
+     * The text of the badge as a String resource.
      *
      * Non readable property. Wraps the [com.mikepenz.materialdrawer.model.interfaces.Badgeable.withBadge] method.
      */

@@ -6,7 +6,7 @@ import com.mikepenz.materialdrawer.holder.StringHolder
 interface BadgeableKt {
 
     /**
-     * The text of the displayed badge given by a StringHolder.
+     * The text of the displayed badge, as a StringHolder.
      *
      * Non readable property. Wraps the [com.mikepenz.materialdrawer.model.interfaces.Badgeable.withBadge] method.
      */
@@ -15,14 +15,14 @@ interface BadgeableKt {
     var badgeHolder: StringHolder
 
     /**
-     * The text of the displayed badge given by a String resource.
+     * The text of the displayed badge as a String resource.
      *
      * Non readable property. Wraps the [com.mikepenz.materialdrawer.model.interfaces.Badgeable.withBadge] method.
      */
     var badgeRes: Int
 
     /**
-     * The style of the displayed badge given by a BadgeStyle.
+     * The style of the displayed badge as a BadgeStyle.
      *
      * Non readable property. Wraps the [com.mikepenz.materialdrawer.model.interfaces.ColorfulBadgeable.withBadgeStyle]
      * method.

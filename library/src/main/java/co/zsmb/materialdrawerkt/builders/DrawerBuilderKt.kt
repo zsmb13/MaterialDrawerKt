@@ -29,7 +29,6 @@ fun Activity.drawer(setup: DrawerBuilderKt.() -> Unit = {}): Drawer {
     return builder.build()
 }
 
-@Suppress("unused")
 @DrawerMarker
 class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
 
@@ -550,7 +549,7 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
         }
 
     /**
-     * Inflates DrawerItems from the given menu resource and adds them to the drawer.
+     * The menu resource to inflate items from. These are added to the drawer.
      *
      * Non readable property. Wraps the [DrawerBuilder.inflateMenu] method.
      */

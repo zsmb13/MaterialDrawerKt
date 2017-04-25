@@ -144,7 +144,7 @@ class ProfileDrawerItemKt(name: String, email: String) : AbstractDrawerItemKt() 
         }
 
     /**
-     * The icon of the profile, given by a url String.
+     * The icon of the profile, as a url String.
      *
      * Non readable property. Wraps the [ProfileDrawerItem.withIcon] method.
      */
