@@ -19,6 +19,20 @@ fun BuilderBase.expandableItem(name: String = "",
     return item.build().apply { attachItem(this) }
 }
 
+/**
+ * Adds a new ExpandableDrawerItem with the given [nameRes] and [descriptionRes].
+ * @return The created ExpandableDrawerItem instance
+ */
+fun BuilderBase.expandableItem(nameRes: Int,
+                               descriptionRes: Int? = null,
+                               setup: ExpandableDrawerItemKt.() -> Unit = {}): ExpandableDrawerItem {
+    val item = ExpandableDrawerItemKt()
+    item.nameRes = nameRes
+    descriptionRes?.let { item.descriptionRes = it }
+    item.setup()
+    return item.build().apply { attachItem(this) }
+}
+
 class ExpandableDrawerItemKt : BaseDescribeableDrawerItemKt() {
 
     /* Builder basics */

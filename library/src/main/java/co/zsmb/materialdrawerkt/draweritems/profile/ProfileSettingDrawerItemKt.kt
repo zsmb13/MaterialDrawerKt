@@ -19,23 +19,37 @@ fun AccountHeaderBuilderKt.profileSetting(
         name: String = "",
         description: String? = null,
         setup: ProfileSettingDrawerItemKt.() -> Unit = {}): ProfileSettingDrawerItem {
-    val item = ProfileSettingDrawerItemKt(name, description)
+    val item = ProfileSettingDrawerItemKt()
     item.name = name
     description?.let { item.description = it }
     item.setup()
     return item.build().apply { addItem(this) }
 }
 
-class ProfileSettingDrawerItemKt(name: String, description: String?) : AbstractDrawerItemKt() {
+/**
+ * Adds a new ProfileSettingDrawerItem with the given [nameRes] and [descriptionRes].
+ * @return The created ProfileSettingDrawerItem instance
+ */
+fun AccountHeaderBuilderKt.profileSetting(
+        nameRes: Int,
+        descriptionRes: Int? = null,
+        setup: ProfileSettingDrawerItemKt.() -> Unit = {}): ProfileSettingDrawerItem {
+    val item = ProfileSettingDrawerItemKt()
+    item.nameRes = nameRes
+    descriptionRes?.let { item.descriptionRes = it }
+    item.setup()
+    return item.build().apply { addItem(this) }
+}
+
+class ProfileSettingDrawerItemKt() : AbstractDrawerItemKt() {
 
     /* Builder basics */
 
-    private val item = ProfileSettingDrawerItem().withName(name)
+    private val item = ProfileSettingDrawerItem()
 
     internal fun build() = item
 
     init {
-        description?.let { item.withDescription(it) }
         super.setItem(item)
     }
 

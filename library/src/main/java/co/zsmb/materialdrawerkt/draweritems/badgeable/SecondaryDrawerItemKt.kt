@@ -18,6 +18,21 @@ fun BuilderBase.secondaryItem(
     return item.build().apply { attachItem(this) }
 }
 
+/**
+ * Adds a new SecondaryDrawerItem with the given [nameRes] and [descriptionRes].
+ * @return The created SecondaryDrawerItem instance
+ */
+fun BuilderBase.secondaryItem(
+        nameRes: Int,
+        descriptionRes: Int? = null,
+        setup: SecondaryDrawerItemKt.() -> Unit = {}): SecondaryDrawerItem {
+    val item = SecondaryDrawerItemKt()
+    item.nameRes = nameRes
+    descriptionRes?.let { item.descriptionRes = it }
+    item.setup()
+    return item.build().apply { attachItem(this) }
+}
+
 class SecondaryDrawerItemKt : AbstractBadgeableDrawerItemKt() {
 
     /* Builder basics */

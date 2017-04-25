@@ -21,6 +21,20 @@ fun BuilderBase.expandableBadgeItem(name: String = "",
     return item.build().apply { attachItem(this) }
 }
 
+/**
+ * Adds a new ExpandableBadgeDrawerItem with the given [nameRes] and [descriptionRes].
+ * @return The created ExpandableBadgeDrawerItem instance
+ */
+fun BuilderBase.expandableBadgeItem(nameRes: Int,
+                                    descriptionRes: Int? = null,
+                                    setup: ExpandableBadgeDrawerItemKt.() -> Unit = {}): ExpandableBadgeDrawerItem {
+    val item = ExpandableBadgeDrawerItemKt()
+    item.nameRes = nameRes
+    descriptionRes?.let { item.descriptionRes = it }
+    item.setup()
+    return item.build().apply { attachItem(this) }
+}
+
 class ExpandableBadgeDrawerItemKt : BaseDescribeableDrawerItemKt(), BadgeableKt {
 
     /* Builder basics */

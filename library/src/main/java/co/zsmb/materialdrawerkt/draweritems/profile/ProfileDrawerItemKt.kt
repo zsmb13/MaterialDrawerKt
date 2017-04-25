@@ -26,6 +26,22 @@ fun AccountHeaderBuilderKt.profile(
     return item.build().apply { addItem(this) }
 }
 
+/**
+ * Adds a new ProfileDrawerItem with the given [nameRes] and [emailRes] address.
+ * @return The created ProfileDrawerItem instance
+ */
+fun AccountHeaderBuilderKt.profile(
+        nameRes: Int,
+        emailRes: Int? = null,
+        setup: ProfileDrawerItemKt.() -> Unit = {}): ProfileDrawerItem {
+    val item = ProfileDrawerItemKt()
+    item.nameRes = nameRes
+    emailRes?.let { item.emailRes = it }
+    item.setup()
+    return item.build().apply { addItem(this) }
+}
+
+
 class ProfileDrawerItemKt : AbstractDrawerItemKt() {
 
     /* Builder basics */

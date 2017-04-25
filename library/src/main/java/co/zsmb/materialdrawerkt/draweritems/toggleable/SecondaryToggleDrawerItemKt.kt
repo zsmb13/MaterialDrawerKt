@@ -18,6 +18,21 @@ fun BuilderBase.secondaryToggleItem(
     return item.build().apply { attachItem(this) }
 }
 
+/**
+ * Adds a new SecondaryToggleDrawerItem with the given [nameRes] and [descriptionRes].
+ * @return The created SecondaryToggleDrawerItem instance
+ */
+fun BuilderBase.secondaryToggleItem(
+        nameRes: Int,
+        descriptionRes: Int? = null,
+        setup: SecondaryToggleDrawerItemKt.() -> Unit = {}): SecondaryToggleDrawerItem {
+    val item = SecondaryToggleDrawerItemKt()
+    item.nameRes = nameRes
+    descriptionRes?.let { item.descriptionRes = it }
+    item.setup()
+    return item.build().apply { attachItem(this) }
+}
+
 class SecondaryToggleDrawerItemKt : AbstractToggleableDrawerItemKt() {
 
     /* Builder basics */

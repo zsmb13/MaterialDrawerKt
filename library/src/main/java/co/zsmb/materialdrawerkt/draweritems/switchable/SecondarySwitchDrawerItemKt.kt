@@ -18,6 +18,21 @@ fun BuilderBase.secondarySwitchItem(
     return item.build().apply { attachItem(this) }
 }
 
+/**
+ * Adds a new SecondarySwitchDrawerItem with the given [nameRes] and [descriptionRes].
+ * @return The created SecondarySwitchDrawerItem instance
+ */
+fun BuilderBase.secondarySwitchItem(
+        nameRes: Int,
+        descriptionRes: Int? = null,
+        setup: SecondarySwitchDrawerItemKt.() -> Unit = {}): SecondarySwitchDrawerItem {
+    val item = SecondarySwitchDrawerItemKt()
+    item.nameRes = nameRes
+    descriptionRes?.let { item.descriptionRes = it }
+    item.setup()
+    return item.build().apply { attachItem(this) }
+}
+
 class SecondarySwitchDrawerItemKt : AbstractSwitchableDrawerItemKt() {
 
     /* Builder basics */

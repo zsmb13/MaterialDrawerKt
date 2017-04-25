@@ -18,6 +18,22 @@ fun BuilderBase.switchItem(
     return item.build().apply { attachItem(this) }
 }
 
+/**
+ * Adds a new SwitchDrawerItem with the given [nameRes] and [descriptionRes].
+ * @return The created SwitchDrawerItem instance
+ */
+fun BuilderBase.switchItem(
+        nameRes: Int,
+        descriptionRes: Int? = null,
+        setup: SwitchDrawerItemKt.() -> Unit = {}): SwitchDrawerItem {
+    val item = SwitchDrawerItemKt()
+    item.nameRes = nameRes
+    descriptionRes?.let { item.descriptionRes = it }
+    item.setup()
+    return item.build().apply { attachItem(this) }
+}
+
+
 class SwitchDrawerItemKt : AbstractSwitchableDrawerItemKt() {
 
     /* Builder basics */

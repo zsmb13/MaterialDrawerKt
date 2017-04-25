@@ -34,6 +34,34 @@ fun BuilderBase.sectionHeader(name: String = "", setup: SectionDrawerItemKt.() -
     return item.build().apply { attachItem(this) }
 }
 
+/**
+ * Adds a new SectionDrawerItem.
+ *
+ * See [sectionHeader] as an alternative.
+ *
+ * @return The created SectionDrawerItem instance
+ */
+fun BuilderBase.sectionItem(nameRes: Int, setup: SectionDrawerItemKt.() -> Unit = {}): SectionDrawerItem {
+    val item = SectionDrawerItemKt()
+    item.nameRes = nameRes
+    item.setup()
+    return item.build().apply { attachItem(this) }
+}
+
+/**
+ * Adds a new SectionDrawerItem.
+ *
+ * Convenience for [sectionItem].
+ *
+ * @return The created SectionDrawerItem instance
+ */
+fun BuilderBase.sectionHeader(nameRes: Int, setup: SectionDrawerItemKt.() -> Unit = {}): SectionDrawerItem {
+    val item = SectionDrawerItemKt()
+    item.nameRes = nameRes
+    item.setup()
+    return item.build().apply { attachItem(this) }
+}
+
 class SectionDrawerItemKt : AbstractDrawerItemKt() {
 
     /* Builder basics */
