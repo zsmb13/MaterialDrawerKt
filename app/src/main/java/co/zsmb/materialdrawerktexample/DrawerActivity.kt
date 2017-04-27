@@ -104,7 +104,7 @@ class DrawerActivity : AppCompatActivity() {
                 identifier = 1
                 selectable = false
                 onClick { _ ->
-                    startActivity(Intent(this@DrawerActivity, DrawerActivity::class.java))
+                    startActivity(Intent(this@DrawerActivity, CompactHeaderDrawerActivity::class.java))
                     false
                 }
             }
