@@ -112,7 +112,7 @@ class DrawerActivity : AppCompatActivity() {
                 iicon = FontAwesome.Icon.faw_home
                 identifier = 2
                 selectable = false
-                onClick(openActivity(DrawerActivity::class))
+                onClick(openActivity(ActionBarActivity::class))
             }
             primaryItem(R.string.drawer_item_multi_drawer, R.string.drawer_item_multi_drawer_desc) {
                 iicon = FontAwesome.Icon.faw_gamepad

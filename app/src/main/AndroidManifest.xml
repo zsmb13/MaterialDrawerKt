@@ -25,6 +25,10 @@
             android:name=".CompactHeaderDrawerActivity"
             android:label="@string/drawer_item_compact_header"
             android:theme="@style/CustomTheme" />
+        <activity
+            android:name=".ActionBarActivity"
+            android:label="@string/drawer_item_action_bar_drawer"
+            android:theme="@style/MaterialDrawerTheme.ActionBar" />
     </application>
 
 </manifest>
