@@ -1,6 +1,6 @@
 package co.zsmb.materialdrawerkt.draweritems.expandable
 
-import co.zsmb.materialdrawerkt.builders.BuilderBase
+import co.zsmb.materialdrawerkt.builders.Builder
 import co.zsmb.materialdrawerkt.draweritems.base.BaseDescribeableDrawerItemKt
 import co.zsmb.materialdrawerkt.nonReadable
 import com.mikepenz.materialdrawer.model.ExpandableDrawerItem
@@ -9,9 +9,9 @@ import com.mikepenz.materialdrawer.model.ExpandableDrawerItem
  * Adds a new ExpandableDrawerItem with the given [name] and [description].
  * @return The created ExpandableDrawerItem instance
  */
-fun BuilderBase.expandableItem(name: String = "",
-                               description: String? = null,
-                               setup: ExpandableDrawerItemKt.() -> Unit = {}): ExpandableDrawerItem {
+fun Builder.expandableItem(name: String = "",
+                           description: String? = null,
+                           setup: ExpandableDrawerItemKt.() -> Unit = {}): ExpandableDrawerItem {
     val item = ExpandableDrawerItemKt()
     item.name = name
     description?.let { item.description = it }
@@ -23,9 +23,9 @@ fun BuilderBase.expandableItem(name: String = "",
  * Adds a new ExpandableDrawerItem with the given [nameRes] and [descriptionRes].
  * @return The created ExpandableDrawerItem instance
  */
-fun BuilderBase.expandableItem(nameRes: Int,
-                               descriptionRes: Int? = null,
-                               setup: ExpandableDrawerItemKt.() -> Unit = {}): ExpandableDrawerItem {
+fun Builder.expandableItem(nameRes: Int,
+                           descriptionRes: Int? = null,
+                           setup: ExpandableDrawerItemKt.() -> Unit = {}): ExpandableDrawerItem {
     val item = ExpandableDrawerItemKt()
     item.nameRes = nameRes
     descriptionRes?.let { item.descriptionRes = it }

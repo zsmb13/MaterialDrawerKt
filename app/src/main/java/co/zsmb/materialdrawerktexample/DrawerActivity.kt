@@ -130,7 +130,7 @@ class DrawerActivity : AppCompatActivity() {
                 iicon = GoogleMaterial.Icon.gmd_adb
                 identifier = 5
                 selectable = false
-                onClick(openActivity(DrawerActivity::class))
+                onClick(openActivity(AdvancedDrawerActivity::class))
             }
             primaryItem(R.string.drawer_item_embedded_drawer, R.string.drawer_item_embedded_drawer_desc) {
                 iicon = GoogleMaterial.Icon.gmd_battery

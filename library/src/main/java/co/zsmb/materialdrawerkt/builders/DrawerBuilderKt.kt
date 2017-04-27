@@ -30,7 +30,7 @@ fun Activity.drawer(setup: DrawerBuilderKt.() -> Unit = {}): Drawer {
 }
 
 @DrawerMarker
-class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
+class DrawerBuilderKt(val activity: Activity) : Builder {
 
     /* Builder basics */
 
@@ -55,6 +55,8 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     fun drawer(param: () -> Unit = {}) {
     }
 
+    @Deprecated(level = DeprecationLevel.WARNING,
+            message = "Only for use with custom drawer items.")
     override fun attachItem(item: IDrawerItem<*, *>) {
         builder.addDrawerItems(item)
     }

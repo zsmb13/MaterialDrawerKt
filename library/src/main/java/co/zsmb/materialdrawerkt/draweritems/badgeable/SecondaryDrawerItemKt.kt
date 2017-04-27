@@ -1,13 +1,13 @@
 package co.zsmb.materialdrawerkt.draweritems.badgeable
 
-import co.zsmb.materialdrawerkt.builders.BuilderBase
+import co.zsmb.materialdrawerkt.builders.Builder
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem
 
 /**
  * Adds a new SecondaryDrawerItem with the given [name] and [description].
  * @return The created SecondaryDrawerItem instance
  */
-fun BuilderBase.secondaryItem(
+fun Builder.secondaryItem(
         name: String = "",
         description: String? = null,
         setup: SecondaryDrawerItemKt.() -> Unit = {}): SecondaryDrawerItem {
@@ -22,7 +22,7 @@ fun BuilderBase.secondaryItem(
  * Adds a new SecondaryDrawerItem with the given [nameRes] and [descriptionRes].
  * @return The created SecondaryDrawerItem instance
  */
-fun BuilderBase.secondaryItem(
+fun Builder.secondaryItem(
         nameRes: Int,
         descriptionRes: Int? = null,
         setup: SecondaryDrawerItemKt.() -> Unit = {}): SecondaryDrawerItem {

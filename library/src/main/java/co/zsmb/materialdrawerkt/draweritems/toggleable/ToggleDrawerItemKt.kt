@@ -1,13 +1,13 @@
 package co.zsmb.materialdrawerkt.draweritems.toggleable
 
-import co.zsmb.materialdrawerkt.builders.BuilderBase
+import co.zsmb.materialdrawerkt.builders.Builder
 import com.mikepenz.materialdrawer.model.ToggleDrawerItem
 
 /**
  * Adds a new ToggleDrawerItem with the given [name] and [description].
  * @return The created ToggleDrawerItem instance
  */
-fun BuilderBase.toggleItem(
+fun Builder.toggleItem(
         name: String = "",
         description: String? = null,
         setup: ToggleDrawerItemKt.() -> Unit = {}): ToggleDrawerItem {
@@ -22,7 +22,7 @@ fun BuilderBase.toggleItem(
  * Adds a new ToggleDrawerItem with the given [nameRes] and [descriptionRes].
  * @return The created ToggleDrawerItem instance
  */
-fun BuilderBase.toggleItem(
+fun Builder.toggleItem(
         nameRes: Int,
         descriptionRes: Int? = null,
         setup: ToggleDrawerItemKt.() -> Unit = {}): ToggleDrawerItem {
