@@ -12,20 +12,34 @@ import com.mikepenz.materialdrawer.model.ExpandableBadgeDrawerItem
  * @return The created ExpandableBadgeDrawerItem instance
  */
 fun BuilderBase.expandableBadgeItem(name: String = "",
-                                    description: String = "",
+                                    description: String? = null,
                                     setup: ExpandableBadgeDrawerItemKt.() -> Unit = {}): ExpandableBadgeDrawerItem {
-    val item = ExpandableBadgeDrawerItemKt(name, description)
+    val item = ExpandableBadgeDrawerItemKt()
+    item.name = name
+    description?.let { item.description = it }
     item.setup()
     return item.build().apply { attachItem(this) }
 }
 
-class ExpandableBadgeDrawerItemKt(name: String, description: String) : BaseDescribeableDrawerItemKt(), BadgeableKt {
+/**
+ * Adds a new ExpandableBadgeDrawerItem with the given [nameRes] and [descriptionRes].
+ * @return The created ExpandableBadgeDrawerItem instance
+ */
+fun BuilderBase.expandableBadgeItem(nameRes: Int,
+                                    descriptionRes: Int? = null,
+                                    setup: ExpandableBadgeDrawerItemKt.() -> Unit = {}): ExpandableBadgeDrawerItem {
+    val item = ExpandableBadgeDrawerItemKt()
+    item.nameRes = nameRes
+    descriptionRes?.let { item.descriptionRes = it }
+    item.setup()
+    return item.build().apply { attachItem(this) }
+}
+
+class ExpandableBadgeDrawerItemKt : BaseDescribeableDrawerItemKt(), BadgeableKt {
 
     /* Builder basics */
 
     private val item = ExpandableBadgeDrawerItem()
-            .withName(name)
-            .withDescription(description)
 
     init {
         super.setItem(item)

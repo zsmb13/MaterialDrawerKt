@@ -9,20 +9,35 @@ import com.mikepenz.materialdrawer.model.ToggleDrawerItem
  */
 fun BuilderBase.toggleItem(
         name: String = "",
-        description: String = "",
+        description: String? = null,
         setup: ToggleDrawerItemKt.() -> Unit = {}): ToggleDrawerItem {
-    val item = ToggleDrawerItemKt(name, description)
+    val item = ToggleDrawerItemKt()
+    item.name = name
+    description?.let { item.description = it }
     item.setup()
     return item.build().apply { attachItem(this) }
 }
 
-class ToggleDrawerItemKt(name: String, description: String) : AbstractToggleableDrawerItemKt() {
+/**
+ * Adds a new ToggleDrawerItem with the given [nameRes] and [descriptionRes].
+ * @return The created ToggleDrawerItem instance
+ */
+fun BuilderBase.toggleItem(
+        nameRes: Int,
+        descriptionRes: Int? = null,
+        setup: ToggleDrawerItemKt.() -> Unit = {}): ToggleDrawerItem {
+    val item = ToggleDrawerItemKt()
+    item.nameRes = nameRes
+    descriptionRes?.let { item.descriptionRes = it }
+    item.setup()
+    return item.build().apply { attachItem(this) }
+}
+
+class ToggleDrawerItemKt : AbstractToggleableDrawerItemKt() {
 
     /* Builder basics */
 
     private val item = ToggleDrawerItem()
-            .withName(name)
-            .withDescription(description)
 
     init {
         super.setItem(item)

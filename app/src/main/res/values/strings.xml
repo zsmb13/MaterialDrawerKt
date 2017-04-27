@@ -1,3 +1,44 @@
 <resources>
     <string name="app_name">MaterialDrawerKtExample</string>
+
+    <string name="drawer_item_persistent_compact_header">PersistentHeader Drawer</string>
+    <string name="drawer_item_persistent_compact_header_desc">Smaller persistent account header</string>
+    <string name="drawer_item_compact_header">CompactHeader Drawer</string>
+    <string name="drawer_item_compact_header_desc">Smaller account header</string>
+    <string name="drawer_item_action_bar_drawer">ActionBar Drawer</string>
+    <string name="drawer_item_action_bar_drawer_desc">Shows how to use with an actionbar</string>
+    <string name="drawer_item_multi_drawer">Multi Drawer</string>
+    <string name="drawer_item_multi_drawer_desc">Left and Right side drawer</string>
+    <string name="drawer_item_non_translucent_status_drawer">NonTranslucentStatus Drawer</string>
+    <string name="drawer_item_non_translucent_status_drawer_desc">Drawer below statusBar</string>
+    <string name="drawer_item_advanced_drawer">Advanced Drawer</string>
+    <string name="drawer_item_advanced_drawer_desc">More advanced drawer features</string>
+    <string name="drawer_item_embedded_drawer">Embedded Drawer</string>
+    <string name="drawer_item_embedded_drawer_desc">Embed the drawer anywhere</string>
+    <string name="drawer_item_mini_drawer">MiniDrawer</string>
+    <string name="drawer_item_mini_drawer_desc">Always visible MiniDrawer</string>
+    <string name="drawer_item_fullscreen_drawer">FullScreen Drawer</string>
+    <string name="drawer_item_fullscreen_drawer_desc">Drawer in FullScreen activity</string>
+    <string name="drawer_item_custom_container_drawer">CustomContainer Drawer</string>
+    <string name="drawer_item_custom_container_drawer_desc">Drawer in different view hirachy</string>
+    <string name="drawer_item_menu_drawer">Menu Drawer</string>
+    <string name="drawer_item_menu_drawer_desc">Drawer from menu.xml</string>
+    <string name="drawer_item_fragment_drawer">Fragment Drawer</string>
+    <string name="drawer_item_fragment_drawer_desc">Use drawer within fragments</string>
+    <string name="drawer_item_collapsing_toolbar_drawer">CollapsingToolbar Drawer</string>
+    <string name="drawer_item_collapsing_toolbar_drawer_desc">Uses a CollapsingToolbarLayout</string>
+    <string name="drawer_item_crossfade_drawer_layout_drawer">CrossfadeDrawerLayout</string>
+    <string name="drawer_item_crossfade_drawer_layout_drawer_desc">2-Step Drawer behavior</string>
+
+    <string name="drawer_item_menu_drawer_item">Menu Drawer Item</string>
+    <string name="drawer_item_menu_drawer_item_desc">Sample menu item with overflow button</string>
+
+    <string name="drawer_item_home">Home</string>
+    <string name="drawer_item_free_play">Free Play</string>
+    <string name="drawer_item_custom">Custom</string>
+    <string name="drawer_item_section_header">Section Header</string>
+    <string name="drawer_item_settings">Settings</string>
+    <string name="drawer_item_help">Help</string>
+    <string name="drawer_item_open_source">Open Source</string>
+    <string name="drawer_item_contact">Contact</string>
 </resources>

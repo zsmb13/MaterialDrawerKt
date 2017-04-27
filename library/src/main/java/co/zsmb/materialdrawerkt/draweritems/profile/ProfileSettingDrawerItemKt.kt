@@ -5,6 +5,7 @@ import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import android.net.Uri
 import co.zsmb.materialdrawerkt.builders.AccountHeaderBuilderKt
+import co.zsmb.materialdrawerkt.draweritems.base.AbstractDrawerItemKt
 import co.zsmb.materialdrawerkt.nonReadable
 import com.mikepenz.iconics.typeface.IIcon
 import com.mikepenz.materialdrawer.holder.StringHolder
@@ -16,22 +17,41 @@ import com.mikepenz.materialdrawer.model.ProfileSettingDrawerItem
  */
 fun AccountHeaderBuilderKt.profileSetting(
         name: String = "",
-        description: String = "",
+        description: String? = null,
         setup: ProfileSettingDrawerItemKt.() -> Unit = {}): ProfileSettingDrawerItem {
-    val item = ProfileSettingDrawerItemKt(name, description)
+    val item = ProfileSettingDrawerItemKt()
+    item.name = name
+    description?.let { item.description = it }
     item.setup()
     return item.build().apply { addItem(this) }
 }
 
-class ProfileSettingDrawerItemKt(name: String, description: String) {
+/**
+ * Adds a new ProfileSettingDrawerItem with the given [nameRes] and [descriptionRes].
+ * @return The created ProfileSettingDrawerItem instance
+ */
+fun AccountHeaderBuilderKt.profileSetting(
+        nameRes: Int,
+        descriptionRes: Int? = null,
+        setup: ProfileSettingDrawerItemKt.() -> Unit = {}): ProfileSettingDrawerItem {
+    val item = ProfileSettingDrawerItemKt()
+    item.nameRes = nameRes
+    descriptionRes?.let { item.descriptionRes = it }
+    item.setup()
+    return item.build().apply { addItem(this) }
+}
+
+class ProfileSettingDrawerItemKt() : AbstractDrawerItemKt() {
 
     /* Builder basics */
 
     private val item = ProfileSettingDrawerItem()
-            .withName(name)
-            .withDescription(description)
 
     internal fun build() = item
+
+    init {
+        super.setItem(item)
+    }
 
     /* ProfileSettingDrawerItem methods */
 

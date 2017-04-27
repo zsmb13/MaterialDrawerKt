@@ -9,20 +9,35 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
  */
 fun BuilderBase.primaryItem(
         name: String = "",
-        description: String = "",
+        description: String? = null,
         setup: PrimaryDrawerItemKt.() -> Unit = {}): PrimaryDrawerItem {
-    val item = PrimaryDrawerItemKt(name, description)
+    val item = PrimaryDrawerItemKt()
+    item.name = name
+    description?.let { item.description = it }
     item.setup()
     return item.build().apply { attachItem(this) }
 }
 
-class PrimaryDrawerItemKt(name: String, description: String) : AbstractBadgeableDrawerItemKt() {
+/**
+ * Adds a new PrimaryDrawerItem with the given [nameRes] and [descriptionRes].
+ * @return The created PrimaryDrawerItem instance
+ */
+fun BuilderBase.primaryItem(
+        nameRes: Int,
+        descriptionRes: Int? = null,
+        setup: PrimaryDrawerItemKt.() -> Unit = {}): PrimaryDrawerItem {
+    val item = PrimaryDrawerItemKt()
+    item.nameRes = nameRes
+    descriptionRes?.let { item.descriptionRes = it }
+    item.setup()
+    return item.build().apply { attachItem(this) }
+}
+
+class PrimaryDrawerItemKt : AbstractBadgeableDrawerItemKt() {
 
     /* Builder basics */
 
     private val item = PrimaryDrawerItem()
-            .withName(name)
-            .withDescription(description)
 
     init {
         super.setItem(item)

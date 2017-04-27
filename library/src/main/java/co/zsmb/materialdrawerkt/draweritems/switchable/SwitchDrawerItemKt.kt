@@ -9,20 +9,36 @@ import com.mikepenz.materialdrawer.model.SwitchDrawerItem
  */
 fun BuilderBase.switchItem(
         name: String = "",
-        description: String = "",
+        description: String? = null,
         setup: SwitchDrawerItemKt.() -> Unit = {}): SwitchDrawerItem {
-    val item = SwitchDrawerItemKt(name, description)
+    val item = SwitchDrawerItemKt()
+    item.name = name
+    description?.let { item.description = it }
     item.setup()
     return item.build().apply { attachItem(this) }
 }
 
-class SwitchDrawerItemKt(name: String, description: String) : AbstractSwitchableDrawerItemKt() {
+/**
+ * Adds a new SwitchDrawerItem with the given [nameRes] and [descriptionRes].
+ * @return The created SwitchDrawerItem instance
+ */
+fun BuilderBase.switchItem(
+        nameRes: Int,
+        descriptionRes: Int? = null,
+        setup: SwitchDrawerItemKt.() -> Unit = {}): SwitchDrawerItem {
+    val item = SwitchDrawerItemKt()
+    item.nameRes = nameRes
+    descriptionRes?.let { item.descriptionRes = it }
+    item.setup()
+    return item.build().apply { attachItem(this) }
+}
+
+
+class SwitchDrawerItemKt : AbstractSwitchableDrawerItemKt() {
 
     /* Builder basics */
 
     private val item = SwitchDrawerItem()
-            .withName(name)
-            .withDescription(description)
 
     init {
         super.setItem(item)

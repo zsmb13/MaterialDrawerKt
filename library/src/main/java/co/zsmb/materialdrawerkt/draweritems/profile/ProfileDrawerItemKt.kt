@@ -17,22 +17,42 @@ import com.mikepenz.materialdrawer.model.ProfileDrawerItem
  */
 fun AccountHeaderBuilderKt.profile(
         name: String = "",
-        email: String = "",
+        email: String? = null,
         setup: ProfileDrawerItemKt.() -> Unit = {}): ProfileDrawerItem {
-    val item = ProfileDrawerItemKt(name, email)
+    val item = ProfileDrawerItemKt()
+    item.name = name
+    email?.let { item.email = it }
     item.setup()
     return item.build().apply { addItem(this) }
 }
 
-class ProfileDrawerItemKt(name: String, email: String) : AbstractDrawerItemKt() {
+/**
+ * Adds a new ProfileDrawerItem with the given [nameRes] and [emailRes] address.
+ * @return The created ProfileDrawerItem instance
+ */
+fun AccountHeaderBuilderKt.profile(
+        nameRes: Int,
+        emailRes: Int? = null,
+        setup: ProfileDrawerItemKt.() -> Unit = {}): ProfileDrawerItem {
+    val item = ProfileDrawerItemKt()
+    item.nameRes = nameRes
+    emailRes?.let { item.emailRes = it }
+    item.setup()
+    return item.build().apply { addItem(this) }
+}
+
+
+class ProfileDrawerItemKt : AbstractDrawerItemKt() {
 
     /* Builder basics */
 
     private val item = ProfileDrawerItem()
-            .withName(name)
-            .withEmail(email)
 
     internal fun build() = item
+
+    init {
+        super.setItem(item)
+    }
 
     /* ProfileDrawerItem methods */
 
@@ -248,7 +268,7 @@ class ProfileDrawerItemKt(name: String, email: String) : AbstractDrawerItemKt() 
         }
 
     /**
-     *The color of the profile item's text in the profile switcher list, as an argb Long.
+     * The color of the profile item's text in the profile switcher list, as an argb Long.
      *
      * Non readable property. Wraps the [ProfileDrawerItem.withTextColor] method.
      */
