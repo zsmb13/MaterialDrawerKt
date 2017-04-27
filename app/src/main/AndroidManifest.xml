@@ -33,6 +33,10 @@
             android:name=".MultiDrawerActivity"
             android:label="@string/drawer_item_multi_drawer"
             android:theme="@style/MaterialTheme.TranslucentStatus" />
+        <activity
+            android:name=".NonTranslucentDrawerActivity"
+            android:label="@string/drawer_item_non_translucent_status_drawer"
+            android:theme="@style/MaterialDrawerTheme" />
     </application>
 
 </manifest>

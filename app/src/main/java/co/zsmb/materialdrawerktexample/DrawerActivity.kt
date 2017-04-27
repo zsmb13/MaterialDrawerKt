@@ -124,7 +124,7 @@ class DrawerActivity : AppCompatActivity() {
                 iicon = FontAwesome.Icon.faw_eye
                 identifier = 4
                 selectable = false
-                onClick(openActivity(DrawerActivity::class))
+                onClick(openActivity(NonTranslucentDrawerActivity::class))
             }
             primaryItem(R.string.drawer_item_advanced_drawer, R.string.drawer_item_advanced_drawer_desc) {
                 iicon = GoogleMaterial.Icon.gmd_adb
