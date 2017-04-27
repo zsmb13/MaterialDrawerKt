@@ -41,6 +41,12 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
             builder.withOnDrawerListener(onDrawerListener)
         }
 
+        root?.let {
+            val drawerResult = builder.buildView()
+            it.addView(drawerResult.slider)
+            return drawerResult
+        }
+
         primaryDrawer?.let { return builder.append(it) }
 
         return builder.build()
@@ -64,6 +70,10 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
     internal fun attachHeader(header: AccountHeader) {
         builder.withAccountHeader(header)
     }
+
+    /* Build helper */
+
+    private var root: ViewGroup? = null
 
     /* Listener helper */
 
@@ -724,6 +734,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
     var rootView: ViewGroup
         get() = nonReadable()
         set(value) {
+            root = value
             builder.withRootView(value)
         }
 
@@ -736,6 +747,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
     var rootViewRes: Int
         get() = nonReadable()
         set(value) {
+            root = activity.findViewById(value) as ViewGroup?
             builder.withRootView(value)
         }
 

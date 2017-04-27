@@ -41,6 +41,10 @@
             android:name=".AdvancedDrawerActivity"
             android:label="@string/drawer_item_advanced_drawer"
             android:theme="@style/MaterialDrawerTheme.TranslucentStatus" />
+        <activity
+            android:name=".EmbeddedDrawerActivity"
+            android:label="@string/drawer_item_embedded_drawer"
+            android:theme="@style/MaterialDrawerTheme" />
     </application>
 
 </manifest>

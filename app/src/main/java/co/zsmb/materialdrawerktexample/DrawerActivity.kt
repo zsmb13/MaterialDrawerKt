@@ -136,7 +136,7 @@ class DrawerActivity : AppCompatActivity() {
                 iicon = GoogleMaterial.Icon.gmd_battery
                 identifier = 7
                 selectable = false
-                onClick(openActivity(DrawerActivity::class))
+                onClick(openActivity(EmbeddedDrawerActivity::class))
             }
             primaryItem(R.string.drawer_item_fullscreen_drawer, R.string.drawer_item_fullscreen_drawer_desc) {
                 iicon = GoogleMaterial.Icon.gmd_labels
