@@ -118,7 +118,7 @@ class DrawerActivity : AppCompatActivity() {
                 iicon = FontAwesome.Icon.faw_gamepad
                 identifier = 3
                 selectable = false
-                onClick(openActivity(DrawerActivity::class))
+                onClick(openActivity(MultiDrawerActivity::class))
             }
             primaryItem(R.string.drawer_item_non_translucent_status_drawer, R.string.drawer_item_non_translucent_status_drawer_desc) {
                 iicon = FontAwesome.Icon.faw_eye

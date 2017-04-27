@@ -24,6 +24,7 @@
             android:layout_gravity="center"
             android:text="Test"
             android:textSize="16sp" />
+
     </FrameLayout>
 
 </LinearLayout>

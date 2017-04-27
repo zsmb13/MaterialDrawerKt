@@ -29,6 +29,10 @@
             android:name=".ActionBarActivity"
             android:label="@string/drawer_item_action_bar_drawer"
             android:theme="@style/MaterialDrawerTheme.ActionBar" />
+        <activity
+            android:name=".MultiDrawerActivity"
+            android:label="@string/drawer_item_multi_drawer"
+            android:theme="@style/MaterialTheme.TranslucentStatus" />
     </application>
 
 </manifest>
