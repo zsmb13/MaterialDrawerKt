@@ -47,8 +47,10 @@ class DrawerActivity : AppCompatActivity() {
             showOnFirstLaunch = true
 
             headerResult = accountHeader {
-                translucentStatusBar = true
                 background = R.drawable.header
+                savedInstance = savedInstanceState
+                translucentStatusBar = true
+
                 profile("Mike Penz", "mikepenz@gmail.com") {
                     iconUrl = "https://avatars3.githubusercontent.com/u/1476232?v=3&s=460"
                     identifier = 100
@@ -74,11 +76,11 @@ class DrawerActivity : AppCompatActivity() {
                     identifier = 105
                 }
                 profileSetting("Add account", "Add new GitHub Account") {
-                    icon = R.drawable.ic_plus
+                    iicon = GoogleMaterial.Icon.gmd_plus
                     identifier = 100_000
                 }
                 profileSetting("Manage Account") {
-                    icon = R.drawable.ic_settings
+                    iicon = GoogleMaterial.Icon.gmd_settings
                     identifier = 100_001
                 }
 
