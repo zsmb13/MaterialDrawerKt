@@ -45,6 +45,10 @@
             android:name=".EmbeddedDrawerActivity"
             android:label="@string/drawer_item_embedded_drawer"
             android:theme="@style/MaterialDrawerTheme" />
+        <activity
+            android:name=".FullscreenDrawerActivity"
+            android:label="@string/drawer_item_fullscreen_drawer"
+            android:theme="@style/FullscreenTheme" />
     </application>
 
 </manifest>

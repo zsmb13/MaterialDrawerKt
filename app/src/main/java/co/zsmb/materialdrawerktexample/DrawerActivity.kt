@@ -142,7 +142,7 @@ class DrawerActivity : AppCompatActivity() {
                 iicon = GoogleMaterial.Icon.gmd_labels
                 identifier = 8
                 selectable = false
-                onClick(openActivity(DrawerActivity::class))
+                onClick(openActivity(FullscreenDrawerActivity::class))
             }
             primaryItem(R.string.drawer_item_custom_container_drawer, R.string.drawer_item_custom_container_drawer_desc) {
                 iicon = GoogleMaterial.Icon.gmd_my_location
