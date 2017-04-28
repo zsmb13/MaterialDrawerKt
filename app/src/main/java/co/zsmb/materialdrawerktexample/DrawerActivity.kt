@@ -154,7 +154,7 @@ class DrawerActivity : AppCompatActivity() {
                 iicon = GoogleMaterial.Icon.gmd_filter_list
                 identifier = 10
                 selectable = false
-                onClick(openActivity(DrawerActivity::class))
+                onClick(openActivity(MenuDrawerActivity::class))
             }
             primaryItem(R.string.drawer_item_mini_drawer, R.string.drawer_item_mini_drawer_desc) {
                 iicon = GoogleMaterial.Icon.gmd_battery_charging

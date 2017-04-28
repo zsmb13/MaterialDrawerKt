@@ -53,6 +53,10 @@
             android:name=".CustomContainerActivity"
             android:label="@string/drawer_item_custom_container_drawer"
             android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar" />
+        <activity
+            android:name=".MenuDrawerActivity"
+            android:label="@string/drawer_item_menu_drawer"
+            android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar" />
     </application>
 
 </manifest>
