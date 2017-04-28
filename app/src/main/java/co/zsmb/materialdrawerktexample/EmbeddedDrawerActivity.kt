@@ -19,7 +19,7 @@ import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem
 import com.mikepenz.octicons_typeface_library.Octicons
-import kotlinx.android.synthetic.main.activity_sample.*
+import kotlinx.android.synthetic.main.activity_embedded.*
 import org.jetbrains.anko.toast
 
 class EmbeddedDrawerActivity : AppCompatActivity() {
@@ -39,7 +39,10 @@ class EmbeddedDrawerActivity : AppCompatActivity() {
             savedInstance = savedInstanceState
             translucentStatusBar = false
             toolbar = this@EmbeddedDrawerActivity.toolbar
-            rootViewRes = R.id.frame_container
+            parentView = frame_container
+
+            // If you don't want to use parentView, set this and also the line after the drawer{} call
+            // buildViewOnly = true
 
             headerResult = accountHeader {
                 savedInstance = savedInstanceState
@@ -103,6 +106,9 @@ class EmbeddedDrawerActivity : AppCompatActivity() {
                 onToggled { state -> toast("Toggle is now set to $state") }
             }
         }
+
+        // If you don't want to use parentView and use buildViewOnly instead, you have to manually add your drawer
+        // frame_container.addView(result.slider)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean =

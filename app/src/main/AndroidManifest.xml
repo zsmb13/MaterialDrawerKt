@@ -49,6 +49,10 @@
             android:name=".FullscreenDrawerActivity"
             android:label="@string/drawer_item_fullscreen_drawer"
             android:theme="@style/FullscreenTheme" />
+        <activity
+            android:name=".CustomContainerActivity"
+            android:label="@string/drawer_item_custom_container_drawer"
+            android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar" />
     </application>
 
 </manifest>

@@ -41,6 +41,10 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
             builder.withOnDrawerListener(onDrawerListener)
         }
 
+        if (buildViewOnly) {
+            return builder.buildView()
+        }
+
         root?.let {
             val drawerResult = builder.buildView()
             it.addView(drawerResult.slider)
@@ -74,6 +78,43 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
     /* Build helper */
 
     private var root: ViewGroup? = null
+
+    /**
+     * Setting this to true will not attach the drawer to the Activity. Instead, you can call [Drawer.getSlider]  to get
+     * the root view of the created drawer, and add it to a ViewGroup yourself.
+     * Default value is false.
+     *
+     * Wraps the [DrawerBuilder.buildView] method.
+     */
+    var buildViewOnly: Boolean = false
+
+    /**
+     * The ViewGroup which the DrawerLayout will be added to.
+     *
+     * This is equivalent to setting the [buildViewOnly] property, or, with the original library, using
+     * [DrawerBuilder.buildView]. The difference is that you don't have to manually add the drawer to the ViewGroup.
+     *
+     * Non readable property.
+     */
+    var parentView: ViewGroup
+        get() = nonReadable()
+        set(value) {
+            root = value
+        }
+
+    /**
+     * The ViewGroup which the DrawerLayout will be added to, given by its layout ID.
+     *
+     * This is equivalent to setting the [buildViewOnly] property, or, with the original library, using
+     * [DrawerBuilder.buildView]. The difference is that you don't have to manually add the drawer to the ViewGroup.
+     *
+     * Non readable property.
+     */
+    var parentViewRes: Int
+        get() = nonReadable()
+        set(value) {
+            root = activity.findViewById(value) as ViewGroup?
+        }
 
     /* Listener helper */
 
@@ -734,7 +775,6 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
     var rootView: ViewGroup
         get() = nonReadable()
         set(value) {
-            root = value
             builder.withRootView(value)
         }
 
@@ -747,7 +787,6 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
     var rootViewRes: Int
         get() = nonReadable()
         set(value) {
-            root = activity.findViewById(value) as ViewGroup?
             builder.withRootView(value)
         }
 

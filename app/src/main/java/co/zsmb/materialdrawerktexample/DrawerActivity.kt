@@ -148,7 +148,7 @@ class DrawerActivity : AppCompatActivity() {
                 iicon = GoogleMaterial.Icon.gmd_my_location
                 identifier = 9
                 selectable = false
-                onClick(openActivity(DrawerActivity::class))
+                onClick(openActivity(CustomContainerActivity::class))
             }
             primaryItem(R.string.drawer_item_menu_drawer, R.string.drawer_item_menu_drawer_desc) {
                 iicon = GoogleMaterial.Icon.gmd_filter_list
