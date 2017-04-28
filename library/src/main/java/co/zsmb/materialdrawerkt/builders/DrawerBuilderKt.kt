@@ -3,6 +3,7 @@ package co.zsmb.materialdrawerkt.builders
 import android.app.Activity
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.widget.RecyclerView
@@ -22,11 +23,20 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
  * Adds a navigation drawer to this Activity.
  * @return The created Drawer instance
  */
-
 fun Activity.drawer(setup: DrawerBuilderKt.() -> Unit = {}): Drawer {
     val builder = DrawerBuilderKt(this)
     builder.setup()
     return builder.build()
+}
+
+/**
+ * Adds a navigation drawer to this Fragment.
+ * @return The created Drawer instance
+ */
+fun Fragment.drawer(setup: DrawerBuilderKt.() -> Unit = {}): Drawer {
+    val builder = DrawerBuilderKt(activity)
+    builder.setup()
+    return builder.buildForFragment()
 }
 
 @DrawerMarker
@@ -54,6 +64,14 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
         primaryDrawer?.let { return builder.append(it) }
 
         return builder.build()
+    }
+
+    internal fun buildForFragment(): Drawer {
+        if (onDrawerListener.isInitialized) {
+            builder.withOnDrawerListener(onDrawerListener)
+        }
+
+        return builder.buildForFragment()
     }
 
     /**
