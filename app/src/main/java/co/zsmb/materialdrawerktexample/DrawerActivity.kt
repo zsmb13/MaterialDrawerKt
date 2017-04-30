@@ -156,24 +156,24 @@ class DrawerActivity : AppCompatActivity() {
                 selectable = false
                 onClick(openActivity(MenuDrawerActivity::class))
             }
-            /*primaryItem(R.string.drawer_item_mini_drawer, R.string.drawer_item_mini_drawer_desc) {
+            primaryItem(R.string.drawer_item_mini_drawer, R.string.drawer_item_mini_drawer_desc) {
                 iicon = GoogleMaterial.Icon.gmd_battery_charging
                 identifier = 11
                 selectable = false
-                onClick(openActivity(DrawerActivity::class))
-            }*/
+                onClick(openActivity(MiniDrawerActivity::class))
+            }
             primaryItem(R.string.drawer_item_fragment_drawer, R.string.drawer_item_fragment_drawer_desc) {
                 iicon = GoogleMaterial.Icon.gmd_disc_full
                 identifier = 12
                 selectable = false
                 onClick(openActivity(FragmentDrawerActivity::class))
             }
-            primaryItem(R.string.drawer_item_collapsing_toolbar_drawer, R.string.drawer_item_collapsing_toolbar_drawer_desc) {
+            /*primaryItem(R.string.drawer_item_collapsing_toolbar_drawer, R.string.drawer_item_collapsing_toolbar_drawer_desc) {
                 iicon = GoogleMaterial.Icon.gmd_camera_rear
                 identifier = 13
                 selectable = false
                 onClick(openActivity(DrawerActivity::class))
-            }
+            }*/
             primaryItem(R.string.drawer_item_persistent_compact_header, R.string.drawer_item_persistent_compact_header_desc) {
                 iicon = GoogleMaterial.Icon.gmd_brightness_5
                 identifier = 14

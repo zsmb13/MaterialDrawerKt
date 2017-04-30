@@ -61,6 +61,10 @@
             android:name=".FragmentDrawerActivity"
             android:label="@string/drawer_item_fragment_drawer"
             android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar" />
+        <activity
+            android:name=".MiniDrawerActivity"
+            android:label="@string/drawer_item_mini_drawer"
+            android:theme="@style/MaterialDrawerTheme" />
     </application>
 
 </manifest>
