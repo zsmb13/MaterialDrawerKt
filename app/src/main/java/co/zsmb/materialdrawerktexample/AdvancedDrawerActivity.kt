@@ -26,8 +26,8 @@ import org.jetbrains.anko.toast
 
 class AdvancedDrawerActivity : AppCompatActivity() {
 
-    lateinit var result: Drawer
-    lateinit var headerResult: AccountHeader
+    private lateinit var result: Drawer
+    private lateinit var headerResult: AccountHeader
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

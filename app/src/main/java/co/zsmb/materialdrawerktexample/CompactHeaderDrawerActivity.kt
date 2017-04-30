@@ -18,8 +18,8 @@ import kotlinx.android.synthetic.main.activity_sample.*
 
 class CompactHeaderDrawerActivity : AppCompatActivity() {
 
-    lateinit var result: Drawer
-    lateinit var headerResult: AccountHeader
+    private lateinit var result: Drawer
+    private lateinit var headerResult: AccountHeader
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

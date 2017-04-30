@@ -20,8 +20,8 @@ import org.jetbrains.anko.toast
 
 class MultiDrawerActivity : AppCompatActivity() {
 
-    lateinit var result: Drawer
-    lateinit var resultAppended: Drawer
+    private lateinit var result: Drawer
+    private lateinit var resultAppended: Drawer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -10,7 +10,7 @@ import org.jetbrains.anko.toast
 
 class MenuDrawerActivity : AppCompatActivity() {
 
-    lateinit var result: Drawer
+    private lateinit var result: Drawer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

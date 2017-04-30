@@ -32,8 +32,8 @@ import kotlin.reflect.KClass
 
 class DrawerActivity : AppCompatActivity() {
 
-    lateinit var result: Drawer
-    lateinit var headerResult: AccountHeader
+    private lateinit var result: Drawer
+    private lateinit var headerResult: AccountHeader
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

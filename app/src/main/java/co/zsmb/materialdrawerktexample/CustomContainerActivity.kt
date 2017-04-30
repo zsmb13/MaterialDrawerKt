@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.activity_sample.*
 
 class CustomContainerActivity : AppCompatActivity() {
 
-    lateinit var result: Drawer
+    private lateinit var result: Drawer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.activity_sample_fullscreen_dark_toolbar.*
 
 class FullscreenDrawerActivity : AppCompatActivity() {
 
-    lateinit var result: Drawer
+    private lateinit var result: Drawer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
