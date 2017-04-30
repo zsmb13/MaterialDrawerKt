@@ -1,4 +1,4 @@
-package co.zsmb.materialdrawerktexample
+package co.zsmb.materialdrawerktexample.originalactivities
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -13,6 +13,7 @@ import co.zsmb.materialdrawerkt.draweritems.profile.profileSetting
 import co.zsmb.materialdrawerkt.draweritems.sectionHeader
 import co.zsmb.materialdrawerkt.draweritems.switchable.switchItem
 import co.zsmb.materialdrawerkt.draweritems.toggleable.toggleItem
+import co.zsmb.materialdrawerktexample.R
 import co.zsmb.materialdrawerktexample.utils.CrossfadeWrapper
 import com.mikepenz.crossfader.Crossfader
 import com.mikepenz.crossfader.util.UIUtils

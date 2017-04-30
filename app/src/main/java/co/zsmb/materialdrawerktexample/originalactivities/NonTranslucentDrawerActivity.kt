@@ -1,4 +1,4 @@
-package co.zsmb.materialdrawerktexample
+package co.zsmb.materialdrawerktexample.originalactivities
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -7,6 +7,7 @@ import co.zsmb.materialdrawerkt.builders.drawer
 import co.zsmb.materialdrawerkt.draweritems.badgeable.primaryItem
 import co.zsmb.materialdrawerkt.draweritems.badgeable.secondaryItem
 import co.zsmb.materialdrawerkt.draweritems.sectionHeader
+import co.zsmb.materialdrawerktexample.R
 import com.mikepenz.fontawesome_typeface_library.FontAwesome
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.model.interfaces.Nameable
@@ -29,14 +30,14 @@ class NonTranslucentDrawerActivity : AppCompatActivity() {
             savedInstance = savedInstanceState
             translucentStatusBar = false
 
-            primaryItem(R.string.drawer_item_home) { iicon = FontAwesome.Icon.faw_home }
-            primaryItem(R.string.drawer_item_free_play) { iicon = FontAwesome.Icon.faw_gamepad }
-            primaryItem(R.string.drawer_item_custom) { iicon = FontAwesome.Icon.faw_eye }
-            sectionHeader(R.string.drawer_item_section_header)
-            secondaryItem(R.string.drawer_item_settings) { iicon = FontAwesome.Icon.faw_cog }
-            secondaryItem(R.string.drawer_item_help) { iicon = FontAwesome.Icon.faw_question }
-            secondaryItem(R.string.drawer_item_open_source) { iicon = FontAwesome.Icon.faw_github }
-            secondaryItem(R.string.drawer_item_contact) { iicon = FontAwesome.Icon.faw_bullhorn }
+            primaryItem(co.zsmb.materialdrawerktexample.R.string.drawer_item_home) { iicon = FontAwesome.Icon.faw_home }
+            primaryItem(co.zsmb.materialdrawerktexample.R.string.drawer_item_free_play) { iicon = FontAwesome.Icon.faw_gamepad }
+            primaryItem(co.zsmb.materialdrawerktexample.R.string.drawer_item_custom) { iicon = FontAwesome.Icon.faw_eye }
+            sectionHeader(co.zsmb.materialdrawerktexample.R.string.drawer_item_section_header)
+            secondaryItem(co.zsmb.materialdrawerktexample.R.string.drawer_item_settings) { iicon = FontAwesome.Icon.faw_cog }
+            secondaryItem(co.zsmb.materialdrawerktexample.R.string.drawer_item_help) { iicon = FontAwesome.Icon.faw_question }
+            secondaryItem(co.zsmb.materialdrawerktexample.R.string.drawer_item_open_source) { iicon = FontAwesome.Icon.faw_github }
+            secondaryItem(co.zsmb.materialdrawerktexample.R.string.drawer_item_contact) { iicon = FontAwesome.Icon.faw_bullhorn }
 
             onItemClick { _, _, drawerItem ->
                 if (drawerItem is Nameable<*>) {

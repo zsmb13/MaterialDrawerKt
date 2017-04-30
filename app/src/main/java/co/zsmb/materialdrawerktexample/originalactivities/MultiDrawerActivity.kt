@@ -1,8 +1,7 @@
-package co.zsmb.materialdrawerktexample
+package co.zsmb.materialdrawerktexample.originalactivities
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import android.view.Gravity
 import android.view.MenuItem
 import co.zsmb.materialdrawerkt.builders.drawer
@@ -10,6 +9,7 @@ import co.zsmb.materialdrawerkt.draweritems.badge
 import co.zsmb.materialdrawerkt.draweritems.badgeable.primaryItem
 import co.zsmb.materialdrawerkt.draweritems.badgeable.secondaryItem
 import co.zsmb.materialdrawerkt.draweritems.sectionHeader
+import co.zsmb.materialdrawerktexample.R
 import com.mikepenz.fontawesome_typeface_library.FontAwesome
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem
@@ -54,7 +54,7 @@ class MultiDrawerActivity : AppCompatActivity() {
             secondaryItem(R.string.drawer_item_contact) { iicon = FontAwesome.Icon.faw_bullhorn }
 
             fun logAndShow(message: String) {
-                Log.d("DRAWER_EVENT", message)
+                android.util.Log.d("DRAWER_EVENT", message)
                 txtLabel.text = message
             }
 
@@ -84,7 +84,7 @@ class MultiDrawerActivity : AppCompatActivity() {
                 false
             }
 
-            onItemLongClick { view, position, drawerItem ->
+            onItemLongClick { _, _, drawerItem ->
                 if (drawerItem is SecondaryDrawerItem) {
                     toast(drawerItem.name.getText(this@MultiDrawerActivity))
                 }

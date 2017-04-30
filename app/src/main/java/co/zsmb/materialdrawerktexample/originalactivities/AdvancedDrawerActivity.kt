@@ -1,4 +1,4 @@
-package co.zsmb.materialdrawerktexample
+package co.zsmb.materialdrawerktexample.originalactivities
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -13,11 +13,12 @@ import co.zsmb.materialdrawerkt.draweritems.badgeable.secondaryItem
 import co.zsmb.materialdrawerkt.draweritems.profile.profile
 import co.zsmb.materialdrawerkt.draweritems.profile.profileSetting
 import co.zsmb.materialdrawerkt.draweritems.sectionHeader
+import co.zsmb.materialdrawerktexample.R
 import co.zsmb.materialdrawerktexample.customitems.customprimary.CustomPrimaryDrawerItem
 import co.zsmb.materialdrawerktexample.customitems.customurl.CustomUrlPrimaryDrawerItem
 import co.zsmb.materialdrawerktexample.customitems.overflow.overflowMenuItem
-import com.mikepenz.fontawesome_typeface_library.FontAwesome
-import com.mikepenz.google_material_typeface_library.GoogleMaterial
+import com.mikepenz.fontawesome_typeface_library.FontAwesome.Icon.*
+import com.mikepenz.google_material_typeface_library.GoogleMaterial.Icon
 import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem
@@ -62,7 +63,7 @@ class AdvancedDrawerActivity : AppCompatActivity() {
                     icon = R.drawable.profile5
                 }
                 profileSetting("Add account", "Add new GitHub Account") {
-                    iicon = GoogleMaterial.Icon.gmd_plus
+                    iicon = Icon.gmd_plus
                     onClick { _ ->
                         val newProfile = ProfileDrawerItem()
                                 .withNameShown(true)
@@ -76,14 +77,14 @@ class AdvancedDrawerActivity : AppCompatActivity() {
                     }
                 }
                 profileSetting("Manage Account") {
-                    iicon = GoogleMaterial.Icon.gmd_settings
+                    iicon = Icon.gmd_settings
                 }
             }
 
-            primaryItem(R.string.drawer_item_home) { iicon = FontAwesome.Icon.faw_home }
+            primaryItem(R.string.drawer_item_home) { iicon = faw_home }
 
             overflowMenuItem(R.string.drawer_item_menu_drawer_item, R.string.drawer_item_menu_drawer_item_desc) {
-                iicon = GoogleMaterial.Icon.gmd_filter_center_focus
+                iicon = Icon.gmd_filter_center_focus
                 menu = R.menu.fragment_menu
                 onMenuItemClick {
                     toast(it.title)
@@ -95,11 +96,11 @@ class AdvancedDrawerActivity : AppCompatActivity() {
                     CustomPrimaryDrawerItem()
                             .withBackgroundRes(R.color.accent)
                             .withName(R.string.drawer_item_free_play)
-                            .withIcon(FontAwesome.Icon.faw_gamepad)
+                            .withIcon(faw_gamepad)
             )
 
             primaryItem(R.string.drawer_item_custom) {
-                iicon = FontAwesome.Icon.faw_gamepad
+                iicon = faw_gamepad
                 description = "This is a description"
             }
 
@@ -112,20 +113,20 @@ class AdvancedDrawerActivity : AppCompatActivity() {
             )
 
             sectionHeader(R.string.drawer_item_section_header)
-            secondaryItem(R.string.drawer_item_settings) { iicon = FontAwesome.Icon.faw_cog }
-            secondaryItem(R.string.drawer_item_help) { iicon = FontAwesome.Icon.faw_question }
+            secondaryItem(R.string.drawer_item_settings) { iicon = faw_cog }
+            secondaryItem(R.string.drawer_item_help) { iicon = faw_question }
             secondaryItem(R.string.drawer_item_open_source) {
-                iicon = FontAwesome.Icon.faw_github
+                iicon = faw_github
                 badge("12")
             }
-            secondaryItem(R.string.drawer_item_contact) { iicon = FontAwesome.Icon.faw_bullhorn }
+            secondaryItem(R.string.drawer_item_contact) { iicon = faw_bullhorn }
 
             footer {
                 secondaryItem(R.string.drawer_item_settings) {
-                    iicon = FontAwesome.Icon.faw_cog
+                    iicon = faw_cog
                 }
                 secondaryItem(R.string.drawer_item_open_source) {
-                    iicon = FontAwesome.Icon.faw_github
+                    iicon = faw_github
                 }
             }
 
@@ -159,7 +160,7 @@ class AdvancedDrawerActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.menu_1 -> {
                     val profile2 = headerResult.profiles[1]
-                    profile2.withIcon(GoogleMaterial.Icon.gmd_android)
+                    profile2.withIcon(Icon.gmd_android)
                     headerResult.updateProfile(profile2)
                     true
                 }

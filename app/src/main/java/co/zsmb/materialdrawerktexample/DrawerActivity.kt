@@ -21,6 +21,8 @@ import co.zsmb.materialdrawerkt.draweritems.switchable.secondarySwitchItem
 import co.zsmb.materialdrawerkt.draweritems.switchable.switchItem
 import co.zsmb.materialdrawerkt.draweritems.toggleable.secondaryToggleItem
 import co.zsmb.materialdrawerkt.draweritems.toggleable.toggleItem
+import co.zsmb.materialdrawerktexample.newactivities.AllDrawerItemsActivity
+import co.zsmb.materialdrawerktexample.originalactivities.*
 import com.mikepenz.fontawesome_typeface_library.FontAwesome
 import com.mikepenz.google_material_typeface_library.GoogleMaterial
 import com.mikepenz.materialdrawer.AccountHeader
@@ -99,6 +101,16 @@ class DrawerActivity : AppCompatActivity() {
                 }
             }
 
+            sectionHeader("MaterialDrawerKt demos") {
+                divider = false
+            }
+
+            primaryItem("All available drawer items") {
+                onClick(openActivity(AllDrawerItemsActivity::class))
+            }
+
+            sectionHeader("Original demo activities")
+
             primaryItem(R.string.drawer_item_compact_header, R.string.drawer_item_compact_header_desc) {
                 iicon = GoogleMaterial.Icon.gmd_sun
                 identifier = 1
@@ -168,26 +180,8 @@ class DrawerActivity : AppCompatActivity() {
                 selectable = false
                 onClick(openActivity(FragmentDrawerActivity::class))
             }
-            /*primaryItem(R.string.drawer_item_collapsing_toolbar_drawer, R.string.drawer_item_collapsing_toolbar_drawer_desc) {
-                iicon = GoogleMaterial.Icon.gmd_camera_rear
-                identifier = 13
-                selectable = false
-                onClick(openActivity(DrawerActivity::class))
-            }*/
-            primaryItem(R.string.drawer_item_persistent_compact_header, R.string.drawer_item_persistent_compact_header_desc) {
-                iicon = GoogleMaterial.Icon.gmd_brightness_5
-                identifier = 14
-                selectable = false
-                onClick(openActivity(DrawerActivity::class))
-            }
-            primaryItem(R.string.drawer_item_persistent_compact_header, R.string.drawer_item_persistent_compact_header_desc) {
-                iicon = GoogleMaterial.Icon.gmd_format_bold
-                identifier = 15
-                selectable = false
-                onClick(openActivity(DrawerActivity::class))
-            }
 
-            sectionHeader(R.string.drawer_item_section_header)
+            sectionHeader("More original demo material")
 
             expandableBadgeItem("Collapsable Badge") {
                 iicon = GoogleMaterial.Icon.gmd_collection_case_play
