@@ -13,7 +13,6 @@ import com.mikepenz.fontawesome_typeface_library.FontAwesome
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.model.interfaces.Nameable
 import kotlinx.android.synthetic.main.activity_sample.*
-import org.jetbrains.anko.toast
 
 class ListenersActivity : AppCompatActivity() {
 
@@ -21,7 +20,7 @@ class ListenersActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sample)
+        setContentView(R.layout.activity_sample_logging)
         setSupportActionBar(toolbar)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -33,50 +32,48 @@ class ListenersActivity : AppCompatActivity() {
 
             primaryItem("Item 1") {
                 iicon = FontAwesome.Icon.faw_heart
-                // onClick { _ -> logToast("Clicked item 1") }
+                // onClick { _ -> log("Clicked item 1") }
             }
 
             switchItem("Item 2") {
                 iicon = FontAwesome.Icon.faw_heart
-                // onClick { _ -> logToast("Clicked item 2") }
-                // onToggled { isEnabled -> logToast("Toggled item 2, it's now set to $isEnabled") }
+                // onClick { _ -> log("Clicked item 2") }
+                // onToggled { isEnabled -> log("Toggled item 2, it's now set to $isEnabled") }
                 onSwitchChanged { drawerItem, button, isEnabled ->
-                    logToast("Toggled item 2, it's now set to $isEnabled")
+                    log("Toggled item 2, it's now set to $isEnabled")
                 }
             }
 
             toggleItem("Item 3") {
                 iicon = FontAwesome.Icon.faw_heart
-                // onClick { _ -> logToast("Clicked item 3") }
-                // onToggled { isEnabled -> logToast("Toggled item 3, it's now set to $isEnabled") }
+                // onClick { _ -> log("Clicked item 3") }
+                // onToggled { isEnabled -> log("Toggled item 3, it's now set to $isEnabled") }
                 onToggleChanged { drawerItem, button, isEnabled ->
-                    logToast("Toggled item 3, it's now set to $isEnabled")
+                    log("Toggled item 3, it's now set to $isEnabled")
                 }
             }
 
-            onOpened { logToast("Opened drawer") }
-            onClosed { logToast("Closed drawer") }
+            onOpened { log("Opened drawer") }
+            onClosed { log("Closed drawer") }
             onSlide { drawerView, slideOffset ->
-                log("Drawer is ${slideOffset * 100}% open")
+                Log.d("SLIDE", "Drawer is ${slideOffset * 100}% open")
             }
 
             onItemClick { view, position, drawerItem ->
-                logToast("Clicked ${(drawerItem as? Nameable<*>)?.name}")
+                log("Clicked ${(drawerItem as? Nameable<*>)?.name}")
             }
             onItemLongClick { view, position, drawerItem ->
-                logToast("Long clicked ${(drawerItem as? Nameable<*>)?.name}")
+                log("Long clicked ${(drawerItem as? Nameable<*>)?.name}")
             }
         }
     }
 
     private fun log(message: String): Boolean {
         Log.d("LISTENER", message)
-        return false
-    }
 
-    private fun logToast(message: String): Boolean {
-        log(message)
-        toast(message)
+        val lines = txtLabel.text.lines() + message
+        txtLabel.text = lines.takeLast(20).joinToString("\n")
+
         return false
     }
 

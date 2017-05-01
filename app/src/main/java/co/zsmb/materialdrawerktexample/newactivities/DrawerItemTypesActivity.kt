@@ -54,7 +54,7 @@ class DrawerItemTypesActivity : AppCompatActivity() {
                 profile("Laura", "laura@gmail.com") {
                     icon = R.drawable.profile4
                 }
-                profileSetting("Refresh", "Refreshes the profile list") {
+                profileSetting("Refresh", "Not a real button") {
                     iicon = GoogleMaterial.Icon.gmd_refresh
                 }
             }
