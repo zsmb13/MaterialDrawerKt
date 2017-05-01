@@ -66,8 +66,24 @@
             android:label="@string/drawer_item_mini_drawer"
             android:theme="@style/MaterialDrawerTheme" />
         <activity
-            android:name=".newactivities.AllDrawerItemsActivity"
-            android:label="All drawer items"
+            android:name=".newactivities.DrawerItemTypesActivity"
+            android:label="Drawer item types"
+            android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar" />
+        <activity
+            android:name=".newactivities.AccountHeaderActivity"
+            android:label="Account header options"
+            android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar" />
+        <activity
+            android:name=".newactivities.ListenersActivity"
+            android:label="Listeners"
+            android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar" />
+        <activity
+            android:name=".newactivities.BadgesActivity"
+            android:label="Badges"
+            android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar" />
+        <activity
+            android:name=".newactivities.HeaderFooterActivity"
+            android:label="Header and footer"
             android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar" />
     </application>
 

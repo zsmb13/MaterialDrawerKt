@@ -21,7 +21,7 @@ import co.zsmb.materialdrawerkt.draweritems.switchable.secondarySwitchItem
 import co.zsmb.materialdrawerkt.draweritems.switchable.switchItem
 import co.zsmb.materialdrawerkt.draweritems.toggleable.secondaryToggleItem
 import co.zsmb.materialdrawerkt.draweritems.toggleable.toggleItem
-import co.zsmb.materialdrawerktexample.newactivities.AllDrawerItemsActivity
+import co.zsmb.materialdrawerktexample.newactivities.*
 import co.zsmb.materialdrawerktexample.originalactivities.*
 import com.mikepenz.fontawesome_typeface_library.FontAwesome
 import com.mikepenz.google_material_typeface_library.GoogleMaterial
@@ -105,8 +105,25 @@ class DrawerActivity : AppCompatActivity() {
                 divider = false
             }
 
-            primaryItem("All available drawer items") {
-                onClick(openActivity(AllDrawerItemsActivity::class))
+            primaryItem("Drawer item types") {
+                iicon = GoogleMaterial.Icon.gmd_cloud
+                onClick(openActivity(DrawerItemTypesActivity::class))
+            }
+            primaryItem("Account header options") {
+                iicon = GoogleMaterial.Icon.gmd_account
+                onClick(openActivity(AccountHeaderActivity::class))
+            }
+            primaryItem("Header and footer") {
+                iicon = GoogleMaterial.Icon.gmd_menu
+                onClick(openActivity(HeaderFooterActivity::class))
+            }
+            primaryItem("Listeners") {
+                iicon = GoogleMaterial.Icon.gmd_audio
+                onClick(openActivity(ListenersActivity::class))
+            }
+            primaryItem("Badges") {
+                iicon = GoogleMaterial.Icon.gmd_tag
+                onClick(openActivity(BadgesActivity::class))
             }
 
             sectionHeader("Original demo activities")
