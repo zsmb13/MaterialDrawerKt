@@ -114,6 +114,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Non readable property. Wraps the [AccountHeaderBuilder.withHeaderBackground] method.
      */
     @Deprecated(level = DeprecationLevel.WARNING,
+            replaceWith = ReplaceWith("background"),
             message = "Alternatives are available, check the documentation.")
     var backgroundRes: Int
         get() = nonReadable()
