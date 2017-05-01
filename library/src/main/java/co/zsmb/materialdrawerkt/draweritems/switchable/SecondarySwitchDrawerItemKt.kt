@@ -1,13 +1,13 @@
 package co.zsmb.materialdrawerkt.draweritems.switchable
 
-import co.zsmb.materialdrawerkt.builders.BuilderBase
+import co.zsmb.materialdrawerkt.builders.Builder
 import com.mikepenz.materialdrawer.model.SecondarySwitchDrawerItem
 
 /**
  * Adds a new SecondarySwitchDrawerItem with the given [name] and [description].
  * @return The created SecondarySwitchDrawerItem instance
  */
-fun BuilderBase.secondarySwitchItem(
+fun Builder.secondarySwitchItem(
         name: String = "",
         description: String? = null,
         setup: SecondarySwitchDrawerItemKt.() -> Unit = {}): SecondarySwitchDrawerItem {
@@ -22,7 +22,7 @@ fun BuilderBase.secondarySwitchItem(
  * Adds a new SecondarySwitchDrawerItem with the given [nameRes] and [descriptionRes].
  * @return The created SecondarySwitchDrawerItem instance
  */
-fun BuilderBase.secondarySwitchItem(
+fun Builder.secondarySwitchItem(
         nameRes: Int,
         descriptionRes: Int? = null,
         setup: SecondarySwitchDrawerItemKt.() -> Unit = {}): SecondarySwitchDrawerItem {

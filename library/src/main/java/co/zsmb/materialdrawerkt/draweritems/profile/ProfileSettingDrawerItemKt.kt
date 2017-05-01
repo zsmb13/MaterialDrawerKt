@@ -109,8 +109,8 @@ class ProfileSettingDrawerItemKt() : AbstractDrawerItemKt() {
      * Non readable property. Wraps the [ProfileSettingDrawerItem.withEmail] method.
      */
     @Deprecated(level = DeprecationLevel.ERROR,
-            message = "Only here for discoverability. Use the description property instead",
-            replaceWith = ReplaceWith("description"))
+            replaceWith = ReplaceWith("description"),
+            message = "Only here for discoverability. Use the description property instead")
     var email: String
         get() = nonReadable()
         set(value) {

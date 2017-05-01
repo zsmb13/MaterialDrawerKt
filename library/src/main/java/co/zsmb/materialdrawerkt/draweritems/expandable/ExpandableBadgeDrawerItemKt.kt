@@ -1,6 +1,6 @@
 package co.zsmb.materialdrawerkt.draweritems.expandable
 
-import co.zsmb.materialdrawerkt.builders.BuilderBase
+import co.zsmb.materialdrawerkt.builders.Builder
 import co.zsmb.materialdrawerkt.draweritems.badgeable.BadgeableKt
 import co.zsmb.materialdrawerkt.draweritems.base.BaseDescribeableDrawerItemKt
 import com.mikepenz.materialdrawer.holder.BadgeStyle
@@ -11,9 +11,9 @@ import com.mikepenz.materialdrawer.model.ExpandableBadgeDrawerItem
  * Adds a new ExpandableBadgeDrawerItem with the given [name] and [description].
  * @return The created ExpandableBadgeDrawerItem instance
  */
-fun BuilderBase.expandableBadgeItem(name: String = "",
-                                    description: String? = null,
-                                    setup: ExpandableBadgeDrawerItemKt.() -> Unit = {}): ExpandableBadgeDrawerItem {
+fun Builder.expandableBadgeItem(name: String = "",
+                                description: String? = null,
+                                setup: ExpandableBadgeDrawerItemKt.() -> Unit = {}): ExpandableBadgeDrawerItem {
     val item = ExpandableBadgeDrawerItemKt()
     item.name = name
     description?.let { item.description = it }
@@ -25,9 +25,9 @@ fun BuilderBase.expandableBadgeItem(name: String = "",
  * Adds a new ExpandableBadgeDrawerItem with the given [nameRes] and [descriptionRes].
  * @return The created ExpandableBadgeDrawerItem instance
  */
-fun BuilderBase.expandableBadgeItem(nameRes: Int,
-                                    descriptionRes: Int? = null,
-                                    setup: ExpandableBadgeDrawerItemKt.() -> Unit = {}): ExpandableBadgeDrawerItem {
+fun Builder.expandableBadgeItem(nameRes: Int,
+                                descriptionRes: Int? = null,
+                                setup: ExpandableBadgeDrawerItemKt.() -> Unit = {}): ExpandableBadgeDrawerItem {
     val item = ExpandableBadgeDrawerItemKt()
     item.nameRes = nameRes
     descriptionRes?.let { item.descriptionRes = it }

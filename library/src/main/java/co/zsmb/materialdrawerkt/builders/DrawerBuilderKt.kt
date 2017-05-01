@@ -3,6 +3,7 @@ package co.zsmb.materialdrawerkt.builders
 import android.app.Activity
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.widget.RecyclerView
@@ -22,15 +23,24 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
  * Adds a navigation drawer to this Activity.
  * @return The created Drawer instance
  */
-
 fun Activity.drawer(setup: DrawerBuilderKt.() -> Unit = {}): Drawer {
     val builder = DrawerBuilderKt(this)
     builder.setup()
     return builder.build()
 }
 
+/**
+ * Adds a navigation drawer to this Fragment.
+ * @return The created Drawer instance
+ */
+fun Fragment.drawer(setup: DrawerBuilderKt.() -> Unit = {}): Drawer {
+    val builder = DrawerBuilderKt(activity)
+    builder.setup()
+    return builder.buildForFragment()
+}
+
 @DrawerMarker
-class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
+class DrawerBuilderKt(val activity: Activity) : Builder {
 
     /* Builder basics */
 
@@ -41,9 +51,27 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
             builder.withOnDrawerListener(onDrawerListener)
         }
 
+        if (buildViewOnly) {
+            return builder.buildView()
+        }
+
+        root?.let {
+            val drawerResult = builder.buildView()
+            it.addView(drawerResult.slider)
+            return drawerResult
+        }
+
         primaryDrawer?.let { return builder.append(it) }
 
         return builder.build()
+    }
+
+    internal fun buildForFragment(): Drawer {
+        if (onDrawerListener.isInitialized) {
+            builder.withOnDrawerListener(onDrawerListener)
+        }
+
+        return builder.buildForFragment()
     }
 
     /**
@@ -55,6 +83,8 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     fun drawer(param: () -> Unit = {}) {
     }
 
+    @Deprecated(level = DeprecationLevel.WARNING,
+            message = "Only for use with custom drawer items.")
     override fun attachItem(item: IDrawerItem<*, *>) {
         builder.addDrawerItems(item)
     }
@@ -62,6 +92,47 @@ class DrawerBuilderKt(val activity: Activity) : BuilderBase() {
     internal fun attachHeader(header: AccountHeader) {
         builder.withAccountHeader(header)
     }
+
+    /* Build helper */
+
+    private var root: ViewGroup? = null
+
+    /**
+     * Setting this to true will not attach the drawer to the Activity. Instead, you can call [Drawer.getSlider]  to get
+     * the root view of the created drawer, and add it to a ViewGroup yourself.
+     * Default value is false.
+     *
+     * Wraps the [DrawerBuilder.buildView] method.
+     */
+    var buildViewOnly: Boolean = false
+
+    /**
+     * The ViewGroup which the DrawerLayout will be added to.
+     *
+     * This is equivalent to setting the [buildViewOnly] property, or, with the original library, using
+     * [DrawerBuilder.buildView]. The difference is that you don't have to manually add the drawer to the ViewGroup.
+     *
+     * Non readable property.
+     */
+    var parentView: ViewGroup
+        get() = nonReadable()
+        set(value) {
+            root = value
+        }
+
+    /**
+     * The ViewGroup which the DrawerLayout will be added to, given by its layout ID.
+     *
+     * This is equivalent to setting the [buildViewOnly] property, or, with the original library, using
+     * [DrawerBuilder.buildView]. The difference is that you don't have to manually add the drawer to the ViewGroup.
+     *
+     * Non readable property.
+     */
+    var parentViewRes: Int
+        get() = nonReadable()
+        set(value) {
+            root = activity.findViewById(value) as ViewGroup?
+        }
 
     /* Listener helper */
 

@@ -21,6 +21,8 @@ import co.zsmb.materialdrawerkt.draweritems.switchable.secondarySwitchItem
 import co.zsmb.materialdrawerkt.draweritems.switchable.switchItem
 import co.zsmb.materialdrawerkt.draweritems.toggleable.secondaryToggleItem
 import co.zsmb.materialdrawerkt.draweritems.toggleable.toggleItem
+import co.zsmb.materialdrawerktexample.newactivities.*
+import co.zsmb.materialdrawerktexample.originalactivities.*
 import com.mikepenz.fontawesome_typeface_library.FontAwesome
 import com.mikepenz.google_material_typeface_library.GoogleMaterial
 import com.mikepenz.materialdrawer.AccountHeader
@@ -32,8 +34,8 @@ import kotlin.reflect.KClass
 
 class DrawerActivity : AppCompatActivity() {
 
-    lateinit var result: Drawer
-    lateinit var headerResult: AccountHeader
+    private lateinit var result: Drawer
+    private lateinit var headerResult: AccountHeader
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -99,12 +101,39 @@ class DrawerActivity : AppCompatActivity() {
                 }
             }
 
+            sectionHeader("MaterialDrawerKt demos") {
+                divider = false
+            }
+
+            primaryItem("Drawer item types") {
+                iicon = GoogleMaterial.Icon.gmd_cloud
+                onClick(openActivity(DrawerItemTypesActivity::class))
+            }
+            primaryItem("Account header options") {
+                iicon = GoogleMaterial.Icon.gmd_account
+                onClick(openActivity(AccountHeaderActivity::class))
+            }
+            primaryItem("Header and footer") {
+                iicon = GoogleMaterial.Icon.gmd_menu
+                onClick(openActivity(HeaderFooterActivity::class))
+            }
+            primaryItem("Listeners") {
+                iicon = GoogleMaterial.Icon.gmd_audio
+                onClick(openActivity(ListenersActivity::class))
+            }
+            primaryItem("Badges") {
+                iicon = GoogleMaterial.Icon.gmd_tag
+                onClick(openActivity(BadgesActivity::class))
+            }
+
+            sectionHeader("Original demo activities")
+
             primaryItem(R.string.drawer_item_compact_header, R.string.drawer_item_compact_header_desc) {
                 iicon = GoogleMaterial.Icon.gmd_sun
                 identifier = 1
                 selectable = false
                 onClick { _ ->
-                    startActivity(Intent(this@DrawerActivity, DrawerActivity::class.java))
+                    startActivity(Intent(this@DrawerActivity, CompactHeaderDrawerActivity::class.java))
                     false
                 }
             }
@@ -112,82 +141,64 @@ class DrawerActivity : AppCompatActivity() {
                 iicon = FontAwesome.Icon.faw_home
                 identifier = 2
                 selectable = false
-                onClick(openActivity(DrawerActivity::class))
+                onClick(openActivity(ActionBarActivity::class))
             }
             primaryItem(R.string.drawer_item_multi_drawer, R.string.drawer_item_multi_drawer_desc) {
                 iicon = FontAwesome.Icon.faw_gamepad
                 identifier = 3
                 selectable = false
-                onClick(openActivity(DrawerActivity::class))
+                onClick(openActivity(MultiDrawerActivity::class))
             }
             primaryItem(R.string.drawer_item_non_translucent_status_drawer, R.string.drawer_item_non_translucent_status_drawer_desc) {
                 iicon = FontAwesome.Icon.faw_eye
                 identifier = 4
                 selectable = false
-                onClick(openActivity(DrawerActivity::class))
+                onClick(openActivity(NonTranslucentDrawerActivity::class))
             }
             primaryItem(R.string.drawer_item_advanced_drawer, R.string.drawer_item_advanced_drawer_desc) {
                 iicon = GoogleMaterial.Icon.gmd_adb
                 identifier = 5
                 selectable = false
-                onClick(openActivity(DrawerActivity::class))
+                onClick(openActivity(AdvancedDrawerActivity::class))
             }
             primaryItem(R.string.drawer_item_embedded_drawer, R.string.drawer_item_embedded_drawer_desc) {
                 iicon = GoogleMaterial.Icon.gmd_battery
                 identifier = 7
                 selectable = false
-                onClick(openActivity(DrawerActivity::class))
+                onClick(openActivity(EmbeddedDrawerActivity::class))
             }
             primaryItem(R.string.drawer_item_fullscreen_drawer, R.string.drawer_item_fullscreen_drawer_desc) {
                 iicon = GoogleMaterial.Icon.gmd_labels
                 identifier = 8
                 selectable = false
-                onClick(openActivity(DrawerActivity::class))
+                onClick(openActivity(FullscreenDrawerActivity::class))
             }
             primaryItem(R.string.drawer_item_custom_container_drawer, R.string.drawer_item_custom_container_drawer_desc) {
                 iicon = GoogleMaterial.Icon.gmd_my_location
                 identifier = 9
                 selectable = false
-                onClick(openActivity(DrawerActivity::class))
+                onClick(openActivity(CustomContainerActivity::class))
             }
             primaryItem(R.string.drawer_item_menu_drawer, R.string.drawer_item_menu_drawer_desc) {
                 iicon = GoogleMaterial.Icon.gmd_filter_list
                 identifier = 10
                 selectable = false
-                onClick(openActivity(DrawerActivity::class))
+                onClick(openActivity(MenuDrawerActivity::class))
             }
             primaryItem(R.string.drawer_item_mini_drawer, R.string.drawer_item_mini_drawer_desc) {
                 iicon = GoogleMaterial.Icon.gmd_battery_charging
                 identifier = 11
                 selectable = false
-                onClick(openActivity(DrawerActivity::class))
+                onClick(openActivity(MiniDrawerActivity::class))
             }
             primaryItem(R.string.drawer_item_fragment_drawer, R.string.drawer_item_fragment_drawer_desc) {
                 iicon = GoogleMaterial.Icon.gmd_disc_full
                 identifier = 12
                 selectable = false
-                onClick(openActivity(DrawerActivity::class))
-            }
-            primaryItem(R.string.drawer_item_collapsing_toolbar_drawer, R.string.drawer_item_collapsing_toolbar_drawer_desc) {
-                iicon = GoogleMaterial.Icon.gmd_camera_rear
-                identifier = 13
-                selectable = false
-                onClick(openActivity(DrawerActivity::class))
-            }
-            primaryItem(R.string.drawer_item_persistent_compact_header, R.string.drawer_item_persistent_compact_header_desc) {
-                iicon = GoogleMaterial.Icon.gmd_brightness_5
-                identifier = 14
-                selectable = false
-                onClick(openActivity(DrawerActivity::class))
-            }
-            primaryItem(R.string.drawer_item_persistent_compact_header, R.string.drawer_item_persistent_compact_header_desc) {
-                iicon = GoogleMaterial.Icon.gmd_format_bold
-                identifier = 15
-                selectable = false
-                onClick(openActivity(DrawerActivity::class))
+                onClick(openActivity(FragmentDrawerActivity::class))
             }
 
-            sectionHeader(R.string.drawer_item_section_header)
+            sectionHeader("More original demo material")
 
             expandableBadgeItem("Collapsable Badge") {
                 iicon = GoogleMaterial.Icon.gmd_collection_case_play

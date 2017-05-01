@@ -1,8 +1,6 @@
 <resources>
     <string name="app_name">MaterialDrawerKtExample</string>
 
-    <string name="drawer_item_persistent_compact_header">PersistentHeader Drawer</string>
-    <string name="drawer_item_persistent_compact_header_desc">Smaller persistent account header</string>
     <string name="drawer_item_compact_header">CompactHeader Drawer</string>
     <string name="drawer_item_compact_header_desc">Smaller account header</string>
     <string name="drawer_item_action_bar_drawer">ActionBar Drawer</string>
@@ -25,11 +23,6 @@
     <string name="drawer_item_menu_drawer_desc">Drawer from menu.xml</string>
     <string name="drawer_item_fragment_drawer">Fragment Drawer</string>
     <string name="drawer_item_fragment_drawer_desc">Use drawer within fragments</string>
-    <string name="drawer_item_collapsing_toolbar_drawer">CollapsingToolbar Drawer</string>
-    <string name="drawer_item_collapsing_toolbar_drawer_desc">Uses a CollapsingToolbarLayout</string>
-    <string name="drawer_item_crossfade_drawer_layout_drawer">CrossfadeDrawerLayout</string>
-    <string name="drawer_item_crossfade_drawer_layout_drawer_desc">2-Step Drawer behavior</string>
-
     <string name="drawer_item_menu_drawer_item">Menu Drawer Item</string>
     <string name="drawer_item_menu_drawer_item_desc">Sample menu item with overflow button</string>
 

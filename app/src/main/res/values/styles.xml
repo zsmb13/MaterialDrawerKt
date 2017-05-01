@@ -35,4 +35,6 @@
         <item name="windowActionModeOverlay">true</item>
     </style>
 
+    <style name="FullscreenTheme" parent="MaterialDrawerTheme.Light.DarkToolbar.TranslucentStatus" />
+
 </resources>

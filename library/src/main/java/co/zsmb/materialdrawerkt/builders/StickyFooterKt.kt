@@ -12,7 +12,7 @@ fun DrawerBuilderKt.footer(setup: StickyFooterKt.() -> Unit = {}) {
 }
 
 @DrawerMarker
-class StickyFooterKt(val builder: DrawerBuilder) : BuilderBase() {
+class StickyFooterKt(val builder: DrawerBuilder) : Builder {
 
     /* Builder basics */
 

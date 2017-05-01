@@ -1,19 +1,18 @@
 package co.zsmb.materialdrawerktexample
 
-import android.app.Application
 import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.widget.ImageView
 import com.mikepenz.materialdrawer.util.AbstractDrawerImageLoader
-import com.mikepenz.materialdrawer.util.DrawerImageLoader
+import com.mikepenz.materialdrawer.util.DrawerImageLoader.init
 import com.squareup.picasso.Picasso
 
-class DrawerApplication : Application() {
+class DrawerApplication : android.app.Application() {
 
     override fun onCreate() {
         super.onCreate()
 
-        DrawerImageLoader.init(object : AbstractDrawerImageLoader() {
+        init(object : AbstractDrawerImageLoader() {
 
             override fun set(imageView: ImageView?, uri: Uri?, placeholder: Drawable?) {
                 if (imageView == null) return

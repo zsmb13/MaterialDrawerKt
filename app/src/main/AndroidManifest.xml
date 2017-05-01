@@ -22,9 +22,69 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CompactHeaderDrawerActivity"
+            android:name=".originalactivities.CompactHeaderDrawerActivity"
             android:label="@string/drawer_item_compact_header"
             android:theme="@style/CustomTheme" />
+        <activity
+            android:name=".originalactivities.ActionBarActivity"
+            android:label="@string/drawer_item_action_bar_drawer"
+            android:theme="@style/MaterialDrawerTheme.ActionBar" />
+        <activity
+            android:name=".originalactivities.MultiDrawerActivity"
+            android:label="@string/drawer_item_multi_drawer"
+            android:theme="@style/MaterialDrawerTheme.TranslucentStatus" />
+        <activity
+            android:name=".originalactivities.NonTranslucentDrawerActivity"
+            android:label="@string/drawer_item_non_translucent_status_drawer"
+            android:theme="@style/MaterialDrawerTheme" />
+        <activity
+            android:name=".originalactivities.AdvancedDrawerActivity"
+            android:label="@string/drawer_item_advanced_drawer"
+            android:theme="@style/MaterialDrawerTheme.TranslucentStatus" />
+        <activity
+            android:name=".originalactivities.EmbeddedDrawerActivity"
+            android:label="@string/drawer_item_embedded_drawer"
+            android:theme="@style/MaterialDrawerTheme" />
+        <activity
+            android:name=".originalactivities.FullscreenDrawerActivity"
+            android:label="@string/drawer_item_fullscreen_drawer"
+            android:theme="@style/FullscreenTheme" />
+        <activity
+            android:name=".originalactivities.CustomContainerActivity"
+            android:label="@string/drawer_item_custom_container_drawer"
+            android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar" />
+        <activity
+            android:name=".originalactivities.MenuDrawerActivity"
+            android:label="@string/drawer_item_menu_drawer"
+            android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar" />
+        <activity
+            android:name=".originalactivities.FragmentDrawerActivity"
+            android:label="@string/drawer_item_fragment_drawer"
+            android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar" />
+        <activity
+            android:name=".originalactivities.MiniDrawerActivity"
+            android:label="@string/drawer_item_mini_drawer"
+            android:theme="@style/MaterialDrawerTheme" />
+        <activity
+            android:name=".newactivities.DrawerItemTypesActivity"
+            android:label="Drawer item types"
+            android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar" />
+        <activity
+            android:name=".newactivities.AccountHeaderActivity"
+            android:label="Account header options"
+            android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar" />
+        <activity
+            android:name=".newactivities.ListenersActivity"
+            android:label="Listeners"
+            android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar" />
+        <activity
+            android:name=".newactivities.BadgesActivity"
+            android:label="Badges"
+            android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar" />
+        <activity
+            android:name=".newactivities.HeaderFooterActivity"
+            android:label="Header and footer"
+            android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar" />
     </application>
 
 </manifest>

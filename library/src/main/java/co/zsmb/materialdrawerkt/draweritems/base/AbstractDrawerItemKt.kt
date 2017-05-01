@@ -2,12 +2,12 @@ package co.zsmb.materialdrawerkt.draweritems.base
 
 import android.view.View
 import co.zsmb.materialdrawerkt.DrawerMarker
-import co.zsmb.materialdrawerkt.builders.BuilderBase
+import co.zsmb.materialdrawerkt.builders.Builder
 import com.mikepenz.materialdrawer.model.AbstractDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 
 @DrawerMarker
-abstract class AbstractDrawerItemKt : BuilderBase() {
+abstract class AbstractDrawerItemKt : Builder {
 
     /* Builder basics */
 

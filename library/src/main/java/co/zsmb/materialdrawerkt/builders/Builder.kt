@@ -4,11 +4,11 @@ import co.zsmb.materialdrawerkt.DrawerMarker
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 
 @DrawerMarker
-abstract class BuilderBase {
+interface Builder {
 
     /**
      * Attaches a drawer item (add as child or add to list, as applicable).
      */
-    internal abstract fun attachItem(item: IDrawerItem<*, *>)
+    fun attachItem(item: IDrawerItem<*, *>)
 
 }

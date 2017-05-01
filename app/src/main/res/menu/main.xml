@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_1"
+        android:orderInCategory="1"
+        android:title="Update Profile 2"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_2"
+        android:orderInCategory="2"
+        android:title="Arrow-Icon"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_3"
+        android:orderInCategory="3"
+        android:title="Hamburger-Icon"
+        app:showAsAction="never" />
+
+</menu>
