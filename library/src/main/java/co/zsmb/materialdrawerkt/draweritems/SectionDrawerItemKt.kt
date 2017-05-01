@@ -79,10 +79,10 @@ class SectionDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * Whether the section header should have a divider displayed above it.
      *
-     * Non readable property. Wraps the [SectionDrawerItem.withDivider] function.
+     * Wraps the [SectionDrawerItem.withDivider] and [SectionDrawerItem.hasDivider] methods.
      */
     var divider: Boolean
-        get() = nonReadable()
+        get() = item.hasDivider()
         set(value) {
             item.withDivider(value)
         }
@@ -90,7 +90,7 @@ class SectionDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * The title/name of the section header.
      *
-     * Non readable property. Wraps the [SectionDrawerItem.withName] function.
+     * Non readable property. Wraps the [SectionDrawerItem.withName] method.
      */
     var name: String
         get() = nonReadable()
@@ -101,7 +101,7 @@ class SectionDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * The title/name of the section header, as a String resource.
      *
-     * Non readable property. Wraps the [SectionDrawerItem.withName] function.
+     * Non readable property. Wraps the [SectionDrawerItem.withName] method.
      */
     var nameRes: Int
         get() = nonReadable()
@@ -112,7 +112,7 @@ class SectionDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * The color of the section header's text, as an argb Long.
      *
-     * Non readable property. Wraps the [SectionDrawerItem.withTextColor] function.
+     * Non readable property. Wraps the [SectionDrawerItem.withTextColor] method.
      */
     var textColor: Long
         get() = nonReadable()
@@ -123,7 +123,7 @@ class SectionDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * The color of the section header's text, as a color resource.
      *
-     * Non readable property. Wraps the [SectionDrawerItem.withTextColorRes] function.
+     * Non readable property. Wraps the [SectionDrawerItem.withTextColorRes] method.
      */
     var textColorRes: Int
         get() = nonReadable()
@@ -134,7 +134,7 @@ class SectionDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * The typeface to use for the section header's text.
      *
-     * Non readable property. Wraps the [SectionDrawerItem.withTypeface] function.
+     * Non readable property. Wraps the [SectionDrawerItem.withTypeface] method.
      */
     var typeface: Typeface
         get() = nonReadable()
