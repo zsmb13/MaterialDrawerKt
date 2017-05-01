@@ -7,12 +7,12 @@ import android.widget.TextView;
 import co.zsmb.materialdrawerktexample.R;
 
 class CustomBaseViewHolder extends RecyclerView.ViewHolder {
-    protected View view;
-    protected ImageView icon;
-    protected TextView name;
-    protected TextView description;
+    final View view;
+    final ImageView icon;
+    final TextView name;
+    final TextView description;
 
-    public CustomBaseViewHolder(View view) {
+    CustomBaseViewHolder(View view) {
         super(view);
 
         this.view = view;

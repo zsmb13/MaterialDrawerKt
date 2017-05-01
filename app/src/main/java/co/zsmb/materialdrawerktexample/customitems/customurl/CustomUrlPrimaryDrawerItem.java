@@ -16,8 +16,8 @@ public class CustomUrlPrimaryDrawerItem
         extends CustomUrlBasePrimaryDrawerItem<CustomUrlPrimaryDrawerItem, CustomUrlPrimaryDrawerItem.ViewHolder>
         implements ColorfulBadgeable<CustomUrlPrimaryDrawerItem> {
 
-    protected StringHolder mBadge;
-    protected BadgeStyle mBadgeStyle = new BadgeStyle();
+    private StringHolder mBadge;
+    private BadgeStyle mBadgeStyle = new BadgeStyle();
 
     @Override
     public CustomUrlPrimaryDrawerItem withBadge(StringHolder badge) {
@@ -96,11 +96,11 @@ public class CustomUrlPrimaryDrawerItem
         return new ViewHolder(v);
     }
 
-    public static class ViewHolder extends CustomBaseViewHolder {
-        private View badgeContainer;
-        private TextView badge;
+    static class ViewHolder extends CustomBaseViewHolder {
+        private final View badgeContainer;
+        private final TextView badge;
 
-        public ViewHolder(View view) {
+        ViewHolder(View view) {
             super(view);
             this.badgeContainer = view.findViewById(R.id.material_drawer_badge_container);
             this.badge = (TextView) view.findViewById(R.id.material_drawer_badge);

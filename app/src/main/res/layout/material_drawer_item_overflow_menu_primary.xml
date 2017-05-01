@@ -35,10 +35,10 @@
             android:fontFamily="sans-serif-medium"
             android:gravity="center_vertical|start"
             android:lines="1"
-            android:singleLine="true"
             android:textDirection="anyRtl"
             android:textSize="@dimen/material_drawer_item_primary_text"
-            tools:text="Some drawer text" />
+            tools:text="Some drawer text"
+            android:maxLines="1" />
 
         <TextView
             android:id="@+id/material_drawer_description"
@@ -47,10 +47,10 @@
             android:fontFamily="sans-serif"
             android:gravity="center_vertical|start"
             android:lines="1"
-            android:singleLine="true"
             android:textDirection="anyRtl"
             android:textSize="@dimen/material_drawer_item_primary_description"
-            tools:text="Some drawer text" />
+            tools:text="Some drawer text"
+            android:maxLines="1" />
     </LinearLayout>
 
     <ImageButton

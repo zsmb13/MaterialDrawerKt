@@ -14,7 +14,7 @@ import com.mikepenz.materialdrawer.util.DrawerImageLoader;
 import com.mikepenz.materialdrawer.util.DrawerUIUtils;
 import com.mikepenz.materialize.util.UIUtils;
 
-public abstract class CustomUrlBasePrimaryDrawerItem<T, VH extends RecyclerView.ViewHolder>
+abstract class CustomUrlBasePrimaryDrawerItem<T, VH extends RecyclerView.ViewHolder>
         extends BaseDrawerItem<T, VH> {
 
     public T withIcon(String url) {
@@ -50,11 +50,11 @@ public abstract class CustomUrlBasePrimaryDrawerItem<T, VH extends RecyclerView.
         return (T) this;
     }
 
-    public StringHolder getDescription() {
+    StringHolder getDescription() {
         return description;
     }
 
-    public ColorHolder getDescriptionTextColor() {
+    ColorHolder getDescriptionTextColor() {
         return descriptionTextColor;
     }
 
@@ -77,9 +77,6 @@ public abstract class CustomUrlBasePrimaryDrawerItem<T, VH extends RecyclerView.
         //get the correct color for the text
         int color = getColor(ctx);
         int selectedTextColor = getSelectedTextColor(ctx);
-        //get the correct color for the icon
-        int iconColor = getIconColor(ctx);
-        int selectedIconColor = getSelectedIconColor(ctx);
 
         //set the background for the item
         UIUtils.setBackground(viewHolder.view, UIUtils.getSelectableBackground(ctx, selectedColor, true));
