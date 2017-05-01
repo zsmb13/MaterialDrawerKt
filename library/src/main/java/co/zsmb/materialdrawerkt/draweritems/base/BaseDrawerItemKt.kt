@@ -126,10 +126,10 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      * Whether the icon of the drawer item should be tinted with the enabled/disabled/selected color. If set to false,
      * your icon will always be displayed with its default colors.
      *
-     * Non readable property. Wraps the [BaseDrawerItem.withIconTintingEnabled] method.
+     * Wraps the [BaseDrawerItem.withIconTintingEnabled] and [BaseDrawerItem.isIconTinted] methods.
      */
     var iconTintingEnabled: Boolean
-        get() = nonReadable()
+        get() = item.isIconTinted
         set(value) {
             item.withIconTintingEnabled(value)
         }
@@ -148,10 +148,10 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * How far the drawer item should be indented. Default value is 1.
      *
-     * Non readable property. Wraps the [BaseDrawerItem.withLevel] method.
+     * Wraps the [BaseDrawerItem.withLevel] and [BaseDrawerItem.getLevel] methods.
      */
     var level: Int
-        get() = nonReadable()
+        get() = item.level
         set(value) {
             item.withLevel(value)
         }

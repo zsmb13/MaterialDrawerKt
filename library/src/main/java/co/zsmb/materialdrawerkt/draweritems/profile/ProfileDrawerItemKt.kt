@@ -215,10 +215,10 @@ class ProfileDrawerItemKt : AbstractDrawerItemKt() {
      * Whether the name of the profile should be displayed in the profile switcher in addition to the email.
      * False by default.
      *
-     * Non readable property. Wraps the [ProfileDrawerItem.withNameShown] method.
+     * Wraps the [ProfileDrawerItem.withNameShown] and [ProfileDrawerItem.isNameShown] methods.
      */
     var nameShown: Boolean
-        get() = nonReadable()
+        get() = item.isNameShown
         set(value) {
             item.withNameShown(value)
         }

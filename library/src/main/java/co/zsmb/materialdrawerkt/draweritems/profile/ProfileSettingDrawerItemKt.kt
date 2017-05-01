@@ -41,7 +41,7 @@ fun AccountHeaderBuilderKt.profileSetting(
     return item.build().apply { addItem(this) }
 }
 
-class ProfileSettingDrawerItemKt() : AbstractDrawerItemKt() {
+class ProfileSettingDrawerItemKt : AbstractDrawerItemKt() {
 
     /* Builder basics */
 
@@ -225,10 +225,10 @@ class ProfileSettingDrawerItemKt() : AbstractDrawerItemKt() {
      * false, your icon will always be displayed with its default colors.
      * Default value is false.
      *
-     * Non readable property. Wraps the [ProfileSettingDrawerItem.withIconTinted] method.
+     * Wraps the [ProfileSettingDrawerItem.withIconTinted] and [ProfileSettingDrawerItem.isIconTinted] methods.
      */
     var iconTinted: Boolean
-        get() = nonReadable()
+        get() = item.isIconTinted
         set(value) {
             item.withIconTinted(value)
         }
