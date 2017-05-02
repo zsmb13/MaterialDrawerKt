@@ -30,14 +30,14 @@ class ActionBarActivity : AppCompatActivity() {
             translucentStatusBar = false
             drawerLayoutRes = material_drawer_fits_not
 
-            primaryItem(co.zsmb.materialdrawerktexample.R.string.drawer_item_home) { iicon = Icon.faw_home }
-            primaryItem(co.zsmb.materialdrawerktexample.R.string.drawer_item_free_play) { iicon = Icon.faw_gamepad }
-            primaryItem(co.zsmb.materialdrawerktexample.R.string.drawer_item_custom) { iicon = Icon.faw_eye }
-            sectionHeader(co.zsmb.materialdrawerktexample.R.string.drawer_item_section_header)
-            secondaryItem(co.zsmb.materialdrawerktexample.R.string.drawer_item_settings) { iicon = Icon.faw_cog }
-            secondaryItem(co.zsmb.materialdrawerktexample.R.string.drawer_item_help) { iicon = Icon.faw_question }
-            secondaryItem(co.zsmb.materialdrawerktexample.R.string.drawer_item_open_source) { iicon = Icon.faw_github }
-            secondaryItem(co.zsmb.materialdrawerktexample.R.string.drawer_item_contact) { iicon = Icon.faw_bullhorn }
+            primaryItem(R.string.drawer_item_home) { iicon = Icon.faw_home }
+            primaryItem(R.string.drawer_item_free_play) { iicon = Icon.faw_gamepad }
+            primaryItem(R.string.drawer_item_custom) { iicon = Icon.faw_eye }
+            sectionHeader(R.string.drawer_item_section_header)
+            secondaryItem(R.string.drawer_item_settings) { iicon = Icon.faw_cog }
+            secondaryItem(R.string.drawer_item_help) { iicon = Icon.faw_question }
+            secondaryItem(R.string.drawer_item_open_source) { iicon = Icon.faw_github }
+            secondaryItem(R.string.drawer_item_contact) { iicon = Icon.faw_bullhorn }
 
             onItemClick { _, _, drawerItem ->
                 if (drawerItem is Nameable<*>) {
