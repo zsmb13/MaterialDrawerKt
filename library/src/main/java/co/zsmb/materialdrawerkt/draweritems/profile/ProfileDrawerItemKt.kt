@@ -8,7 +8,6 @@ import co.zsmb.materialdrawerkt.builders.AccountHeaderBuilderKt
 import co.zsmb.materialdrawerkt.draweritems.base.AbstractDrawerItemKt
 import co.zsmb.materialdrawerkt.nonReadable
 import com.mikepenz.iconics.typeface.IIcon
-import com.mikepenz.materialdrawer.holder.StringHolder
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem
 
 /**
@@ -92,16 +91,12 @@ class ProfileDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * The email associated with the profile, as a String resource.
      *
-     * Non readable property. Uses reflection to provide similar functionality to the [ProfileDrawerItem.withEmail]
-     * method.
+     * Non readable property. Wraps the [ProfileDrawerItem.withEmail] method.
      */
     var emailRes: Int
         get() = nonReadable()
         set(value) {
-            item.javaClass.declaredFields.find { it.name == "email" }?.let {
-                it.isAccessible = true
-                it.set(item, StringHolder(value))
-            }
+            item.withEmail(value)
         }
 
     /**
@@ -199,16 +194,12 @@ class ProfileDrawerItemKt : AbstractDrawerItemKt() {
     /**
      * The name of the profile, as a String resource.
      *
-     * Non readable property. Uses reflection to provide similar functionality to the [ProfileDrawerItem.withName]
-     * method.
+     * Non readable property. Wraps the [ProfileDrawerItem.withName] method.
      */
     var nameRes: Int
         get() = nonReadable()
         set(value) {
-            item.javaClass.declaredFields.find { it.name == "name" }?.let {
-                it.isAccessible = true
-                it.set(item, StringHolder(value))
-            }
+            item.withName(value)
         }
 
     /**
