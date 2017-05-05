@@ -1,4 +1,4 @@
-# MaterialDrawerKt [![Build Status](https://travis-ci.com/zsmb13/MaterialDrawerKt.svg?token=R4XyYLi9KYiStKDFim5B&branch=master)](https://travis-ci.com/zsmb13/MaterialDrawerKt)
+# MaterialDrawerKt [![Build Status](https://travis-ci.org/zsmb13/MaterialDrawerKt.svg?branch=master)](https://travis-ci.org/zsmb13/MaterialDrawerKt) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-MaterialDrawerKt-orange.svg?style=flat)](https://android-arsenal.com/details/1/5693)
 
 <img src="https://raw.githubusercontent.com/zsmb13/MaterialDrawerKt/master/docs/github-banner.png">
 
