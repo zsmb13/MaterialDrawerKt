@@ -6,7 +6,7 @@ apply from: '../testformatter.gradle'
 ext {
     PUBLISH_GROUP_ID = 'co.zsmb'
     PUBLISH_ARTIFACT_ID = 'materialdrawer-kt'
-    PUBLISH_VERSION = '1.0'
+    PUBLISH_VERSION = '1.0.1'
 }
 
 android {
