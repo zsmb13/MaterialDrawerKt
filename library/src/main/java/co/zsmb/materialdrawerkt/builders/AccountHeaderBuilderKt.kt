@@ -78,6 +78,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Non readable property. Wraps the [AccountHeaderBuilder.withAlternativeProfileHeaderSwitching] method.
      */
     var alternativeSwitching: Boolean
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withAlternativeProfileHeaderSwitching(value)
@@ -90,6 +91,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * method.
      */
     var background: Int
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withHeaderBackground(value)
@@ -101,6 +103,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Non readable property. Wraps the [AccountHeaderBuilder.withHeaderBackground] method.
      */
     var backgroundDrawable: Drawable
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withHeaderBackground(value)
@@ -117,6 +120,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
             replaceWith = ReplaceWith("background"),
             message = "Alternatives are available, check the documentation.")
     var backgroundRes: Int
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withHeaderBackground(value)
@@ -128,6 +132,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Non readable property. Wraps the [AccountHeaderBuilder.withHeaderBackgroundScaleType] method.
      */
     var backgroundScaleType: ImageView.ScaleType
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withHeaderBackgroundScaleType(value)
@@ -144,6 +149,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "Alternatives are available, check the documentation.")
     var closeDrawerOnProfileListClick: Boolean
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withCloseDrawerOnProfileListClick(value)
@@ -157,6 +163,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * [AccountHeaderBuilder.withResetDrawerOnProfileListClick] method.
      */
     var closeListAfterSelection: Boolean
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withResetDrawerOnProfileListClick(value)
@@ -170,6 +177,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * [AccountHeaderBuilder.withCloseDrawerOnProfileListClick] method.
      */
     var closeOnClick: Boolean
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withCloseDrawerOnProfileListClick(value)
@@ -182,6 +190,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Non readable property. Wraps the [AccountHeaderBuilder.withCompactStyle] method.
      */
     var compactStyle: Boolean
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withCompactStyle(value)
@@ -195,6 +204,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * [AccountHeaderBuilder.withCurrentProfileHiddenInList] method.
      */
     var currentHidden: Boolean
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withCurrentProfileHiddenInList(value)
@@ -211,6 +221,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "Alternatives are available, check the documentation.")
     var currentProfileHiddenInList: Boolean
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withCurrentProfileHiddenInList(value)
@@ -222,6 +233,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Non readable property. Wraps the [AccountHeaderBuilder.withAccountHeader] method.
      */
     var customView: View
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withAccountHeader(value)
@@ -233,6 +245,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Non readable property. Wraps the [AccountHeaderBuilder.withAccountHeader] method.
      */
     var customViewRes: Int
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withAccountHeader(value)
@@ -247,6 +260,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Non readable property. Wraps the [AccountHeaderBuilder.withOnProfileClickDrawerCloseDelay] method.
      */
     var delayOnDrawerClose: Int
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withOnProfileClickDrawerCloseDelay(value)
@@ -259,6 +273,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Non readable property. Wraps the [AccountHeaderBuilder.withDividerBelowHeader] method.
      */
     var dividerBelow: Boolean
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withDividerBelowHeader(value)
@@ -272,6 +287,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "Setting this manually is not recommended.")
     var drawer: Drawer
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withDrawer(value)
@@ -283,6 +299,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Non readable property. Wraps the [AccountHeaderBuilder.withEmailTypeface] method.
      */
     var emailTypeface: Typeface
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withEmailTypeface(value)
@@ -294,6 +311,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Non readable property. Wraps the [AccountHeaderBuilder.withHeightDp] method.
      */
     var heightDp: Int
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withHeightDp(value)
@@ -305,6 +323,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Non readable property. Wraps the [AccountHeaderBuilder.withHeightPx] method.
      */
     var heightPx: Int
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withHeightPx(value)
@@ -316,6 +335,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Non readable property. Wraps the [AccountHeaderBuilder.withHeightRes] method.
      */
     var heightRes: Int
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withHeightRes(value)
@@ -327,6 +347,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Non readable property. Wraps the [AccountHeaderBuilder.withNameTypeface] method.
      */
     var nameTypeface: Typeface
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withNameTypeface(value)
@@ -354,6 +375,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Non readable property. Wraps the [AccountHeaderBuilder.withOnlyMainProfileImageVisible] method.
      */
     var onlyMainProfileImageVisible: Boolean
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withOnlyMainProfileImageVisible(value)
@@ -367,6 +389,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Non readable property. Wraps the [AccountHeaderBuilder.withOnlySmallProfileImagesVisible] method.
      */
     var onlySmallProfileImagesVisible: Boolean
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withOnlySmallProfileImagesVisible(value)
@@ -435,6 +458,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Non readable property. Wraps the [AccountHeaderBuilder.withPaddingBelowHeader] method.
      */
     var paddingBelow: Boolean
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withPaddingBelowHeader(value)
@@ -447,6 +471,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Non readable property. Wraps the [AccountHeaderBuilder.withProfileImagesClickable] method.
      */
     var profileImagesClickable: Boolean
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withProfileImagesClickable(value)
@@ -460,6 +485,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Non readable property. Wraps the [AccountHeaderBuilder.withProfileImagesVisible] method.
      */
     var profileImagesVisible: Boolean
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withProfileImagesVisible(value)
@@ -476,6 +502,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "Alternatives are available, check the documentation.")
     var resetDrawerOnProfileListClick: Boolean
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withResetDrawerOnProfileListClick(value)
@@ -493,6 +520,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Non readable property. Wraps the [AccountHeaderBuilder.withSavedInstance] method.
      */
     var savedInstance: Bundle?
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withSavedInstance(value)
@@ -505,6 +533,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Non readable property. Wraps the [AccountHeaderBuilder.withSelectionFirstLine] method.
      */
     var selectionFirstLine: String
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withSelectionFirstLine(value)
@@ -517,6 +546,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Non readable property. Wraps the [AccountHeaderBuilder.withSelectionFirstLineShown] method.
      */
     var selectionFirstLineShown: Boolean
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withSelectionFirstLineShown(value)
@@ -529,6 +559,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Non readable property. Wraps the [AccountHeaderBuilder.withSelectionListEnabled] method.
      */
     var selectionListEnabled: Boolean
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withSelectionListEnabled(value)
@@ -541,6 +572,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Non readable property. Wraps the [AccountHeaderBuilder.withSelectionListEnabledForSingleProfile] method.
      */
     var selectionListEnabledForSingleProfile: Boolean
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withSelectionListEnabledForSingleProfile(value)
@@ -553,6 +585,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Non readable property. Wraps the [AccountHeaderBuilder.withSelectionSecondLine] method.
      */
     var selectionSecondLine: String
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withSelectionSecondLine(value)
@@ -565,6 +598,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Non readable property. Wraps the [AccountHeaderBuilder.withSelectionSecondLineShown] method.
      */
     var selectionSecondLineShown: Boolean
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withSelectionSecondLineShown(value)
@@ -576,6 +610,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Non readable property. Wraps the [AccountHeaderBuilder.withTextColor] method.
      */
     var textColor: Long
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withTextColor(value.toInt())
@@ -587,6 +622,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Non readable property. Wraps the [AccountHeaderBuilder.withTextColorRes] method.
      */
     var textColorRes: Int
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withTextColorRes(value)
@@ -599,6 +635,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Non readable property. Wraps the [AccountHeaderBuilder.withThreeSmallProfileImages] method.
      */
     var threeSmallProfileImages: Boolean
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withThreeSmallProfileImages(value)
@@ -611,6 +648,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Non readable property. Wraps the [AccountHeaderBuilder.withTranslucentStatusBar] method.
      */
     var translucentStatusBar: Boolean
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withTranslucentStatusBar(value)
@@ -623,6 +661,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
      * Non readable property. Wraps the [AccountHeaderBuilder.withTypeface] method.
      */
     var typeface: Typeface
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             builder.withTypeface(value)

@@ -21,6 +21,7 @@ abstract class AbstractBadgeableDrawerItemKt : BaseDescribeableDrawerItemKt(), B
 
     // Documentation inherited
     override var badgeHolder: StringHolder
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             item.withBadge(value)
@@ -28,6 +29,7 @@ abstract class AbstractBadgeableDrawerItemKt : BaseDescribeableDrawerItemKt(), B
 
     // Documentation inherited
     override var badgeRes: Int
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             item.withBadge(value)
@@ -35,6 +37,7 @@ abstract class AbstractBadgeableDrawerItemKt : BaseDescribeableDrawerItemKt(), B
 
     // Documentation inherited
     override var badgeStyle: BadgeStyle
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             item.withBadgeStyle(value)

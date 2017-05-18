@@ -61,6 +61,7 @@ class ProfileDrawerItemKt : AbstractDrawerItemKt() {
      * Non readable property. Wraps the [ProfileDrawerItem.withDisabledTextColor] method.
      */
     var disabledTextColor: Long
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             item.withDisabledTextColor(value.toInt())
@@ -72,6 +73,7 @@ class ProfileDrawerItemKt : AbstractDrawerItemKt() {
      * Non readable property. Wraps the [ProfileDrawerItem.withDisabledTextColorRes] method.
      */
     var disabledTextColorRes: Int
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             item.withDisabledTextColorRes(value)
@@ -83,6 +85,7 @@ class ProfileDrawerItemKt : AbstractDrawerItemKt() {
      * Non readable property. Wraps the [ProfileDrawerItem.withEmail] method.
      */
     var email: String
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             item.withEmail(value)
@@ -94,6 +97,7 @@ class ProfileDrawerItemKt : AbstractDrawerItemKt() {
      * Non readable property. Wraps the [ProfileDrawerItem.withEmail] method.
      */
     var emailRes: Int
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             item.withEmail(value)
@@ -105,6 +109,7 @@ class ProfileDrawerItemKt : AbstractDrawerItemKt() {
      * Convenience for [iconRes]. Non readable property. Wraps the [ProfileDrawerItem.withIcon] method.
      */
     var icon: Int
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             item.withIcon(value)
@@ -116,6 +121,7 @@ class ProfileDrawerItemKt : AbstractDrawerItemKt() {
      * Non readable property. Wraps the [ProfileDrawerItem.withIcon] method.
      */
     var iconBitmap: Bitmap
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             item.withIcon(value)
@@ -127,6 +133,7 @@ class ProfileDrawerItemKt : AbstractDrawerItemKt() {
      * Non readable property. Wraps the [ProfileDrawerItem.withIcon] method.
      */
     var iconDrawable: Drawable
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             item.withIcon(value)
@@ -142,6 +149,7 @@ class ProfileDrawerItemKt : AbstractDrawerItemKt() {
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "Alternatives are available, check the documentation.")
     var iconRes: Int
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             item.withIcon(value)
@@ -153,6 +161,7 @@ class ProfileDrawerItemKt : AbstractDrawerItemKt() {
      * Non readable property. Wraps the [ProfileDrawerItem.withIcon] method.
      */
     var iconUri: Uri
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             item.withIcon(value)
@@ -164,6 +173,7 @@ class ProfileDrawerItemKt : AbstractDrawerItemKt() {
      * Non readable property. Wraps the [ProfileDrawerItem.withIcon] method.
      */
     var iconUrl: String
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             item.withIcon(value)
@@ -175,6 +185,7 @@ class ProfileDrawerItemKt : AbstractDrawerItemKt() {
      * Non readable property. Wraps the [ProfileDrawerItem.withIcon] method.
      */
     var iicon: IIcon
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             item.withIcon(value)
@@ -186,6 +197,7 @@ class ProfileDrawerItemKt : AbstractDrawerItemKt() {
      * Non readable property. Wraps the [ProfileDrawerItem.withName] method.
      */
     var name: String
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             item.withName(value)
@@ -197,6 +209,7 @@ class ProfileDrawerItemKt : AbstractDrawerItemKt() {
      * Non readable property. Wraps the [ProfileDrawerItem.withName] method.
      */
     var nameRes: Int
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             item.withName(value)
@@ -220,6 +233,7 @@ class ProfileDrawerItemKt : AbstractDrawerItemKt() {
      * Non readable property. Wraps the [ProfileDrawerItem.withSelectedColor] method.
      */
     var selectedColor: Long
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             item.withSelectedColor(value.toInt())
@@ -231,6 +245,7 @@ class ProfileDrawerItemKt : AbstractDrawerItemKt() {
      * Non readable property. Wraps the [ProfileDrawerItem.withSelectedColorRes] method.
      */
     var selectedColorRes: Int
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             item.withSelectedColorRes(value)
@@ -242,6 +257,7 @@ class ProfileDrawerItemKt : AbstractDrawerItemKt() {
      * Non readable property. Wraps the [ProfileDrawerItem.withSelectedTextColor] method.
      */
     var selectedTextColor: Long
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             item.withSelectedTextColor(value.toInt())
@@ -253,6 +269,7 @@ class ProfileDrawerItemKt : AbstractDrawerItemKt() {
      * Non readable property. Wraps the [ProfileDrawerItem.withSelectedTextColorRes] method.
      */
     var selectedTextColorRes: Int
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             item.withSelectedTextColorRes(value)
@@ -264,6 +281,7 @@ class ProfileDrawerItemKt : AbstractDrawerItemKt() {
      * Non readable property. Wraps the [ProfileDrawerItem.withTextColor] method.
      */
     var textColor: Long
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             item.withTextColor(value.toInt())
@@ -275,6 +293,7 @@ class ProfileDrawerItemKt : AbstractDrawerItemKt() {
      * Non readable property. Wraps the [ProfileDrawerItem.withTextColorRes] method.
      */
     var textColorRes: Int
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             item.withTextColorRes(value)
@@ -286,6 +305,7 @@ class ProfileDrawerItemKt : AbstractDrawerItemKt() {
      * Non readable property. Wraps the [ProfileDrawerItem.withTypeface] method.
      */
     var typeface: Typeface
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             item.withTypeface(value)

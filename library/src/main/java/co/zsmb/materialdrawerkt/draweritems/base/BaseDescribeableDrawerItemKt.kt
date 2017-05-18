@@ -22,6 +22,7 @@ abstract class BaseDescribeableDrawerItemKt : BaseDrawerItemKt() {
      * Non readable property. Wraps the [BaseDescribeableDrawerItem.withDescription] method.
      */
     var description: String
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             item.withDescription(value)
@@ -33,6 +34,7 @@ abstract class BaseDescribeableDrawerItemKt : BaseDrawerItemKt() {
      * Non readable property. Wraps the [BaseDescribeableDrawerItem.withDescription] method.
      */
     var descriptionRes: Int
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             item.withDescription(value)
@@ -44,6 +46,7 @@ abstract class BaseDescribeableDrawerItemKt : BaseDrawerItemKt() {
      * Non readable property. Wraps the [BaseDescribeableDrawerItem.withDescriptionTextColor] method.
      */
     var descriptionTextColor: Long
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             item.withDescriptionTextColor(value.toInt())
@@ -55,6 +58,7 @@ abstract class BaseDescribeableDrawerItemKt : BaseDrawerItemKt() {
      * Non readable property. Wraps the [BaseDescribeableDrawerItem.withDescriptionTextColorRes] method.
      */
     var descriptionTextColorRes: Int
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             item.withDescriptionTextColorRes(value)

@@ -28,6 +28,7 @@ abstract class AbstractSwitchableDrawerItemKt : BaseDescribeableDrawerItemKt() {
             replaceWith = ReplaceWith("selectable"),
             message = "Use the selectable property instead.")
     var checkable: Boolean
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             item.withCheckable(value)

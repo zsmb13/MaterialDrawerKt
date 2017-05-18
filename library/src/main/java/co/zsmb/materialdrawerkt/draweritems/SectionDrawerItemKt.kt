@@ -93,6 +93,7 @@ class SectionDrawerItemKt : AbstractDrawerItemKt() {
      * Non readable property. Wraps the [SectionDrawerItem.withName] method.
      */
     var name: String
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             item.withName(value)
@@ -104,6 +105,7 @@ class SectionDrawerItemKt : AbstractDrawerItemKt() {
      * Non readable property. Wraps the [SectionDrawerItem.withName] method.
      */
     var nameRes: Int
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             item.withName(value)
@@ -115,6 +117,7 @@ class SectionDrawerItemKt : AbstractDrawerItemKt() {
      * Non readable property. Wraps the [SectionDrawerItem.withTextColor] method.
      */
     var textColor: Long
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             item.withTextColor(value.toInt())
@@ -126,6 +129,7 @@ class SectionDrawerItemKt : AbstractDrawerItemKt() {
      * Non readable property. Wraps the [SectionDrawerItem.withTextColorRes] method.
      */
     var textColorRes: Int
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             item.withTextColorRes(value)
@@ -137,6 +141,7 @@ class SectionDrawerItemKt : AbstractDrawerItemKt() {
      * Non readable property. Wraps the [SectionDrawerItem.withTypeface] method.
      */
     var typeface: Typeface
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
             item.withTypeface(value)
