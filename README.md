@@ -21,7 +21,7 @@ You can find the sample app [in the Play Store](https://play.google.com/store/ap
 The library is hosted on jcenter. To use it, add the following line to your module level `build.gradle` file's dependencies:
  
 ```gradle
-compile 'co.zsmb:materialdrawer-kt:1.0.1'
+compile 'co.zsmb:materialdrawer-kt:1.0.2'
 ```
 
 You don't have to include the original library separately.
@@ -69,6 +69,8 @@ drawer {
     }
 }
 ```
+
+Note that most of these properties are non-readable, and can only be used for setting these values. This is why these properties are marked as deprecated, and will cause build errors. The rest should be safe to use to read back any values you've set, if you had to do that for whatever reason.
 
 # Advanced features
 
