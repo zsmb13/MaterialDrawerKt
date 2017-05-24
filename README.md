@@ -72,6 +72,8 @@ drawer {
 
 Note that most of these properties are non-readable, and can only be used for setting these values. This is why these properties are marked as deprecated, and will cause build errors. The rest should be safe to use to read back any values you've set, if you had to do that for whatever reason.
 
+For a complete reference of the wrapper methods and properties, see the [list in the wiki](https://github.com/zsmb13/MaterialDrawerKt/wiki/Wrappers).
+
 # Advanced features
 
 ### Account headers

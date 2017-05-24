@@ -73,9 +73,9 @@ abstract class AbstractDrawerItemKt : Builder {
     /**
      * Adds an event [handler] to the drawer item that's called when the item is clicked.
      *
-     * Wraps the [AbstractDrawerItem.withOnDrawerItemClickListener] method.
-     *
      * Convenience for the three parameter [onClick] method, to be used when you don't need all its parameters.
+     *
+     * Wraps the [AbstractDrawerItem.withOnDrawerItemClickListener] method.
      */
     fun onClick(handler: (view: View) -> Boolean) {
         item.withOnDrawerItemClickListener { view, _, _ -> handler(view) }
