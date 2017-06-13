@@ -24,7 +24,7 @@ The library is hosted on jcenter. To use it, add the following line to your modu
 compile 'co.zsmb:materialdrawer-kt:1.0.2'
 ```
 
-You don't have to include the original library separately.
+In general, you don't have to include the original library separately. (See the note in the FAQ.) 
 
 # Basic usage
 
@@ -281,6 +281,40 @@ drawer {
         Log.d("DRAWER", "Opened")
     }
 }
+```
+
+# FAQ
+
+#### I want to use features of the base library that haven't made it to this one yet
+
+If the base library gets features and they aren't ported to this wrapper yet, you can include that as a dependency in addition to this one, and use the two together. For these purposes, the internal `DrawerBuilder` that this library uses is exposed through a property, and you can access it like so:
+ 
+```kotlin
+drawer {
+    builder.withKeepStickyItemsVisible(true)
+}
+```
+
+The internal `AccountHeaderBuilder` is exposed in the same way:
+
+```kotlin
+accountHeader {
+    builder.withHeightDp(20)
+}
+```
+
+As for drawer items, you can just use the original API's calls on the items that are returned:
+
+```kotlin
+val item = primaryItem("Hello") {
+    icon = R.drawable.profile
+}
+item.withBadge("10")
+```
+```kotlin
+primaryItem("Hello") {
+    icon = R.drawable.profile
+}.withBadge("10")
 ```
 
 # License

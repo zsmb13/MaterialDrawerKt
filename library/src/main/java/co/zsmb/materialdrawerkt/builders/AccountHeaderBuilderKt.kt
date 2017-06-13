@@ -28,7 +28,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
 
     /* Builder basics */
 
-    private val builder = AccountHeaderBuilder().withActivity(activity)
+    val builder: AccountHeaderBuilder = AccountHeaderBuilder().withActivity(activity)
 
     internal fun build(): AccountHeader {
         if (onProfileImageListener.isInitialized) {

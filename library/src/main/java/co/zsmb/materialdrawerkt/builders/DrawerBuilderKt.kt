@@ -44,7 +44,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
 
     /* Builder basics */
 
-    internal val builder = DrawerBuilder(activity)
+    val builder = DrawerBuilder(activity)
 
     internal fun build(): Drawer {
         if (onDrawerListener.isInitialized) {
