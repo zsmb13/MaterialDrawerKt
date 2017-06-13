@@ -658,6 +658,19 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
         }
 
     /**
+     * Toggles if the sticky footer should stay visible upon switching to the profile list. Note that using this with
+     * stickyDrawerItems can lead to the selection not being updated correctly. Use with care.
+     * Default value is false.
+     *
+     * Non readable property. Wraps the [DrawerBuilder.withKeepStickyItemsVisible] method.
+     */
+    var keepStickyItemsVisible: Boolean
+        get() = nonReadable()
+        set(value) {
+            builder.withKeepStickyItemsVisible(value)
+        }
+
+    /**
      * The menu resource to inflate items from. These are added to the drawer.
      *
      * Non readable property. Wraps the [DrawerBuilder.inflateMenu] method.
