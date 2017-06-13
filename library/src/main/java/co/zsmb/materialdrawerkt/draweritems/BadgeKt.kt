@@ -24,7 +24,7 @@ class BadgeKt(text: String) {
     /* Builder basics */
 
     internal val style = BadgeStyle()
-    internal val holder = StringHolder(text)
+    internal var holder = StringHolder(text)
 
     /* BadgeStyle methods */
 
@@ -359,7 +359,7 @@ class BadgeKt(text: String) {
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            holder.text = value
+            holder = StringHolder(value)
         }
 
     /**
