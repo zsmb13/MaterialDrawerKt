@@ -30,6 +30,7 @@ android {
 
 repositories {
     mavenCentral()
+    maven { url 'https://maven.google.com' }
 }
 
 dependencies {
@@ -42,7 +43,7 @@ dependencies {
 
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
-    compile('com.mikepenz:materialdrawer:5.9.2@aar') {
+    compile('com.mikepenz:materialdrawer:5.9.3@aar') {
         transitive = true
     }
 }
