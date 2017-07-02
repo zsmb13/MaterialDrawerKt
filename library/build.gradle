@@ -43,7 +43,7 @@ dependencies {
 
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
-    compile('com.mikepenz:materialdrawer:5.9.3@aar') {
+    compile('com.mikepenz:materialdrawer:5.9.4@aar') {
         transitive = true
     }
 }
