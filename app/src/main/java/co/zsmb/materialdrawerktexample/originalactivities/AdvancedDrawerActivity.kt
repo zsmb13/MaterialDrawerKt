@@ -17,13 +17,13 @@ import co.zsmb.materialdrawerktexample.R
 import co.zsmb.materialdrawerktexample.customitems.customprimary.CustomPrimaryDrawerItem
 import co.zsmb.materialdrawerktexample.customitems.customurl.CustomUrlPrimaryDrawerItem
 import co.zsmb.materialdrawerktexample.customitems.overflow.overflowMenuItem
+import co.zsmb.materialdrawerktexample.utils.toast
 import com.mikepenz.fontawesome_typeface_library.FontAwesome.Icon.*
 import com.mikepenz.google_material_typeface_library.GoogleMaterial.Icon
 import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem
 import kotlinx.android.synthetic.main.activity_sample.*
-import org.jetbrains.anko.toast
 
 class AdvancedDrawerActivity : AppCompatActivity() {
 

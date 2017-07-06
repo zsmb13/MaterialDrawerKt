@@ -14,6 +14,7 @@ import co.zsmb.materialdrawerkt.draweritems.sectionHeader
 import co.zsmb.materialdrawerkt.draweritems.switchable.switchItem
 import co.zsmb.materialdrawerkt.draweritems.toggleable.toggleItem
 import co.zsmb.materialdrawerktexample.R
+import co.zsmb.materialdrawerktexample.utils.toast
 import com.mikepenz.fontawesome_typeface_library.FontAwesome
 import com.mikepenz.google_material_typeface_library.GoogleMaterial
 import com.mikepenz.materialdrawer.AccountHeader
@@ -21,7 +22,6 @@ import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem
 import com.mikepenz.octicons_typeface_library.Octicons
 import kotlinx.android.synthetic.main.activity_embedded.*
-import org.jetbrains.anko.toast
 
 class EmbeddedDrawerActivity : AppCompatActivity() {
 

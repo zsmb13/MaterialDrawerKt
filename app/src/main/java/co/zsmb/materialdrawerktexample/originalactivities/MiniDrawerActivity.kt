@@ -15,6 +15,7 @@ import co.zsmb.materialdrawerkt.draweritems.switchable.switchItem
 import co.zsmb.materialdrawerkt.draweritems.toggleable.toggleItem
 import co.zsmb.materialdrawerktexample.R
 import co.zsmb.materialdrawerktexample.utils.CrossfadeWrapper
+import co.zsmb.materialdrawerktexample.utils.toast
 import com.mikepenz.crossfader.Crossfader
 import com.mikepenz.crossfader.util.UIUtils
 import com.mikepenz.crossfader.view.CrossFadeSlidingPaneLayout
@@ -25,7 +26,6 @@ import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem
 import com.mikepenz.octicons_typeface_library.Octicons
 import kotlinx.android.synthetic.main.activity_mini_drawer.*
-import org.jetbrains.anko.toast
 
 class MiniDrawerActivity : AppCompatActivity() {
 

@@ -8,11 +8,11 @@ import co.zsmb.materialdrawerkt.draweritems.badgeable.primaryItem
 import co.zsmb.materialdrawerkt.draweritems.badgeable.secondaryItem
 import co.zsmb.materialdrawerkt.draweritems.sectionHeader
 import co.zsmb.materialdrawerktexample.R
+import co.zsmb.materialdrawerktexample.utils.toast
 import com.mikepenz.fontawesome_typeface_library.FontAwesome
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.model.interfaces.Nameable
 import kotlinx.android.synthetic.main.activity_sample.*
-import org.jetbrains.anko.toast
 
 class NonTranslucentDrawerActivity : AppCompatActivity() {
 
