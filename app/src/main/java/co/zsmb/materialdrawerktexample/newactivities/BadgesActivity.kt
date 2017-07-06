@@ -30,6 +30,7 @@ class BadgesActivity : AppCompatActivity() {
         result = drawer {
             savedInstance = savedInstanceState
             toolbar = this@BadgesActivity.toolbar
+            closeOnClick = false
 
             accountHeader { background = R.drawable.header }
 
@@ -72,8 +73,6 @@ class BadgesActivity : AppCompatActivity() {
                 iicon = FontAwesome.Icon.faw_heart
                 selectable = false
             }
-
-            onItemClick { view, position, drawerItem -> true }
         }
     }
 

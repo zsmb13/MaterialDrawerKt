@@ -32,37 +32,32 @@ class ListenersActivity : AppCompatActivity() {
 
             primaryItem("Item 1") {
                 iicon = FontAwesome.Icon.faw_heart
-                // onClick { _ -> log("Clicked item 1") }
             }
 
             switchItem("Item 2") {
                 iicon = FontAwesome.Icon.faw_heart
-                // onClick { _ -> log("Clicked item 2") }
-                // onToggled { isEnabled -> log("Toggled item 2, it's now set to $isEnabled") }
-                onSwitchChanged { drawerItem, button, isEnabled ->
+                onToggled { isEnabled ->
                     log("Toggled item 2, it's now set to $isEnabled")
                 }
             }
 
             toggleItem("Item 3") {
                 iicon = FontAwesome.Icon.faw_heart
-                // onClick { _ -> log("Clicked item 3") }
-                // onToggled { isEnabled -> log("Toggled item 3, it's now set to $isEnabled") }
-                onToggleChanged { drawerItem, button, isEnabled ->
+                onToggled { isEnabled ->
                     log("Toggled item 3, it's now set to $isEnabled")
                 }
             }
 
             onOpened { log("Opened drawer") }
             onClosed { log("Closed drawer") }
-            onSlide { drawerView, slideOffset ->
+            onSlide { _, slideOffset ->
                 Log.d("SLIDE", "Drawer is ${slideOffset * 100}% open")
             }
 
-            onItemClick { view, position, drawerItem ->
+            onItemClick { _, _, drawerItem ->
                 log("Clicked ${(drawerItem as? Nameable<*>)?.name}")
             }
-            onItemLongClick { view, position, drawerItem ->
+            onItemLongClick { _, _, drawerItem ->
                 log("Long clicked ${(drawerItem as? Nameable<*>)?.name}")
             }
         }

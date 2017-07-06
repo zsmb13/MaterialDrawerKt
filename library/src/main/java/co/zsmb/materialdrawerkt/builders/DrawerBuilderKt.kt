@@ -717,7 +717,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      * @param position The position of the clicked item within the drawer
      */
     fun onItemClick(handler: (position: Int) -> Boolean) {
-        builder.withOnDrawerItemClickListener { view, position, drawerItem -> handler(position) }
+        builder.withOnDrawerItemClickListener { _, position, _ -> handler(position) }
     }
 
     /**
@@ -746,7 +746,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      * @param position The position of the clicked item within the drawer
      */
     fun onItemLongClick(handler: (position: Int) -> Boolean) {
-        builder.withOnDrawerItemLongClickListener { view, position, drawerItem -> handler(position) }
+        builder.withOnDrawerItemLongClickListener { _, position, _ -> handler(position) }
     }
 
     /**
