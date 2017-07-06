@@ -78,6 +78,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      * A shadowing method to prevent nesting [drawer][co.zsmb.materialdrawerkt.builders.drawer] calls.
      * ( Credits to hotkey for this solution http://stackoverflow.com/a/43470027/4465208 )
      */
+    @Suppress("UNUSED_PARAMETER")
     @Deprecated(level = DeprecationLevel.ERROR,
             message = "Drawers can't be nested.")
     fun drawer(param: () -> Unit = {}) {

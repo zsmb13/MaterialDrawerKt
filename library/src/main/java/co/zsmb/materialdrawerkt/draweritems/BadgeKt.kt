@@ -11,6 +11,7 @@ import com.mikepenz.materialdrawer.holder.StringHolder
 /**
  * Adds a badge with the given [text].
  */
+@Suppress("DEPRECATION")
 fun BadgeableKt.badge(text: String = "", setup: BadgeKt.() -> Unit = {}) {
     val badge = BadgeKt(text)
     badge.setup()
