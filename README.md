@@ -82,7 +82,7 @@ For a complete reference of the wrapper methods and properties, see the [list in
 
 ### Account headers
 
-You can use the following syntax to add profiles to your drawer:
+Creating an account header with profile entries can be done like so:
  
 ```kotlin
 drawer {
@@ -101,9 +101,22 @@ drawer {
 
 Note that loading images from URLs requires additional setup, see the `DrawerApplication` class in the sample app for guidance.
 
+### Footers
+
+You can add items to an always visible, sticky footer in by nesting them inside a `footer` block:
+
+```kotlin
+drawer {
+    footer {
+        primaryItem("Primary item")
+        secondaryItem("Secondary item")
+    }
+}
+```
+
 ### Listeners
 
-You can add listeners to both individual drawer items and the entire drawer. Some examples:
+Listeners can be added to both individual drawer items and the entire drawer. Some examples:
 
 ```kotlin
 drawer {
@@ -132,7 +145,7 @@ More examples in the "Listeners" section of the sample app.
 
 ### Badges
 
-You can add badges to some drawer items, and customize them with this syntax:
+Add badges to drawer items, and customize them with this syntax:
 
 ```kotlin
 drawer {
