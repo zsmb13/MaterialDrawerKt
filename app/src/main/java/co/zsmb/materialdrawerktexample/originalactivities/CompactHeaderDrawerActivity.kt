@@ -2,6 +2,7 @@ package co.zsmb.materialdrawerktexample.originalactivities
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.MenuItem
 import co.zsmb.materialdrawerkt.builders.accountHeader
 import co.zsmb.materialdrawerkt.builders.drawer
 import co.zsmb.materialdrawerkt.draweritems.badgeable.primaryItem
@@ -28,7 +29,6 @@ class CompactHeaderDrawerActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setHomeButtonEnabled(false)
 
         result = drawer {
             savedInstance = savedInstanceState
@@ -119,6 +119,15 @@ class CompactHeaderDrawerActivity : AppCompatActivity() {
         headerResult.saveInstanceState(outState)
         super.onSaveInstanceState(outState)
     }
+
+    override fun onOptionsItemSelected(item: MenuItem) =
+            when (item.itemId) {
+                android.R.id.home -> {
+                    onBackPressed()
+                    true
+                }
+                else -> super.onOptionsItemSelected(item)
+            }
 
     override fun onBackPressed() {
         if (result.isDrawerOpen)
