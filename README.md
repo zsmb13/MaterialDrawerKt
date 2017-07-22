@@ -1,6 +1,7 @@
 # MaterialDrawerKt 
 
-[![Build Status](https://travis-ci.org/zsmb13/MaterialDrawerKt.svg?branch=master)](https://travis-ci.org/zsmb13/MaterialDrawerKt) 
+[![Build Status](https://travis-ci.org/zsmb13/MaterialDrawerKt.svg?branch=master)](https://travis-ci.org/zsmb13/MaterialDrawerKt)
+[![Bintray](https://img.shields.io/bintray/v/zsmb13/MaterialDrawerKt/MaterialDrawerKt.svg?maxAge=86400)](https://bintray.com/zsmb13/MaterialDrawerKt/MaterialDrawerKt)
 [![Awesome Kotlin Badge](https://kotlin.link/awesome-kotlin.svg)](https://github.com/KotlinBy/awesome-kotlin)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-MaterialDrawerKt-orange.svg?style=flat)](https://android-arsenal.com/details/1/5693) 
 
