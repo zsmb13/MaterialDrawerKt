@@ -9,7 +9,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 @DrawerMarker
 abstract class AbstractDrawerItemKt : Builder {
 
-    /* Builder basics */
+    //region Builder basics
 
     private lateinit var item: AbstractDrawerItem<*, *>
 
@@ -22,7 +22,9 @@ abstract class AbstractDrawerItemKt : Builder {
         item.withSubItems(subItem)
     }
 
-    /* AbstractDrawerItem methods */
+    //endregion
+
+    //region AbstractDrawerItem methods
 
     /**
      * Whether the drawer item is enabled (clickable, etc.).
@@ -156,5 +158,7 @@ abstract class AbstractDrawerItemKt : Builder {
         set(value) {
             item.withTag(value)
         }
+
+    //endregion
 
 }

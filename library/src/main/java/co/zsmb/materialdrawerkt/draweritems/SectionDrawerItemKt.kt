@@ -64,7 +64,7 @@ fun Builder.sectionHeader(nameRes: Int, setup: SectionDrawerItemKt.() -> Unit = 
 
 class SectionDrawerItemKt : AbstractDrawerItemKt() {
 
-    /* Builder basics */
+    //region Builder basics
 
     private val item = SectionDrawerItem()
 
@@ -74,7 +74,9 @@ class SectionDrawerItemKt : AbstractDrawerItemKt() {
 
     internal fun build() = item
 
-    /* SectionDrawerItem methods */
+    //endregion
+
+    //region SectionDrawerItem methods
 
     /**
      * Whether the section header should have a divider displayed above it.
@@ -146,5 +148,7 @@ class SectionDrawerItemKt : AbstractDrawerItemKt() {
         set(value) {
             item.withTypeface(value)
         }
+
+    //endregion
 
 }

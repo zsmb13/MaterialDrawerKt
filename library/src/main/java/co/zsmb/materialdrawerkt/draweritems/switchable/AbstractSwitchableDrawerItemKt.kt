@@ -8,7 +8,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 
 abstract class AbstractSwitchableDrawerItemKt : BaseDescribeableDrawerItemKt() {
 
-    /* Builder basics */
+    //region Builder basics
 
     private lateinit var item: AbstractSwitchableDrawerItem<*>
 
@@ -17,7 +17,9 @@ abstract class AbstractSwitchableDrawerItemKt : BaseDescribeableDrawerItemKt() {
         this.item = item
     }
 
-    /* AbstractSwitchableDrawerItem methods */
+    //endregion
+
+    //region AbstractSwitchableDrawerItem methods
 
     /**
      * Whether the drawer item is selectable.
@@ -102,5 +104,7 @@ abstract class AbstractSwitchableDrawerItemKt : BaseDescribeableDrawerItemKt() {
         set(value) {
             item.withSwitchEnabled(value)
         }
+
+    //endregion
 
 }

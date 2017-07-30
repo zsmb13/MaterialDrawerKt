@@ -43,7 +43,7 @@ fun AccountHeaderBuilderKt.profile(
 
 class ProfileDrawerItemKt : AbstractDrawerItemKt() {
 
-    /* Builder basics */
+    //region Builder basics
 
     private val item = ProfileDrawerItem()
 
@@ -53,7 +53,9 @@ class ProfileDrawerItemKt : AbstractDrawerItemKt() {
         super.setItem(item)
     }
 
-    /* ProfileDrawerItem methods */
+    //endregion
+
+    //region ProfileDrawerItem methods
 
     /**
      * The color of the profile item's text when it's disabled, as an argb Long.
@@ -310,5 +312,7 @@ class ProfileDrawerItemKt : AbstractDrawerItemKt() {
         set(value) {
             item.withTypeface(value)
         }
+
+    //endregion
 
 }

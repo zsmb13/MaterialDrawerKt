@@ -22,12 +22,14 @@ fun BadgeableKt.badge(text: String = "", setup: BadgeKt.() -> Unit = {}) {
 @DrawerMarker
 class BadgeKt(text: String) {
 
-    /* Builder basics */
+    //region Builder basics
 
     internal val style = BadgeStyle()
     internal var holder = StringHolder(text)
 
-    /* BadgeStyle methods */
+    //endregion
+
+    //region BadgeStyle methods
 
     /**
      * The background of the badge as a Drawable.
@@ -398,5 +400,7 @@ class BadgeKt(text: String) {
         set(value) {
             holder.textRes = value
         }
+
+    //endregion
 
 }

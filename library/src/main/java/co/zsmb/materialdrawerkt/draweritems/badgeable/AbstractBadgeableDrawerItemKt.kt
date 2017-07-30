@@ -8,7 +8,7 @@ import com.mikepenz.materialdrawer.model.AbstractBadgeableDrawerItem
 
 abstract class AbstractBadgeableDrawerItemKt : BaseDescribeableDrawerItemKt(), BadgeableKt {
 
-    /* Builder basics */
+    //region Builder basics
 
     private lateinit var item: AbstractBadgeableDrawerItem<*>
 
@@ -17,7 +17,9 @@ abstract class AbstractBadgeableDrawerItemKt : BaseDescribeableDrawerItemKt(), B
         this.item = item
     }
 
-    /* AbstractBadgeableDrawerItem methods */
+    //endregion
+
+    //region AbstractBadgeableDrawerItem methods
 
     // Documentation inherited
     override var badgeHolder: StringHolder
@@ -42,5 +44,7 @@ abstract class AbstractBadgeableDrawerItemKt : BaseDescribeableDrawerItemKt(), B
         set(value) {
             item.withBadgeStyle(value)
         }
+
+    //endregion
 
 }

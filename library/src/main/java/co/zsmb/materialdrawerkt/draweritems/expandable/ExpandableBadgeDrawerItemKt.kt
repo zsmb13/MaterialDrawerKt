@@ -37,7 +37,7 @@ fun Builder.expandableBadgeItem(nameRes: Int,
 
 class ExpandableBadgeDrawerItemKt : BaseDescribeableDrawerItemKt(), BadgeableKt {
 
-    /* Builder basics */
+    //region Builder basics
 
     private val item = ExpandableBadgeDrawerItem()
 
@@ -47,7 +47,9 @@ class ExpandableBadgeDrawerItemKt : BaseDescribeableDrawerItemKt(), BadgeableKt 
 
     internal fun build() = item
 
-    /* ExpandableBadgeDrawerItem methods */
+    //endregion
+
+    //region ExpandableBadgeDrawerItem methods
 
     // Documentation inherited
     override var badgeHolder: StringHolder
@@ -69,5 +71,7 @@ class ExpandableBadgeDrawerItemKt : BaseDescribeableDrawerItemKt(), BadgeableKt 
         set(value) {
             item.withBadgeStyle(value)
         }
+
+    //endregion
 
 }

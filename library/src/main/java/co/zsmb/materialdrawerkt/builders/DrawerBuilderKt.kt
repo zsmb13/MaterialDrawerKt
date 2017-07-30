@@ -42,7 +42,7 @@ fun Fragment.drawer(setup: DrawerBuilderKt.() -> Unit = {}): Drawer {
 @DrawerMarker
 class DrawerBuilderKt(val activity: Activity) : Builder {
 
-    /* Builder basics */
+    //region Builder basics
 
     val builder = DrawerBuilder(activity)
 
@@ -94,7 +94,9 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
         builder.withAccountHeader(header)
     }
 
-    /* Build helper */
+    //endregion
+
+    //region Build helper
 
     private var root: ViewGroup? = null
 
@@ -137,7 +139,9 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
             root = activity.findViewById<ViewGroup>(value)
         }
 
-    /* Listener helper */
+    //endregion
+
+    //region Listener helper
 
     private val onDrawerListener = object : Drawer.OnDrawerListener {
         var isInitialized = false
@@ -173,7 +177,9 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
         }
     }
 
-    /* DrawerBuilder methods */
+    //endregion
+
+    //region DrawerBuilder methods
 
     /**
      * A custom ActionBarDrawerToggle to be used in with this drawer.
@@ -1275,5 +1281,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
         set(value) {
             builder.withDrawerWidthRes(value)
         }
+
+    //endregion
 
 }

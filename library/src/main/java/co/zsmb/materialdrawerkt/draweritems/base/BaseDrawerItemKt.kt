@@ -8,7 +8,7 @@ import com.mikepenz.materialdrawer.model.BaseDrawerItem
 
 abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
 
-    /* Builder basics */
+    //region Builder basics
 
     private lateinit var item: BaseDrawerItem<*, *>
 
@@ -17,7 +17,9 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
         this.item = item
     }
 
-    /* BaseDrawerItem methods */
+    //endregion
+
+    //region BaseDrawerItem methods
 
     /**
      * The color of the drawer item's icon when it's disabled, as an argb Long.
@@ -337,5 +339,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
         set(value) {
             item.withTypeface(value)
         }
+
+    //endregion
 
 }

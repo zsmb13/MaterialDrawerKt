@@ -14,10 +14,12 @@ fun DrawerBuilderKt.footer(setup: StickyFooterKt.() -> Unit = {}) {
 @DrawerMarker
 class StickyFooterKt(val builder: DrawerBuilder) : Builder {
 
-    /* Builder basics */
+    //region Builder basics
 
     override fun attachItem(item: IDrawerItem<*, *>) {
         builder.addStickyDrawerItems(item)
     }
+
+    //endregion
 
 }

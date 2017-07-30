@@ -35,7 +35,7 @@ fun Builder.primaryItem(
 
 class PrimaryDrawerItemKt : AbstractBadgeableDrawerItemKt() {
 
-    /* Builder basics */
+    //region Builder basics
 
     private val item = PrimaryDrawerItem()
 
@@ -44,5 +44,7 @@ class PrimaryDrawerItemKt : AbstractBadgeableDrawerItemKt() {
     }
 
     internal fun build() = item
+
+    //endregion
 
 }

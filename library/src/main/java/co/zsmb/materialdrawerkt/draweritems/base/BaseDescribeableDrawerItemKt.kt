@@ -5,7 +5,7 @@ import com.mikepenz.materialdrawer.model.BaseDescribeableDrawerItem
 
 abstract class BaseDescribeableDrawerItemKt : BaseDrawerItemKt() {
 
-    /* Builder basics */
+    //region Builder basics
 
     private lateinit var item: BaseDescribeableDrawerItem<*, *>
 
@@ -14,7 +14,9 @@ abstract class BaseDescribeableDrawerItemKt : BaseDrawerItemKt() {
         this.item = item
     }
 
-    /* BaseDescribeableDrawerItem methods */
+    //endregion
+
+    //region BaseDescribeableDrawerItem methods
 
     /**
      * The description of the drawer item.
@@ -63,5 +65,7 @@ abstract class BaseDescribeableDrawerItemKt : BaseDrawerItemKt() {
         set(value) {
             item.withDescriptionTextColorRes(value)
         }
+
+    //endregion
 
 }

@@ -26,7 +26,7 @@ fun DrawerBuilderKt.accountHeader(setup: AccountHeaderBuilderKt.() -> Unit = {})
 @DrawerMarker
 class AccountHeaderBuilderKt(activity: Activity) {
 
-    /* Builder basics */
+    //region Builder basics
 
     val builder: AccountHeaderBuilder = AccountHeaderBuilder().withActivity(activity)
 
@@ -40,7 +40,9 @@ class AccountHeaderBuilderKt(activity: Activity) {
 
     internal fun addItem(profile: IProfile<*>) = builder.addProfiles(profile)
 
-    /* Listener helper */
+    //endregion
+
+    //region Listener helper
 
     private val onProfileImageListener = object : AccountHeader.OnAccountHeaderProfileImageListener {
         var isInitialized = false
@@ -66,7 +68,9 @@ class AccountHeaderBuilderKt(activity: Activity) {
         }
     }
 
-    /* AccountHeaderBuilder methods */
+    //endregion
+
+    //region AccountHeaderBuilder methods
 
     /**
      * By default, the small profile icons in the header show the most recently used profiles, the leftmost being the
@@ -666,5 +670,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
         set(value) {
             builder.withTypeface(value)
         }
+
+    //endregion
 
 }

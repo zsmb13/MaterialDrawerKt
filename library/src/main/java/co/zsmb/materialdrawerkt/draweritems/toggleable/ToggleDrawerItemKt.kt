@@ -35,7 +35,7 @@ fun Builder.toggleItem(
 
 class ToggleDrawerItemKt : AbstractToggleableDrawerItemKt() {
 
-    /* Builder basics */
+    // region Builder basics
 
     private val item = ToggleDrawerItem()
 
@@ -44,5 +44,7 @@ class ToggleDrawerItemKt : AbstractToggleableDrawerItemKt() {
     }
 
     internal fun build() = item
+
+    //endregion
 
 }

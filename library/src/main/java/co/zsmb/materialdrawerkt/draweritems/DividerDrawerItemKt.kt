@@ -16,7 +16,7 @@ fun Builder.divider(setup: DividerDrawerItemKt.() -> Unit = {}): DividerDrawerIt
 
 class DividerDrawerItemKt : AbstractDrawerItemKt() {
 
-    /* Builder basics */
+    //region Builder basics
 
     private val item = DividerDrawerItem()
 
@@ -25,5 +25,7 @@ class DividerDrawerItemKt : AbstractDrawerItemKt() {
     }
 
     internal fun build() = item
+
+    //endregion
 
 }

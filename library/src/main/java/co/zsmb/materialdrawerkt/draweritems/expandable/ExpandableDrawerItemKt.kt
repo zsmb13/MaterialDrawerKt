@@ -35,7 +35,7 @@ fun Builder.expandableItem(nameRes: Int,
 
 class ExpandableDrawerItemKt : BaseDescribeableDrawerItemKt() {
 
-    /* Builder basics */
+    //region Builder basics
 
     private val item = ExpandableDrawerItem()
 
@@ -45,7 +45,9 @@ class ExpandableDrawerItemKt : BaseDescribeableDrawerItemKt() {
 
     internal fun build() = item
 
-    /* ExpandableDrawerItem methods */
+    //endregion
+
+    //region ExpandableDrawerItem methods
 
     /**
      * The color of the expand arrow, as an argb Long.
@@ -115,5 +117,7 @@ class ExpandableDrawerItemKt : BaseDescribeableDrawerItemKt() {
         set(value) {
             item.withArrowRotationAngleStart(value)
         }
+
+    //endregion
 
 }

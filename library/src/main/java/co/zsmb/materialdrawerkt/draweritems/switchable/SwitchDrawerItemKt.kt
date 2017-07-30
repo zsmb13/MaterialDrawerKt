@@ -36,7 +36,7 @@ fun Builder.switchItem(
 
 class SwitchDrawerItemKt : AbstractSwitchableDrawerItemKt() {
 
-    /* Builder basics */
+    //region Builder basics
 
     private val item = SwitchDrawerItem()
 
@@ -45,5 +45,7 @@ class SwitchDrawerItemKt : AbstractSwitchableDrawerItemKt() {
     }
 
     internal fun build() = item
+
+    //endregion
 
 }

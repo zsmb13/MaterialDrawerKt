@@ -42,7 +42,7 @@ fun AccountHeaderBuilderKt.profileSetting(
 
 class ProfileSettingDrawerItemKt : AbstractDrawerItemKt() {
 
-    /* Builder basics */
+    //region Builder basics
 
     private val item = ProfileSettingDrawerItem()
 
@@ -52,7 +52,9 @@ class ProfileSettingDrawerItemKt : AbstractDrawerItemKt() {
         super.setItem(item)
     }
 
-    /* ProfileSettingDrawerItem methods */
+    //endregion
+
+    //region ProfileSettingDrawerItem methods
 
     /**
      * The description of the profile setting item.
@@ -325,5 +327,7 @@ class ProfileSettingDrawerItemKt : AbstractDrawerItemKt() {
         set(value) {
             item.withTypeface(value)
         }
+
+    //endregion
 
 }
