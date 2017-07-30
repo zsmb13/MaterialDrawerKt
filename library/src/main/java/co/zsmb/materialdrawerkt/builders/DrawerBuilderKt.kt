@@ -134,7 +134,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            root = activity.findViewById(value) as ViewGroup?
+            root = activity.findViewById<ViewGroup>(value)
         }
 
     /* Listener helper */
