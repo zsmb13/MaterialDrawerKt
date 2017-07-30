@@ -26,7 +26,7 @@ You can find the sample app [in the Play Store](https://play.google.com/store/ap
 The library is hosted on jcenter. To use it, add the following line to your module level `build.gradle` file's dependencies:
  
 ```gradle
-compile 'co.zsmb:materialdrawer-kt:1.0.5'
+compile 'co.zsmb:materialdrawer-kt:1.0.6'
 ```
 
 In general, you don't have to include the original library separately. (See the note in the FAQ.) 
