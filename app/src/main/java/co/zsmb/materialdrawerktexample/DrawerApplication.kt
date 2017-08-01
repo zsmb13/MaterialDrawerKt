@@ -20,7 +20,6 @@ class DrawerApplication : android.app.Application() {
                         .cancelRequest(imageView)
             }
         }
-
     }
 
 }

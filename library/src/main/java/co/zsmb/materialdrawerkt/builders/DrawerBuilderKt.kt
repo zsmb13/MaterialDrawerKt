@@ -21,6 +21,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 
 /**
  * Adds a navigation drawer to this Activity.
+ *
  * @return The created Drawer instance
  */
 fun Activity.drawer(setup: DrawerBuilderKt.() -> Unit = {}): Drawer {
@@ -31,6 +32,7 @@ fun Activity.drawer(setup: DrawerBuilderKt.() -> Unit = {}): Drawer {
 
 /**
  * Adds a navigation drawer to this Fragment.
+ *
  * @return The created Drawer instance
  */
 fun Fragment.drawer(setup: DrawerBuilderKt.() -> Unit = {}): Drawer {
