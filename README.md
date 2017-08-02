@@ -301,6 +301,52 @@ drawer {
 }
 ```
 
+### Image loading
+
+Since the MaterialDrawer library doesn't include its own image loading solution, you have to set one up yourself. You have to do this before the first time MaterialDrawer has to load an image, for example, in your Application's `onCreate` method. 
+
+With the original library, this setup looks like this (Picasso is just used as an example):
+
+```kotlin
+DrawerImageLoader.init(object: AbstractDrawerImageLoader() {
+    override fun placeholder(ctx: Context, tag: String?): Drawable {
+        return DrawerUIUtils.getPlaceHolder(ctx)
+    }
+
+    override fun set(imageView: ImageView, uri: Uri, placeholder: Drawable?, tag: String?) {
+        Picasso.with(imageView.context)
+                .load(uri)
+                .placeholder(placeholder)
+                .into(imageView)
+    }
+
+    override fun cancel(imageView: ImageView) {
+        Picasso.with(imageView.context)
+                .cancelRequest(imageView)
+    }
+})
+```
+
+This can be replaced by the following:
+
+```kotlin
+drawerImageLoader {
+    placeholder { ctx, tag ->
+        DrawerUIUtils.getPlaceHolder(ctx)
+    }
+    set { imageView, uri, placeholder, tag ->
+        Picasso.with(imageView.context)
+                .load(uri)
+                .placeholder(placeholder)
+                .into(imageView)
+    }
+    cancel { imageView ->
+        Picasso.with(imageView.context)
+                .cancelRequest(imageView)
+    }
+}
+```
+
 # FAQ
 
 #### I want to use features of the base library that haven't made it to this one yet
