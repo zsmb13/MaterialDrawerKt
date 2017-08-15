@@ -37,7 +37,9 @@ before_install:
   - chmod +x gradlew
 
 notifications:
-  email: false
+  email:
+    on_failure: always
+    on_success: never
 
 #before_script:
 #  - echo no | android create avd --force -n test -t android-21 --abi armeabi-v7a
