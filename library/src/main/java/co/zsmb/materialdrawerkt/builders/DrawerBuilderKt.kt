@@ -740,7 +740,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      * @param position The position of the clicked item within the drawer
      * @param drawerItem The clicked drawer item
      */
-    fun onItemClick(handler: (view: View, position: Int, drawerItem: IDrawerItem<*, *>) -> Boolean) {
+    fun onItemClick(handler: (view: View?, position: Int, drawerItem: IDrawerItem<*, *>) -> Boolean) {
         builder.withOnDrawerItemClickListener(handler)
     }
 

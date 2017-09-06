@@ -79,7 +79,7 @@ abstract class AbstractDrawerItemKt : Builder {
      *
      * Wraps the [AbstractDrawerItem.withOnDrawerItemClickListener] method.
      */
-    fun onClick(handler: (view: View) -> Boolean) {
+    fun onClick(handler: (view: View?) -> Boolean) {
         item.withOnDrawerItemClickListener { view, _, _ -> handler(view) }
     }
 
@@ -94,7 +94,7 @@ abstract class AbstractDrawerItemKt : Builder {
      * @param position The position of the item within the drawer
      * @param drawerItem The drawer item itself
      */
-    fun onClick(handler: (view: View, position: Int, drawerItem: IDrawerItem<*, *>) -> Boolean) {
+    fun onClick(handler: (view: View?, position: Int, drawerItem: IDrawerItem<*, *>) -> Boolean) {
         item.withOnDrawerItemClickListener(handler)
     }
 

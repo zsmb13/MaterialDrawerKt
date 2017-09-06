@@ -281,7 +281,7 @@ class DrawerActivity : AppCompatActivity() {
         }
     }
 
-    private fun <T : Activity> openActivity(activity: KClass<T>): (View) -> Boolean = {
+    private fun <T : Activity> openActivity(activity: KClass<T>): (View?) -> Boolean = {
         startActivity(Intent(this@DrawerActivity, activity.java))
         false
     }
