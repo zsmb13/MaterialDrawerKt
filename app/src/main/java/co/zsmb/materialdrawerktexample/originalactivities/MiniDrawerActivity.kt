@@ -67,7 +67,7 @@ class MiniDrawerActivity : AppCompatActivity() {
                 profile("Mr. X", "mister.x.super@gmail.com") { icon = R.drawable.profile4 }
                 profile("Batman", "batman@gmail.com") { icon = R.drawable.profile5 }
                 profileSetting("Add account", "Add new GitHub Account") {
-                    iicon = GoogleMaterial.Icon.gmd_plus
+                    iicon = GoogleMaterial.Icon.gmd_add
                     onClick { _ ->
                         val newProfile = ProfileDrawerItem()
                                 .withNameShown(true)

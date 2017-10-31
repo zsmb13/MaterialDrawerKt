@@ -69,7 +69,7 @@ class EmbeddedDrawerActivity : AppCompatActivity() {
                     icon = R.drawable.profile5
                 }
                 profileSetting("Add account", "Add new GitHub Account") {
-                    iicon = GoogleMaterial.Icon.gmd_plus
+                    iicon = GoogleMaterial.Icon.gmd_add
                     onClick { _ ->
                         val newProfile = ProfileDrawerItem()
                                 .withNameShown(true)

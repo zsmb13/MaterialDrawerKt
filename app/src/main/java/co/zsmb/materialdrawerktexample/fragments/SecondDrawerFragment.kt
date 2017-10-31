@@ -29,7 +29,7 @@ class SecondDrawerFragment : Fragment() {
             primaryItem(R.string.drawer_item_custom) { iicon = FontAwesome.Icon.faw_eye }
         }
 
-        view.title.text = arguments.getString(KEY_TITLE)
+        view.title.text = arguments?.getString(KEY_TITLE)
 
         result.drawerLayout.fitsSystemWindows = false
         result.slider.fitsSystemWindows = false
@@ -37,7 +37,7 @@ class SecondDrawerFragment : Fragment() {
         return view
     }
 
-    override fun onSaveInstanceState(outState: Bundle?) {
+    override fun onSaveInstanceState(outState: Bundle) {
         result.saveInstanceState(outState)
         super.onSaveInstanceState(outState)
     }

@@ -55,7 +55,7 @@ class CompactHeaderDrawerActivity : AppCompatActivity() {
                 }
 
                 profileSetting("Add account", "Add new GitHub Account") {
-                    iicon = GoogleMaterial.Icon.gmd_plus
+                    iicon = GoogleMaterial.Icon.gmd_add
                     identifier = 100_000
                 }
                 profileSetting("Manage Account") {

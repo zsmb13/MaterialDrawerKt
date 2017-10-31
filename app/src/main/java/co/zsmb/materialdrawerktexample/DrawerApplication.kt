@@ -1,9 +1,10 @@
 package co.zsmb.materialdrawerktexample
 
+import android.app.Application
 import co.zsmb.materialdrawerkt.imageloader.drawerImageLoader
 import com.squareup.picasso.Picasso
 
-class DrawerApplication : android.app.Application() {
+class DrawerApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()

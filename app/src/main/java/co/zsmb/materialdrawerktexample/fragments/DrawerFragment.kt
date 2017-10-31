@@ -36,7 +36,7 @@ class DrawerFragment : Fragment() {
             secondaryItem(R.string.drawer_item_contact) { iicon = FontAwesome.Icon.faw_bullhorn }
         }
 
-        view.title.text = arguments.getString(KEY_TITLE)
+        view.title.text = arguments?.getString(KEY_TITLE)
 
         result.drawerLayout.fitsSystemWindows = false
         result.slider.fitsSystemWindows = false
@@ -44,7 +44,7 @@ class DrawerFragment : Fragment() {
         return view
     }
 
-    override fun onSaveInstanceState(outState: Bundle?) {
+    override fun onSaveInstanceState(outState: Bundle) {
         result.saveInstanceState(outState)
         super.onSaveInstanceState(outState)
     }

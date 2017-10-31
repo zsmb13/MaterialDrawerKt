@@ -25,6 +25,7 @@ import co.zsmb.materialdrawerktexample.newactivities.*
 import co.zsmb.materialdrawerktexample.originalactivities.*
 import com.mikepenz.fontawesome_typeface_library.FontAwesome
 import com.mikepenz.google_material_typeface_library.GoogleMaterial
+import com.mikepenz.material_design_iconic_typeface_library.MaterialDesignIconic
 import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem
@@ -78,7 +79,7 @@ class DrawerActivity : AppCompatActivity() {
                     identifier = 105
                 }
                 profileSetting("Add account", "Add new GitHub Account") {
-                    iicon = GoogleMaterial.Icon.gmd_plus
+                    iicon = GoogleMaterial.Icon.gmd_add
                     identifier = 100_000
                 }
                 profileSetting("Manage Account") {
@@ -110,7 +111,7 @@ class DrawerActivity : AppCompatActivity() {
                 onClick(openActivity(DrawerItemTypesActivity::class))
             }
             primaryItem("Account header options") {
-                iicon = GoogleMaterial.Icon.gmd_account
+                iicon = MaterialDesignIconic.Icon.gmi_account
                 onClick(openActivity(AccountHeaderActivity::class))
             }
             primaryItem("Header and footer") {
@@ -118,18 +119,18 @@ class DrawerActivity : AppCompatActivity() {
                 onClick(openActivity(HeaderFooterActivity::class))
             }
             primaryItem("Listeners") {
-                iicon = GoogleMaterial.Icon.gmd_audio
+                iicon = MaterialDesignIconic.Icon.gmi_audio
                 onClick(openActivity(ListenersActivity::class))
             }
             primaryItem("Badges") {
-                iicon = GoogleMaterial.Icon.gmd_tag
+                iicon = MaterialDesignIconic.Icon.gmi_tag
                 onClick(openActivity(BadgesActivity::class))
             }
 
             sectionHeader("Original demo activities")
 
             primaryItem(R.string.drawer_item_compact_header, R.string.drawer_item_compact_header_desc) {
-                iicon = GoogleMaterial.Icon.gmd_sun
+                iicon = GoogleMaterial.Icon.gmd_brightness_5
                 identifier = 1
                 selectable = false
                 onClick { _ ->
@@ -162,13 +163,13 @@ class DrawerActivity : AppCompatActivity() {
                 onClick(openActivity(AdvancedDrawerActivity::class))
             }
             primaryItem(R.string.drawer_item_embedded_drawer, R.string.drawer_item_embedded_drawer_desc) {
-                iicon = GoogleMaterial.Icon.gmd_battery
+                iicon = MaterialDesignIconic.Icon.gmi_battery
                 identifier = 7
                 selectable = false
                 onClick(openActivity(EmbeddedDrawerActivity::class))
             }
             primaryItem(R.string.drawer_item_fullscreen_drawer, R.string.drawer_item_fullscreen_drawer_desc) {
-                iicon = GoogleMaterial.Icon.gmd_labels
+                iicon = MaterialDesignIconic.Icon.gmi_labels
                 identifier = 8
                 selectable = false
                 onClick(openActivity(FullscreenDrawerActivity::class))
@@ -186,7 +187,7 @@ class DrawerActivity : AppCompatActivity() {
                 onClick(openActivity(MenuDrawerActivity::class))
             }
             primaryItem(R.string.drawer_item_mini_drawer, R.string.drawer_item_mini_drawer_desc) {
-                iicon = GoogleMaterial.Icon.gmd_battery_charging
+                iicon = MaterialDesignIconic.Icon.gmi_battery_charging
                 identifier = 11
                 selectable = false
                 onClick(openActivity(MiniDrawerActivity::class))
@@ -201,7 +202,7 @@ class DrawerActivity : AppCompatActivity() {
             sectionHeader("More original demo material")
 
             expandableBadgeItem("Collapsable Badge") {
-                iicon = GoogleMaterial.Icon.gmd_collection_case_play
+                iicon = MaterialDesignIconic.Icon.gmi_collection_case_play
                 identifier = 18
                 selectable = false
                 badge("100") {
@@ -210,28 +211,28 @@ class DrawerActivity : AppCompatActivity() {
                 }
                 secondaryItem("CollapsableItem") {
                     level = 2
-                    iicon = GoogleMaterial.Icon.gmd_8tracks
+                    iicon = MaterialDesignIconic.Icon.gmi_8tracks
                     identifier = 2000
                 }
                 secondaryItem("CollapsableItem 2") {
                     level = 2
-                    iicon = GoogleMaterial.Icon.gmd_8tracks
+                    iicon = MaterialDesignIconic.Icon.gmi_8tracks
                     identifier = 2001
                 }
             }
 
             expandableItem("Collapsable Badge") {
-                iicon = GoogleMaterial.Icon.gmd_collection_case_play
+                iicon = MaterialDesignIconic.Icon.gmi_collection_case_play
                 identifier = 19
                 selectable = false
                 secondaryItem("CollapsableItem") {
                     level = 2
-                    iicon = GoogleMaterial.Icon.gmd_8tracks
+                    iicon = MaterialDesignIconic.Icon.gmi_8tracks
                     identifier = 2002
                 }
                 secondaryItem("CollapsableItem 2") {
                     level = 2
-                    iicon = GoogleMaterial.Icon.gmd_8tracks
+                    iicon = MaterialDesignIconic.Icon.gmi_8tracks
                     identifier = 2003
                 }
             }

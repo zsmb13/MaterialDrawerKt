@@ -63,7 +63,7 @@ class AdvancedDrawerActivity : AppCompatActivity() {
                     icon = R.drawable.profile5
                 }
                 profileSetting("Add account", "Add new GitHub Account") {
-                    iicon = Icon.gmd_plus
+                    iicon = Icon.gmd_add
                     onClick { _ ->
                         val newProfile = ProfileDrawerItem()
                                 .withNameShown(true)

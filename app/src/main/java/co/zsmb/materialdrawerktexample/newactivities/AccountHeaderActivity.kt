@@ -10,7 +10,7 @@ import co.zsmb.materialdrawerkt.draweritems.profile.profile
 import co.zsmb.materialdrawerkt.draweritems.profile.profileSetting
 import co.zsmb.materialdrawerktexample.R
 import co.zsmb.materialdrawerktexample.utils.toast
-import com.mikepenz.google_material_typeface_library.GoogleMaterial
+import com.mikepenz.material_design_iconic_typeface_library.MaterialDesignIconic
 import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.octicons_typeface_library.Octicons
@@ -71,11 +71,11 @@ class AccountHeaderActivity : AppCompatActivity() {
                     nameShown = true
                 }
                 profileSetting("Settings 1") {
-                    iicon = GoogleMaterial.Icon.gmd_network_setting
+                    iicon = MaterialDesignIconic.Icon.gmi_network_setting
                     iconColor = 0xFF00FF66
                 }
                 profileSetting("Settings 2") {
-                    iicon = GoogleMaterial.Icon.gmd_power_setting
+                    iicon = MaterialDesignIconic.Icon.gmi_power_setting
                     textColorRes = R.color.colorPrimary
                 }
 
