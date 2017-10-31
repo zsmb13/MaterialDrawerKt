@@ -10,12 +10,12 @@ ext {
 }
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    compileSdkVersion 27
+    buildToolsVersion "27.0.0"
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
     }
@@ -23,17 +23,19 @@ android {
 
 repositories {
     mavenCentral()
-    maven { url 'https://maven.google.com' }
+    google()
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-
-    compile('com.mikepenz:materialdrawer:5.9.5@aar') {
+    api('com.mikepenz:materialdrawer:6.0.0@aar') {
         transitive = true
     }
+    implementation "com.android.support:appcompat-v7:27.0.0"
+    implementation "com.android.support:recyclerview-v7:27.0.0"
+    implementation "com.android.support:support-annotations:27.0.0"
+    implementation "com.android.support:design:27.0.0"
 }
 
 apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'
