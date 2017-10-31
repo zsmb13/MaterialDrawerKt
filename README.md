@@ -23,10 +23,16 @@ You can find the sample app [in the Play Store](https://play.google.com/store/ap
 
 # Setup
 
-The library is hosted on jcenter. To use it, add the following line to your module level `build.gradle` file's dependencies:
+The library is hosted on jcenter. To use it, add the following to your module level `build.gradle` file's dependencies:
  
 ```gradle
-compile 'co.zsmb:materialdrawer-kt:1.1.1'
+implementation 'co.zsmb:materialdrawer-kt:1.2.0'
+
+// required support libraries
+implementation "com.android.support:appcompat-v7:${versions.supportLib}"
+implementation "com.android.support:recyclerview-v7:${versions.supportLib}"
+implementation "com.android.support:support-annotations:${versions.supportLib}"
+implementation "com.android.support:design:${versions.supportLib}"
 ```
 
 In general, you don't have to include the original library separately. (See the note in the FAQ.) 
