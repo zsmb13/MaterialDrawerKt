@@ -36,7 +36,8 @@ fun Activity.drawer(setup: DrawerBuilderKt.() -> Unit = {}): Drawer {
  * @return The created Drawer instance
  */
 fun Fragment.drawer(setup: DrawerBuilderKt.() -> Unit = {}): Drawer {
-    val builder = DrawerBuilderKt(activity)
+    val fragmentActivity = activity ?: throw IllegalStateException("Fragment is not attached to an Activity")
+    val builder = DrawerBuilderKt(fragmentActivity)
     builder.setup()
     return builder.buildForFragment()
 }
@@ -815,12 +816,11 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withPositionBasedStateManagement] method.
      */
+    @Deprecated(level = DeprecationLevel.ERROR,
+            message = "FastAdapter no longer has this setting in its new versions. Please remove this call.")
     var positionBasedStateManagement: Boolean
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
-        set(value) {
-            builder.withPositionBasedStateManagement(value)
-        }
+        set(value) = Unit
 
     /**
      * The primary drawer that's already present in the Activity. This is to be set when the current drawer is the
@@ -829,7 +829,6 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      * Non readable property. Wraps the [DrawerBuilder.append] method.
      */
     var primaryDrawer: Drawer? = null
-        get() = field
         set(value) {
             if (value != null) {
                 field = value
