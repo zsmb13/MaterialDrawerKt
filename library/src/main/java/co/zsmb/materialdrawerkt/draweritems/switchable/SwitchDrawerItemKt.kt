@@ -7,7 +7,7 @@ import com.mikepenz.materialdrawer.model.SwitchDrawerItem
  * Adds a new SwitchDrawerItem with the given [name] and [description].
  * @return The created SwitchDrawerItem instance
  */
-fun Builder.switchItem(
+inline fun Builder.switchItem(
         name: String = "",
         description: String? = null,
         setup: SwitchDrawerItemKt.() -> Unit = {}): SwitchDrawerItem {
@@ -22,7 +22,7 @@ fun Builder.switchItem(
  * Adds a new SwitchDrawerItem with the given [nameRes] and [descriptionRes].
  * @return The created SwitchDrawerItem instance
  */
-fun Builder.switchItem(
+inline fun Builder.switchItem(
         nameRes: Int,
         descriptionRes: Int? = null,
         setup: SwitchDrawerItemKt.() -> Unit = {}): SwitchDrawerItem {
@@ -44,6 +44,7 @@ class SwitchDrawerItemKt : AbstractSwitchableDrawerItemKt() {
         super.setItem(item)
     }
 
+    @PublishedApi
     internal fun build() = item
 
     //endregion

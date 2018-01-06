@@ -24,7 +24,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
  *
  * @return The created Drawer instance
  */
-fun Activity.drawer(setup: DrawerBuilderKt.() -> Unit = {}): Drawer {
+inline fun Activity.drawer(setup: DrawerBuilderKt.() -> Unit = {}): Drawer {
     val builder = DrawerBuilderKt(this)
     builder.setup()
     return builder.build()
@@ -35,7 +35,7 @@ fun Activity.drawer(setup: DrawerBuilderKt.() -> Unit = {}): Drawer {
  *
  * @return The created Drawer instance
  */
-fun Fragment.drawer(setup: DrawerBuilderKt.() -> Unit = {}): Drawer {
+inline fun Fragment.drawer(setup: DrawerBuilderKt.() -> Unit = {}): Drawer {
     val fragmentActivity = activity ?: throw IllegalStateException("Fragment is not attached to an Activity")
     val builder = DrawerBuilderKt(fragmentActivity)
     builder.setup()
@@ -49,6 +49,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
 
     val builder = DrawerBuilder(activity)
 
+    @PublishedApi
     internal fun build(): Drawer {
         if (onDrawerListener.isInitialized) {
             builder.withOnDrawerListener(onDrawerListener)
@@ -69,6 +70,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
         return builder.build()
     }
 
+    @PublishedApi
     internal fun buildForFragment(): Drawer {
         if (onDrawerListener.isInitialized) {
             builder.withOnDrawerListener(onDrawerListener)
@@ -93,6 +95,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
         builder.addDrawerItems(item)
     }
 
+    @PublishedApi
     internal fun attachHeader(header: AccountHeader) {
         builder.withAccountHeader(header)
     }

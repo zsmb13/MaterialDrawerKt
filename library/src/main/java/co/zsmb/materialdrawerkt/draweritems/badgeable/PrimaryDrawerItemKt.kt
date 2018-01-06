@@ -7,7 +7,7 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
  * Adds a new PrimaryDrawerItem with the given [name] and [description].
  * @return The created PrimaryDrawerItem instance
  */
-fun Builder.primaryItem(
+inline fun Builder.primaryItem(
         name: String = "",
         description: String? = null,
         setup: PrimaryDrawerItemKt.() -> Unit = {}): PrimaryDrawerItem {
@@ -22,7 +22,7 @@ fun Builder.primaryItem(
  * Adds a new PrimaryDrawerItem with the given [nameRes] and [descriptionRes].
  * @return The created PrimaryDrawerItem instance
  */
-fun Builder.primaryItem(
+inline fun Builder.primaryItem(
         nameRes: Int,
         descriptionRes: Int? = null,
         setup: PrimaryDrawerItemKt.() -> Unit = {}): PrimaryDrawerItem {
@@ -43,6 +43,7 @@ class PrimaryDrawerItemKt : AbstractBadgeableDrawerItemKt() {
         super.setItem(item)
     }
 
+    @PublishedApi
     internal fun build() = item
 
     //endregion

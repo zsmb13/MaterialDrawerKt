@@ -14,7 +14,7 @@ import com.mikepenz.materialdrawer.model.ProfileDrawerItem
  * Adds a new ProfileDrawerItem with the given [name] and [email] address.
  * @return The created ProfileDrawerItem instance
  */
-fun AccountHeaderBuilderKt.profile(
+inline fun AccountHeaderBuilderKt.profile(
         name: String = "",
         email: String? = null,
         setup: ProfileDrawerItemKt.() -> Unit = {}): ProfileDrawerItem {
@@ -29,7 +29,7 @@ fun AccountHeaderBuilderKt.profile(
  * Adds a new ProfileDrawerItem with the given [nameRes] and [emailRes] address.
  * @return The created ProfileDrawerItem instance
  */
-fun AccountHeaderBuilderKt.profile(
+inline fun AccountHeaderBuilderKt.profile(
         nameRes: Int,
         emailRes: Int? = null,
         setup: ProfileDrawerItemKt.() -> Unit = {}): ProfileDrawerItem {
@@ -47,6 +47,7 @@ class ProfileDrawerItemKt : AbstractDrawerItemKt() {
 
     private val item = ProfileDrawerItem()
 
+    @PublishedApi
     internal fun build() = item
 
     init {

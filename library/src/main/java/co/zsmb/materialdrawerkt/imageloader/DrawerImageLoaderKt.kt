@@ -14,7 +14,7 @@ import com.mikepenz.materialdrawer.util.DrawerImageLoader
  *
  * @return The created IDrawerImageLoader instance
  */
-fun drawerImageLoader(actions: DrawerImageLoaderKt.() -> Unit): DrawerImageLoader.IDrawerImageLoader {
+inline fun drawerImageLoader(actions: DrawerImageLoaderKt.() -> Unit): DrawerImageLoader.IDrawerImageLoader {
     val loaderImpl = DrawerImageLoaderKt().apply(actions).build()
     DrawerImageLoader.init(loaderImpl)
     return loaderImpl
@@ -26,6 +26,7 @@ class DrawerImageLoaderKt {
     private var cancelFunc: ((ImageView) -> Unit)? = null
     private var placeholderFunc: ((Context, String?) -> Drawable)? = null
 
+    @PublishedApi
     internal fun build() = object : AbstractDrawerImageLoader() {
 
         private val setFunction: (ImageView, Uri, Drawable?, String?) -> Unit = setFunc

@@ -11,9 +11,9 @@ import com.mikepenz.materialdrawer.model.ExpandableBadgeDrawerItem
  * Adds a new ExpandableBadgeDrawerItem with the given [name] and [description].
  * @return The created ExpandableBadgeDrawerItem instance
  */
-fun Builder.expandableBadgeItem(name: String = "",
-                                description: String? = null,
-                                setup: ExpandableBadgeDrawerItemKt.() -> Unit = {}): ExpandableBadgeDrawerItem {
+inline fun Builder.expandableBadgeItem(name: String = "",
+                                       description: String? = null,
+                                       setup: ExpandableBadgeDrawerItemKt.() -> Unit = {}): ExpandableBadgeDrawerItem {
     val item = ExpandableBadgeDrawerItemKt()
     item.name = name
     description?.let { item.description = it }
@@ -25,9 +25,9 @@ fun Builder.expandableBadgeItem(name: String = "",
  * Adds a new ExpandableBadgeDrawerItem with the given [nameRes] and [descriptionRes].
  * @return The created ExpandableBadgeDrawerItem instance
  */
-fun Builder.expandableBadgeItem(nameRes: Int,
-                                descriptionRes: Int? = null,
-                                setup: ExpandableBadgeDrawerItemKt.() -> Unit = {}): ExpandableBadgeDrawerItem {
+inline fun Builder.expandableBadgeItem(nameRes: Int,
+                                       descriptionRes: Int? = null,
+                                       setup: ExpandableBadgeDrawerItemKt.() -> Unit = {}): ExpandableBadgeDrawerItem {
     val item = ExpandableBadgeDrawerItemKt()
     item.nameRes = nameRes
     descriptionRes?.let { item.descriptionRes = it }
@@ -45,6 +45,7 @@ class ExpandableBadgeDrawerItemKt : BaseDescribeableDrawerItemKt(), BadgeableKt 
         super.setItem(item)
     }
 
+    @PublishedApi
     internal fun build() = item
 
     //endregion

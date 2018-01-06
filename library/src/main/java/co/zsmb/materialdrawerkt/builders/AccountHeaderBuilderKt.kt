@@ -17,7 +17,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile
  * Adds an [AccountHeader] to the drawer.
  * @return The created [AccountHeader] instance
  */
-fun DrawerBuilderKt.accountHeader(setup: AccountHeaderBuilderKt.() -> Unit = {}): AccountHeader {
+inline fun DrawerBuilderKt.accountHeader(setup: AccountHeaderBuilderKt.() -> Unit = {}): AccountHeader {
     val header = AccountHeaderBuilderKt(activity)
     header.setup()
     return header.build().apply { attachHeader(this) }
@@ -30,6 +30,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
 
     val builder: AccountHeaderBuilder = AccountHeaderBuilder().withActivity(activity)
 
+    @PublishedApi
     internal fun build(): AccountHeader {
         if (onProfileImageListener.isInitialized) {
             builder.withOnAccountHeaderProfileImageListener(onProfileImageListener)
@@ -38,6 +39,7 @@ class AccountHeaderBuilderKt(activity: Activity) {
         return builder.build()
     }
 
+    @PublishedApi
     internal fun addItem(profile: IProfile<*>) = builder.addProfiles(profile)
 
     //endregion

@@ -12,7 +12,7 @@ import com.mikepenz.materialdrawer.holder.StringHolder
  * Adds a badge with the given [text].
  */
 @Suppress("DEPRECATION")
-fun BadgeableKt.badge(text: String = "", setup: BadgeKt.() -> Unit = {}) {
+inline fun BadgeableKt.badge(text: String = "", setup: BadgeKt.() -> Unit = {}) {
     val badge = BadgeKt(text)
     badge.setup()
     this.badgeHolder = badge.holder
@@ -23,8 +23,9 @@ fun BadgeableKt.badge(text: String = "", setup: BadgeKt.() -> Unit = {}) {
 class BadgeKt(text: String) {
 
     //region Builder basics
-
+    @PublishedApi
     internal val style = BadgeStyle()
+    @PublishedApi
     internal var holder = StringHolder(text)
 
     //endregion

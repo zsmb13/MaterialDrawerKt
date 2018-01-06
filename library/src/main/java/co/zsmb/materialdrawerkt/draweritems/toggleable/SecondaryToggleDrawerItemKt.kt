@@ -7,7 +7,7 @@ import com.mikepenz.materialdrawer.model.SecondaryToggleDrawerItem
  * Adds a new SecondaryToggleDrawerItem with the given [name] and [description].
  * @return The created SecondaryToggleDrawerItem instance
  */
-fun Builder.secondaryToggleItem(
+inline fun Builder.secondaryToggleItem(
         name: String = "",
         description: String? = null,
         setup: SecondaryToggleDrawerItemKt.() -> Unit = {}): SecondaryToggleDrawerItem {
@@ -22,7 +22,7 @@ fun Builder.secondaryToggleItem(
  * Adds a new SecondaryToggleDrawerItem with the given [nameRes] and [descriptionRes].
  * @return The created SecondaryToggleDrawerItem instance
  */
-fun Builder.secondaryToggleItem(
+inline fun Builder.secondaryToggleItem(
         nameRes: Int,
         descriptionRes: Int? = null,
         setup: SecondaryToggleDrawerItemKt.() -> Unit = {}): SecondaryToggleDrawerItem {
@@ -43,6 +43,7 @@ class SecondaryToggleDrawerItemKt : AbstractToggleableDrawerItemKt() {
         super.setItem(item)
     }
 
+    @PublishedApi
     internal fun build() = item
 
     //endregion

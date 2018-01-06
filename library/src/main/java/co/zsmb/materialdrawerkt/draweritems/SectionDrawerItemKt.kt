@@ -13,7 +13,7 @@ import com.mikepenz.materialdrawer.model.SectionDrawerItem
  *
  * @return The created SectionDrawerItem instance
  */
-fun Builder.sectionItem(name: String = "", setup: SectionDrawerItemKt.() -> Unit = {}): SectionDrawerItem {
+inline fun Builder.sectionItem(name: String = "", setup: SectionDrawerItemKt.() -> Unit = {}): SectionDrawerItem {
     val item = SectionDrawerItemKt()
     item.name = name
     item.setup()
@@ -27,7 +27,7 @@ fun Builder.sectionItem(name: String = "", setup: SectionDrawerItemKt.() -> Unit
  *
  * @return The created SectionDrawerItem instance
  */
-fun Builder.sectionHeader(name: String = "", setup: SectionDrawerItemKt.() -> Unit = {}): SectionDrawerItem {
+inline fun Builder.sectionHeader(name: String = "", setup: SectionDrawerItemKt.() -> Unit = {}): SectionDrawerItem {
     val item = SectionDrawerItemKt()
     item.name = name
     item.setup()
@@ -41,7 +41,7 @@ fun Builder.sectionHeader(name: String = "", setup: SectionDrawerItemKt.() -> Un
  *
  * @return The created SectionDrawerItem instance
  */
-fun Builder.sectionItem(nameRes: Int, setup: SectionDrawerItemKt.() -> Unit = {}): SectionDrawerItem {
+inline fun Builder.sectionItem(nameRes: Int, setup: SectionDrawerItemKt.() -> Unit = {}): SectionDrawerItem {
     val item = SectionDrawerItemKt()
     item.nameRes = nameRes
     item.setup()
@@ -55,7 +55,7 @@ fun Builder.sectionItem(nameRes: Int, setup: SectionDrawerItemKt.() -> Unit = {}
  *
  * @return The created SectionDrawerItem instance
  */
-fun Builder.sectionHeader(nameRes: Int, setup: SectionDrawerItemKt.() -> Unit = {}): SectionDrawerItem {
+inline fun Builder.sectionHeader(nameRes: Int, setup: SectionDrawerItemKt.() -> Unit = {}): SectionDrawerItem {
     val item = SectionDrawerItemKt()
     item.nameRes = nameRes
     item.setup()
@@ -72,6 +72,7 @@ class SectionDrawerItemKt : AbstractDrawerItemKt() {
         super.setItem(item)
     }
 
+    @PublishedApi
     internal fun build() = item
 
     //endregion

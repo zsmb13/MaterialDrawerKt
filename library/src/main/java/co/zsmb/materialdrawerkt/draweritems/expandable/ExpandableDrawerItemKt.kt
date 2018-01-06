@@ -9,9 +9,9 @@ import com.mikepenz.materialdrawer.model.ExpandableDrawerItem
  * Adds a new ExpandableDrawerItem with the given [name] and [description].
  * @return The created ExpandableDrawerItem instance
  */
-fun Builder.expandableItem(name: String = "",
-                           description: String? = null,
-                           setup: ExpandableDrawerItemKt.() -> Unit = {}): ExpandableDrawerItem {
+inline fun Builder.expandableItem(name: String = "",
+                                  description: String? = null,
+                                  setup: ExpandableDrawerItemKt.() -> Unit = {}): ExpandableDrawerItem {
     val item = ExpandableDrawerItemKt()
     item.name = name
     description?.let { item.description = it }
@@ -23,9 +23,9 @@ fun Builder.expandableItem(name: String = "",
  * Adds a new ExpandableDrawerItem with the given [nameRes] and [descriptionRes].
  * @return The created ExpandableDrawerItem instance
  */
-fun Builder.expandableItem(nameRes: Int,
-                           descriptionRes: Int? = null,
-                           setup: ExpandableDrawerItemKt.() -> Unit = {}): ExpandableDrawerItem {
+inline fun Builder.expandableItem(nameRes: Int,
+                                  descriptionRes: Int? = null,
+                                  setup: ExpandableDrawerItemKt.() -> Unit = {}): ExpandableDrawerItem {
     val item = ExpandableDrawerItemKt()
     item.nameRes = nameRes
     descriptionRes?.let { item.descriptionRes = it }
@@ -43,6 +43,7 @@ class ExpandableDrawerItemKt : BaseDescribeableDrawerItemKt() {
         super.setItem(item)
     }
 
+    @PublishedApi
     internal fun build() = item
 
     //endregion

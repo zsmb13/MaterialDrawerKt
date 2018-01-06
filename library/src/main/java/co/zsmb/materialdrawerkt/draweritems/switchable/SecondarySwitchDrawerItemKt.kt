@@ -7,7 +7,7 @@ import com.mikepenz.materialdrawer.model.SecondarySwitchDrawerItem
  * Adds a new SecondarySwitchDrawerItem with the given [name] and [description].
  * @return The created SecondarySwitchDrawerItem instance
  */
-fun Builder.secondarySwitchItem(
+inline fun Builder.secondarySwitchItem(
         name: String = "",
         description: String? = null,
         setup: SecondarySwitchDrawerItemKt.() -> Unit = {}): SecondarySwitchDrawerItem {
@@ -22,7 +22,7 @@ fun Builder.secondarySwitchItem(
  * Adds a new SecondarySwitchDrawerItem with the given [nameRes] and [descriptionRes].
  * @return The created SecondarySwitchDrawerItem instance
  */
-fun Builder.secondarySwitchItem(
+inline fun Builder.secondarySwitchItem(
         nameRes: Int,
         descriptionRes: Int? = null,
         setup: SecondarySwitchDrawerItemKt.() -> Unit = {}): SecondarySwitchDrawerItem {
@@ -43,6 +43,7 @@ class SecondarySwitchDrawerItemKt : AbstractSwitchableDrawerItemKt() {
         super.setItem(item)
     }
 
+    @PublishedApi
     internal fun build() = item
 
     //endregion

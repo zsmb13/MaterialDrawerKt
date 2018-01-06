@@ -7,7 +7,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 /**
  * Adds a footer to the drawer.
  */
-fun DrawerBuilderKt.footer(setup: StickyFooterKt.() -> Unit = {}) {
+inline fun DrawerBuilderKt.footer(setup: StickyFooterKt.() -> Unit = {}) {
     StickyFooterKt(builder).setup()
 }
 

@@ -7,7 +7,7 @@ import com.mikepenz.materialdrawer.model.SecondaryDrawerItem
  * Adds a new SecondaryDrawerItem with the given [name] and [description].
  * @return The created SecondaryDrawerItem instance
  */
-fun Builder.secondaryItem(
+inline fun Builder.secondaryItem(
         name: String = "",
         description: String? = null,
         setup: SecondaryDrawerItemKt.() -> Unit = {}): SecondaryDrawerItem {
@@ -22,7 +22,7 @@ fun Builder.secondaryItem(
  * Adds a new SecondaryDrawerItem with the given [nameRes] and [descriptionRes].
  * @return The created SecondaryDrawerItem instance
  */
-fun Builder.secondaryItem(
+inline fun Builder.secondaryItem(
         nameRes: Int,
         descriptionRes: Int? = null,
         setup: SecondaryDrawerItemKt.() -> Unit = {}): SecondaryDrawerItem {
@@ -43,6 +43,7 @@ class SecondaryDrawerItemKt : AbstractBadgeableDrawerItemKt() {
         super.setItem(item)
     }
 
+    @PublishedApi
     internal fun build() = item
 
     //endregion

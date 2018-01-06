@@ -7,7 +7,7 @@ import com.mikepenz.materialdrawer.model.ToggleDrawerItem
  * Adds a new ToggleDrawerItem with the given [name] and [description].
  * @return The created ToggleDrawerItem instance
  */
-fun Builder.toggleItem(
+inline fun Builder.toggleItem(
         name: String = "",
         description: String? = null,
         setup: ToggleDrawerItemKt.() -> Unit = {}): ToggleDrawerItem {
@@ -22,7 +22,7 @@ fun Builder.toggleItem(
  * Adds a new ToggleDrawerItem with the given [nameRes] and [descriptionRes].
  * @return The created ToggleDrawerItem instance
  */
-fun Builder.toggleItem(
+inline fun Builder.toggleItem(
         nameRes: Int,
         descriptionRes: Int? = null,
         setup: ToggleDrawerItemKt.() -> Unit = {}): ToggleDrawerItem {
@@ -43,6 +43,7 @@ class ToggleDrawerItemKt : AbstractToggleableDrawerItemKt() {
         super.setItem(item)
     }
 
+    @PublishedApi
     internal fun build() = item
 
     //endregion

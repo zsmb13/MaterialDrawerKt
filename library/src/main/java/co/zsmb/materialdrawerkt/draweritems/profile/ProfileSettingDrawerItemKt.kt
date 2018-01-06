@@ -14,7 +14,7 @@ import com.mikepenz.materialdrawer.model.ProfileSettingDrawerItem
  * Adds a new ProfileSettingDrawerItem with the given [name] and [description].
  * @return The created ProfileSettingDrawerItem instance
  */
-fun AccountHeaderBuilderKt.profileSetting(
+inline fun AccountHeaderBuilderKt.profileSetting(
         name: String = "",
         description: String? = null,
         setup: ProfileSettingDrawerItemKt.() -> Unit = {}): ProfileSettingDrawerItem {
@@ -29,7 +29,7 @@ fun AccountHeaderBuilderKt.profileSetting(
  * Adds a new ProfileSettingDrawerItem with the given [nameRes] and [descriptionRes].
  * @return The created ProfileSettingDrawerItem instance
  */
-fun AccountHeaderBuilderKt.profileSetting(
+inline fun AccountHeaderBuilderKt.profileSetting(
         nameRes: Int,
         descriptionRes: Int? = null,
         setup: ProfileSettingDrawerItemKt.() -> Unit = {}): ProfileSettingDrawerItem {
@@ -46,6 +46,7 @@ class ProfileSettingDrawerItemKt : AbstractDrawerItemKt() {
 
     private val item = ProfileSettingDrawerItem()
 
+    @PublishedApi
     internal fun build() = item
 
     init {

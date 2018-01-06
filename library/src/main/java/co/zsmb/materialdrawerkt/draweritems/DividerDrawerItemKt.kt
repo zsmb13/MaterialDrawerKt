@@ -8,7 +8,7 @@ import com.mikepenz.materialdrawer.model.DividerDrawerItem
  * Adds a new DividerDrawerItem.
  * @return The created DividerDrawerItem instance
  */
-fun Builder.divider(setup: DividerDrawerItemKt.() -> Unit = {}): DividerDrawerItem {
+inline fun Builder.divider(setup: DividerDrawerItemKt.() -> Unit = {}): DividerDrawerItem {
     val item = DividerDrawerItemKt()
     item.setup()
     return item.build().apply { attachItem(this) }
@@ -24,6 +24,7 @@ class DividerDrawerItemKt : AbstractDrawerItemKt() {
         super.setItem(item)
     }
 
+    @PublishedApi
     internal fun build() = item
 
     //endregion
