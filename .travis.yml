@@ -34,8 +34,8 @@ android:
  - google-gdk-license-.+
 
 before_install:
+  - yes | sdkmanager "platforms;android-27"
   - chmod +x gradlew
-  - yes | sdkmanager --licenses
 
 notifications:
   email:
