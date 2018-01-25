@@ -1,3 +1,5 @@
+@file:Suppress("RedundantVisibilityModifier")
+
 package co.zsmb.materialdrawerkt.draweritems.toggleable
 
 import co.zsmb.materialdrawerkt.builders.Builder
@@ -7,7 +9,7 @@ import com.mikepenz.materialdrawer.model.SecondaryToggleDrawerItem
  * Adds a new SecondaryToggleDrawerItem with the given [name] and [description].
  * @return The created SecondaryToggleDrawerItem instance
  */
-fun Builder.secondaryToggleItem(
+public fun Builder.secondaryToggleItem(
         name: String = "",
         description: String? = null,
         setup: SecondaryToggleDrawerItemKt.() -> Unit = {}): SecondaryToggleDrawerItem {
@@ -22,7 +24,7 @@ fun Builder.secondaryToggleItem(
  * Adds a new SecondaryToggleDrawerItem with the given [nameRes] and [descriptionRes].
  * @return The created SecondaryToggleDrawerItem instance
  */
-fun Builder.secondaryToggleItem(
+public fun Builder.secondaryToggleItem(
         nameRes: Int,
         descriptionRes: Int? = null,
         setup: SecondaryToggleDrawerItemKt.() -> Unit = {}): SecondaryToggleDrawerItem {
@@ -33,7 +35,7 @@ fun Builder.secondaryToggleItem(
     return item.build().apply { attachItem(this) }
 }
 
-class SecondaryToggleDrawerItemKt : AbstractToggleableDrawerItemKt() {
+public class SecondaryToggleDrawerItemKt : AbstractToggleableDrawerItemKt() {
 
     //region Builder basics
 

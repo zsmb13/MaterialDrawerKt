@@ -1,3 +1,5 @@
+@file:Suppress("RedundantVisibilityModifier")
+
 package co.zsmb.materialdrawerkt.draweritems.badgeable
 
 import co.zsmb.materialdrawerkt.builders.Builder
@@ -7,7 +9,7 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
  * Adds a new PrimaryDrawerItem with the given [name] and [description].
  * @return The created PrimaryDrawerItem instance
  */
-fun Builder.primaryItem(
+public fun Builder.primaryItem(
         name: String = "",
         description: String? = null,
         setup: PrimaryDrawerItemKt.() -> Unit = {}): PrimaryDrawerItem {
@@ -22,7 +24,7 @@ fun Builder.primaryItem(
  * Adds a new PrimaryDrawerItem with the given [nameRes] and [descriptionRes].
  * @return The created PrimaryDrawerItem instance
  */
-fun Builder.primaryItem(
+public fun Builder.primaryItem(
         nameRes: Int,
         descriptionRes: Int? = null,
         setup: PrimaryDrawerItemKt.() -> Unit = {}): PrimaryDrawerItem {
@@ -33,7 +35,7 @@ fun Builder.primaryItem(
     return item.build().apply { attachItem(this) }
 }
 
-class PrimaryDrawerItemKt : AbstractBadgeableDrawerItemKt() {
+public class PrimaryDrawerItemKt : AbstractBadgeableDrawerItemKt() {
 
     //region Builder basics
 

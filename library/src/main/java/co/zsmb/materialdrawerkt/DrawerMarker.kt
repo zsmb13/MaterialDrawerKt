@@ -1,4 +1,6 @@
+@file:Suppress("RedundantVisibilityModifier")
+
 package co.zsmb.materialdrawerkt
 
 @DslMarker
-annotation class DrawerMarker
+internal annotation class DrawerMarker

@@ -1,3 +1,5 @@
+@file:Suppress("RedundantVisibilityModifier")
+
 package co.zsmb.materialdrawerkt.draweritems.switchable
 
 import co.zsmb.materialdrawerkt.builders.Builder
@@ -7,7 +9,7 @@ import com.mikepenz.materialdrawer.model.SecondarySwitchDrawerItem
  * Adds a new SecondarySwitchDrawerItem with the given [name] and [description].
  * @return The created SecondarySwitchDrawerItem instance
  */
-fun Builder.secondarySwitchItem(
+public fun Builder.secondarySwitchItem(
         name: String = "",
         description: String? = null,
         setup: SecondarySwitchDrawerItemKt.() -> Unit = {}): SecondarySwitchDrawerItem {
@@ -22,7 +24,7 @@ fun Builder.secondarySwitchItem(
  * Adds a new SecondarySwitchDrawerItem with the given [nameRes] and [descriptionRes].
  * @return The created SecondarySwitchDrawerItem instance
  */
-fun Builder.secondarySwitchItem(
+public fun Builder.secondarySwitchItem(
         nameRes: Int,
         descriptionRes: Int? = null,
         setup: SecondarySwitchDrawerItemKt.() -> Unit = {}): SecondarySwitchDrawerItem {
@@ -33,7 +35,7 @@ fun Builder.secondarySwitchItem(
     return item.build().apply { attachItem(this) }
 }
 
-class SecondarySwitchDrawerItemKt : AbstractSwitchableDrawerItemKt() {
+public class SecondarySwitchDrawerItemKt : AbstractSwitchableDrawerItemKt() {
 
     //region Builder basics
 

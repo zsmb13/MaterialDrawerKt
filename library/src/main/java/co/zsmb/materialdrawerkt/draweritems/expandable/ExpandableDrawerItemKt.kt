@@ -1,3 +1,5 @@
+@file:Suppress("RedundantVisibilityModifier")
+
 package co.zsmb.materialdrawerkt.draweritems.expandable
 
 import co.zsmb.materialdrawerkt.builders.Builder
@@ -9,9 +11,9 @@ import com.mikepenz.materialdrawer.model.ExpandableDrawerItem
  * Adds a new ExpandableDrawerItem with the given [name] and [description].
  * @return The created ExpandableDrawerItem instance
  */
-fun Builder.expandableItem(name: String = "",
-                           description: String? = null,
-                           setup: ExpandableDrawerItemKt.() -> Unit = {}): ExpandableDrawerItem {
+public fun Builder.expandableItem(name: String = "",
+                                  description: String? = null,
+                                  setup: ExpandableDrawerItemKt.() -> Unit = {}): ExpandableDrawerItem {
     val item = ExpandableDrawerItemKt()
     item.name = name
     description?.let { item.description = it }
@@ -23,9 +25,9 @@ fun Builder.expandableItem(name: String = "",
  * Adds a new ExpandableDrawerItem with the given [nameRes] and [descriptionRes].
  * @return The created ExpandableDrawerItem instance
  */
-fun Builder.expandableItem(nameRes: Int,
-                           descriptionRes: Int? = null,
-                           setup: ExpandableDrawerItemKt.() -> Unit = {}): ExpandableDrawerItem {
+public fun Builder.expandableItem(nameRes: Int,
+                                  descriptionRes: Int? = null,
+                                  setup: ExpandableDrawerItemKt.() -> Unit = {}): ExpandableDrawerItem {
     val item = ExpandableDrawerItemKt()
     item.nameRes = nameRes
     descriptionRes?.let { item.descriptionRes = it }
@@ -33,7 +35,7 @@ fun Builder.expandableItem(nameRes: Int,
     return item.build().apply { attachItem(this) }
 }
 
-class ExpandableDrawerItemKt : BaseDescribeableDrawerItemKt() {
+public class ExpandableDrawerItemKt : BaseDescribeableDrawerItemKt() {
 
     //region Builder basics
 
@@ -54,7 +56,7 @@ class ExpandableDrawerItemKt : BaseDescribeableDrawerItemKt() {
      *
      * Non readable property. Wraps the [ExpandableDrawerItem.withArrowColor] method.
      */
-    var arrowColor: Long
+    public var arrowColor: Long
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -66,7 +68,7 @@ class ExpandableDrawerItemKt : BaseDescribeableDrawerItemKt() {
      *
      * Non readable property. Wraps the [ExpandableDrawerItem.withArrowColorRes] method.
      */
-    var arrowColorRes: Int
+    public var arrowColorRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -80,7 +82,7 @@ class ExpandableDrawerItemKt : BaseDescribeableDrawerItemKt() {
      * Non readable property. Wraps the [ExpandableDrawerItem.withArrowRotationAngleStart] and
      * [ExpandableDrawerItem.withArrowRotationAngleEnd] methods.
      */
-    var arrowRotationAngle: Pair<Int, Int>
+    public var arrowRotationAngle: Pair<Int, Int>
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -96,7 +98,7 @@ class ExpandableDrawerItemKt : BaseDescribeableDrawerItemKt() {
      *
      * Non readable property. Wraps the [ExpandableDrawerItem.withArrowRotationAngleEnd] method.
      */
-    var arrowRotationAngleEnd: Int
+    public var arrowRotationAngleEnd: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -111,7 +113,7 @@ class ExpandableDrawerItemKt : BaseDescribeableDrawerItemKt() {
      *
      * Non readable property. Wraps the [ExpandableDrawerItem.withArrowRotationAngleStart] method.
      */
-    var arrowRotationAngleStart: Int
+    public var arrowRotationAngleStart: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {

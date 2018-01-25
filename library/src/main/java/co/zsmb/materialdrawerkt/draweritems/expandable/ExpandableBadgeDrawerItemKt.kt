@@ -1,3 +1,5 @@
+@file:Suppress("RedundantVisibilityModifier")
+
 package co.zsmb.materialdrawerkt.draweritems.expandable
 
 import co.zsmb.materialdrawerkt.builders.Builder
@@ -11,9 +13,9 @@ import com.mikepenz.materialdrawer.model.ExpandableBadgeDrawerItem
  * Adds a new ExpandableBadgeDrawerItem with the given [name] and [description].
  * @return The created ExpandableBadgeDrawerItem instance
  */
-fun Builder.expandableBadgeItem(name: String = "",
-                                description: String? = null,
-                                setup: ExpandableBadgeDrawerItemKt.() -> Unit = {}): ExpandableBadgeDrawerItem {
+public fun Builder.expandableBadgeItem(name: String = "",
+                                       description: String? = null,
+                                       setup: ExpandableBadgeDrawerItemKt.() -> Unit = {}): ExpandableBadgeDrawerItem {
     val item = ExpandableBadgeDrawerItemKt()
     item.name = name
     description?.let { item.description = it }
@@ -25,9 +27,9 @@ fun Builder.expandableBadgeItem(name: String = "",
  * Adds a new ExpandableBadgeDrawerItem with the given [nameRes] and [descriptionRes].
  * @return The created ExpandableBadgeDrawerItem instance
  */
-fun Builder.expandableBadgeItem(nameRes: Int,
-                                descriptionRes: Int? = null,
-                                setup: ExpandableBadgeDrawerItemKt.() -> Unit = {}): ExpandableBadgeDrawerItem {
+public fun Builder.expandableBadgeItem(nameRes: Int,
+                                       descriptionRes: Int? = null,
+                                       setup: ExpandableBadgeDrawerItemKt.() -> Unit = {}): ExpandableBadgeDrawerItem {
     val item = ExpandableBadgeDrawerItemKt()
     item.nameRes = nameRes
     descriptionRes?.let { item.descriptionRes = it }
@@ -35,7 +37,7 @@ fun Builder.expandableBadgeItem(nameRes: Int,
     return item.build().apply { attachItem(this) }
 }
 
-class ExpandableBadgeDrawerItemKt : BaseDescribeableDrawerItemKt(), BadgeableKt {
+public class ExpandableBadgeDrawerItemKt : BaseDescribeableDrawerItemKt(), BadgeableKt {
 
     //region Builder basics
 

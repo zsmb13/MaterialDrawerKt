@@ -1,3 +1,5 @@
+@file:Suppress("RedundantVisibilityModifier")
+
 package co.zsmb.materialdrawerkt.builders
 
 import co.zsmb.materialdrawerkt.DrawerMarker

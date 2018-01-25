@@ -1,3 +1,5 @@
+@file:Suppress("RedundantVisibilityModifier")
+
 package co.zsmb.materialdrawerkt.draweritems.switchable
 
 import android.widget.CompoundButton
@@ -6,7 +8,7 @@ import co.zsmb.materialdrawerkt.nonReadable
 import com.mikepenz.materialdrawer.model.AbstractSwitchableDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 
-abstract class AbstractSwitchableDrawerItemKt : BaseDescribeableDrawerItemKt() {
+public abstract class AbstractSwitchableDrawerItemKt : BaseDescribeableDrawerItemKt() {
 
     //region Builder basics
 
@@ -29,7 +31,7 @@ abstract class AbstractSwitchableDrawerItemKt : BaseDescribeableDrawerItemKt() {
     @Deprecated(level = DeprecationLevel.ERROR,
             replaceWith = ReplaceWith("selectable"),
             message = "Use the selectable property instead.")
-    var checkable: Boolean
+    public var checkable: Boolean
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -42,7 +44,7 @@ abstract class AbstractSwitchableDrawerItemKt : BaseDescribeableDrawerItemKt() {
      *
      * Wraps the [AbstractSwitchableDrawerItem.withChecked] and [AbstractSwitchableDrawerItem.isChecked] methods.
      */
-    var checked: Boolean
+    public var checked: Boolean
         get() = item.isChecked
         set(value) {
             item.withChecked(value)
@@ -60,7 +62,7 @@ abstract class AbstractSwitchableDrawerItemKt : BaseDescribeableDrawerItemKt() {
     @Deprecated(level = DeprecationLevel.ERROR,
             replaceWith = ReplaceWith("onSwitchChanged(handler)"),
             message = "Use onSwitchChanged instead.")
-    fun onCheckedChange(handler: (drawerItem: IDrawerItem<*, *>, button: CompoundButton, isChecked: Boolean) -> Unit) {
+    public fun onCheckedChange(handler: (drawerItem: IDrawerItem<*, *>, button: CompoundButton, isChecked: Boolean) -> Unit) {
         item.withOnCheckedChangeListener(handler)
     }
 
@@ -73,7 +75,7 @@ abstract class AbstractSwitchableDrawerItemKt : BaseDescribeableDrawerItemKt() {
      * @param button The CompoundButton View whose state has changed
      * @param isEnabled True if the switch is now in an "on" state
      */
-    fun onSwitchChanged(handler: (drawerItem: IDrawerItem<*, *>, button: CompoundButton, isEnabled: Boolean) -> Unit) {
+    public fun onSwitchChanged(handler: (drawerItem: IDrawerItem<*, *>, button: CompoundButton, isEnabled: Boolean) -> Unit) {
         item.withOnCheckedChangeListener(handler)
     }
 
@@ -86,7 +88,7 @@ abstract class AbstractSwitchableDrawerItemKt : BaseDescribeableDrawerItemKt() {
      *
      * @param isEnabled True if the switch is now in an "on" state
      */
-    fun onToggled(handler: (isEnabled: Boolean) -> Unit) {
+    public fun onToggled(handler: (isEnabled: Boolean) -> Unit) {
         item.withOnCheckedChangeListener { _, _, isEnabled ->
             handler(isEnabled)
         }
@@ -99,7 +101,7 @@ abstract class AbstractSwitchableDrawerItemKt : BaseDescribeableDrawerItemKt() {
      * Wraps the [AbstractSwitchableDrawerItem.withSwitchEnabled] and [AbstractSwitchableDrawerItem.isSwitchEnabled]
      * methods.
      */
-    var switchEnabled: Boolean
+    public var switchEnabled: Boolean
         get() = item.isSwitchEnabled
         set(value) {
             item.withSwitchEnabled(value)

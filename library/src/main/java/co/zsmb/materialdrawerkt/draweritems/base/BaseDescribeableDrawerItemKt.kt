@@ -1,9 +1,11 @@
+@file:Suppress("RedundantVisibilityModifier")
+
 package co.zsmb.materialdrawerkt.draweritems.base
 
 import co.zsmb.materialdrawerkt.nonReadable
 import com.mikepenz.materialdrawer.model.BaseDescribeableDrawerItem
 
-abstract class BaseDescribeableDrawerItemKt : BaseDrawerItemKt() {
+public abstract class BaseDescribeableDrawerItemKt : BaseDrawerItemKt() {
 
     //region Builder basics
 
@@ -23,7 +25,7 @@ abstract class BaseDescribeableDrawerItemKt : BaseDrawerItemKt() {
      *
      * Non readable property. Wraps the [BaseDescribeableDrawerItem.withDescription] method.
      */
-    var description: String
+    public var description: String
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -35,7 +37,7 @@ abstract class BaseDescribeableDrawerItemKt : BaseDrawerItemKt() {
      *
      * Non readable property. Wraps the [BaseDescribeableDrawerItem.withDescription] method.
      */
-    var descriptionRes: Int
+    public var descriptionRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -47,7 +49,7 @@ abstract class BaseDescribeableDrawerItemKt : BaseDrawerItemKt() {
      *
      * Non readable property. Wraps the [BaseDescribeableDrawerItem.withDescriptionTextColor] method.
      */
-    var descriptionTextColor: Long
+    public var descriptionTextColor: Long
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -59,7 +61,7 @@ abstract class BaseDescribeableDrawerItemKt : BaseDrawerItemKt() {
      *
      * Non readable property. Wraps the [BaseDescribeableDrawerItem.withDescriptionTextColorRes] method.
      */
-    var descriptionTextColorRes: Int
+    public var descriptionTextColorRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {

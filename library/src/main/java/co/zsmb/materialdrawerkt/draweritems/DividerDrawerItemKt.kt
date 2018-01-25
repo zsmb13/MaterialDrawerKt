@@ -1,3 +1,5 @@
+@file:Suppress("RedundantVisibilityModifier")
+
 package co.zsmb.materialdrawerkt.draweritems
 
 import co.zsmb.materialdrawerkt.builders.Builder
@@ -8,13 +10,13 @@ import com.mikepenz.materialdrawer.model.DividerDrawerItem
  * Adds a new DividerDrawerItem.
  * @return The created DividerDrawerItem instance
  */
-fun Builder.divider(setup: DividerDrawerItemKt.() -> Unit = {}): DividerDrawerItem {
+public fun Builder.divider(setup: DividerDrawerItemKt.() -> Unit = {}): DividerDrawerItem {
     val item = DividerDrawerItemKt()
     item.setup()
     return item.build().apply { attachItem(this) }
 }
 
-class DividerDrawerItemKt : AbstractDrawerItemKt() {
+public class DividerDrawerItemKt : AbstractDrawerItemKt() {
 
     //region Builder basics
 

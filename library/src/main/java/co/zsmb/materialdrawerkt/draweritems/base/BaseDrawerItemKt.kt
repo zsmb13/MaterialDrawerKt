@@ -1,3 +1,5 @@
+@file:Suppress("RedundantVisibilityModifier")
+
 package co.zsmb.materialdrawerkt.draweritems.base
 
 import android.graphics.Typeface
@@ -6,7 +8,7 @@ import co.zsmb.materialdrawerkt.nonReadable
 import com.mikepenz.iconics.typeface.IIcon
 import com.mikepenz.materialdrawer.model.BaseDrawerItem
 
-abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
+public abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
 
     //region Builder basics
 
@@ -26,7 +28,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      *
      * Non readable property. Wraps the [BaseDrawerItem.withDisabledIconColor] method.
      */
-    var disabledIconColor: Long
+    public var disabledIconColor: Long
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -38,7 +40,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      *
      * Non readable property. Wraps the [BaseDrawerItem.withDisabledIconColorRes] method.
      */
-    var disabledIconColorRes: Int
+    public var disabledIconColorRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -50,7 +52,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      *
      * Non readable property. Wraps the [BaseDrawerItem.withDisabledTextColor] method.
      */
-    var disabledTextColor: Long
+    public var disabledTextColor: Long
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -62,7 +64,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      *
      * Non readable property. Wraps the [BaseDrawerItem.withDisabledTextColorRes] method.
      */
-    var disabledTextColorRes: Int
+    public var disabledTextColorRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -74,7 +76,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      *
      * Non readable property. Convenience for [iconRes]. Wraps the [BaseDrawerItem.withIcon] method.
      */
-    var icon: Int
+    public var icon: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -86,7 +88,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      *
      * Non readable property. Wraps the [BaseDrawerItem.withIconColor] method.
      */
-    var iconColor: Long
+    public var iconColor: Long
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -98,7 +100,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      *
      * Non readable property. Wraps the [BaseDrawerItem.withIconColorRes] method.
      */
-    var iconColorRes: Int
+    public var iconColorRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -110,7 +112,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      *
      * Non readable property. Wraps the [BaseDrawerItem.withIcon] method.
      */
-    var iconDrawable: Drawable
+    public var iconDrawable: Drawable
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -126,7 +128,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "Alternatives are available, check the documentation.")
-    var iconRes: Int
+    public var iconRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -139,7 +141,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      *
      * Wraps the [BaseDrawerItem.withIconTintingEnabled] and [BaseDrawerItem.isIconTinted] methods.
      */
-    var iconTintingEnabled: Boolean
+    public var iconTintingEnabled: Boolean
         get() = item.isIconTinted
         set(value) {
             item.withIconTintingEnabled(value)
@@ -150,7 +152,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      *
      * Non readable property. Wraps the [BaseDrawerItem.withIcon] method.
      */
-    var iicon: IIcon
+    public var iicon: IIcon
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -162,7 +164,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      *
      * Wraps the [BaseDrawerItem.withLevel] and [BaseDrawerItem.getLevel] methods.
      */
-    var level: Int
+    public var level: Int
         get() = item.level
         set(value) {
             item.withLevel(value)
@@ -173,7 +175,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      *
      * Non readable property. Wraps the [BaseDrawerItem.withName] method.
      */
-    var name: String
+    public var name: String
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -185,7 +187,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      *
      * Non readable property. Wraps the [BaseDrawerItem.withName] method.
      */
-    var nameRes: Int
+    public var nameRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -197,7 +199,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      *
      * Non readable property. Wraps the [BaseDrawerItem.withSelectedColor] method.
      */
-    var selectedColor: Long
+    public var selectedColor: Long
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -209,7 +211,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      *
      * Non readable property. Wraps the [BaseDrawerItem.withSelectedColorRes] method.
      */
-    var selectedColorRes: Int
+    public var selectedColorRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -221,7 +223,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      *
      * Non readable property. Convenience for [selectedIconRes]. Wraps the [BaseDrawerItem.withSelectedIcon] method.
      */
-    var selectedIcon: Int
+    public var selectedIcon: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -233,7 +235,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      *
      * Non readable property. Wraps the [BaseDrawerItem.withSelectedIconColor] method.
      */
-    var selectedIconColor: Long
+    public var selectedIconColor: Long
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -245,7 +247,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      *
      * Non readable property. Wraps the [BaseDrawerItem.withSelectedIconColorRes] method.
      */
-    var selectedIconColorRes: Int
+    public var selectedIconColorRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -257,7 +259,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      *
      * Non readable property. Wraps the [BaseDrawerItem.withSelectedIcon] method.
      */
-    var selectedIconDrawable: Drawable
+    public var selectedIconDrawable: Drawable
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -273,7 +275,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "Alternatives are available, check the documentation.")
-    var selectedIconRes: Int
+    public var selectedIconRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -285,7 +287,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      *
      * Non readable property. Wraps the [BaseDrawerItem.withSelectedTextColor] method.
      */
-    var selectedTextColor: Long
+    public var selectedTextColor: Long
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -297,7 +299,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      *
      * Non readable property. Wraps the [BaseDrawerItem.withSelectedTextColorRes] method.
      */
-    var selectedTextColorRes: Int
+    public var selectedTextColorRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -309,7 +311,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      *
      * Non readable property. Wraps the [BaseDrawerItem.withTextColor] method.
      */
-    var textColor: Long
+    public var textColor: Long
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -321,7 +323,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      *
      * Non readable property. Wraps the [BaseDrawerItem.withTextColorRes] method.
      */
-    var textColorRes: Int
+    public var textColorRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -333,7 +335,7 @@ abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
      *
      * Non readable property. Wraps the [BaseDrawerItem.withTypeface] method.
      */
-    var typeface: Typeface
+    public var typeface: Typeface
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {

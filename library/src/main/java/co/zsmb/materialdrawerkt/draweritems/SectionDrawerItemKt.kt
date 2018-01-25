@@ -1,3 +1,5 @@
+@file:Suppress("RedundantVisibilityModifier")
+
 package co.zsmb.materialdrawerkt.draweritems
 
 import android.graphics.Typeface
@@ -13,7 +15,7 @@ import com.mikepenz.materialdrawer.model.SectionDrawerItem
  *
  * @return The created SectionDrawerItem instance
  */
-fun Builder.sectionItem(name: String = "", setup: SectionDrawerItemKt.() -> Unit = {}): SectionDrawerItem {
+public fun Builder.sectionItem(name: String = "", setup: SectionDrawerItemKt.() -> Unit = {}): SectionDrawerItem {
     val item = SectionDrawerItemKt()
     item.name = name
     item.setup()
@@ -27,7 +29,7 @@ fun Builder.sectionItem(name: String = "", setup: SectionDrawerItemKt.() -> Unit
  *
  * @return The created SectionDrawerItem instance
  */
-fun Builder.sectionHeader(name: String = "", setup: SectionDrawerItemKt.() -> Unit = {}): SectionDrawerItem {
+public fun Builder.sectionHeader(name: String = "", setup: SectionDrawerItemKt.() -> Unit = {}): SectionDrawerItem {
     val item = SectionDrawerItemKt()
     item.name = name
     item.setup()
@@ -41,7 +43,7 @@ fun Builder.sectionHeader(name: String = "", setup: SectionDrawerItemKt.() -> Un
  *
  * @return The created SectionDrawerItem instance
  */
-fun Builder.sectionItem(nameRes: Int, setup: SectionDrawerItemKt.() -> Unit = {}): SectionDrawerItem {
+public fun Builder.sectionItem(nameRes: Int, setup: SectionDrawerItemKt.() -> Unit = {}): SectionDrawerItem {
     val item = SectionDrawerItemKt()
     item.nameRes = nameRes
     item.setup()
@@ -55,14 +57,14 @@ fun Builder.sectionItem(nameRes: Int, setup: SectionDrawerItemKt.() -> Unit = {}
  *
  * @return The created SectionDrawerItem instance
  */
-fun Builder.sectionHeader(nameRes: Int, setup: SectionDrawerItemKt.() -> Unit = {}): SectionDrawerItem {
+public fun Builder.sectionHeader(nameRes: Int, setup: SectionDrawerItemKt.() -> Unit = {}): SectionDrawerItem {
     val item = SectionDrawerItemKt()
     item.nameRes = nameRes
     item.setup()
     return item.build().apply { attachItem(this) }
 }
 
-class SectionDrawerItemKt : AbstractDrawerItemKt() {
+public class SectionDrawerItemKt : AbstractDrawerItemKt() {
 
     //region Builder basics
 
@@ -83,7 +85,7 @@ class SectionDrawerItemKt : AbstractDrawerItemKt() {
      *
      * Wraps the [SectionDrawerItem.withDivider] and [SectionDrawerItem.hasDivider] methods.
      */
-    var divider: Boolean
+    public var divider: Boolean
         get() = item.hasDivider()
         set(value) {
             item.withDivider(value)
@@ -94,7 +96,7 @@ class SectionDrawerItemKt : AbstractDrawerItemKt() {
      *
      * Non readable property. Wraps the [SectionDrawerItem.withName] method.
      */
-    var name: String
+    public var name: String
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -106,7 +108,7 @@ class SectionDrawerItemKt : AbstractDrawerItemKt() {
      *
      * Non readable property. Wraps the [SectionDrawerItem.withName] method.
      */
-    var nameRes: Int
+    public var nameRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -118,7 +120,7 @@ class SectionDrawerItemKt : AbstractDrawerItemKt() {
      *
      * Non readable property. Wraps the [SectionDrawerItem.withTextColor] method.
      */
-    var textColor: Long
+    public var textColor: Long
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -130,7 +132,7 @@ class SectionDrawerItemKt : AbstractDrawerItemKt() {
      *
      * Non readable property. Wraps the [SectionDrawerItem.withTextColorRes] method.
      */
-    var textColorRes: Int
+    public var textColorRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -142,7 +144,7 @@ class SectionDrawerItemKt : AbstractDrawerItemKt() {
      *
      * Non readable property. Wraps the [SectionDrawerItem.withTypeface] method.
      */
-    var typeface: Typeface
+    public var typeface: Typeface
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
