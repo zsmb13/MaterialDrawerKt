@@ -1,3 +1,5 @@
+@file:Suppress("RedundantVisibilityModifier")
+
 package co.zsmb.materialdrawerkt.draweritems.toggleable
 
 import android.widget.CompoundButton
@@ -5,20 +7,9 @@ import co.zsmb.materialdrawerkt.draweritems.base.BaseDescribeableDrawerItemKt
 import com.mikepenz.materialdrawer.model.AbstractToggleableDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 
-abstract class AbstractToggleableDrawerItemKt : BaseDescribeableDrawerItemKt() {
-
-    //region Builder basics
-
-    private lateinit var item: AbstractToggleableDrawerItem<*>
-
-    protected fun setItem(item: AbstractToggleableDrawerItem<*>) {
-        super.setItem(item)
-        this.item = item
-    }
-
-    //endregion
-
-    //region AbstractToggleableDrawerItem methods
+@Suppress("FINITE_BOUNDS_VIOLATION_IN_JAVA")
+public abstract class AbstractToggleableDrawerItemKt<out T : AbstractToggleableDrawerItem<*>>(item: T) :
+        BaseDescribeableDrawerItemKt<T>(item) {
 
     /**
      * Whether the drawer item's toggle is currently in its "on" state.
@@ -26,7 +17,7 @@ abstract class AbstractToggleableDrawerItemKt : BaseDescribeableDrawerItemKt() {
      *
      * Wraps the [AbstractToggleableDrawerItem.withChecked] and [AbstractToggleableDrawerItem.isChecked] methods.
      */
-    var checked: Boolean
+    public var checked: Boolean
         get() = item.isChecked
         set(value) {
             item.withChecked(value)
@@ -44,7 +35,7 @@ abstract class AbstractToggleableDrawerItemKt : BaseDescribeableDrawerItemKt() {
     @Deprecated(level = DeprecationLevel.ERROR,
             replaceWith = ReplaceWith("onToggledChanged(handler)"),
             message = "Use onToggledChanged instead.")
-    fun onCheckedChange(handler: (drawerItem: IDrawerItem<*, *>, button: CompoundButton, isChecked: Boolean) -> Unit) {
+    public fun onCheckedChange(handler: (drawerItem: IDrawerItem<*, *>, button: CompoundButton, isChecked: Boolean) -> Unit) {
         item.withOnCheckedChangeListener(handler)
     }
 
@@ -57,7 +48,7 @@ abstract class AbstractToggleableDrawerItemKt : BaseDescribeableDrawerItemKt() {
      * @param button The CompoundButton View whose state has changed
      * @param isEnabled True if the toggle is now in an "on" state
      */
-    fun onToggleChanged(handler: (drawerItem: IDrawerItem<*, *>, button: CompoundButton, isEnabled: Boolean) -> Unit) {
+    public fun onToggleChanged(handler: (drawerItem: IDrawerItem<*, *>, button: CompoundButton, isEnabled: Boolean) -> Unit) {
         item.withOnCheckedChangeListener(handler)
     }
 
@@ -70,7 +61,7 @@ abstract class AbstractToggleableDrawerItemKt : BaseDescribeableDrawerItemKt() {
      *
      * @param isEnabled True if the toggle is now in an "on" state
      */
-    fun onToggled(handler: (isEnabled: Boolean) -> Unit) {
+    public fun onToggled(handler: (isEnabled: Boolean) -> Unit) {
         item.withOnCheckedChangeListener { _, _, isEnabled ->
             handler(isEnabled)
         }
@@ -83,12 +74,10 @@ abstract class AbstractToggleableDrawerItemKt : BaseDescribeableDrawerItemKt() {
      * Wraps the [AbstractToggleableDrawerItem.withToggleEnabled] and [AbstractToggleableDrawerItem.isToggleEnabled]
      * methods.
      */
-    var toggleEnabled: Boolean
+    public var toggleEnabled: Boolean
         get() = item.isToggleEnabled
         set(value) {
             item.withToggleEnabled(value)
         }
-
-    //endregion
 
 }

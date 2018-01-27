@@ -1,50 +1,32 @@
+@file:Suppress("RedundantVisibilityModifier")
+
 package co.zsmb.materialdrawerkt.draweritems.toggleable
 
 import co.zsmb.materialdrawerkt.builders.Builder
+import co.zsmb.materialdrawerkt.createItem
 import com.mikepenz.materialdrawer.model.SecondaryToggleDrawerItem
 
 /**
  * Adds a new SecondaryToggleDrawerItem with the given [name] and [description].
  * @return The created SecondaryToggleDrawerItem instance
  */
-fun Builder.secondaryToggleItem(
+public fun Builder.secondaryToggleItem(
         name: String = "",
         description: String? = null,
         setup: SecondaryToggleDrawerItemKt.() -> Unit = {}): SecondaryToggleDrawerItem {
-    val item = SecondaryToggleDrawerItemKt()
-    item.name = name
-    description?.let { item.description = it }
-    item.setup()
-    return item.build().apply { attachItem(this) }
+    return createItem(SecondaryToggleDrawerItemKt(), name, description, setup)
 }
 
 /**
  * Adds a new SecondaryToggleDrawerItem with the given [nameRes] and [descriptionRes].
  * @return The created SecondaryToggleDrawerItem instance
  */
-fun Builder.secondaryToggleItem(
+public fun Builder.secondaryToggleItem(
         nameRes: Int,
         descriptionRes: Int? = null,
         setup: SecondaryToggleDrawerItemKt.() -> Unit = {}): SecondaryToggleDrawerItem {
-    val item = SecondaryToggleDrawerItemKt()
-    item.nameRes = nameRes
-    descriptionRes?.let { item.descriptionRes = it }
-    item.setup()
-    return item.build().apply { attachItem(this) }
+    return createItem(SecondaryToggleDrawerItemKt(), nameRes, descriptionRes, setup)
 }
 
-class SecondaryToggleDrawerItemKt : AbstractToggleableDrawerItemKt() {
-
-    //region Builder basics
-
-    private val item = SecondaryToggleDrawerItem()
-
-    init {
-        super.setItem(item)
-    }
-
-    internal fun build() = item
-
-    //endregion
-
-}
+public class SecondaryToggleDrawerItemKt :
+        AbstractToggleableDrawerItemKt<SecondaryToggleDrawerItem>(SecondaryToggleDrawerItem())

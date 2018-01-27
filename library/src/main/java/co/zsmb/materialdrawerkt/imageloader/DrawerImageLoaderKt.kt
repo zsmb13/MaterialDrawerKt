@@ -1,3 +1,5 @@
+@file:Suppress("RedundantVisibilityModifier")
+
 package co.zsmb.materialdrawerkt.imageloader
 
 import android.content.Context
@@ -14,13 +16,13 @@ import com.mikepenz.materialdrawer.util.DrawerImageLoader
  *
  * @return The created IDrawerImageLoader instance
  */
-fun drawerImageLoader(actions: DrawerImageLoaderKt.() -> Unit): DrawerImageLoader.IDrawerImageLoader {
+public fun drawerImageLoader(actions: DrawerImageLoaderKt.() -> Unit): DrawerImageLoader.IDrawerImageLoader {
     val loaderImpl = DrawerImageLoaderKt().apply(actions).build()
     DrawerImageLoader.init(loaderImpl)
     return loaderImpl
 }
 
-class DrawerImageLoaderKt {
+public class DrawerImageLoaderKt {
 
     private var setFunc: ((ImageView, Uri, Drawable?, String?) -> Unit)? = null
     private var cancelFunc: ((ImageView) -> Unit)? = null
@@ -37,8 +39,7 @@ class DrawerImageLoaderKt {
         private val placeholderFunction = placeholderFunc
                 ?: { ctx, tag -> super.placeholder(ctx, tag) }
 
-        override fun set(imageView: ImageView, uri: Uri, placeholder: Drawable?, tag: String?)
-                = setFunction(imageView, uri, placeholder, tag)
+        override fun set(imageView: ImageView, uri: Uri, placeholder: Drawable?, tag: String?) = setFunction(imageView, uri, placeholder, tag)
 
         override fun cancel(imageView: ImageView) = cancelFunction(imageView)
 
@@ -56,7 +57,7 @@ class DrawerImageLoaderKt {
      * @param placeholder The placeholder that can be used for the image
      * @param tag The tag of the image
      */
-    fun set(setFunction: (imageView: ImageView, uri: Uri, placeholder: Drawable?, tag: String?) -> Unit) {
+    public fun set(setFunction: (imageView: ImageView, uri: Uri, placeholder: Drawable?, tag: String?) -> Unit) {
         this.setFunc = setFunction
     }
 
@@ -67,7 +68,7 @@ class DrawerImageLoaderKt {
      *
      * @param imageView The ImageView to cancel the operation on
      */
-    fun cancel(cancelFunction: (imageView: ImageView) -> Unit) {
+    public fun cancel(cancelFunction: (imageView: ImageView) -> Unit) {
         this.cancelFunc = cancelFunction
     }
 
@@ -79,7 +80,7 @@ class DrawerImageLoaderKt {
      * @param ctx The context of the image being loaded
      * @param tag The tag to get a placeholder for
      */
-    fun placeholder(placeholderFunction: (ctx: Context, tag: String?) -> Drawable) {
+    public fun placeholder(placeholderFunction: (ctx: Context, tag: String?) -> Drawable) {
         this.placeholderFunc = placeholderFunction
     }
 

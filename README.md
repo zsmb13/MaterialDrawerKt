@@ -26,7 +26,7 @@ You can find the sample app [in the Play Store](https://play.google.com/store/ap
 The library is hosted on jcenter. To use it, add the following to your module level `build.gradle` file's dependencies:
  
 ```gradle
-implementation 'co.zsmb:materialdrawer-kt:1.2.2'
+implementation 'co.zsmb:materialdrawer-kt:1.3.0'
 
 // required support libraries
 implementation "com.android.support:appcompat-v7:${versions.supportLib}"
@@ -233,11 +233,11 @@ accountHeader {
 
 Note that overloaded functions are replaced with multiple properties, distinguished by suffixes. For example, the above `withHeaderBackground` function's three overloads can be set through the following properties:
 
-Parameter type    | Property name
------------------ | ------------------------------------------
-Int               | headerBackground <br/> headerBackgroundRes
-Drawable          | headerBackgroundDrawable
-ImageHolder       | headerBackgroundImage
+|  Parameter type    | Property name                              |
+| ------------------ | ------------------------------------------ |
+|  Int               | headerBackground <br/> headerBackgroundRes |
+|  Drawable          | headerBackgroundDrawable                   |
+|  ImageHolder       | headerBackgroundImage                      |
 
 There may be defaults without suffixes for what's assumed to be the most popular use case.
 

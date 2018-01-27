@@ -1,3 +1,5 @@
+@file:Suppress("RedundantVisibilityModifier")
+
 package co.zsmb.materialdrawerkt.builders
 
 import android.app.Activity
@@ -24,7 +26,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
  *
  * @return The created Drawer instance
  */
-fun Activity.drawer(setup: DrawerBuilderKt.() -> Unit = {}): Drawer {
+public fun Activity.drawer(setup: DrawerBuilderKt.() -> Unit = {}): Drawer {
     val builder = DrawerBuilderKt(this)
     builder.setup()
     return builder.build()
@@ -35,7 +37,7 @@ fun Activity.drawer(setup: DrawerBuilderKt.() -> Unit = {}): Drawer {
  *
  * @return The created Drawer instance
  */
-fun Fragment.drawer(setup: DrawerBuilderKt.() -> Unit = {}): Drawer {
+public fun Fragment.drawer(setup: DrawerBuilderKt.() -> Unit = {}): Drawer {
     val fragmentActivity = activity ?: throw IllegalStateException("Fragment is not attached to an Activity")
     val builder = DrawerBuilderKt(fragmentActivity)
     builder.setup()
@@ -43,11 +45,11 @@ fun Fragment.drawer(setup: DrawerBuilderKt.() -> Unit = {}): Drawer {
 }
 
 @DrawerMarker
-class DrawerBuilderKt(val activity: Activity) : Builder {
+public class DrawerBuilderKt(val activity: Activity) : Builder {
 
     //region Builder basics
 
-    val builder = DrawerBuilder(activity)
+    internal val builder = DrawerBuilder(activity)
 
     internal fun build(): Drawer {
         if (onDrawerListener.isInitialized) {
@@ -84,12 +86,12 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
     @Suppress("UNUSED_PARAMETER")
     @Deprecated(level = DeprecationLevel.ERROR,
             message = "Drawers can't be nested.")
-    fun drawer(param: () -> Unit = {}) {
+    public fun drawer(param: () -> Unit = {}) {
     }
 
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "Only for use with custom drawer items.")
-    override fun attachItem(item: IDrawerItem<*, *>) {
+    public override fun attachItem(item: IDrawerItem<*, *>) {
         builder.addDrawerItems(item)
     }
 
@@ -110,7 +112,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Wraps the [DrawerBuilder.buildView] method.
      */
-    var buildViewOnly: Boolean = false
+    public var buildViewOnly: Boolean = false
 
     /**
      * The ViewGroup which the DrawerLayout will be added to.
@@ -120,7 +122,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property.
      */
-    var parentView: ViewGroup
+    public var parentView: ViewGroup
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -135,7 +137,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property.
      */
-    var parentViewRes: Int
+    public var parentViewRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -147,9 +149,9 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
     //region Listener helper
 
     private val onDrawerListener = object : Drawer.OnDrawerListener {
-        var isInitialized = false
+        internal var isInitialized = false
 
-        var onSlide: ((View, Float) -> Unit)? = null
+        internal var onSlide: ((View, Float) -> Unit)? = null
             set(value) {
                 isInitialized = true
                 field = value
@@ -159,7 +161,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
             onSlide?.invoke(drawerView, slideOffset)
         }
 
-        var onClosed: ((View) -> Unit)? = null
+        internal var onClosed: ((View) -> Unit)? = null
             set(value) {
                 isInitialized = true
                 field = value
@@ -169,7 +171,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
             onClosed?.invoke(drawerView)
         }
 
-        var onOpened: ((View) -> Unit)? = null
+        internal var onOpened: ((View) -> Unit)? = null
             set(value) {
                 isInitialized = true
                 field = value
@@ -189,7 +191,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withActionBarDrawerToggle] method.
      */
-    var actionBarDrawerToggle: ActionBarDrawerToggle
+    public var actionBarDrawerToggle: ActionBarDrawerToggle
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -202,7 +204,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withActionBarDrawerToggleAnimated] method.
      */
-    var actionBarDrawerToggleAnimated: Boolean
+    public var actionBarDrawerToggleAnimated: Boolean
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -215,7 +217,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withActionBarDrawerToggle] method.
      */
-    var actionBarDrawerToggleEnabled: Boolean
+    public var actionBarDrawerToggleEnabled: Boolean
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(enabled) {
@@ -227,7 +229,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withAdapter] method.
      */
-    var adapter: FastAdapter<IDrawerItem<out Any?, out RecyclerView.ViewHolder>>
+    public var adapter: FastAdapter<IDrawerItem<out Any?, out RecyclerView.ViewHolder>>
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -240,7 +242,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withAdapterWrapper] method.
      */
-    var adapterWrapper: RecyclerView.Adapter<out RecyclerView.ViewHolder>
+    public var adapterWrapper: RecyclerView.Adapter<out RecyclerView.ViewHolder>
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -253,7 +255,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withCloseOnClick] method.
      */
-    var closeOnClick: Boolean
+    public var closeOnClick: Boolean
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -265,7 +267,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withCustomView] method.
      */
-    var customView: View
+    public var customView: View
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -277,7 +279,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withCustomView] method.
      */
-    var customViewRes: Int
+    public var customViewRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -295,7 +297,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withDelayDrawerClickEvent] method.
      */
-    var delayDrawerClickEvent: Int
+    public var delayDrawerClickEvent: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -311,7 +313,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withDelayOnDrawerClose] method.
      */
-    var delayOnDrawerClose: Int
+    public var delayOnDrawerClose: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -324,7 +326,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withDisplayBelowStatusBar] method.
      */
-    var displayBelowStatusBar: Boolean
+    public var displayBelowStatusBar: Boolean
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -341,7 +343,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "Alternatives are available, check the documentation.")
-    var drawerGravity: Int
+    public var drawerGravity: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -353,7 +355,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withDrawerLayout] method.
      */
-    var drawerLayout: DrawerLayout
+    public var drawerLayout: DrawerLayout
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -365,7 +367,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withDrawerLayout] method.
      */
-    var drawerLayoutRes: Int
+    public var drawerLayoutRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -381,7 +383,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "Alternatives are available, check the documentation.")
-    var drawerWidthDp: Int
+    public var drawerWidthDp: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -397,7 +399,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "Alternatives are available, check the documentation.")
-    var drawerWidthPx: Int
+    public var drawerWidthPx: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -413,7 +415,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "Alternatives are available, check the documentation.")
-    var drawerWidthRes: Int
+    public var drawerWidthRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -426,7 +428,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withFireOnInitialOnClick] method.
      */
-    var fireOnInitialOnClick: Boolean
+    public var fireOnInitialOnClick: Boolean
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -441,7 +443,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "This has no effect as of Material Drawer version 5.9.0")
-    var footerClickable: Boolean
+    public var footerClickable: Boolean
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -454,7 +456,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withFooterDivider] method.
      */
-    var footerDivider: Boolean
+    public var footerDivider: Boolean
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -466,7 +468,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withFooter] method.
      */
-    var footerView: View
+    public var footerView: View
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -478,7 +480,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withFooter] method.
      */
-    var footerViewRes: Int
+    public var footerViewRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -492,7 +494,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withFullscreen] method.
      */
-    var fullscreen: Boolean
+    public var fullscreen: Boolean
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -505,7 +507,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withGenerateMiniDrawer] method.
      */
-    var generateMiniDrawer: Boolean
+    public var generateMiniDrawer: Boolean
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -519,7 +521,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      * Convenience for [drawerGravity]. Non readable property. Wraps the [DrawerBuilder.withDrawerGravity]
      * method.
      */
-    var gravity: Int
+    public var gravity: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -533,7 +535,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withHasStableIds] method.
      */
-    var hasStableIds: Boolean
+    public var hasStableIds: Boolean
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -546,7 +548,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withHeaderDivider] method.
      */
-    var headerDivider: Boolean
+    public var headerDivider: Boolean
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -562,7 +564,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "Use px, dp, or a dimension resource instead.")
-    var headerHeight: DimenHolder
+    public var headerHeight: DimenHolder
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -574,7 +576,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Convenience for [headerHeight]. Non readable property. Wraps the [DrawerBuilder.withHeaderHeight] method.
      */
-    var headerHeightDp: Int
+    public var headerHeightDp: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -586,7 +588,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Convenience for [headerHeight]. Non readable property. Wraps the [DrawerBuilder.withHeaderHeight] method.
      */
-    var headerHeightPx: Int
+    public var headerHeightPx: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -598,7 +600,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Convenience for [headerHeight]. Non readable property. Wraps the [DrawerBuilder.withHeaderHeight] method.
      */
-    var headerHeightRes: Int
+    public var headerHeightRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -611,7 +613,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withHeaderPadding] method.
      */
-    var headerPadding: Boolean
+    public var headerPadding: Boolean
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -623,7 +625,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withHeader] method.
      */
-    var headerView: View
+    public var headerView: View
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -635,7 +637,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withHeader] method.
      */
-    var headerViewRes: Int
+    public var headerViewRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -648,7 +650,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withInnerShadow] method.
      */
-    var innerShadow: Boolean
+    public var innerShadow: Boolean
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -660,7 +662,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withItemAnimator] method.
      */
-    var itemAnimator: RecyclerView.ItemAnimator
+    public var itemAnimator: RecyclerView.ItemAnimator
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -674,7 +676,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withKeepStickyItemsVisible] method.
      */
-    var keepStickyItemsVisible: Boolean
+    public var keepStickyItemsVisible: Boolean
         get() = nonReadable()
         set(value) {
             builder.withKeepStickyItemsVisible(value)
@@ -685,7 +687,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.inflateMenu] method.
      */
-    var menuItemsRes: Int
+    public var menuItemsRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -698,7 +700,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withMultiSelect] method.
      */
-    var multiSelect: Boolean
+    public var multiSelect: Boolean
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -712,7 +714,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * @param drawerView The root View of the drawer
      */
-    fun onClosed(handler: (drawerView: View) -> Unit) {
+    public fun onClosed(handler: (drawerView: View) -> Unit) {
         onDrawerListener.onClosed = handler
     }
 
@@ -725,7 +727,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * @param position The position of the clicked item within the drawer
      */
-    fun onItemClick(handler: (position: Int) -> Boolean) {
+    public fun onItemClick(handler: (position: Int) -> Boolean) {
         builder.withOnDrawerItemClickListener { _, position, _ -> handler(position) }
     }
 
@@ -741,7 +743,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      * @param position The position of the clicked item within the drawer
      * @param drawerItem The clicked drawer item
      */
-    fun onItemClick(handler: (view: View?, position: Int, drawerItem: IDrawerItem<*, *>) -> Boolean) {
+    public fun onItemClick(handler: (view: View?, position: Int, drawerItem: IDrawerItem<*, *>) -> Boolean) {
         builder.withOnDrawerItemClickListener(handler)
     }
 
@@ -754,7 +756,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * @param position The position of the clicked item within the drawer
      */
-    fun onItemLongClick(handler: (position: Int) -> Boolean) {
+    public fun onItemLongClick(handler: (position: Int) -> Boolean) {
         builder.withOnDrawerItemLongClickListener { _, position, _ -> handler(position) }
     }
 
@@ -770,7 +772,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      * @param position The position of the clicked item within the drawer
      * @param drawerItem The clicked drawer item
      */
-    fun onItemLongClick(handler: (view: View, position: Int, drawerItem: IDrawerItem<*, *>) -> Boolean) {
+    public fun onItemLongClick(handler: (view: View, position: Int, drawerItem: IDrawerItem<*, *>) -> Boolean) {
         builder.withOnDrawerItemLongClickListener(handler)
     }
 
@@ -781,7 +783,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * @param handler the handler to call on navigation. Should return true if the event has been handled.
      */
-    fun onNavigation(handler: (view: View) -> Boolean) {
+    public fun onNavigation(handler: (view: View) -> Boolean) {
         builder.withOnDrawerNavigationListener(handler)
     }
 
@@ -792,7 +794,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * @param drawerView The root View of the drawer
      */
-    fun onOpened(handler: (drawerView: View) -> Unit) {
+    public fun onOpened(handler: (drawerView: View) -> Unit) {
         onDrawerListener.onOpened = handler
     }
 
@@ -804,7 +806,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      * @param drawerView The root View of the drawer
      * @param slideOffset The amount to which the drawer is open, as a number between 0 (closed) and 1 (open)
      */
-    fun onSlide(handler: (drawerView: View, slideOffset: Float) -> Unit) {
+    public fun onSlide(handler: (drawerView: View, slideOffset: Float) -> Unit) {
         onDrawerListener.onSlide = handler
     }
 
@@ -818,7 +820,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      */
     @Deprecated(level = DeprecationLevel.ERROR,
             message = "FastAdapter no longer has this setting in its new versions. Please remove this call.")
-    var positionBasedStateManagement: Boolean
+    public var positionBasedStateManagement: Boolean
         get() = nonReadable()
         set(value) = Unit
 
@@ -828,7 +830,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.append] method.
      */
-    var primaryDrawer: Drawer? = null
+    public var primaryDrawer: Drawer? = null
         set(value) {
             if (value != null) {
                 field = value
@@ -840,7 +842,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withRecyclerView] method.
      */
-    var recyclerView: RecyclerView
+    public var recyclerView: RecyclerView
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -853,7 +855,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withRootView] method.
      */
-    var rootView: ViewGroup
+    public var rootView: ViewGroup
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -866,7 +868,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withRootView] method.
      */
-    var rootViewRes: Int
+    public var rootViewRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -883,7 +885,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withSavedInstance] method.
      */
-    var savedInstance: Bundle?
+    public var savedInstance: Bundle?
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -896,7 +898,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withScrollToTopAfterClick] method.
      */
-    var scrollToTopAfterClick: Boolean
+    public var scrollToTopAfterClick: Boolean
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -909,7 +911,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withSelectedItem] method.
      */
-    var selectedItem: Long
+    public var selectedItem: Long
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -922,7 +924,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withSelectedItemByPosition] method.
      */
-    var selectedItemByPosition: Int
+    public var selectedItemByPosition: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -939,7 +941,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "Alternatives are available, check the documentation.")
-    var showDrawerOnFirstLaunch: Boolean
+    public var showDrawerOnFirstLaunch: Boolean
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -957,7 +959,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "Alternatives are available, check the documentation.")
-    var showDrawerUntilDraggedOpened: Boolean
+    public var showDrawerUntilDraggedOpened: Boolean
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -971,7 +973,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      * Convenience for the [showDrawerOnFirstLaunch] property. Non readable property. Wraps the
      * [DrawerBuilder.withShowDrawerOnFirstLaunch] method.
      */
-    var showOnFirstLaunch: Boolean
+    public var showOnFirstLaunch: Boolean
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -986,7 +988,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      * Convenience for [showDrawerUntilDraggedOpened]. Non readable property. Wraps the
      * [DrawerBuilder.withShowDrawerUntilDraggedOpened] method.
      */
-    var showUntilDraggedOpened: Boolean
+    public var showUntilDraggedOpened: Boolean
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -999,7 +1001,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      * Convenience for [sliderBackgroundRes]. Non readable property. Wraps the
      * [DrawerBuilder.withSliderBackgroundDrawableRes] method.
      */
-    var sliderBackground: Int
+    public var sliderBackground: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -1011,7 +1013,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withSliderBackgroundColor] method.
      */
-    var sliderBackgroundColor: Long
+    public var sliderBackgroundColor: Long
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -1023,7 +1025,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withSliderBackgroundColorRes] method.
      */
-    var sliderBackgroundColorRes: Int
+    public var sliderBackgroundColorRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -1035,7 +1037,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withSliderBackgroundDrawable] method.
      */
-    var sliderBackgroundDrawable: Drawable
+    public var sliderBackgroundDrawable: Drawable
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -1051,7 +1053,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "Alternatives are available, check the documentation.")
-    var sliderBackgroundRes: Int
+    public var sliderBackgroundRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -1063,7 +1065,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withStickyFooter] method.
      */
-    var stickyFooter: ViewGroup
+    public var stickyFooter: ViewGroup
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -1076,7 +1078,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withStickyFooterDivider] method.
      */
-    var stickyFooterDivider: Boolean
+    public var stickyFooterDivider: Boolean
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -1088,7 +1090,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withStickyFooter] method.
      */
-    var stickyFooterRes: Int
+    public var stickyFooterRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -1101,7 +1103,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withStickyFooterShadow] method.
      */
-    var stickyFooterShadow: Boolean
+    public var stickyFooterShadow: Boolean
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -1113,7 +1115,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withStickyHeader] method.
      */
-    var stickyHeader: ViewGroup
+    public var stickyHeader: ViewGroup
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -1125,7 +1127,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withStickyHeader] method.
      */
-    var stickyHeaderRes: Int
+    public var stickyHeaderRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -1138,7 +1140,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withStickyHeaderShadow] method.
      */
-    var stickyHeaderShadow: Boolean
+    public var stickyHeaderShadow: Boolean
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -1152,7 +1154,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      * Convenience for [translucentNavigationBar]. Non readable property. Wraps the
      * [DrawerBuilder.withTranslucentNavigationBar] method.
      */
-    var supportTranslucentNavBar: Boolean
+    public var supportTranslucentNavBar: Boolean
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -1165,7 +1167,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withSystemUIHidden] method.
      */
-    var systemUIHidden: Boolean
+    public var systemUIHidden: Boolean
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -1178,7 +1180,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withToolbar] method.
      */
-    var toolbar: Toolbar
+    public var toolbar: Toolbar
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -1192,7 +1194,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      * Convenience for [translucentNavigationBarProgrammatically]. Non readable property. Wraps the
      * [DrawerBuilder.withTranslucentNavigationBarProgrammatically] method.
      */
-    var translucentNavBar: Boolean
+    public var translucentNavBar: Boolean
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -1209,7 +1211,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "Alternatives are available, check the documentation.")
-    var translucentNavigationBar: Boolean
+    public var translucentNavigationBar: Boolean
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -1226,7 +1228,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "Alternatives are available, check the documentation.")
-    var translucentNavigationBarProgrammatically: Boolean
+    public var translucentNavigationBarProgrammatically: Boolean
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -1240,7 +1242,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withTranslucentStatusBar] method.
      */
-    var translucentStatusBar: Boolean
+    public var translucentStatusBar: Boolean
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -1252,7 +1254,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Convenience for [drawerWidthDp]. Non readable property. Wraps the [DrawerBuilder.withDrawerWidthDp] method.
      */
-    var widthDp: Int
+    public var widthDp: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -1264,7 +1266,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Convenience for [drawerWidthPx]. Non readable property. Wraps the [DrawerBuilder.withDrawerWidthPx] method.
      */
-    var widthPx: Int
+    public var widthPx: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -1276,7 +1278,7 @@ class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Convenience for [drawerWidthRes]. Non readable property. Wraps the [DrawerBuilder.withDrawerWidthRes] method.
      */
-    var widthRes: Int
+    public var widthRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {

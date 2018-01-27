@@ -1,3 +1,5 @@
+@file:Suppress("RedundantVisibilityModifier")
+
 package co.zsmb.materialdrawerkt.draweritems.base
 
 import android.view.View
@@ -7,20 +9,16 @@ import com.mikepenz.materialdrawer.model.AbstractDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 
 @DrawerMarker
-abstract class AbstractDrawerItemKt : Builder {
+public abstract class AbstractDrawerItemKt<out T : AbstractDrawerItem<*, *>>(protected val item: T) : Builder {
 
     //region Builder basics
-
-    private lateinit var item: AbstractDrawerItem<*, *>
-
-    protected fun setItem(item: AbstractDrawerItem<*, *>) {
-        this.item = item
-    }
 
     @Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
     override fun attachItem(subItem: IDrawerItem<*, *>) {
         item.withSubItems(subItem)
     }
+
+    internal fun build(): T = item
 
     //endregion
 
@@ -31,7 +29,7 @@ abstract class AbstractDrawerItemKt : Builder {
      *
      * Wraps the [AbstractDrawerItem.withEnabled] and [AbstractDrawerItem.isEnabled] methods.
      */
-    var enabled: Boolean
+    public var enabled: Boolean
         get() = item.isEnabled
         set(value) {
             item.withEnabled(value)
@@ -42,7 +40,7 @@ abstract class AbstractDrawerItemKt : Builder {
      *
      * Wraps the [AbstractDrawerItem.withIdentifier] and [AbstractDrawerItem.getIdentifier] methods.
      */
-    var identifier: Long
+    public var identifier: Long
         get() = item.identifier
         set(value) {
             item.withIdentifier(value)
@@ -53,7 +51,7 @@ abstract class AbstractDrawerItemKt : Builder {
      *
      * Wraps the [AbstractDrawerItem.withIsExpanded] and [AbstractDrawerItem.isExpanded] methods.
      */
-    var isExpanded: Boolean
+    public var isExpanded: Boolean
         get() = item.isExpanded
         set(value) {
             item.withIsExpanded(value)
@@ -68,7 +66,7 @@ abstract class AbstractDrawerItemKt : Builder {
      * @param drawerItem The drawer item itself
      * @param view The view which has been created for the drawer item
      */
-    fun onBindView(handler: (drawerItem: IDrawerItem<*, *>, view: View) -> Unit) {
+    public fun onBindView(handler: (drawerItem: IDrawerItem<*, *>, view: View) -> Unit) {
         item.withPostOnBindViewListener(handler)
     }
 
@@ -79,7 +77,7 @@ abstract class AbstractDrawerItemKt : Builder {
      *
      * Wraps the [AbstractDrawerItem.withOnDrawerItemClickListener] method.
      */
-    fun onClick(handler: (view: View?) -> Boolean) {
+    public fun onClick(handler: (view: View?) -> Boolean) {
         item.withOnDrawerItemClickListener { view, _, _ -> handler(view) }
     }
 
@@ -94,7 +92,7 @@ abstract class AbstractDrawerItemKt : Builder {
      * @param position The position of the item within the drawer
      * @param drawerItem The drawer item itself
      */
-    fun onClick(handler: (view: View?, position: Int, drawerItem: IDrawerItem<*, *>) -> Boolean) {
+    public fun onClick(handler: (view: View?, position: Int, drawerItem: IDrawerItem<*, *>) -> Boolean) {
         item.withOnDrawerItemClickListener(handler)
     }
 
@@ -103,7 +101,7 @@ abstract class AbstractDrawerItemKt : Builder {
      *
      * Wraps the [AbstractDrawerItem.withSelectable] and [AbstractDrawerItem.isSelectable] methods.
      */
-    var selectable: Boolean
+    public var selectable: Boolean
         get() = item.isSelectable
         set(value) {
             item.withSelectable(value)
@@ -115,7 +113,7 @@ abstract class AbstractDrawerItemKt : Builder {
      * Convenience for [setSelected]. Wraps the [AbstractDrawerItem.withSetSelected] and [AbstractDrawerItem.isSelected]
      * methods.
      */
-    var selected: Boolean
+    public var selected: Boolean
         get() = item.isSelected
         set(value) {
             item.withSetSelected(value)
@@ -127,7 +125,7 @@ abstract class AbstractDrawerItemKt : Builder {
      * Wraps the [AbstractDrawerItem.withSelectedBackgroundAnimated] and
      * [AbstractDrawerItem.isSelectedBackgroundAnimated] methods.
      */
-    var selectedBackgroundAnimated: Boolean
+    public var selectedBackgroundAnimated: Boolean
         get() = item.isSelectedBackgroundAnimated
         set(value) {
             item.withSelectedBackgroundAnimated(value)
@@ -142,7 +140,7 @@ abstract class AbstractDrawerItemKt : Builder {
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "Alternatives are available, check the documentation.")
-    var setSelected: Boolean
+    public var setSelected: Boolean
         get() = item.isSelected
         set(value) {
             item.withSetSelected(value)
@@ -153,7 +151,7 @@ abstract class AbstractDrawerItemKt : Builder {
      *
      * Wraps the [AbstractDrawerItem.withTag] and [AbstractDrawerItem.getTag] methods.
      */
-    var tag: Any?
+    public var tag: Any?
         get() = item.tag
         set(value) {
             item.withTag(value)

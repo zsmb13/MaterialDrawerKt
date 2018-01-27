@@ -1,3 +1,5 @@
+@file:Suppress("RedundantVisibilityModifier")
+
 package co.zsmb.materialdrawerkt.draweritems.badgeable
 
 import co.zsmb.materialdrawerkt.draweritems.base.BaseDescribeableDrawerItemKt
@@ -6,20 +8,9 @@ import com.mikepenz.materialdrawer.holder.BadgeStyle
 import com.mikepenz.materialdrawer.holder.StringHolder
 import com.mikepenz.materialdrawer.model.AbstractBadgeableDrawerItem
 
-abstract class AbstractBadgeableDrawerItemKt : BaseDescribeableDrawerItemKt(), BadgeableKt {
-
-    //region Builder basics
-
-    private lateinit var item: AbstractBadgeableDrawerItem<*>
-
-    protected fun setItem(item: AbstractBadgeableDrawerItem<*>) {
-        super.setItem(item)
-        this.item = item
-    }
-
-    //endregion
-
-    //region AbstractBadgeableDrawerItem methods
+@Suppress("FINITE_BOUNDS_VIOLATION_IN_JAVA")
+public abstract class AbstractBadgeableDrawerItemKt<out T : AbstractBadgeableDrawerItem<*>>(item: T) :
+        BaseDescribeableDrawerItemKt<T>(item), BadgeableKt {
 
     // Documentation inherited
     override var badgeHolder: StringHolder
@@ -44,7 +35,5 @@ abstract class AbstractBadgeableDrawerItemKt : BaseDescribeableDrawerItemKt(), B
         set(value) {
             item.withBadgeStyle(value)
         }
-
-    //endregion
 
 }

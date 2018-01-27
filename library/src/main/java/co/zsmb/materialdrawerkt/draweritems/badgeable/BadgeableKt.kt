@@ -1,3 +1,5 @@
+@file:Suppress("RedundantVisibilityModifier")
+
 package co.zsmb.materialdrawerkt.draweritems.badgeable
 
 import com.mikepenz.materialdrawer.holder.BadgeStyle
