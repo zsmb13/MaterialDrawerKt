@@ -8,20 +8,7 @@ import co.zsmb.materialdrawerkt.nonReadable
 import com.mikepenz.iconics.typeface.IIcon
 import com.mikepenz.materialdrawer.model.BaseDrawerItem
 
-public abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
-
-    //region Builder basics
-
-    private lateinit var item: BaseDrawerItem<*, *>
-
-    protected fun setItem(item: BaseDrawerItem<*, *>) {
-        super.setItem(item)
-        this.item = item
-    }
-
-    //endregion
-
-    //region BaseDrawerItem methods
+public abstract class BaseDrawerItemKt<out T : BaseDrawerItem<*, *>>(item: T) : AbstractDrawerItemKt<T>(item) {
 
     /**
      * The color of the drawer item's icon when it's disabled, as an argb Long.
@@ -341,7 +328,5 @@ public abstract class BaseDrawerItemKt : AbstractDrawerItemKt() {
         set(value) {
             item.withTypeface(value)
         }
-
-    //endregion
 
 }

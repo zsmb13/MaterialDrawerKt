@@ -3,6 +3,7 @@
 package co.zsmb.materialdrawerkt.draweritems.badgeable
 
 import co.zsmb.materialdrawerkt.builders.Builder
+import co.zsmb.materialdrawerkt.createItem
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem
 
 /**
@@ -13,11 +14,7 @@ public fun Builder.secondaryItem(
         name: String = "",
         description: String? = null,
         setup: SecondaryDrawerItemKt.() -> Unit = {}): SecondaryDrawerItem {
-    val item = SecondaryDrawerItemKt()
-    item.name = name
-    description?.let { item.description = it }
-    item.setup()
-    return item.build().apply { attachItem(this) }
+    return createItem(SecondaryDrawerItemKt(), name, description, setup)
 }
 
 /**
@@ -28,25 +25,7 @@ public fun Builder.secondaryItem(
         nameRes: Int,
         descriptionRes: Int? = null,
         setup: SecondaryDrawerItemKt.() -> Unit = {}): SecondaryDrawerItem {
-    val item = SecondaryDrawerItemKt()
-    item.nameRes = nameRes
-    descriptionRes?.let { item.descriptionRes = it }
-    item.setup()
-    return item.build().apply { attachItem(this) }
+    return createItem(SecondaryDrawerItemKt(), nameRes, descriptionRes, setup)
 }
 
-public class SecondaryDrawerItemKt : AbstractBadgeableDrawerItemKt() {
-
-    //region Builder basics
-
-    private val item = SecondaryDrawerItem()
-
-    init {
-        super.setItem(item)
-    }
-
-    internal fun build() = item
-
-    //endregion
-
-}
+public class SecondaryDrawerItemKt : AbstractBadgeableDrawerItemKt<SecondaryDrawerItem>(SecondaryDrawerItem())

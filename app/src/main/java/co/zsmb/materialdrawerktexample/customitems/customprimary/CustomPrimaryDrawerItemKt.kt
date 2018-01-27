@@ -1,6 +1,7 @@
 package co.zsmb.materialdrawerktexample.customitems.customprimary
 
 import co.zsmb.materialdrawerkt.builders.Builder
+import co.zsmb.materialdrawerkt.createItem
 import co.zsmb.materialdrawerkt.draweritems.badgeable.AbstractBadgeableDrawerItemKt
 import co.zsmb.materialdrawerkt.nonReadable
 
@@ -8,35 +9,17 @@ fun Builder.customPrimaryItem(
         name: String = "",
         description: String? = null,
         setup: CustomPrimaryDrawerItemKt.() -> Unit = {}): CustomPrimaryDrawerItem {
-    val item = CustomPrimaryDrawerItemKt()
-    item.name = name
-    description?.let { item.description = it }
-    item.setup()
-    return item.build().apply { attachItem(this) }
+    return createItem(CustomPrimaryDrawerItemKt(), name, description, setup)
 }
 
 fun Builder.customPrimaryItem(
         nameRes: Int,
         descriptionRes: Int? = null,
         setup: CustomPrimaryDrawerItemKt.() -> Unit = {}): CustomPrimaryDrawerItem {
-    val item = CustomPrimaryDrawerItemKt()
-    item.nameRes = nameRes
-    descriptionRes?.let { item.descriptionRes = it }
-    item.setup()
-    return item.build().apply { attachItem(this) }
+    return createItem(CustomPrimaryDrawerItemKt(), nameRes, descriptionRes, setup)
 }
 
-class CustomPrimaryDrawerItemKt : AbstractBadgeableDrawerItemKt() {
-
-    // Builder
-
-    private val item = CustomPrimaryDrawerItem()
-
-    init {
-        super.setItem(item)
-    }
-
-    fun build() = item
+class CustomPrimaryDrawerItemKt : AbstractBadgeableDrawerItemKt<CustomPrimaryDrawerItem>(CustomPrimaryDrawerItem()) {
 
     // Props and methods
 

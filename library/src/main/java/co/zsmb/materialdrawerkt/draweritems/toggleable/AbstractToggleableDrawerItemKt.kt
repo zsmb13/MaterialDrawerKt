@@ -7,20 +7,9 @@ import co.zsmb.materialdrawerkt.draweritems.base.BaseDescribeableDrawerItemKt
 import com.mikepenz.materialdrawer.model.AbstractToggleableDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 
-public abstract class AbstractToggleableDrawerItemKt : BaseDescribeableDrawerItemKt() {
-
-    //region Builder basics
-
-    private lateinit var item: AbstractToggleableDrawerItem<*>
-
-    protected fun setItem(item: AbstractToggleableDrawerItem<*>) {
-        super.setItem(item)
-        this.item = item
-    }
-
-    //endregion
-
-    //region AbstractToggleableDrawerItem methods
+@Suppress("FINITE_BOUNDS_VIOLATION_IN_JAVA")
+public abstract class AbstractToggleableDrawerItemKt<out T : AbstractToggleableDrawerItem<*>>(item: T) :
+        BaseDescribeableDrawerItemKt<T>(item) {
 
     /**
      * Whether the drawer item's toggle is currently in its "on" state.
@@ -90,7 +79,5 @@ public abstract class AbstractToggleableDrawerItemKt : BaseDescribeableDrawerIte
         set(value) {
             item.withToggleEnabled(value)
         }
-
-    //endregion
 
 }

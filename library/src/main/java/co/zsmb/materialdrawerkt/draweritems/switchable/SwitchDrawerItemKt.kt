@@ -3,6 +3,7 @@
 package co.zsmb.materialdrawerkt.draweritems.switchable
 
 import co.zsmb.materialdrawerkt.builders.Builder
+import co.zsmb.materialdrawerkt.createItem
 import com.mikepenz.materialdrawer.model.SwitchDrawerItem
 
 /**
@@ -13,11 +14,7 @@ public fun Builder.switchItem(
         name: String = "",
         description: String? = null,
         setup: SwitchDrawerItemKt.() -> Unit = {}): SwitchDrawerItem {
-    val item = SwitchDrawerItemKt()
-    item.name = name
-    description?.let { item.description = it }
-    item.setup()
-    return item.build().apply { attachItem(this) }
+    return createItem(SwitchDrawerItemKt(), name, description, setup)
 }
 
 /**
@@ -28,26 +25,7 @@ public fun Builder.switchItem(
         nameRes: Int,
         descriptionRes: Int? = null,
         setup: SwitchDrawerItemKt.() -> Unit = {}): SwitchDrawerItem {
-    val item = SwitchDrawerItemKt()
-    item.nameRes = nameRes
-    descriptionRes?.let { item.descriptionRes = it }
-    item.setup()
-    return item.build().apply { attachItem(this) }
+    return createItem(SwitchDrawerItemKt(), nameRes, descriptionRes, setup)
 }
 
-
-public class SwitchDrawerItemKt : AbstractSwitchableDrawerItemKt() {
-
-    //region Builder basics
-
-    private val item = SwitchDrawerItem()
-
-    init {
-        super.setItem(item)
-    }
-
-    internal fun build() = item
-
-    //endregion
-
-}
+public class SwitchDrawerItemKt : AbstractSwitchableDrawerItemKt<SwitchDrawerItem>(SwitchDrawerItem())

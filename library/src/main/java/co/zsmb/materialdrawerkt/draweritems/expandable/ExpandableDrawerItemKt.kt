@@ -3,6 +3,7 @@
 package co.zsmb.materialdrawerkt.draweritems.expandable
 
 import co.zsmb.materialdrawerkt.builders.Builder
+import co.zsmb.materialdrawerkt.createItem
 import co.zsmb.materialdrawerkt.draweritems.base.BaseDescribeableDrawerItemKt
 import co.zsmb.materialdrawerkt.nonReadable
 import com.mikepenz.materialdrawer.model.ExpandableDrawerItem
@@ -14,11 +15,7 @@ import com.mikepenz.materialdrawer.model.ExpandableDrawerItem
 public fun Builder.expandableItem(name: String = "",
                                   description: String? = null,
                                   setup: ExpandableDrawerItemKt.() -> Unit = {}): ExpandableDrawerItem {
-    val item = ExpandableDrawerItemKt()
-    item.name = name
-    description?.let { item.description = it }
-    item.setup()
-    return item.build().apply { attachItem(this) }
+    return createItem(ExpandableDrawerItemKt(), name, description, setup)
 }
 
 /**
@@ -28,28 +25,11 @@ public fun Builder.expandableItem(name: String = "",
 public fun Builder.expandableItem(nameRes: Int,
                                   descriptionRes: Int? = null,
                                   setup: ExpandableDrawerItemKt.() -> Unit = {}): ExpandableDrawerItem {
-    val item = ExpandableDrawerItemKt()
-    item.nameRes = nameRes
-    descriptionRes?.let { item.descriptionRes = it }
-    item.setup()
-    return item.build().apply { attachItem(this) }
+    return createItem(ExpandableDrawerItemKt(), nameRes, descriptionRes, setup)
 }
 
-public class ExpandableDrawerItemKt : BaseDescribeableDrawerItemKt() {
-
-    //region Builder basics
-
-    private val item = ExpandableDrawerItem()
-
-    init {
-        super.setItem(item)
-    }
-
-    internal fun build() = item
-
-    //endregion
-
-    //region ExpandableDrawerItem methods
+public class ExpandableDrawerItemKt :
+        BaseDescribeableDrawerItemKt<ExpandableDrawerItem>(ExpandableDrawerItem()) {
 
     /**
      * The color of the expand arrow, as an argb Long.
@@ -119,7 +99,5 @@ public class ExpandableDrawerItemKt : BaseDescribeableDrawerItemKt() {
         set(value) {
             item.withArrowRotationAngleStart(value)
         }
-
-    //endregion
 
 }

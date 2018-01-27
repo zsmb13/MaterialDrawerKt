@@ -5,20 +5,8 @@ package co.zsmb.materialdrawerkt.draweritems.base
 import co.zsmb.materialdrawerkt.nonReadable
 import com.mikepenz.materialdrawer.model.BaseDescribeableDrawerItem
 
-public abstract class BaseDescribeableDrawerItemKt : BaseDrawerItemKt() {
-
-    //region Builder basics
-
-    private lateinit var item: BaseDescribeableDrawerItem<*, *>
-
-    protected fun setItem(item: BaseDescribeableDrawerItem<*, *>) {
-        super.setItem(item)
-        this.item = item
-    }
-
-    //endregion
-
-    //region BaseDescribeableDrawerItem methods
+public abstract class BaseDescribeableDrawerItemKt<out T : BaseDescribeableDrawerItem<*, *>>(item: T) :
+        BaseDrawerItemKt<T>(item) {
 
     /**
      * The description of the drawer item.
@@ -67,7 +55,5 @@ public abstract class BaseDescribeableDrawerItemKt : BaseDrawerItemKt() {
         set(value) {
             item.withDescriptionTextColorRes(value)
         }
-
-    //endregion
 
 }

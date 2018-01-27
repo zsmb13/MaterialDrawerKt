@@ -8,20 +8,9 @@ import co.zsmb.materialdrawerkt.nonReadable
 import com.mikepenz.materialdrawer.model.AbstractSwitchableDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 
-public abstract class AbstractSwitchableDrawerItemKt : BaseDescribeableDrawerItemKt() {
-
-    //region Builder basics
-
-    private lateinit var item: AbstractSwitchableDrawerItem<*>
-
-    protected fun setItem(item: AbstractSwitchableDrawerItem<*>) {
-        super.setItem(item)
-        this.item = item
-    }
-
-    //endregion
-
-    //region AbstractSwitchableDrawerItem methods
+@Suppress("FINITE_BOUNDS_VIOLATION_IN_JAVA")
+public abstract class AbstractSwitchableDrawerItemKt<out T : AbstractSwitchableDrawerItem<*>>(item: T) :
+        BaseDescribeableDrawerItemKt<T>(item) {
 
     /**
      * Whether the drawer item is selectable.
@@ -106,7 +95,5 @@ public abstract class AbstractSwitchableDrawerItemKt : BaseDescribeableDrawerIte
         set(value) {
             item.withSwitchEnabled(value)
         }
-
-    //endregion
 
 }

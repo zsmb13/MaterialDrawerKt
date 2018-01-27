@@ -30,10 +30,7 @@ public fun Builder.sectionItem(name: String = "", setup: SectionDrawerItemKt.() 
  * @return The created SectionDrawerItem instance
  */
 public fun Builder.sectionHeader(name: String = "", setup: SectionDrawerItemKt.() -> Unit = {}): SectionDrawerItem {
-    val item = SectionDrawerItemKt()
-    item.name = name
-    item.setup()
-    return item.build().apply { attachItem(this) }
+    return sectionItem(name, setup)
 }
 
 /**
@@ -58,27 +55,10 @@ public fun Builder.sectionItem(nameRes: Int, setup: SectionDrawerItemKt.() -> Un
  * @return The created SectionDrawerItem instance
  */
 public fun Builder.sectionHeader(nameRes: Int, setup: SectionDrawerItemKt.() -> Unit = {}): SectionDrawerItem {
-    val item = SectionDrawerItemKt()
-    item.nameRes = nameRes
-    item.setup()
-    return item.build().apply { attachItem(this) }
+    return sectionItem(nameRes, setup)
 }
 
-public class SectionDrawerItemKt : AbstractDrawerItemKt() {
-
-    //region Builder basics
-
-    private val item = SectionDrawerItem()
-
-    init {
-        super.setItem(item)
-    }
-
-    internal fun build() = item
-
-    //endregion
-
-    //region SectionDrawerItem methods
+public class SectionDrawerItemKt : AbstractDrawerItemKt<SectionDrawerItem>(SectionDrawerItem()) {
 
     /**
      * Whether the section header should have a divider displayed above it.
@@ -150,7 +130,5 @@ public class SectionDrawerItemKt : AbstractDrawerItemKt() {
         set(value) {
             item.withTypeface(value)
         }
-
-    //endregion
 
 }

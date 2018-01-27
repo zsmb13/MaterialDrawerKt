@@ -3,6 +3,7 @@
 package co.zsmb.materialdrawerkt.draweritems.switchable
 
 import co.zsmb.materialdrawerkt.builders.Builder
+import co.zsmb.materialdrawerkt.createItem
 import com.mikepenz.materialdrawer.model.SecondarySwitchDrawerItem
 
 /**
@@ -13,11 +14,7 @@ public fun Builder.secondarySwitchItem(
         name: String = "",
         description: String? = null,
         setup: SecondarySwitchDrawerItemKt.() -> Unit = {}): SecondarySwitchDrawerItem {
-    val item = SecondarySwitchDrawerItemKt()
-    item.name = name
-    description?.let { item.description = it }
-    item.setup()
-    return item.build().apply { attachItem(this) }
+    return createItem(SecondarySwitchDrawerItemKt(), name, description, setup)
 }
 
 /**
@@ -28,25 +25,8 @@ public fun Builder.secondarySwitchItem(
         nameRes: Int,
         descriptionRes: Int? = null,
         setup: SecondarySwitchDrawerItemKt.() -> Unit = {}): SecondarySwitchDrawerItem {
-    val item = SecondarySwitchDrawerItemKt()
-    item.nameRes = nameRes
-    descriptionRes?.let { item.descriptionRes = it }
-    item.setup()
-    return item.build().apply { attachItem(this) }
+    return createItem(SecondarySwitchDrawerItemKt(), nameRes, descriptionRes, setup)
 }
 
-public class SecondarySwitchDrawerItemKt : AbstractSwitchableDrawerItemKt() {
-
-    //region Builder basics
-
-    private val item = SecondarySwitchDrawerItem()
-
-    init {
-        super.setItem(item)
-    }
-
-    internal fun build() = item
-
-    //endregion
-
-}
+public class SecondarySwitchDrawerItemKt :
+        AbstractSwitchableDrawerItemKt<SecondarySwitchDrawerItem>(SecondarySwitchDrawerItem())

@@ -9,20 +9,16 @@ import com.mikepenz.materialdrawer.model.AbstractDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 
 @DrawerMarker
-public abstract class AbstractDrawerItemKt : Builder {
+public abstract class AbstractDrawerItemKt<out T : AbstractDrawerItem<*, *>>(protected val item: T) : Builder {
 
     //region Builder basics
-
-    private lateinit var item: AbstractDrawerItem<*, *>
-
-    protected fun setItem(item: AbstractDrawerItem<*, *>) {
-        this.item = item
-    }
 
     @Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
     override fun attachItem(subItem: IDrawerItem<*, *>) {
         item.withSubItems(subItem)
     }
+
+    internal fun build(): T = item
 
     //endregion
 

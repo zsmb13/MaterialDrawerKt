@@ -3,6 +3,7 @@
 package co.zsmb.materialdrawerkt.draweritems.expandable
 
 import co.zsmb.materialdrawerkt.builders.Builder
+import co.zsmb.materialdrawerkt.createItem
 import co.zsmb.materialdrawerkt.draweritems.badgeable.BadgeableKt
 import co.zsmb.materialdrawerkt.draweritems.base.BaseDescribeableDrawerItemKt
 import com.mikepenz.materialdrawer.holder.BadgeStyle
@@ -16,11 +17,7 @@ import com.mikepenz.materialdrawer.model.ExpandableBadgeDrawerItem
 public fun Builder.expandableBadgeItem(name: String = "",
                                        description: String? = null,
                                        setup: ExpandableBadgeDrawerItemKt.() -> Unit = {}): ExpandableBadgeDrawerItem {
-    val item = ExpandableBadgeDrawerItemKt()
-    item.name = name
-    description?.let { item.description = it }
-    item.setup()
-    return item.build().apply { attachItem(this) }
+    return createItem(ExpandableBadgeDrawerItemKt(), name, description, setup)
 }
 
 /**
@@ -30,28 +27,12 @@ public fun Builder.expandableBadgeItem(name: String = "",
 public fun Builder.expandableBadgeItem(nameRes: Int,
                                        descriptionRes: Int? = null,
                                        setup: ExpandableBadgeDrawerItemKt.() -> Unit = {}): ExpandableBadgeDrawerItem {
-    val item = ExpandableBadgeDrawerItemKt()
-    item.nameRes = nameRes
-    descriptionRes?.let { item.descriptionRes = it }
-    item.setup()
-    return item.build().apply { attachItem(this) }
+    return createItem(ExpandableBadgeDrawerItemKt(), nameRes, descriptionRes, setup)
 }
 
-public class ExpandableBadgeDrawerItemKt : BaseDescribeableDrawerItemKt(), BadgeableKt {
-
-    //region Builder basics
-
-    private val item = ExpandableBadgeDrawerItem()
-
-    init {
-        super.setItem(item)
-    }
-
-    internal fun build() = item
-
-    //endregion
-
-    //region ExpandableBadgeDrawerItem methods
+public class ExpandableBadgeDrawerItemKt :
+        BaseDescribeableDrawerItemKt<ExpandableBadgeDrawerItem>(ExpandableBadgeDrawerItem()),
+        BadgeableKt {
 
     // Documentation inherited
     override var badgeHolder: StringHolder
@@ -73,7 +54,5 @@ public class ExpandableBadgeDrawerItemKt : BaseDescribeableDrawerItemKt(), Badge
         set(value) {
             item.withBadgeStyle(value)
         }
-
-    //endregion
 
 }

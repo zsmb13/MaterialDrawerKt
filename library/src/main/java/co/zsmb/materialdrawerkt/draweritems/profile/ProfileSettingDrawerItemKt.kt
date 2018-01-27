@@ -42,21 +42,7 @@ public fun AccountHeaderBuilderKt.profileSetting(
     return item.build().apply { addItem(this) }
 }
 
-public class ProfileSettingDrawerItemKt : AbstractDrawerItemKt() {
-
-    //region Builder basics
-
-    private val item = ProfileSettingDrawerItem()
-
-    internal fun build() = item
-
-    init {
-        super.setItem(item)
-    }
-
-    //endregion
-
-    //region ProfileSettingDrawerItem methods
+public class ProfileSettingDrawerItemKt : AbstractDrawerItemKt<ProfileSettingDrawerItem>(ProfileSettingDrawerItem()) {
 
     /**
      * The description of the profile setting item.
@@ -329,7 +315,5 @@ public class ProfileSettingDrawerItemKt : AbstractDrawerItemKt() {
         set(value) {
             item.withTypeface(value)
         }
-
-    //endregion
 
 }

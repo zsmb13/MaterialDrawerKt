@@ -3,6 +3,7 @@
 package co.zsmb.materialdrawerkt.draweritems.badgeable
 
 import co.zsmb.materialdrawerkt.builders.Builder
+import co.zsmb.materialdrawerkt.createItem
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
 
 /**
@@ -13,11 +14,7 @@ public fun Builder.primaryItem(
         name: String = "",
         description: String? = null,
         setup: PrimaryDrawerItemKt.() -> Unit = {}): PrimaryDrawerItem {
-    val item = PrimaryDrawerItemKt()
-    item.name = name
-    description?.let { item.description = it }
-    item.setup()
-    return item.build().apply { attachItem(this) }
+    return createItem(PrimaryDrawerItemKt(), name, description, setup)
 }
 
 /**
@@ -28,25 +25,7 @@ public fun Builder.primaryItem(
         nameRes: Int,
         descriptionRes: Int? = null,
         setup: PrimaryDrawerItemKt.() -> Unit = {}): PrimaryDrawerItem {
-    val item = PrimaryDrawerItemKt()
-    item.nameRes = nameRes
-    descriptionRes?.let { item.descriptionRes = it }
-    item.setup()
-    return item.build().apply { attachItem(this) }
+    return createItem(PrimaryDrawerItemKt(), nameRes, descriptionRes, setup)
 }
 
-public class PrimaryDrawerItemKt : AbstractBadgeableDrawerItemKt() {
-
-    //region Builder basics
-
-    private val item = PrimaryDrawerItem()
-
-    init {
-        super.setItem(item)
-    }
-
-    internal fun build() = item
-
-    //endregion
-
-}
+public class PrimaryDrawerItemKt : AbstractBadgeableDrawerItemKt<PrimaryDrawerItem>(PrimaryDrawerItem())
