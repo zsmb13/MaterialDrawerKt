@@ -27,7 +27,7 @@ repositories {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
-    api('com.mikepenz:materialdrawer:6.0.3@aar') {
+    api('com.mikepenz:materialdrawer:6.0.4@aar') {
         transitive = true
     }
     implementation "com.android.support:appcompat-v7:$support_lib_version"
