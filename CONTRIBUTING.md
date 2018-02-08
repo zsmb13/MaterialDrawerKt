@@ -8,9 +8,10 @@ If you run into a problem while using the library - weird behavior, bug, missing
 
 ### Pull requests
 
-If you can fix the problems that you find yourself, you're welcome to create pull requests as well. 
+If you can fix the problems that you find yourself, you're welcome to create pull requests as well.
 
 Some general rules regarding these:
 
+- Create them against the `dev` branch.
 - Describe the nature of the changes you've made as best you can.
-- Be very careful about changing public APIs.
+- Be very careful about changing public API.
