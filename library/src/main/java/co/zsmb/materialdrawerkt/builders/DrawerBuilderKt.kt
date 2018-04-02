@@ -3,6 +3,7 @@
 package co.zsmb.materialdrawerkt.builders
 
 import android.app.Activity
+import android.content.SharedPreferences
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -929,6 +930,20 @@ public class DrawerBuilderKt(val activity: Activity) : Builder {
         get() = nonReadable()
         set(value) {
             builder.withSelectedItemByPosition(value)
+        }
+
+    /**
+     * The [SharedPreferences] to use to store state about [DrawerBuilderKt.showOnFirstLaunch] and
+     * [DrawerBuilderKt.showUntilDraggedOpened] functionality.
+     * Default value is the one provided by [PreferenceManager.getDefaultSharedPreferences].
+     *
+     * Non readable property. Wraps the [DrawerBuilder.withSavedInstance] method.
+     */
+    public var sharedPreferences: SharedPreferences
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        get() = nonReadable()
+        set(value) {
+            builder.withSavedInstance(value)
         }
 
     /**

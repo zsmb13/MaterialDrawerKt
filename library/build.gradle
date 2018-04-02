@@ -11,7 +11,6 @@ ext {
 
 android {
     compileSdkVersion 27
-    buildToolsVersion "27.0.3"
 
     defaultConfig {
         minSdkVersion 14
@@ -27,7 +26,7 @@ repositories {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
-    api('com.mikepenz:materialdrawer:6.0.6@aar') {
+    api('com.mikepenz:materialdrawer:6.0.7@aar') {
         transitive = true
     }
     implementation "com.android.support:appcompat-v7:$support_lib_version"
