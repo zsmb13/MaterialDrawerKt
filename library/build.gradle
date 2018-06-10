@@ -16,6 +16,10 @@ android {
         minSdkVersion 14
         targetSdkVersion 28
     }
+
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {
