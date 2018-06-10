@@ -22,11 +22,6 @@ android {
     }
 }
 
-repositories {
-    mavenCentral()
-    google()
-}
-
 dependencies {
     implementation project(path: ':library')
 
