@@ -943,7 +943,7 @@ public class DrawerBuilderKt(val activity: Activity) : Builder {
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            builder.withSavedInstance(value)
+            builder.withSharedPreferences(value)
         }
 
     /**
