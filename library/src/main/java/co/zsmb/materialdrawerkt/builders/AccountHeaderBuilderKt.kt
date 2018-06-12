@@ -30,7 +30,7 @@ public class AccountHeaderBuilderKt(activity: Activity) {
 
     //region Builder basics
 
-    internal val builder: AccountHeaderBuilder = AccountHeaderBuilder().withActivity(activity)
+    public val builder: AccountHeaderBuilder = AccountHeaderBuilder().withActivity(activity)
 
     internal fun build(): AccountHeader {
         if (onProfileImageListener.isInitialized) {
