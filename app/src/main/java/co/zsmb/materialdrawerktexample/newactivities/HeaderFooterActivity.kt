@@ -44,7 +44,7 @@ class HeaderFooterActivity : AppCompatActivity() {
 
             sectionHeader("Try multi select here!")
             for (i in 1..10) {
-                primaryItem("Item $i") { iicon = FontAwesome.Icon.faw_heart_o }
+                primaryItem("Item $i") { iicon = FontAwesome.Icon.faw_heart }
             }
 
             footer {

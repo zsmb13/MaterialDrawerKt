@@ -6,27 +6,26 @@ apply from: '../testformatter.gradle'
 ext {
     PUBLISH_GROUP_ID = 'co.zsmb'
     PUBLISH_ARTIFACT_ID = 'materialdrawer-kt'
-    PUBLISH_VERSION = '1.3.4'
+    PUBLISH_VERSION = '1.3.5'
 }
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 27
+        targetSdkVersion 28
+    }
+
+    lintOptions {
+        abortOnError false
     }
 }
 
-repositories {
-    mavenCentral()
-    google()
-}
-
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    api('com.mikepenz:materialdrawer:6.0.7@aar') {
+    api('com.mikepenz:materialdrawer:6.0.8@aar') {
         transitive = true
     }
     implementation "com.android.support:appcompat-v7:$support_lib_version"

@@ -50,7 +50,7 @@ public class DrawerBuilderKt(val activity: Activity) : Builder {
 
     //region Builder basics
 
-    internal val builder = DrawerBuilder(activity)
+    public val builder = DrawerBuilder(activity)
 
     internal fun build(): Drawer {
         if (onDrawerListener.isInitialized) {
@@ -943,7 +943,7 @@ public class DrawerBuilderKt(val activity: Activity) : Builder {
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            builder.withSavedInstance(value)
+            builder.withSharedPreferences(value)
         }
 
     /**
