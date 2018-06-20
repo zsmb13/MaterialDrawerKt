@@ -33,14 +33,14 @@ class FullscreenDrawerActivity : AppCompatActivity() {
             toolbar = this@FullscreenDrawerActivity.toolbar
             translucentStatusBar = false
 
-            primaryItem(co.zsmb.materialdrawerktexample.R.string.drawer_item_home) { iicon = FontAwesome.Icon.faw_home }
-            primaryItem(co.zsmb.materialdrawerktexample.R.string.drawer_item_free_play) { iicon = FontAwesome.Icon.faw_gamepad }
-            primaryItem(co.zsmb.materialdrawerktexample.R.string.drawer_item_custom) { iicon = FontAwesome.Icon.faw_eye }
-            sectionHeader(co.zsmb.materialdrawerktexample.R.string.drawer_item_section_header)
-            secondaryItem(co.zsmb.materialdrawerktexample.R.string.drawer_item_settings) { iicon = FontAwesome.Icon.faw_cog }
-            secondaryItem(co.zsmb.materialdrawerktexample.R.string.drawer_item_help) { iicon = FontAwesome.Icon.faw_question }
-            secondaryItem(co.zsmb.materialdrawerktexample.R.string.drawer_item_open_source) { iicon = FontAwesome.Icon.faw_github }
-            secondaryItem(co.zsmb.materialdrawerktexample.R.string.drawer_item_contact) { iicon = FontAwesome.Icon.faw_bullhorn }
+            primaryItem(R.string.drawer_item_home) { iicon = FontAwesome.Icon.faw_home }
+            primaryItem(R.string.drawer_item_free_play) { iicon = FontAwesome.Icon.faw_gamepad }
+            primaryItem(R.string.drawer_item_custom) { iicon = FontAwesome.Icon.faw_eye }
+            sectionHeader(R.string.drawer_item_section_header)
+            secondaryItem(R.string.drawer_item_settings) { iicon = FontAwesome.Icon.faw_cog }
+            secondaryItem(R.string.drawer_item_help) { iicon = FontAwesome.Icon.faw_question }
+            secondaryItem(R.string.drawer_item_open_source) { iicon = FontAwesome.Icon.faw_github }
+            secondaryItem(R.string.drawer_item_contact) { iicon = FontAwesome.Icon.faw_bullhorn }
             divider()
             for (i in 1..20) {
                 primaryItem("Custom $i") { iicon = FontAwesome.Icon.faw_android }

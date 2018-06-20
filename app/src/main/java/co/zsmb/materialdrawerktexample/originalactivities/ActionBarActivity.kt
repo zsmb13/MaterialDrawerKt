@@ -3,12 +3,12 @@ package co.zsmb.materialdrawerktexample.originalactivities
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
+import co.zsmb.materialdrawerkt.R.layout.material_drawer_fits_not
 import co.zsmb.materialdrawerkt.builders.drawer
 import co.zsmb.materialdrawerkt.draweritems.badgeable.primaryItem
 import co.zsmb.materialdrawerkt.draweritems.badgeable.secondaryItem
 import co.zsmb.materialdrawerkt.draweritems.sectionHeader
 import co.zsmb.materialdrawerktexample.R
-import co.zsmb.materialdrawerktexample.R.layout.material_drawer_fits_not
 import com.mikepenz.fontawesome_typeface_library.FontAwesome.Icon
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.model.interfaces.Nameable

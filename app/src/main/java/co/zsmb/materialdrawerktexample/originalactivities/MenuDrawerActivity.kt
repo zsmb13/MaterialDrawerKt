@@ -24,7 +24,7 @@ class MenuDrawerActivity : AppCompatActivity() {
         result = drawer {
             toolbar = this@MenuDrawerActivity.toolbar
             savedInstance = savedInstanceState
-            menuItemsRes = co.zsmb.materialdrawerktexample.R.menu.example_menu
+            menuItemsRes = R.menu.example_menu
 
             onItemClick { _, _, drawerItem ->
                 if (drawerItem is Nameable<*>) {
