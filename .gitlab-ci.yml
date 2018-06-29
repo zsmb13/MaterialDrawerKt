@@ -2,6 +2,7 @@ image: registry.gitlab.com/hardysim/android-ci:latest
 
 stages:
 - debug
+- release
 
 before_script:
 - export GRADLE_USER_HOME=.gradle
@@ -14,3 +15,15 @@ debug build:
     - docker
   script:
     - ./gradlew assembleDebug
+
+library release:
+  stage: release
+  tags:
+    - docker
+  script:
+    - ./gradlew generateRelease
+  artifacts:
+    paths:
+      - library/build/release-*
+  only:
+    - master
