@@ -22,7 +22,7 @@ debug build:
   script:
     - ./gradlew assembleDebug
   except:
-    - dev
+    - master
 
 library release build:
   stage: build
@@ -34,7 +34,7 @@ library release build:
     paths:
       - library/build*
   only:
-    - dev
+    - master
 
 library upload to Bintray:
   stage: release
@@ -45,5 +45,5 @@ library upload to Bintray:
   dependencies:
     - library release build
   only:
-    - dev
+    - master
   when: manual
