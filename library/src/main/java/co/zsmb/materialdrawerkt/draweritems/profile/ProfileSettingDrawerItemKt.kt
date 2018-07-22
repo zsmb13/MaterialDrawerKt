@@ -237,7 +237,7 @@ public class ProfileSettingDrawerItemKt : AbstractDrawerItemKt<ProfileSettingDra
      *
      * Non readable property. Wraps the [ProfileSettingDrawerItem.withName] method.
      */
-    public var name: String
+    public var name: CharSequence
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
