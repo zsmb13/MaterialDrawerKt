@@ -59,7 +59,12 @@ bintray {
     override = true
 
     Properties properties = new Properties()
-    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+    def localPropsFile = project.rootProject.file('local.properties')
+    if (localPropsFile.exists()) {
+        properties.load(localPropsFile.newDataInputStream())
+    }
+
     user = properties.getProperty('bintrayUser') ?: System.getenv('BINTRAY_USER')
     key = properties.getProperty('bintrayKey') ?: System.getenv('BINTRAY_API_KEY')
 
