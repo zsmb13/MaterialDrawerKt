@@ -1,7 +1,7 @@
 image: registry.gitlab.com/hardysim/android-ci:latest
 
 stages:
-- debug
+- build
 - release
 
 before_script:
@@ -10,20 +10,34 @@ before_script:
 - chmod +x ./gradlew
 
 debug build:
-  stage: debug
+  stage: build
   tags:
     - docker
   script:
     - ./gradlew assembleDebug
+  except:
+    - dev
 
-library release:
+library release build:
+  stage: build
+  tags:
+    - docker
+  script:
+    - ./gradlew clean library:assembleRelease androidSourcesJar androidJavadocsJar
+  artifacts:
+    paths:
+      - library/build*
+  only:
+    - dev
+
+library upload to Bintray:
   stage: release
   tags:
     - docker
   script:
-    - ./gradlew generateRelease
-  artifacts:
-    paths:
-      - library/build/release-*
+    - ./gradlew generatePomFileForReleasePublication bintrayUpload
+  dependencies:
+    - library release build
   only:
-    - master
+    - dev
+  when: manual
