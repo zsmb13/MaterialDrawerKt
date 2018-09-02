@@ -90,8 +90,7 @@ public class DrawerBuilderKt(val activity: Activity) : Builder {
     public fun drawer(param: () -> Unit = {}) {
     }
 
-    @Deprecated(level = DeprecationLevel.WARNING,
-            message = "Only for use with custom drawer items.")
+    @Suppress("OverridingDeprecatedMember")
     public override fun attachItem(item: IDrawerItem<*, *>) {
         builder.addDrawerItems(item)
     }

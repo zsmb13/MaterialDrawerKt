@@ -18,7 +18,8 @@ public class StickyFooterKt(val builder: DrawerBuilder) : Builder {
 
     //region Builder basics
 
-    override fun attachItem(item: IDrawerItem<*, *>) {
+    @Suppress("OverridingDeprecatedMember")
+    public override fun attachItem(item: IDrawerItem<*, *>) {
         builder.addStickyDrawerItems(item)
     }
 
