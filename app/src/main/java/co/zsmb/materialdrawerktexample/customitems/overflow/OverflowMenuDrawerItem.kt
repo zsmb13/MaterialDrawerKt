@@ -1,7 +1,7 @@
 package co.zsmb.materialdrawerktexample.customitems.overflow
 
-import android.support.annotation.LayoutRes
-import android.support.v7.widget.PopupMenu
+import androidx.annotation.LayoutRes
+import androidx.appcompat.widget.PopupMenu
 import android.view.View
 import android.widget.ImageButton
 import co.zsmb.materialdrawerktexample.R
