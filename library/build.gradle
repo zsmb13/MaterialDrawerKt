@@ -27,13 +27,13 @@ android {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    api('com.mikepenz:materialdrawer:6.0.9@aar') {
+    api('com.mikepenz:materialdrawer:6.1.0-rc01') {
         transitive = true
     }
-    implementation "com.android.support:appcompat-v7:$support_lib_version"
-    implementation "com.android.support:recyclerview-v7:$support_lib_version"
-    implementation "com.android.support:support-annotations:$support_lib_version"
-    implementation "com.android.support:design:$support_lib_version"
+    implementation "androidx.appcompat:appcompat:$androidx_lib_version"
+    implementation "androidx.recyclerview:recyclerview:$androidx_lib_version"
+    implementation "androidx.annotation:annotation:$androidx_lib_version"
+    implementation "com.google.android.material:material:$androidx_lib_version"
 }
 
 apply from: '../testformatter.gradle'
