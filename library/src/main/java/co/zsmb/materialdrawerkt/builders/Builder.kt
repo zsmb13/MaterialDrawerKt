@@ -11,6 +11,8 @@ interface Builder {
     /**
      * Attaches a drawer item (add as child or add to list, as applicable).
      */
+    @Deprecated(level = DeprecationLevel.WARNING,
+            message = "Only for use with custom drawer items.")
     fun attachItem(item: IDrawerItem<*, *>)
 
 }
