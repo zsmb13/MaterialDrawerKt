@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import co.zsmb.materialdrawerkt.builders.drawer
 import co.zsmb.materialdrawerkt.draweritems.badgeable.primaryItem
 import co.zsmb.materialdrawerkt.draweritems.badgeable.secondaryItem
@@ -13,7 +14,7 @@ import com.mikepenz.fontawesome_typeface_library.FontAwesome
 import com.mikepenz.materialdrawer.Drawer
 import kotlinx.android.synthetic.main.fragment_simple_sample.view.*
 
-class DrawerFragment : androidx.fragment.app.Fragment() {
+class DrawerFragment : Fragment() {
 
     private lateinit var result: Drawer
 

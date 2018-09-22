@@ -10,6 +10,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
 import co.zsmb.materialdrawerkt.DrawerMarker
 import co.zsmb.materialdrawerkt.nonReadable
 import com.mikepenz.fastadapter.FastAdapter
@@ -35,7 +37,7 @@ public fun Activity.drawer(setup: DrawerBuilderKt.() -> Unit = {}): Drawer {
  *
  * @return The created Drawer instance
  */
-public fun androidx.fragment.app.Fragment.drawer(setup: DrawerBuilderKt.() -> Unit = {}): Drawer {
+public fun Fragment.drawer(setup: DrawerBuilderKt.() -> Unit = {}): Drawer {
     val fragmentActivity = activity ?: throw IllegalStateException("Fragment is not attached to an Activity")
     val builder = DrawerBuilderKt(fragmentActivity)
     builder.setup()
@@ -226,7 +228,7 @@ public class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withAdapter] method.
      */
-    public var adapter: FastAdapter<IDrawerItem<out Any?, out androidx.recyclerview.widget.RecyclerView.ViewHolder>>
+    public var adapter: FastAdapter<IDrawerItem<out Any?, out RecyclerView.ViewHolder>>
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -239,7 +241,7 @@ public class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withAdapterWrapper] method.
      */
-    public var adapterWrapper: androidx.recyclerview.widget.RecyclerView.Adapter<out androidx.recyclerview.widget.RecyclerView.ViewHolder>
+    public var adapterWrapper: RecyclerView.Adapter<out RecyclerView.ViewHolder>
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -659,7 +661,7 @@ public class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withItemAnimator] method.
      */
-    public var itemAnimator: androidx.recyclerview.widget.RecyclerView.ItemAnimator
+    public var itemAnimator: RecyclerView.ItemAnimator
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -839,7 +841,7 @@ public class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withRecyclerView] method.
      */
-    public var recyclerView: androidx.recyclerview.widget.RecyclerView
+    public var recyclerView: RecyclerView
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
