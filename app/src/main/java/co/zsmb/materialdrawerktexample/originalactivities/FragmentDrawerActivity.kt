@@ -1,9 +1,9 @@
 package co.zsmb.materialdrawerktexample.originalactivities
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import co.zsmb.materialdrawerktexample.R
 import co.zsmb.materialdrawerktexample.fragments.DrawerFragment
 import co.zsmb.materialdrawerktexample.fragments.SecondDrawerFragment
