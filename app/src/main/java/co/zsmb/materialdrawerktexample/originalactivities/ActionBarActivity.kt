@@ -1,8 +1,8 @@
 package co.zsmb.materialdrawerktexample.originalactivities
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import co.zsmb.materialdrawerkt.R.layout.material_drawer_fits_not
 import co.zsmb.materialdrawerkt.builders.drawer
 import co.zsmb.materialdrawerkt.draweritems.badgeable.primaryItem

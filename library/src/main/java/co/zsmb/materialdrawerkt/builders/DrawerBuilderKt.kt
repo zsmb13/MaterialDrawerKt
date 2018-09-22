@@ -6,13 +6,12 @@ import android.app.Activity
 import android.content.SharedPreferences
 import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.widget.DrawerLayout
-import android.support.v7.app.ActionBarDrawerToggle
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.Toolbar
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
 import co.zsmb.materialdrawerkt.DrawerMarker
 import co.zsmb.materialdrawerkt.nonReadable
 import com.mikepenz.fastadapter.FastAdapter
@@ -355,7 +354,7 @@ public class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withDrawerLayout] method.
      */
-    public var drawerLayout: DrawerLayout
+    public var drawerLayout: androidx.drawerlayout.widget.DrawerLayout
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
