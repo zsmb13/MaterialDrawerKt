@@ -3,9 +3,17 @@ package co.zsmb.materialdrawerktexample.newactivities
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import co.zsmb.materialdrawerkt.builders.accountHeader
+import co.zsmb.materialdrawerkt.builders.drawer
+import co.zsmb.materialdrawerkt.draweritems.badge
+import co.zsmb.materialdrawerkt.draweritems.badgeable.primaryItem
+import co.zsmb.materialdrawerkt.draweritems.badgeable.secondaryItem
+import co.zsmb.materialdrawerkt.draweritems.expandable.expandableBadgeItem
+import co.zsmb.materialdrawerkt.draweritems.sectionHeader
 import co.zsmb.materialdrawerktexample.R
 import com.mikepenz.fontawesome_typeface_library.FontAwesome
 import com.mikepenz.materialdrawer.Drawer
+import kotlinx.android.synthetic.main.activity_sample.*
 
 class BadgesActivity : AppCompatActivity() {
 

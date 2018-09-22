@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import co.zsmb.materialdrawerktexample.R
 import co.zsmb.materialdrawerktexample.fragments.DrawerFragment
 import co.zsmb.materialdrawerktexample.fragments.SecondDrawerFragment
+import kotlinx.android.synthetic.main.activity_sample_fragment_dark_toolbar.*
 
 class FragmentDrawerActivity : AppCompatActivity() {
 

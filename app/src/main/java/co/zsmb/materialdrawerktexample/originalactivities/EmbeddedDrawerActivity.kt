@@ -3,13 +3,25 @@ package co.zsmb.materialdrawerktexample.originalactivities
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import co.zsmb.materialdrawerkt.builders.accountHeader
+import co.zsmb.materialdrawerkt.builders.drawer
+import co.zsmb.materialdrawerkt.draweritems.badgeable.primaryItem
+import co.zsmb.materialdrawerkt.draweritems.badgeable.secondaryItem
+import co.zsmb.materialdrawerkt.draweritems.divider
+import co.zsmb.materialdrawerkt.draweritems.profile.profile
+import co.zsmb.materialdrawerkt.draweritems.profile.profileSetting
+import co.zsmb.materialdrawerkt.draweritems.sectionHeader
+import co.zsmb.materialdrawerkt.draweritems.switchable.switchItem
+import co.zsmb.materialdrawerkt.draweritems.toggleable.toggleItem
 import co.zsmb.materialdrawerktexample.R
+import co.zsmb.materialdrawerktexample.utils.toast
 import com.mikepenz.fontawesome_typeface_library.FontAwesome
 import com.mikepenz.google_material_typeface_library.GoogleMaterial
 import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem
 import com.mikepenz.octicons_typeface_library.Octicons
+import kotlinx.android.synthetic.main.activity_embedded.*
 
 class EmbeddedDrawerActivity : AppCompatActivity() {
 
