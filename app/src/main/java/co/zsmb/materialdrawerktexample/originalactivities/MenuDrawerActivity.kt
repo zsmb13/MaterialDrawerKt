@@ -1,13 +1,10 @@
 package co.zsmb.materialdrawerktexample.originalactivities
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import co.zsmb.materialdrawerkt.builders.drawer
+import androidx.appcompat.app.AppCompatActivity
 import co.zsmb.materialdrawerktexample.R
-import co.zsmb.materialdrawerktexample.utils.toast
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.model.interfaces.Nameable
-import kotlinx.android.synthetic.main.activity_sample_dark_toolbar.*
 
 class MenuDrawerActivity : AppCompatActivity() {
 

@@ -1,20 +1,15 @@
 package co.zsmb.materialdrawerktexample.fragments
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import co.zsmb.materialdrawerkt.builders.drawer
-import co.zsmb.materialdrawerkt.draweritems.badgeable.primaryItem
-import co.zsmb.materialdrawerkt.draweritems.badgeable.secondaryItem
-import co.zsmb.materialdrawerkt.draweritems.sectionHeader
 import co.zsmb.materialdrawerktexample.R
 import com.mikepenz.fontawesome_typeface_library.FontAwesome
 import com.mikepenz.materialdrawer.Drawer
 import kotlinx.android.synthetic.main.fragment_simple_sample.view.*
 
-class DrawerFragment : Fragment() {
+class DrawerFragment : androidx.fragment.app.Fragment() {
 
     private lateinit var result: Drawer
 

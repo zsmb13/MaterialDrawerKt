@@ -1,10 +1,10 @@
 package co.zsmb.materialdrawerktexample.customitems.customurl;
 
 import android.content.Context;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.StringRes;
 import android.view.View;
 import android.widget.TextView;
+import androidx.annotation.LayoutRes;
+import androidx.annotation.StringRes;
 import co.zsmb.materialdrawerktexample.R;
 import com.mikepenz.materialdrawer.holder.BadgeStyle;
 import com.mikepenz.materialdrawer.holder.StringHolder;
