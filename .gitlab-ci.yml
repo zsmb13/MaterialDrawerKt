@@ -29,7 +29,7 @@ library release build:
   tags:
     - docker
   script:
-    - ./gradlew clean library:assembleRelease androidSourcesJar androidJavadocsJar
+    - ./gradlew clean library:assembleRelease androidSourcesJar
   artifacts:
     paths:
       - library/build*
