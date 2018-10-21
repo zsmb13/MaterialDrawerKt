@@ -109,7 +109,7 @@ drawer {
 }
 ```
 
-Note that loading images from URLs requires additional setup, see the `DrawerApplication` class in the sample app for guidance.
+*Note that loading images from URLs requires additional setup, see the [Image loading section](#image-loading) of this document or the `DrawerApplication` class in the sample app for guidance.*
 
 ### Footers
 
