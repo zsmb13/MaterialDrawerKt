@@ -59,6 +59,5 @@ library upload to MavenCentral:
   dependencies:
     - library release build
   only:
-    - dev
     - master
   when: manual
