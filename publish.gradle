@@ -14,6 +14,12 @@ task androidSourcesJar(type: Jar) {
     from android.sourceSets.main.java.source
 }
 
+artifacts {
+    archives androidJavadocsJar, androidSourcesJar
+}
+
+/* Bintray publishing */
+
 bintray {
     dryRun = false
     publish = true
@@ -68,4 +74,81 @@ bintray {
             }
         }
     }
+}
+
+/* MavenCentral publishing */
+
+apply plugin: 'maven'
+apply plugin: 'signing'
+
+group = PUBLISH_GROUP_ID
+version = PUBLISH_VERSION
+
+
+File secretPropsFile = project.rootProject.file('local.properties')
+if (secretPropsFile.exists()) {
+    println "Found secret props file, loading props"
+    Properties p = new Properties()
+    p.load(new FileInputStream(secretPropsFile))
+    p.each { name, value ->
+        ext[name] = value
+    }
+} else {
+    println "No props file, loading env vars"
+    ext["signing.keyId"] = System.getenv('SIGNING_KEY_ID')
+    ext["signing.password"] = System.getenv('SIGNING_PASSWORD')
+    ext["signing.secretKeyRingFile"] = System.getenv('SIGNING_SECRET_KEY_RING_FILE')
+    ext["ossrhUsername"] = System.getenv('OSSRH_USERNAME')
+    ext["ossrhPassword"] = System.getenv('OSSRH_PASSWORD')
+}
+
+uploadArchives {
+    archivesBaseName = PUBLISH_ARTIFACT_ID
+
+    repositories {
+        mavenDeployer {
+            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            pom.project {
+                name 'MaterialDrawerKt'
+                packaging 'aar'
+                // optionally artifactId can be defined here
+                description 'A Kotlin DSL wrapper around the mikepenz/MaterialDrawer library.'
+                url 'https://github.com/zsmb13/MaterialDrawerKt'
+
+                scm {
+                    connection 'scm:git:git://github.com/zsmb13/MaterialDrawerKt.git'
+                    developerConnection 'scm:git:ssh://github.com:zsmb13/MaterialDrawerKt.git'
+                    url 'https://github.com/zsmb13/MaterialDrawerKt/tree/master'
+                }
+
+                licenses {
+                    license {
+                        name 'The Apache License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id 'zsmb13'
+                        name 'Márton Braun'
+                        email 'braunmarci@gmail.com'
+                    }
+                }
+            }
+        }
+    }
+}
+
+signing {
+    sign configurations.archives
 }

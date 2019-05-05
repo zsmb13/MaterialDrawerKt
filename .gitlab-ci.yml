@@ -36,12 +36,26 @@ library release build:
   only:
     - master
 
-library upload to Bintray:
+#library upload to Bintray:
+#  stage: release
+#  tags:
+#    - docker
+#  script:
+#    - ./gradlew generatePomFileForReleasePublication bintrayUpload
+#  dependencies:
+#    - library release build
+#  only:
+#    - master
+#  when: manual
+
+library upload to MavenCentral:
   stage: release
   tags:
     - docker
+  before_script:
+    - echo $GPG_KEY_CONTENTS > secret.gpg
   script:
-    - ./gradlew generatePomFileForReleasePublication bintrayUpload
+    - ./gradlew library:uploadArchives
   dependencies:
     - library release build
   only:
