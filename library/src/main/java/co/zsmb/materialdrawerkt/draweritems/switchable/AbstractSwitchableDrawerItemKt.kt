@@ -32,12 +32,12 @@ public abstract class AbstractSwitchableDrawerItemKt<out T : AbstractSwitchableD
      * Whether the drawer item's switch is currently in its "on" state.
      * Default value is false.
      *
-     * Wraps the [AbstractSwitchableDrawerItem.withChecked] and [AbstractSwitchableDrawerItem.isChecked] methods.
+     * Wraps the [AbstractSwitchableDrawerItem.isChecked] property.
      */
     public var checked: Boolean
         get() = item.isChecked
         set(value) {
-            item.withChecked(value)
+            item.isChecked = value
         }
 
     /**
@@ -99,13 +99,12 @@ public abstract class AbstractSwitchableDrawerItemKt<out T : AbstractSwitchableD
      * Whether the drawer item's switch can be toggled by the user.
      * Default value is true.
      *
-     * Wraps the [AbstractSwitchableDrawerItem.withSwitchEnabled] and [AbstractSwitchableDrawerItem.isSwitchEnabled]
-     * methods.
+     * Wraps the [AbstractSwitchableDrawerItem.isSwitchEnabled] property.
      */
     public var switchEnabled: Boolean
         get() = item.isSwitchEnabled
         set(value) {
-            item.withSwitchEnabled(value)
+            item.isSwitchEnabled = value
         }
 
 }

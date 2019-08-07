@@ -7,6 +7,9 @@ import android.graphics.drawable.Drawable
 import android.net.Uri
 import co.zsmb.materialdrawerkt.nonReadable
 import com.mikepenz.iconics.typeface.IIcon
+import com.mikepenz.materialdrawer.holder.ColorHolder
+import com.mikepenz.materialdrawer.holder.ImageHolder
+import com.mikepenz.materialdrawer.holder.StringHolder
 import com.mikepenz.materialdrawer.model.BaseDrawerItem
 
 public abstract class BaseDrawerItemKt<out T : BaseDrawerItem<*, *>>(item: T) : AbstractDrawerItemKt<T>(item) {
@@ -38,49 +41,49 @@ public abstract class BaseDrawerItemKt<out T : BaseDrawerItem<*, *>>(item: T) : 
     /**
      * The icon of the drawer item, as a drawable resource.
      *
-     * Non readable property. Convenience for [iconRes]. Wraps the [BaseDrawerItem.withIcon] method.
+     * Non readable property. Convenience for [iconRes]. Wraps the [BaseDrawerItem.icon] property.
      */
     public var icon: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            item.withIcon(value)
+            item.icon = ImageHolder(value)
         }
 
     /**
      * The color of the drawer item's icon when it's enabled, as an argb Long.
      *
-     * Non readable property. Wraps the [BaseDrawerItem.withIconColor] method.
+     * Non readable property. Wraps the [BaseDrawerItem.iconColor] property.
      */
     public var iconColor: Long
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            item.withIconColor(value.toInt())
+            item.iconColor = ColorHolder.fromColor(value.toInt())
         }
 
     /**
      * The color of the drawer item's icon when it's enabled, as a color resource.
      *
-     * Non readable property. Wraps the [BaseDrawerItem.withIconColorRes] method.
+     * Non readable property. Wraps the [BaseDrawerItem.iconColor] property.
      */
     public var iconColorRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            item.withIconColorRes(value)
+            item.iconColor = ColorHolder.fromColorRes(value)
         }
 
     /**
      * The icon of the drawer item, as a Drawable.
      *
-     * Non readable property. Wraps the [BaseDrawerItem.withIcon] method.
+     * Non readable property. Wraps the [BaseDrawerItem.icon] property.
      */
     public var iconDrawable: Drawable
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            item.withIcon(value)
+            item.icon = ImageHolder(value)
         }
 
     /**
@@ -88,7 +91,7 @@ public abstract class BaseDrawerItemKt<out T : BaseDrawerItem<*, *>>(item: T) : 
      *
      * See [icon] as an alternative.
      *
-     * Non readable property. Wraps the [BaseDrawerItem.withIcon] method.
+     * Non readable property. Wraps the [BaseDrawerItem.icon] property.
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "Alternatives are available, check the documentation.")
@@ -96,14 +99,14 @@ public abstract class BaseDrawerItemKt<out T : BaseDrawerItem<*, *>>(item: T) : 
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            item.withIcon(value)
+            item.icon = ImageHolder(value)
         }
 
     /**
      * Whether the icon of the drawer item should be tinted with the enabled/disabled/selected color. If set to false,
      * your icon will always be displayed with its default colors.
      *
-     * Wraps the [BaseDrawerItem.withIconTintingEnabled] and [BaseDrawerItem.isIconTinted] methods.
+     * Wraps the [BaseDrawerItem.isIconTinted] property.
      */
     public var iconTintingEnabled: Boolean
         get() = item.isIconTinted
@@ -138,19 +141,19 @@ public abstract class BaseDrawerItemKt<out T : BaseDrawerItem<*, *>>(item: T) : 
     /**
      * The icon of the drawer item, as an IIcon.
      *
-     * Non readable property. Wraps the [BaseDrawerItem.withIcon] method.
+     * Non readable property. Wraps the [BaseDrawerItem.icon] property.
      */
     public var iicon: IIcon
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            item.withIcon(value)
+            item.icon = ImageHolder(value)
         }
 
     /**
      * How far the drawer item should be indented. Default value is 1.
      *
-     * Wraps the [BaseDrawerItem.withLevel] and [BaseDrawerItem.getLevel] methods.
+     * Wraps [BaseDrawerItem.withLevel] and [BaseDrawerItem.level].
      */
     public var level: Int
         get() = item.level
@@ -161,61 +164,50 @@ public abstract class BaseDrawerItemKt<out T : BaseDrawerItem<*, *>>(item: T) : 
     /**
      * The title/name of the drawer item.
      *
-     * Non readable property. Wraps the [BaseDrawerItem.withName] method.
+     * Non readable property. Wraps the [BaseDrawerItem.name] property.
      */
     public var name: String
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            item.withName(value)
+            item.name = StringHolder(value)
         }
 
     /**
      * The title/name of the drawer item, as a String resource.
      *
-     * Non readable property. Wraps the [BaseDrawerItem.withName] method.
+     * Non readable property. Wraps the [BaseDrawerItem.name] property.
      */
     public var nameRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            item.withName(value)
-        }
-
-    /**
-     * The color of the drawer item when it's selected, as an argb Long.
-     *
-     * Non readable property. Wraps the [BaseDrawerItem.withSelectedColor] method.
-     */
-    public var selectedColor: Long
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
-        get() = nonReadable()
-        set(value) {
-            item.withSelectedColor(value.toInt())
-        }
-
-    /**
-     * The color of the drawer item when it's selected, as a color resource.
-     *
-     * Non readable property. Wraps the [BaseDrawerItem.withSelectedColorRes] method.
-     */
-    public var selectedColorRes: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
-        get() = nonReadable()
-        set(value) {
-            item.withSelectedColorRes(value)
+            item.name = StringHolder(value)
         }
 
     /**
      * The icon of the drawer when it's selected, as a drawable resource.
      *
-     * Non readable property. Convenience for [selectedIconRes]. Wraps the [BaseDrawerItem.withSelectedIcon] method.
+     * Non readable property. Convenience for [selectedIconRes]. Wraps the [BaseDrawerItem.selectedIcon] property.
      */
+    @Suppress("MemberVisibilityCanBePrivate")
     public var selectedIcon: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            item.withSelectedIcon(value)
+            item.selectedIcon = ImageHolder(value)
+        }
+
+    /**
+     * The icon of the drawer item when it's selected, as a Bitmap.
+     *
+     * Non readable property. Wraps the [BaseDrawerItem.selectedIcon] property.
+     */
+    public var selectedIconBitmap: Bitmap
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        get() = nonReadable()
+        set(value) {
+            item.selectedIcon = ImageHolder(value)
         }
 
     /**
@@ -245,13 +237,13 @@ public abstract class BaseDrawerItemKt<out T : BaseDrawerItem<*, *>>(item: T) : 
     /**
      * The icon of the drawer item when it's selected, as a Drawable.
      *
-     * Non readable property. Wraps the [BaseDrawerItem.withSelectedIcon] method.
+     * Non readable property. Wraps the [BaseDrawerItem.selectedIcon] property.
      */
     public var selectedIconDrawable: Drawable
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            item.withSelectedIcon(value)
+            item.selectedIcon = ImageHolder(value)
         }
 
     /**
@@ -259,7 +251,7 @@ public abstract class BaseDrawerItemKt<out T : BaseDrawerItem<*, *>>(item: T) : 
      *
      * See [selectedIcon] as an alternative.
      *
-     * Non readable property. Wraps the [BaseDrawerItem.withSelectedIcon] method.
+     * Non readable property. Wraps the [BaseDrawerItem.selectedIcon] property.
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "Alternatives are available, check the documentation.")
@@ -267,51 +259,27 @@ public abstract class BaseDrawerItemKt<out T : BaseDrawerItem<*, *>>(item: T) : 
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            item.withSelectedIcon(value)
+            item.selectedIcon = ImageHolder(value)
         }
 
     /**
-     * The color of the drawer item's text when it's selected, as an argb Long.
+     * The icon of the drawer item when it's selected, as an Uri.
      *
-     * Non readable property. Wraps the [BaseDrawerItem.withSelectedTextColor] method.
+     * Non readable property. Wraps the [BaseDrawerItem.selectedIcon] property.
      */
-    public var selectedTextColor: Long
+    public var selectedIconUri: Uri
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            item.withSelectedTextColor(value.toInt())
+            item.selectedIcon = ImageHolder(value)
         }
 
     /**
-     * The color of the drawer item's text when it's selected, as a color resource.
+     * The icon of the drawer item when it's selected, as a url String.
      *
-     * Non readable property. Wraps the [BaseDrawerItem.withSelectedTextColorRes] method.
+     * Non readable property. Wraps the [BaseDrawerItem.selectedIcon] property.
      */
-    public var selectedTextColorRes: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
-        get() = nonReadable()
-        set(value) {
-            item.withSelectedTextColorRes(value)
-        }
-
-    /**
-     * The color of the drawer item's text, as an argb Long.
-     *
-     * Non readable property. Wraps the [BaseDrawerItem.withTextColor] method.
-     */
-    public var textColor: Long
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
-        get() = nonReadable()
-        set(value) {
-            item.withTextColor(value.toInt())
-        }
-
-    /**
-     * The color of the drawer item's text, as a color resource.
-     *
-     * Non readable property. Wraps the [BaseDrawerItem.withTextColorRes] method.
-     */
-    public var textColorRes: Int
+    public var selectedIconUrl: String
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {

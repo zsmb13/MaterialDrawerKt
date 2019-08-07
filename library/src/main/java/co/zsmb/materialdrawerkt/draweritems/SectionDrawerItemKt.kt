@@ -2,10 +2,10 @@
 
 package co.zsmb.materialdrawerkt.draweritems
 
-import android.graphics.Typeface
 import co.zsmb.materialdrawerkt.builders.Builder
 import co.zsmb.materialdrawerkt.draweritems.base.AbstractDrawerItemKt
 import co.zsmb.materialdrawerkt.nonReadable
+import com.mikepenz.materialdrawer.holder.StringHolder
 import com.mikepenz.materialdrawer.model.SectionDrawerItem
 
 /**
@@ -63,24 +63,24 @@ public class SectionDrawerItemKt : AbstractDrawerItemKt<SectionDrawerItem>(Secti
     /**
      * Whether the section header should have a divider displayed above it.
      *
-     * Wraps the [SectionDrawerItem.withDivider] and [SectionDrawerItem.hasDivider] methods.
+     * Wraps the [SectionDrawerItem.divider] property.
      */
     public var divider: Boolean
-        get() = item.hasDivider()
+        get() = item.divider
         set(value) {
-            item.withDivider(value)
+            item.divider = value
         }
 
     /**
      * The title/name of the section header.
      *
-     * Non readable property. Wraps the [SectionDrawerItem.withName] method.
+     * Non readable property. Wraps the [SectionDrawerItem.name] property.
      */
     public var name: String
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            item.withName(value)
+            item.name = StringHolder(value)
         }
 
     /**

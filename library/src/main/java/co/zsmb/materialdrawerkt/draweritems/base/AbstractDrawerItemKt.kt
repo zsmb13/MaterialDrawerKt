@@ -6,6 +6,9 @@ import android.graphics.Typeface
 import android.view.View
 import co.zsmb.materialdrawerkt.DrawerMarker
 import co.zsmb.materialdrawerkt.builders.Builder
+import co.zsmb.materialdrawerkt.nonReadable
+import com.mikepenz.materialdrawer.Drawer
+import com.mikepenz.materialdrawer.holder.ColorHolder
 import com.mikepenz.materialdrawer.model.AbstractDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.OnPostBindViewListener
@@ -63,34 +66,34 @@ public abstract class AbstractDrawerItemKt<out T : AbstractDrawerItem<*, *>>(pro
     /**
      * Whether the drawer item is enabled (clickable, etc.).
      *
-     * Wraps the [AbstractDrawerItem.withEnabled] and [AbstractDrawerItem.isEnabled] methods.
+     * Wraps the [AbstractDrawerItem.isEnabled] property.
      */
     public var enabled: Boolean
         get() = item.isEnabled
         set(value) {
-            item.withEnabled(value)
+            item.isEnabled = value
         }
 
     /**
      * The identifier of the drawer item. Default value is -1L.
      *
-     * Wraps the [AbstractDrawerItem.withIdentifier] and [AbstractDrawerItem.getIdentifier] methods.
+     * Wraps the [AbstractDrawerItem.identifier] property.
      */
     public var identifier: Long
         get() = item.identifier
         set(value) {
-            item.withIdentifier(value)
+            item.identifier = value
         }
 
     /**
      * Whether the subitems of this item are visible.
      *
-     * Wraps the [AbstractDrawerItem.withIsExpanded] and [AbstractDrawerItem.isExpanded] methods.
+     * Wraps the [AbstractDrawerItem.isExpanded] property.
      */
     public var isExpanded: Boolean
         get() = item.isExpanded
         set(value) {
-            item.withIsExpanded(value)
+            item.isExpanded = value
         }
 
     /**
@@ -147,31 +150,29 @@ public abstract class AbstractDrawerItemKt<out T : AbstractDrawerItem<*, *>>(pro
     /**
      * Whether the drawer item is selectable.
      *
-     * Wraps the [AbstractDrawerItem.withSelectable] and [AbstractDrawerItem.isSelectable] methods.
+     * Wraps the [AbstractDrawerItem.isSelectable] property.
      */
     public var selectable: Boolean
         get() = item.isSelectable
         set(value) {
-            item.withSelectable(value)
+            item.isSelectable = value
         }
 
     /**
      * Whether the drawer item is selected.
      *
-     * Convenience for [setSelected]. Wraps the [AbstractDrawerItem.withSetSelected] and [AbstractDrawerItem.isSelected]
-     * methods.
+     * Wraps the [AbstractDrawerItem.isSelected] property.
      */
     public var selected: Boolean
         get() = item.isSelected
         set(value) {
-            item.withSetSelected(value)
+            item.isSelected = value
         }
 
     /**
      * Whether the drawer item's background should have a fade animation between the selected and unselected states.
      *
-     * Wraps the [AbstractDrawerItem.withSelectedBackgroundAnimated] and
-     * [AbstractDrawerItem.isSelectedBackgroundAnimated] methods.
+     * Wraps the [AbstractDrawerItem.isSelectedBackgroundAnimated] property.
      */
     public var selectedBackgroundAnimated: Boolean
         get() = item.isSelectedBackgroundAnimated
@@ -216,29 +217,38 @@ public abstract class AbstractDrawerItemKt<out T : AbstractDrawerItem<*, *>>(pro
         }
 
     /**
-     * Whether the drawer item should be set as selected.
+     * The color of the profile item's text in the profile switcher list when it's selected, as a color resource.
      *
-     * See [selected] as an alternative.
-     *
-     * Wraps the [AbstractDrawerItem.withSetSelected] and [AbstractDrawerItem.isSelected] methods.
+     * Non readable property. Wraps the [AbstractDrawerItem.selectedTextColor] property.
      */
-    @Deprecated(level = DeprecationLevel.WARNING,
-            message = "Alternatives are available, check the documentation.")
-    public var setSelected: Boolean
-        get() = item.isSelected
+    public var selectedTextColorRes: Int
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        get() = nonReadable()
         set(value) {
-            item.withSetSelected(value)
+            item.selectedTextColor = ColorHolder.fromColorRes(value)
         }
 
     /**
      * An arbitrary object you can attach to the drawer item.
      *
-     * Wraps the [AbstractDrawerItem.withTag] and [AbstractDrawerItem.getTag] methods.
+     * Wraps the [AbstractDrawerItem.tag] property.
      */
     public var tag: Any?
         get() = item.tag
         set(value) {
-            item.withTag(value)
+            item.tag = value
+        }
+
+    /**
+     * The color of the drawer item's text, as an argb Long.
+     *
+     * Non readable property. Wraps the [AbstractDrawerItem.textColor] property.
+     */
+    public var textColor: Long
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        get() = nonReadable()
+        set(value) {
+            item.textColor = ColorHolder.fromColor(value.toInt())
         }
 
     /**

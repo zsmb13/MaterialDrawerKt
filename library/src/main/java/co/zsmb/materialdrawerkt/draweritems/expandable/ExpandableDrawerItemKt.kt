@@ -6,6 +6,7 @@ import co.zsmb.materialdrawerkt.builders.Builder
 import co.zsmb.materialdrawerkt.createItem
 import co.zsmb.materialdrawerkt.draweritems.base.BaseDescribeableDrawerItemKt
 import co.zsmb.materialdrawerkt.nonReadable
+import com.mikepenz.materialdrawer.holder.ColorHolder
 import com.mikepenz.materialdrawer.model.ExpandableDrawerItem
 
 /**
@@ -34,40 +35,44 @@ public class ExpandableDrawerItemKt :
     /**
      * The color of the expand arrow, as an argb Long.
      *
-     * Non readable property. Wraps the [ExpandableDrawerItem.withArrowColor] method.
+     * Non readable property. Wraps the [ExpandableDrawerItem.arrowColor] property.
      */
     public var arrowColor: Long
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            item.withArrowColor(value.toInt())
+            item.arrowColor = ColorHolder.fromColor(value.toInt())
         }
 
     /**
      * The color of the expand arrow, as a color resource.
      *
-     * Non readable property. Wraps the [ExpandableDrawerItem.withArrowColorRes] method.
+     * Non readable property. Wraps the [ExpandableDrawerItem.arrowColor] property.
      */
     public var arrowColorRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            item.withArrowColorRes(value)
+            item.arrowColor = ColorHolder.fromColorRes(value)
         }
 
     /**
      * Convenience for setting both [arrowRotationAngleStart] and [arrowRotationAngleEnd] at the same time. See those
      * properties for details.
      *
-     * Non readable property. Wraps the [ExpandableDrawerItem.withArrowRotationAngleStart] and
-     * [ExpandableDrawerItem.withArrowRotationAngleEnd] methods.
+     * Default values are 0 and 180.
+     *
+     * Non readable property. Wraps the [ExpandableDrawerItem.arrowRotationAngleStart] and
+     * [ExpandableDrawerItem.arrowRotationAngleEnd] properties.
      */
     public var arrowRotationAngle: Pair<Int, Int>
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            item.withArrowRotationAngleStart(value.first)
-                    .withArrowRotationAngleEnd(value.second)
+            item.apply {
+                arrowRotationAngleStart = value.first
+                arrowRotationAngleEnd = value.second
+            }
         }
 
     /**
@@ -76,13 +81,15 @@ public class ExpandableDrawerItemKt :
      *
      * See [arrowRotationAngle] as an alternative.
      *
-     * Non readable property. Wraps the [ExpandableDrawerItem.withArrowRotationAngleEnd] method.
+     * Default value is 180.
+     *
+     * Wraps the [ExpandableDrawerItem.arrowRotationAngleEnd] property.
      */
     public var arrowRotationAngleEnd: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
-        get() = nonReadable()
+        get() = item.arrowRotationAngleEnd
         set(value) {
-            item.withArrowRotationAngleEnd(value)
+            item.arrowRotationAngleEnd = value
         }
 
     /**
@@ -91,13 +98,15 @@ public class ExpandableDrawerItemKt :
      *
      * See [arrowRotationAngle] as an alternative.
      *
-     * Non readable property. Wraps the [ExpandableDrawerItem.withArrowRotationAngleStart] method.
+     * Default value is 0.
+     *
+     * Wraps the [ExpandableDrawerItem.arrowRotationAngleStart] property.
      */
     public var arrowRotationAngleStart: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
-        get() = nonReadable()
+        get() = item.arrowRotationAngleStart
         set(value) {
-            item.withArrowRotationAngleStart(value)
+            item.arrowRotationAngleStart = value
         }
 
 }

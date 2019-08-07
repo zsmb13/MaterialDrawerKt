@@ -16,12 +16,12 @@ public abstract class AbstractToggleableDrawerItemKt<out T : AbstractToggleableD
      * Whether the drawer item's toggle is currently in its "on" state.
      * Default value is false.
      *
-     * Wraps the [AbstractToggleableDrawerItem.withChecked] and [AbstractToggleableDrawerItem.isChecked] methods.
+     * Wraps the [AbstractToggleableDrawerItem.isChecked] property.
      */
     public var checked: Boolean
         get() = item.isChecked
         set(value) {
-            item.withChecked(value)
+            item.isChecked = value
         }
 
     /**
@@ -82,13 +82,12 @@ public abstract class AbstractToggleableDrawerItemKt<out T : AbstractToggleableD
      * Whether the drawer item's toggle can be toggled by the user.
      * Default value is true.
      *
-     * Wraps the [AbstractToggleableDrawerItem.withToggleEnabled] and [AbstractToggleableDrawerItem.isToggleEnabled]
-     * methods.
+     * Wraps the [AbstractToggleableDrawerItem.isToggleEnabled] property.
      */
     public var toggleEnabled: Boolean
         get() = item.isToggleEnabled
         set(value) {
-            item.withToggleEnabled(value)
+            item.isToggleEnabled = value
         }
 
 }
