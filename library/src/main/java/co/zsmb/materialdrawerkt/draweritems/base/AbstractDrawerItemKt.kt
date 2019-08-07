@@ -7,6 +7,7 @@ import co.zsmb.materialdrawerkt.DrawerMarker
 import co.zsmb.materialdrawerkt.builders.Builder
 import com.mikepenz.materialdrawer.model.AbstractDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
+import com.mikepenz.materialdrawer.model.interfaces.OnPostBindViewListener
 
 @DrawerMarker
 public abstract class AbstractDrawerItemKt<out T : AbstractDrawerItem<*, *>>(protected val item: T) : Builder {
@@ -66,8 +67,12 @@ public abstract class AbstractDrawerItemKt<out T : AbstractDrawerItem<*, *>>(pro
      * @param drawerItem The drawer item itself
      * @param view The view which has been created for the drawer item
      */
-    public fun onBindView(handler: (drawerItem: IDrawerItem<*, *>, view: View) -> Unit) {
-        item.withPostOnBindViewListener(handler)
+    public fun onBindView(handler: (drawerItem: IDrawerItem<*>, view: View) -> Unit) {
+        item.withPostOnBindViewListener(object : OnPostBindViewListener {
+            override fun onBindView(drawerItem: IDrawerItem<*>, view: View) {
+                handler(drawerItem, view)
+            }
+        })
     }
 
     /**
@@ -78,7 +83,11 @@ public abstract class AbstractDrawerItemKt<out T : AbstractDrawerItem<*, *>>(pro
      * Wraps the [AbstractDrawerItem.withOnDrawerItemClickListener] method.
      */
     public fun onClick(handler: (view: View?) -> Boolean) {
-        item.withOnDrawerItemClickListener { view, _, _ -> handler(view) }
+        item.withOnDrawerItemClickListener(object : Drawer.OnDrawerItemClickListener {
+            override fun onItemClick(view: View?, position: Int, drawerItem: IDrawerItem<*>): Boolean {
+                return handler(view)
+            }
+        })
     }
 
     /**
@@ -92,8 +101,12 @@ public abstract class AbstractDrawerItemKt<out T : AbstractDrawerItem<*, *>>(pro
      * @param position The position of the item within the drawer
      * @param drawerItem The drawer item itself
      */
-    public fun onClick(handler: (view: View?, position: Int, drawerItem: IDrawerItem<*, *>) -> Boolean) {
-        item.withOnDrawerItemClickListener(handler)
+    public fun onClick(handler: (view: View?, position: Int, drawerItem: IDrawerItem<*>) -> Boolean) {
+        item.withOnDrawerItemClickListener(object : Drawer.OnDrawerItemClickListener {
+            override fun onItemClick(view: View?, position: Int, drawerItem: IDrawerItem<*>): Boolean {
+                return handler(view, position, drawerItem)
+            }
+        })
     }
 
     /**
