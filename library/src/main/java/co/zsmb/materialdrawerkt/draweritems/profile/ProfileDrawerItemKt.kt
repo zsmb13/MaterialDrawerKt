@@ -45,30 +45,6 @@ public fun AccountHeaderBuilderKt.profile(
 public class ProfileDrawerItemKt : AbstractDrawerItemKt<ProfileDrawerItem>(ProfileDrawerItem()) {
 
     /**
-     * The color of the profile item's text when it's disabled, as an argb Long.
-     *
-     * Non readable property. Wraps the [ProfileDrawerItem.withDisabledTextColor] method.
-     */
-    public var disabledTextColor: Long
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
-        get() = nonReadable()
-        set(value) {
-            item.withDisabledTextColor(value.toInt())
-        }
-
-    /**
-     * The color of the profile item's text when it's disabled, as a color resource.
-     *
-     * Non readable property. Wraps the [ProfileDrawerItem.withDisabledTextColorRes] method.
-     */
-    public var disabledTextColorRes: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
-        get() = nonReadable()
-        set(value) {
-            item.withDisabledTextColorRes(value)
-        }
-
-    /**
      * The email associated with the profile.
      *
      * Non readable property. Wraps the [ProfileDrawerItem.withEmail] method.
@@ -213,91 +189,7 @@ public class ProfileDrawerItemKt : AbstractDrawerItemKt<ProfileDrawerItem>(Profi
     public var nameShown: Boolean
         get() = item.isNameShown
         set(value) {
-            item.withNameShown(value)
-        }
-
-    /**
-     * The color of the profile item in the profile switcher list when it's selected, as an argb Long.
-     *
-     * Non readable property. Wraps the [ProfileDrawerItem.withSelectedColor] method.
-     */
-    public var selectedColor: Long
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
-        get() = nonReadable()
-        set(value) {
-            item.withSelectedColor(value.toInt())
-        }
-
-    /**
-     * The color of the profile item in the profile switcher list when it's selected, as a color resource.
-     *
-     * Non readable property. Wraps the [ProfileDrawerItem.withSelectedColorRes] method.
-     */
-    public var selectedColorRes: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
-        get() = nonReadable()
-        set(value) {
-            item.withSelectedColorRes(value)
-        }
-
-    /**
-     * The color of the profile item's text in the profile switcher list when it's selected, as an argb Long.
-     *
-     * Non readable property. Wraps the [ProfileDrawerItem.withSelectedTextColor] method.
-     */
-    public var selectedTextColor: Long
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
-        get() = nonReadable()
-        set(value) {
-            item.withSelectedTextColor(value.toInt())
-        }
-
-    /**
-     * The color of the profile item's text in the profile switcher list when it's selected, as a color resource.
-     *
-     * Non readable property. Wraps the [ProfileDrawerItem.withSelectedTextColorRes] method.
-     */
-    public var selectedTextColorRes: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
-        get() = nonReadable()
-        set(value) {
-            item.withSelectedTextColorRes(value)
-        }
-
-    /**
-     * The color of the profile item's text in the profile switcher list, as an argb Long.
-     *
-     * Non readable property. Wraps the [ProfileDrawerItem.withTextColor] method.
-     */
-    public var textColor: Long
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
-        get() = nonReadable()
-        set(value) {
-            item.withTextColor(value.toInt())
-        }
-
-    /**
-     * The color of the profile item's text in the profile switcher list, as a color resource.
-     *
-     * Non readable property. Wraps the [ProfileDrawerItem.withTextColorRes] method.
-     */
-    public var textColorRes: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
-        get() = nonReadable()
-        set(value) {
-            item.withTextColorRes(value)
-        }
-
-    /**
-     * The typeface to use for the profile item's text.
-     *
-     * Non readable property. Wraps the [ProfileDrawerItem.withTypeface] method.
-     */
-    public var typeface: Typeface
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
-        get() = nonReadable()
-        set(value) {
-            item.withTypeface(value)
+            item.isNameShown = value
         }
 
     //endregion

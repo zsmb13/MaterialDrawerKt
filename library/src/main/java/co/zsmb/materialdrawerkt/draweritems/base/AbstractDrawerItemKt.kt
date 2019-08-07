@@ -2,6 +2,7 @@
 
 package co.zsmb.materialdrawerkt.draweritems.base
 
+import android.graphics.Typeface
 import android.view.View
 import co.zsmb.materialdrawerkt.DrawerMarker
 import co.zsmb.materialdrawerkt.builders.Builder
@@ -24,6 +25,40 @@ public abstract class AbstractDrawerItemKt<out T : AbstractDrawerItem<*, *>>(pro
     //endregion
 
     //region AbstractDrawerItem methods
+    /**
+     * Defines the content description of the item.
+     *
+     * Wraps the [AbstractDrawerItem.contentDescription] property.
+     */
+    public var contentDescription: String?
+        get() = item.contentDescription
+        set(value) {
+            item.contentDescription = value
+        }
+
+    /**
+     * The color of the drawer item's text when it's disabled, as an argb Long.
+     *
+     * Non readable property. Wraps the [AbstractDrawerItem.disabledTextColor] property.
+     */
+    public var disabledTextColor: Long
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        get() = nonReadable()
+        set(value) {
+            item.disabledTextColor = ColorHolder.fromColor(value.toInt())
+        }
+
+    /**
+     * The color of the drawer item's text when it's disabled, as a color resource.
+     *
+     * Non readable property. Wraps the [AbstractDrawerItem.disabledTextColor] property.
+     */
+    public var disabledTextColorRes: Int
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        get() = nonReadable()
+        set(value) {
+            item.disabledTextColor = ColorHolder.fromColorRes(value)
+        }
 
     /**
      * Whether the drawer item is enabled (clickable, etc.).
@@ -141,7 +176,43 @@ public abstract class AbstractDrawerItemKt<out T : AbstractDrawerItem<*, *>>(pro
     public var selectedBackgroundAnimated: Boolean
         get() = item.isSelectedBackgroundAnimated
         set(value) {
-            item.withSelectedBackgroundAnimated(value)
+            item.isSelectedBackgroundAnimated = value
+        }
+
+    /**
+     * The color of the profile item in the profile switcher list when it's selected, as an argb Long.
+     *
+     * Non readable property. Wraps the [AbstractDrawerItem.selectedColor] property.
+     */
+    public var selectedColor: Long
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        get() = nonReadable()
+        set(value) {
+            item.selectedColor = ColorHolder.fromColor(value.toInt())
+        }
+
+    /**
+     * The color of the profile item in the profile switcher list when it's selected, as a color resource.
+     *
+     * Non readable property. Wraps the [AbstractDrawerItem.selectedColor] property.
+     */
+    public var selectedColorRes: Int
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        get() = nonReadable()
+        set(value) {
+            item.selectedColor = ColorHolder.fromColorRes(value)
+        }
+
+    /**
+     * The color of the profile item's text in the profile switcher list when it's selected, as an argb Long.
+     *
+     * Non readable property. Wraps the [AbstractDrawerItem.selectedTextColor] property.
+     */
+    public var selectedTextColor: Long
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        get() = nonReadable()
+        set(value) {
+            item.selectedTextColor = ColorHolder.fromColor(value.toInt())
         }
 
     /**
@@ -170,6 +241,29 @@ public abstract class AbstractDrawerItemKt<out T : AbstractDrawerItem<*, *>>(pro
             item.withTag(value)
         }
 
+    /**
+     * The color of the drawer item's text, as a color resource.
+     *
+     * Non readable property. Wraps the [AbstractDrawerItem.textColor] property.
+     */
+    public var textColorRes: Int
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        get() = nonReadable()
+        set(value) {
+            item.textColor = ColorHolder.fromColorRes(value)
+        }
+
+    /**
+     * The typeface to use for the profile item's text.
+     *
+     * Non readable property. Wraps the [AbstractDrawerItem.typeface] property.
+     */
+    public var typeface: Typeface
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        get() = nonReadable()
+        set(value) {
+            item.typeface = value
+        }
     //endregion
 
 }

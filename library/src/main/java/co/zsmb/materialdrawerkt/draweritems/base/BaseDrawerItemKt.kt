@@ -36,30 +36,6 @@ public abstract class BaseDrawerItemKt<out T : BaseDrawerItem<*, *>>(item: T) : 
         }
 
     /**
-     * The color of the drawer item's text when it's disabled, as an argb Long.
-     *
-     * Non readable property. Wraps the [BaseDrawerItem.withDisabledTextColor] method.
-     */
-    public var disabledTextColor: Long
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
-        get() = nonReadable()
-        set(value) {
-            item.withDisabledTextColor(value.toInt())
-        }
-
-    /**
-     * The color of the drawer item's text when it's disabled, as a color resource.
-     *
-     * Non readable property. Wraps the [BaseDrawerItem.withDisabledTextColorRes] method.
-     */
-    public var disabledTextColorRes: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
-        get() = nonReadable()
-        set(value) {
-            item.withDisabledTextColorRes(value)
-        }
-
-    /**
      * The icon of the drawer item, as a drawable resource.
      *
      * Non readable property. Convenience for [iconRes]. Wraps the [BaseDrawerItem.withIcon] method.
@@ -339,19 +315,7 @@ public abstract class BaseDrawerItemKt<out T : BaseDrawerItem<*, *>>(item: T) : 
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            item.withTextColorRes(value)
-        }
-
-    /**
-     * The typeface to use for the drawer item's text.
-     *
-     * Non readable property. Wraps the [BaseDrawerItem.withTypeface] method.
-     */
-    public var typeface: Typeface
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
-        get() = nonReadable()
-        set(value) {
-            item.withTypeface(value)
+            item.selectedIcon = ImageHolder(value)
         }
 
 }

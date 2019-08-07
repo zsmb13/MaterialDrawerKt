@@ -92,43 +92,7 @@ public class SectionDrawerItemKt : AbstractDrawerItemKt<SectionDrawerItem>(Secti
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            item.withName(value)
-        }
-
-    /**
-     * The color of the section header's text, as an argb Long.
-     *
-     * Non readable property. Wraps the [SectionDrawerItem.withTextColor] method.
-     */
-    public var textColor: Long
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
-        get() = nonReadable()
-        set(value) {
-            item.withTextColor(value.toInt())
-        }
-
-    /**
-     * The color of the section header's text, as a color resource.
-     *
-     * Non readable property. Wraps the [SectionDrawerItem.withTextColorRes] method.
-     */
-    public var textColorRes: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
-        get() = nonReadable()
-        set(value) {
-            item.withTextColorRes(value)
-        }
-
-    /**
-     * The typeface to use for the section header's text.
-     *
-     * Non readable property. Wraps the [SectionDrawerItem.withTypeface] method.
-     */
-    public var typeface: Typeface
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
-        get() = nonReadable()
-        set(value) {
-            item.withTypeface(value)
+            item.name = StringHolder(value)
         }
 
 }
