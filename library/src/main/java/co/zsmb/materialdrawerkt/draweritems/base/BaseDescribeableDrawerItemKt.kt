@@ -13,10 +13,10 @@ public abstract class BaseDescribeableDrawerItemKt<out T : BaseDescribeableDrawe
     /**
      * The description of the drawer item.
      *
-     * Non readable property. Wraps the [BaseDescribeableDrawerItem.description] property.
+     * Non-readable property. Wraps the [BaseDescribeableDrawerItem.description] property.
      */
     public var description: String
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.description = StringHolder(value)
@@ -25,10 +25,10 @@ public abstract class BaseDescribeableDrawerItemKt<out T : BaseDescribeableDrawe
     /**
      * The description of the drawer item, as a String resource.
      *
-     * Non readable property. Wraps the [BaseDescribeableDrawerItem.description] property.
+     * Non-readable property. Wraps the [BaseDescribeableDrawerItem.description] property.
      */
     public var descriptionRes: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.description = StringHolder(value)
@@ -37,10 +37,10 @@ public abstract class BaseDescribeableDrawerItemKt<out T : BaseDescribeableDrawe
     /**
      * The color of the description text, as an argb Long.
      *
-     * Non readable property. Wraps the [BaseDescribeableDrawerItem.descriptionTextColor] property.
+     * Non-readable property. Wraps the [BaseDescribeableDrawerItem.descriptionTextColor] property.
      */
     public var descriptionTextColor: Long
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.descriptionTextColor = ColorHolder.fromColor(value.toInt())
@@ -49,10 +49,10 @@ public abstract class BaseDescribeableDrawerItemKt<out T : BaseDescribeableDrawe
     /**
      * The color of the description text, as a color resource.
      *
-     * Non readable property. Wraps the [BaseDescribeableDrawerItem.descriptionTextColor] property.
+     * Non-readable property. Wraps the [BaseDescribeableDrawerItem.descriptionTextColor] property.
      */
     public var descriptionTextColorRes: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.descriptionTextColor = ColorHolder.fromColorRes(value)

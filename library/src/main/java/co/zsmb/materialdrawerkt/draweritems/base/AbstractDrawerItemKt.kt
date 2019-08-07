@@ -42,10 +42,10 @@ public abstract class AbstractDrawerItemKt<out T : AbstractDrawerItem<*, *>>(pro
     /**
      * The color of the drawer item's text when it's disabled, as an argb Long.
      *
-     * Non readable property. Wraps the [AbstractDrawerItem.disabledTextColor] property.
+     * Non-readable property. Wraps the [AbstractDrawerItem.disabledTextColor] property.
      */
     public var disabledTextColor: Long
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.disabledTextColor = ColorHolder.fromColor(value.toInt())
@@ -54,10 +54,10 @@ public abstract class AbstractDrawerItemKt<out T : AbstractDrawerItem<*, *>>(pro
     /**
      * The color of the drawer item's text when it's disabled, as a color resource.
      *
-     * Non readable property. Wraps the [AbstractDrawerItem.disabledTextColor] property.
+     * Non-readable property. Wraps the [AbstractDrawerItem.disabledTextColor] property.
      */
     public var disabledTextColorRes: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.disabledTextColor = ColorHolder.fromColorRes(value)
@@ -183,10 +183,10 @@ public abstract class AbstractDrawerItemKt<out T : AbstractDrawerItem<*, *>>(pro
     /**
      * The color of the profile item in the profile switcher list when it's selected, as an argb Long.
      *
-     * Non readable property. Wraps the [AbstractDrawerItem.selectedColor] property.
+     * Non-readable property. Wraps the [AbstractDrawerItem.selectedColor] property.
      */
     public var selectedColor: Long
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.selectedColor = ColorHolder.fromColor(value.toInt())
@@ -195,10 +195,10 @@ public abstract class AbstractDrawerItemKt<out T : AbstractDrawerItem<*, *>>(pro
     /**
      * The color of the profile item in the profile switcher list when it's selected, as a color resource.
      *
-     * Non readable property. Wraps the [AbstractDrawerItem.selectedColor] property.
+     * Non-readable property. Wraps the [AbstractDrawerItem.selectedColor] property.
      */
     public var selectedColorRes: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.selectedColor = ColorHolder.fromColorRes(value)
@@ -207,10 +207,10 @@ public abstract class AbstractDrawerItemKt<out T : AbstractDrawerItem<*, *>>(pro
     /**
      * The color of the profile item's text in the profile switcher list when it's selected, as an argb Long.
      *
-     * Non readable property. Wraps the [AbstractDrawerItem.selectedTextColor] property.
+     * Non-readable property. Wraps the [AbstractDrawerItem.selectedTextColor] property.
      */
     public var selectedTextColor: Long
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.selectedTextColor = ColorHolder.fromColor(value.toInt())
@@ -219,10 +219,10 @@ public abstract class AbstractDrawerItemKt<out T : AbstractDrawerItem<*, *>>(pro
     /**
      * The color of the profile item's text in the profile switcher list when it's selected, as a color resource.
      *
-     * Non readable property. Wraps the [AbstractDrawerItem.selectedTextColor] property.
+     * Non-readable property. Wraps the [AbstractDrawerItem.selectedTextColor] property.
      */
     public var selectedTextColorRes: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.selectedTextColor = ColorHolder.fromColorRes(value)
@@ -242,10 +242,10 @@ public abstract class AbstractDrawerItemKt<out T : AbstractDrawerItem<*, *>>(pro
     /**
      * The color of the drawer item's text, as an argb Long.
      *
-     * Non readable property. Wraps the [AbstractDrawerItem.textColor] property.
+     * Non-readable property. Wraps the [AbstractDrawerItem.textColor] property.
      */
     public var textColor: Long
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.textColor = ColorHolder.fromColor(value.toInt())
@@ -254,10 +254,10 @@ public abstract class AbstractDrawerItemKt<out T : AbstractDrawerItem<*, *>>(pro
     /**
      * The color of the drawer item's text, as a color resource.
      *
-     * Non readable property. Wraps the [AbstractDrawerItem.textColor] property.
+     * Non-readable property. Wraps the [AbstractDrawerItem.textColor] property.
      */
     public var textColorRes: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.textColor = ColorHolder.fromColorRes(value)
@@ -266,10 +266,10 @@ public abstract class AbstractDrawerItemKt<out T : AbstractDrawerItem<*, *>>(pro
     /**
      * The typeface to use for the profile item's text.
      *
-     * Non readable property. Wraps the [AbstractDrawerItem.typeface] property.
+     * Non-readable property. Wraps the [AbstractDrawerItem.typeface] property.
      */
     public var typeface: Typeface
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.typeface = value

@@ -35,10 +35,10 @@ public class ExpandableDrawerItemKt :
     /**
      * The color of the expand arrow, as an argb Long.
      *
-     * Non readable property. Wraps the [ExpandableDrawerItem.arrowColor] property.
+     * Non-readable property. Wraps the [ExpandableDrawerItem.arrowColor] property.
      */
     public var arrowColor: Long
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.arrowColor = ColorHolder.fromColor(value.toInt())
@@ -47,10 +47,10 @@ public class ExpandableDrawerItemKt :
     /**
      * The color of the expand arrow, as a color resource.
      *
-     * Non readable property. Wraps the [ExpandableDrawerItem.arrowColor] property.
+     * Non-readable property. Wraps the [ExpandableDrawerItem.arrowColor] property.
      */
     public var arrowColorRes: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.arrowColor = ColorHolder.fromColorRes(value)
@@ -62,11 +62,11 @@ public class ExpandableDrawerItemKt :
      *
      * Default values are 0 and 180.
      *
-     * Non readable property. Wraps the [ExpandableDrawerItem.arrowRotationAngleStart] and
+     * Non-readable property. Wraps the [ExpandableDrawerItem.arrowRotationAngleStart] and
      * [ExpandableDrawerItem.arrowRotationAngleEnd] properties.
      */
     public var arrowRotationAngle: Pair<Int, Int>
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.apply {
@@ -86,7 +86,7 @@ public class ExpandableDrawerItemKt :
      * Wraps the [ExpandableDrawerItem.arrowRotationAngleEnd] property.
      */
     public var arrowRotationAngleEnd: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = item.arrowRotationAngleEnd
         set(value) {
             item.arrowRotationAngleEnd = value
@@ -103,7 +103,7 @@ public class ExpandableDrawerItemKt :
      * Wraps the [ExpandableDrawerItem.arrowRotationAngleStart] property.
      */
     public var arrowRotationAngleStart: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = item.arrowRotationAngleStart
         set(value) {
             item.arrowRotationAngleStart = value

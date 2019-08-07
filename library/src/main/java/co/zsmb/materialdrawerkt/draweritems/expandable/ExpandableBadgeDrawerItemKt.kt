@@ -39,10 +39,10 @@ public class ExpandableBadgeDrawerItemKt :
     /**
      * The color of the expand arrow, as an argb Long.
      *
-     * Non readable property. Wraps the [ExpandableBadgeDrawerItem.arrowColor] property.
+     * Non-readable property. Wraps the [ExpandableBadgeDrawerItem.arrowColor] property.
      */
     public var arrowColor: Long
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.arrowColor = ColorHolder.fromColor(value.toInt())
@@ -51,10 +51,10 @@ public class ExpandableBadgeDrawerItemKt :
     /**
      * The color of the expand arrow, as a color resource.
      *
-     * Non readable property. Wraps the [ExpandableBadgeDrawerItem.arrowColor] property.
+     * Non-readable property. Wraps the [ExpandableBadgeDrawerItem.arrowColor] property.
      */
     public var arrowColorRes: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.arrowColor = ColorHolder.fromColorRes(value)
@@ -66,11 +66,11 @@ public class ExpandableBadgeDrawerItemKt :
      *
      * Default values are 0 and 180.
      *
-     * Non readable property. Wraps the [ExpandableBadgeDrawerItem.arrowRotationAngleStart] and
+     * Non-readable property. Wraps the [ExpandableBadgeDrawerItem.arrowRotationAngleStart] and
      * [ExpandableBadgeDrawerItem.arrowRotationAngleEnd] properties.
      */
     public var arrowRotationAngle: Pair<Int, Int>
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.apply {
@@ -90,7 +90,7 @@ public class ExpandableBadgeDrawerItemKt :
      * Wraps the [ExpandableBadgeDrawerItem.arrowRotationAngleEnd] property.
      */
     public var arrowRotationAngleEnd: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = item.arrowRotationAngleEnd
         set(value) {
             item.arrowRotationAngleEnd = value
@@ -107,7 +107,7 @@ public class ExpandableBadgeDrawerItemKt :
      * Wraps the [ExpandableBadgeDrawerItem.arrowRotationAngleStart] property.
      */
     public var arrowRotationAngleStart: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = item.arrowRotationAngleStart
         set(value) {
             item.arrowRotationAngleStart = value
@@ -115,7 +115,7 @@ public class ExpandableBadgeDrawerItemKt :
 
     // Documentation inherited
     override var badgeHolder: StringHolder
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.withBadge(value)
@@ -123,7 +123,7 @@ public class ExpandableBadgeDrawerItemKt :
 
     // Documentation inherited
     override var badgeRes: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.withBadge(value)
@@ -131,7 +131,7 @@ public class ExpandableBadgeDrawerItemKt :
 
     // Documentation inherited
     override var badgeStyle: BadgeStyle
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.withBadgeStyle(value)
