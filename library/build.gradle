@@ -27,10 +27,10 @@ android {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    api 'com.mikepenz:materialdrawer:6.1.1'
+    api 'com.mikepenz:materialdrawer:7.0.0-rc04'
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
-    implementation 'androidx.annotation:annotation:1.0.2'
+    implementation 'androidx.annotation:annotation:1.1.0'
     implementation 'com.google.android.material:material:1.0.0'
 }
 
