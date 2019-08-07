@@ -41,7 +41,7 @@ library upload to MavenCentral:
   tags:
     - docker
   before_script:
-    - echo $GPG_KEY_CONTENTS > secret.gpg
+    - echo $GPG_KEY_CONTENTS | base64 -d > secret.gpg
   script:
     - ./gradlew library:publishReleasePublicationToSonatypeRepository closeAndReleaseRepository
   dependencies:
