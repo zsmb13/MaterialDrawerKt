@@ -37,7 +37,7 @@ dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
     implementation "com.mikepenz:crossfader:1.6.0"
     implementation 'com.mikepenz:google-material-typeface:3.0.1.2.original@aar'
