@@ -36,10 +36,9 @@ class AccountHeaderActivity : AppCompatActivity() {
 
             headerResult = accountHeader {
                 savedInstance = savedInstanceState
-                background = R.drawable.header
 
                 currentHidden = true
-                heightDp = 300
+                heightDp = 150
                 selectionSecondLine = "This is not an email!"
                 threeSmallProfileImages = true
 

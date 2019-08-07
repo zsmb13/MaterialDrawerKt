@@ -43,7 +43,6 @@ class DrawerItemTypesActivity : AppCompatActivity() {
 
             headerResult = accountHeader {
                 savedInstance = savedInstanceState
-                background = R.drawable.header
 
                 profile("Pam", "pam@gmail.com") {
                     icon = R.drawable.profile4
