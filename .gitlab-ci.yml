@@ -55,7 +55,7 @@ library upload to MavenCentral:
   before_script:
     - echo $GPG_KEY_CONTENTS > secret.gpg
   script:
-    - ./gradlew library:uploadArchives
+    - ./gradlew library:publishReleasePublicationToSonatypeRepository closeAndReleaseRepository
   dependencies:
     - library release build
   only:
