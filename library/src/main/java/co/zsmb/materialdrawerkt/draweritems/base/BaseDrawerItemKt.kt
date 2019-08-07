@@ -2,8 +2,9 @@
 
 package co.zsmb.materialdrawerkt.draweritems.base
 
-import android.graphics.Typeface
+import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
+import android.net.Uri
 import co.zsmb.materialdrawerkt.nonReadable
 import com.mikepenz.iconics.typeface.IIcon
 import com.mikepenz.materialdrawer.model.BaseDrawerItem
@@ -131,7 +132,31 @@ public abstract class BaseDrawerItemKt<out T : BaseDrawerItem<*, *>>(item: T) : 
     public var iconTintingEnabled: Boolean
         get() = item.isIconTinted
         set(value) {
-            item.withIconTintingEnabled(value)
+            item.isIconTinted = value
+        }
+
+    /**
+     * The icon of the drawer item, as an Uri.
+     *
+     * Non readable property. Wraps the [BaseDrawerItem.icon] property.
+     */
+    public var iconUri: Uri
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        get() = nonReadable()
+        set(value) {
+            item.icon = ImageHolder(value)
+        }
+
+    /**
+     * The icon of the drawer item, as a url String.
+     *
+     * Non readable property. Wraps the [BaseDrawerItem.icon] property.
+     */
+    public var iconUrl: String
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        get() = nonReadable()
+        set(value) {
+            item.icon = ImageHolder(value)
         }
 
     /**
