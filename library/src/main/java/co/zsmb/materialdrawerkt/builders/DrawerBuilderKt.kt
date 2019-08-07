@@ -38,7 +38,8 @@ public fun Activity.drawer(setup: DrawerBuilderKt.() -> Unit = {}): Drawer {
  * @return The created Drawer instance
  */
 public fun Fragment.drawer(setup: DrawerBuilderKt.() -> Unit = {}): Drawer {
-    val fragmentActivity = activity ?: throw IllegalStateException("Fragment is not attached to an Activity")
+    val fragmentActivity = activity
+            ?: throw IllegalStateException("Fragment is not attached to an Activity")
     val builder = DrawerBuilderKt(fragmentActivity)
     builder.setup()
     return builder.buildForFragment()
@@ -90,7 +91,7 @@ public class DrawerBuilderKt(val activity: Activity) : Builder {
     }
 
     @Suppress("OverridingDeprecatedMember")
-    public override fun attachItem(item: IDrawerItem<*, *>) {
+    public override fun attachItem(item: IDrawerItem<*>) {
         builder.addDrawerItems(item)
     }
 
@@ -228,7 +229,7 @@ public class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withAdapter] method.
      */
-    public var adapter: FastAdapter<IDrawerItem<out Any?, out RecyclerView.ViewHolder>>
+    public var adapter: FastAdapter<IDrawerItem<out RecyclerView.ViewHolder>>
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {

@@ -6,6 +6,7 @@ import co.zsmb.materialdrawerkt.builders.Builder
 import co.zsmb.materialdrawerkt.createItem
 import co.zsmb.materialdrawerkt.draweritems.badgeable.BadgeableKt
 import co.zsmb.materialdrawerkt.draweritems.base.BaseDescribeableDrawerItemKt
+import co.zsmb.materialdrawerkt.nonReadable
 import com.mikepenz.materialdrawer.holder.BadgeStyle
 import com.mikepenz.materialdrawer.holder.ColorHolder
 import com.mikepenz.materialdrawer.holder.StringHolder
@@ -114,21 +115,24 @@ public class ExpandableBadgeDrawerItemKt :
 
     // Documentation inherited
     override var badgeHolder: StringHolder
-        get() = item.badge
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        get() = nonReadable()
         set(value) {
             item.withBadge(value)
         }
 
     // Documentation inherited
     override var badgeRes: Int
-        get() = item.badge.textRes
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        get() = nonReadable()
         set(value) {
             item.withBadge(value)
         }
 
     // Documentation inherited
     override var badgeStyle: BadgeStyle
-        get() = item.badgeStyle
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        get() = nonReadable()
         set(value) {
             item.withBadgeStyle(value)
         }

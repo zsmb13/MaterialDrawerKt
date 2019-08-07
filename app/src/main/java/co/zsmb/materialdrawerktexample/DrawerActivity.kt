@@ -102,7 +102,7 @@ class DrawerActivity : AppCompatActivity() {
 
                 onProfileChanged { _, profile, _ ->
                     if (profile.identifier == 100_000L) {
-                        val size = headerResult.profiles.size
+                        val size = headerResult.profiles?.size ?: 0
                         val newProfile = ProfileDrawerItem()
                                 .withName("New Batman ${size - 1}")
                                 .withNameShown(true)
@@ -140,7 +140,7 @@ class DrawerActivity : AppCompatActivity() {
                 onClick(openActivity(BadgesActivity::class))
             }
 
-            sectionHeader("Original demo activities")
+            sectionHeader("Original demo Activities")
 
             primaryItem(R.string.drawer_item_compact_header, R.string.drawer_item_compact_header_desc) {
                 iicon = GoogleMaterial.Icon.gmd_brightness_5
@@ -234,7 +234,7 @@ class DrawerActivity : AppCompatActivity() {
                 }
             }
 
-            expandableItem("Collapsable Badge") {
+            expandableItem("Collapsable") {
                 iicon = MaterialDesignIconic.Icon.gmi_collection_case_play
                 identifier = 19
                 selectable = false
@@ -300,7 +300,7 @@ class DrawerActivity : AppCompatActivity() {
         false
     }
 
-    override fun onSaveInstanceState(outState: Bundle?) {
+    override fun onSaveInstanceState(outState: Bundle) {
         result.saveInstanceState(outState)
         headerResult.saveInstanceState(outState)
         super.onSaveInstanceState(outState)

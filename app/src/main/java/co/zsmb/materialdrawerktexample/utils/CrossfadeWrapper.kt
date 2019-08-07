@@ -7,6 +7,6 @@ class CrossfadeWrapper(private val mCrossfader: Crossfader<*>) : ICrossfader {
 
     override fun crossfade() = mCrossfader.crossFade()
 
-    override fun isCrossfaded() = mCrossfader.isCrossFaded()
+    override val isCrossfaded: Boolean = mCrossfader.isCrossFaded
 
 }

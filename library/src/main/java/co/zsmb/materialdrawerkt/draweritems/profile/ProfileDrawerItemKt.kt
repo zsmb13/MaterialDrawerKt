@@ -3,7 +3,6 @@
 package co.zsmb.materialdrawerkt.draweritems.profile
 
 import android.graphics.Bitmap
-import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import android.net.Uri
 import co.zsmb.materialdrawerkt.builders.AccountHeaderBuilderKt

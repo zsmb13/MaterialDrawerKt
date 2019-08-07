@@ -13,6 +13,6 @@ interface Builder {
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "Only for use with custom drawer items.")
-    fun attachItem(item: IDrawerItem<*, *>)
+    fun attachItem(item: IDrawerItem<*>)
 
 }

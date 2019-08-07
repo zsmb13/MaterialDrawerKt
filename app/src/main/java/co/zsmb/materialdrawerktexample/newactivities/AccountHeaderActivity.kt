@@ -10,10 +10,10 @@ import co.zsmb.materialdrawerkt.draweritems.profile.profile
 import co.zsmb.materialdrawerkt.draweritems.profile.profileSetting
 import co.zsmb.materialdrawerktexample.R
 import co.zsmb.materialdrawerktexample.utils.toast
-import com.mikepenz.material_design_iconic_typeface_library.MaterialDesignIconic
+import com.mikepenz.iconics.typeface.library.materialdesigniconic.MaterialDesignIconic
+import com.mikepenz.iconics.typeface.library.octicons.Octicons
 import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.Drawer
-import com.mikepenz.octicons_typeface_library.Octicons
 import kotlinx.android.synthetic.main.activity_sample.*
 
 class AccountHeaderActivity : AppCompatActivity() {
@@ -102,7 +102,7 @@ class AccountHeaderActivity : AppCompatActivity() {
                 else -> super.onOptionsItemSelected(item)
             }
 
-    override fun onSaveInstanceState(outState: Bundle?) {
+    override fun onSaveInstanceState(outState: Bundle) {
         headerResult.saveInstanceState(outState)
         result.saveInstanceState(outState)
         super.onSaveInstanceState(outState)

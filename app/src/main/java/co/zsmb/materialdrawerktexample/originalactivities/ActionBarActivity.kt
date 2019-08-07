@@ -9,7 +9,7 @@ import co.zsmb.materialdrawerkt.draweritems.badgeable.primaryItem
 import co.zsmb.materialdrawerkt.draweritems.badgeable.secondaryItem
 import co.zsmb.materialdrawerkt.draweritems.sectionHeader
 import co.zsmb.materialdrawerktexample.R
-import com.mikepenz.fontawesome_typeface_library.FontAwesome.Icon
+import com.mikepenz.iconics.typeface.library.fonrawesome.FontAwesome.Icon
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.model.interfaces.Nameable
 
@@ -41,7 +41,7 @@ class ActionBarActivity : AppCompatActivity() {
 
             onItemClick { _, _, drawerItem ->
                 if (drawerItem is Nameable<*>) {
-                    supportActionBar?.title = drawerItem.name.getText(this@ActionBarActivity)
+                    supportActionBar?.title = drawerItem.name!!.getText(this@ActionBarActivity)
                 }
                 false
             }
@@ -56,7 +56,7 @@ class ActionBarActivity : AppCompatActivity() {
                 else -> super.onOptionsItemSelected(item)
             }
 
-    override fun onSaveInstanceState(outState: Bundle?) {
+    override fun onSaveInstanceState(outState: Bundle) {
         result.saveInstanceState(outState)
         super.onSaveInstanceState(outState)
     }

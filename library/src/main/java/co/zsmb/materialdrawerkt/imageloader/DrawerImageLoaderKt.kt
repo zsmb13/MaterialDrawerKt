@@ -24,13 +24,13 @@ public fun drawerImageLoader(actions: DrawerImageLoaderKt.() -> Unit): DrawerIma
 
 public class DrawerImageLoaderKt {
 
-    private var setFunc: ((ImageView, Uri, Drawable?, String?) -> Unit)? = null
+    private var setFunc: ((ImageView, Uri, Drawable, String?) -> Unit)? = null
     private var cancelFunc: ((ImageView) -> Unit)? = null
     private var placeholderFunc: ((Context, String?) -> Drawable)? = null
 
     internal fun build() = object : AbstractDrawerImageLoader() {
 
-        private val setFunction: (ImageView, Uri, Drawable?, String?) -> Unit = setFunc
+        private val setFunction: (ImageView, Uri, Drawable, String?) -> Unit = setFunc
                 ?: throw IllegalStateException("DrawerImageLoader has to have a set function")
 
         private val cancelFunction: (ImageView) -> Unit = cancelFunc
@@ -39,7 +39,7 @@ public class DrawerImageLoaderKt {
         private val placeholderFunction = placeholderFunc
                 ?: { ctx, tag -> super.placeholder(ctx, tag) }
 
-        override fun set(imageView: ImageView, uri: Uri, placeholder: Drawable?, tag: String?) = setFunction(imageView, uri, placeholder, tag)
+        override fun set(imageView: ImageView, uri: Uri, placeholder: Drawable, tag: String?) = setFunction(imageView, uri, placeholder, tag)
 
         override fun cancel(imageView: ImageView) = cancelFunction(imageView)
 
@@ -57,7 +57,7 @@ public class DrawerImageLoaderKt {
      * @param placeholder The placeholder that can be used for the image
      * @param tag The tag of the image
      */
-    public fun set(setFunction: (imageView: ImageView, uri: Uri, placeholder: Drawable?, tag: String?) -> Unit) {
+    public fun set(setFunction: (imageView: ImageView, uri: Uri, placeholder: Drawable, tag: String?) -> Unit) {
         this.setFunc = setFunction
     }
 

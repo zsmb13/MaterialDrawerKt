@@ -10,7 +10,7 @@ import co.zsmb.materialdrawerkt.draweritems.badgeable.primaryItem
 import co.zsmb.materialdrawerkt.draweritems.badgeable.secondaryItem
 import co.zsmb.materialdrawerkt.draweritems.sectionHeader
 import co.zsmb.materialdrawerktexample.R
-import com.mikepenz.fontawesome_typeface_library.FontAwesome
+import com.mikepenz.iconics.typeface.library.fonrawesome.FontAwesome
 import com.mikepenz.materialdrawer.Drawer
 import kotlinx.android.synthetic.main.fragment_simple_sample.view.*
 
