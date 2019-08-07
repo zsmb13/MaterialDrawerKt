@@ -74,10 +74,10 @@ public class SectionDrawerItemKt : AbstractDrawerItemKt<SectionDrawerItem>(Secti
     /**
      * The title/name of the section header.
      *
-     * Non readable property. Wraps the [SectionDrawerItem.name] property.
+     * Non-readable property. Wraps the [SectionDrawerItem.name] property.
      */
     public var name: String
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.name = StringHolder(value)
@@ -86,10 +86,10 @@ public class SectionDrawerItemKt : AbstractDrawerItemKt<SectionDrawerItem>(Secti
     /**
      * The title/name of the section header, as a String resource.
      *
-     * Non readable property. Wraps the [SectionDrawerItem.withName] method.
+     * Non-readable property. Wraps the [SectionDrawerItem.withName] method.
      */
     public var nameRes: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.name = StringHolder(value)

@@ -10,7 +10,7 @@ interface BadgeableKt {
     /**
      * The text of the displayed badge, as a StringHolder.
      *
-     * Non readable property. Wraps the [com.mikepenz.materialdrawer.model.interfaces.Badgeable.withBadge] method.
+     * Non-readable property. Wraps the [com.mikepenz.materialdrawer.model.interfaces.Badgeable.withBadge] method.
      *
      * You should use [co.zsmb.materialdrawerkt.draweritems.badge] instead.
      */
@@ -21,14 +21,14 @@ interface BadgeableKt {
     /**
      * The text of the displayed badge as a String resource.
      *
-     * Non readable property. Wraps the [com.mikepenz.materialdrawer.model.interfaces.Badgeable.withBadge] method.
+     * Non-readable property. Wraps the [com.mikepenz.materialdrawer.model.interfaces.Badgeable.withBadge] method.
      */
     var badgeRes: Int
 
     /**
      * The style of the displayed badge as a BadgeStyle.
      *
-     * Non readable property. Wraps the [com.mikepenz.materialdrawer.model.interfaces.ColorfulBadgeable.withBadgeStyle]
+     * Non-readable property. Wraps the [com.mikepenz.materialdrawer.model.interfaces.ColorfulBadgeable.withBadgeStyle]
      * method.
      */
     var badgeStyle: BadgeStyle

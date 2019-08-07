@@ -16,13 +16,13 @@ public abstract class AbstractSwitchableDrawerItemKt<out T : AbstractSwitchableD
     /**
      * Whether the drawer item is selectable.
      *
-     * Non readable property. Wraps the [AbstractSwitchableDrawerItem.withCheckable] method.
+     * Non-readable property. Wraps the [AbstractSwitchableDrawerItem.withCheckable] method.
      */
     @Deprecated(level = DeprecationLevel.ERROR,
             replaceWith = ReplaceWith("selectable"),
             message = "Use the selectable property instead.")
     public var checkable: Boolean
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.withCheckable(value)

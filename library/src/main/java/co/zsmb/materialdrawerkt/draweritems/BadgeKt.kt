@@ -36,10 +36,10 @@ public class BadgeKt(text: String) {
     /**
      * The background of the badge as a Drawable.
      *
-     * Non readable property. Wraps the [BadgeStyle.withBadgeBackground] method.
+     * Non-readable property. Wraps the [BadgeStyle.withBadgeBackground] method.
      */
     public var backgroundDrawable: Drawable
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             style.withBadgeBackground(value)
@@ -48,10 +48,10 @@ public class BadgeKt(text: String) {
     /**
      * The color of the badge, as an argb Long.
      *
-     * Non readable property. Wraps the [BadgeStyle.withColor] method.
+     * Non-readable property. Wraps the [BadgeStyle.withColor] method.
      */
     public var color: Long
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             style.withColor(value.toInt())
@@ -60,10 +60,10 @@ public class BadgeKt(text: String) {
     /**
      * The color of the badge when it's tapped, as an argb Long.
      *
-     * Non readable property. Wraps the [BadgeStyle.withColorPressed] method.
+     * Non-readable property. Wraps the [BadgeStyle.withColorPressed] method.
      */
     public var colorPressed: Long
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             style.withColorPressed(value.toInt())
@@ -72,10 +72,10 @@ public class BadgeKt(text: String) {
     /**
      * The color of the badge when it's tapped, as a a color resource.
      *
-     * Non readable property. Wraps the [BadgeStyle.withColorPressedRes] method.
+     * Non-readable property. Wraps the [BadgeStyle.withColorPressedRes] method.
      */
     public var colorPressedRes: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             style.withColorPressedRes(value)
@@ -84,10 +84,10 @@ public class BadgeKt(text: String) {
     /**
      * The color of the badge, as a color resource.
      *
-     * Non readable property. Wraps the [BadgeStyle.withColor] method.
+     * Non-readable property. Wraps the [BadgeStyle.withColor] method.
      */
     public var colorRes: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             style.withColorRes(value)
@@ -96,10 +96,10 @@ public class BadgeKt(text: String) {
     /**
      * The corner radius of the badge, in dps.
      *
-     * Non readable property. Wraps the [BadgeStyle.withCornersDp] method.
+     * Non-readable property. Wraps the [BadgeStyle.withCornersDp] method.
      */
     public var cornersDp: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             style.withCornersDp(value)
@@ -108,10 +108,10 @@ public class BadgeKt(text: String) {
     /**
      * The corner radius of the badge, in pixels.
      *
-     * Non readable property. Wraps the [BadgeStyle.withCorners] method.
+     * Non-readable property. Wraps the [BadgeStyle.withCorners] method.
      */
     public var cornersPx: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             style.withCorners(value)
@@ -120,10 +120,10 @@ public class BadgeKt(text: String) {
     /**
      * The corner radius of the badge, as a dimension resource.
      *
-     * Non readable property. Wraps the [BadgeStyle.withCorners] method.
+     * Non-readable property. Wraps the [BadgeStyle.withCorners] method.
      */
     public var cornersRes: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             style.withCorners(DimenHolder.fromResource(value))
@@ -132,10 +132,10 @@ public class BadgeKt(text: String) {
     /**
      * The background of the badge as a GradientDrawable resource.
      *
-     * Non readable property. Wraps the [BadgeStyle.withGradientDrawable] method.
+     * Non-readable property. Wraps the [BadgeStyle.withGradientDrawable] method.
      */
     public var gradientDrawableRes: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             style.withGradientDrawable(value)
@@ -144,10 +144,10 @@ public class BadgeKt(text: String) {
     /**
      * The minimum width of the badge (more precisely, the badge's text), in dps.
      *
-     * Non readable property. Wraps the [BadgeStyle.withMinWidth] method.
+     * Non-readable property. Wraps the [BadgeStyle.withMinWidth] method.
      */
     public var minWidthDp: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             style.withMinWidth(DimenHolder.fromDp(value))
@@ -156,10 +156,10 @@ public class BadgeKt(text: String) {
     /**
      * The minimum width of the badge (more precisely, the badge's text), in pixels.
      *
-     * Non readable property. Wraps the [BadgeStyle.withMinWidth] method.
+     * Non-readable property. Wraps the [BadgeStyle.withMinWidth] method.
      */
     public var minWidthPx: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             style.withMinWidth(value)
@@ -168,10 +168,10 @@ public class BadgeKt(text: String) {
     /**
      * The minimum width of the badge (more precisely, the badge's text), as a dimension resource.
      *
-     * Non readable property. Wraps the [BadgeStyle.withMinWidth] method.
+     * Non-readable property. Wraps the [BadgeStyle.withMinWidth] method.
      */
     public var minWidthRes: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             style.withMinWidth(DimenHolder.fromResource(value))
@@ -180,10 +180,10 @@ public class BadgeKt(text: String) {
     /**
      * The padding of all sides of the badge, in dps.
      *
-     * Non readable property. Wraps the [BadgeStyle.withPadding] method.
+     * Non-readable property. Wraps the [BadgeStyle.withPadding] method.
      */
     public var paddingDp: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             paddingHorizontalDp = value
@@ -195,10 +195,10 @@ public class BadgeKt(text: String) {
      *
      * Replacement for paddingLeftRightDp.
      *
-     * Non readable property. Wraps the [BadgeStyle.withPaddingLeftRightDp] method.
+     * Non-readable property. Wraps the [BadgeStyle.withPaddingLeftRightDp] method.
      */
     public var paddingHorizontalDp: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             style.withPaddingLeftRightDp(value)
@@ -209,10 +209,10 @@ public class BadgeKt(text: String) {
      *
      * Replacement for paddingLeftRightPx.
      *
-     * Non readable property. Wraps the [BadgeStyle.withPaddingLeftRightPx] method.
+     * Non-readable property. Wraps the [BadgeStyle.withPaddingLeftRightPx] method.
      */
     public var paddingHorizontalPx: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             style.withPaddingLeftRightPx(value)
@@ -221,10 +221,10 @@ public class BadgeKt(text: String) {
     /**
      * The horizontal padding of the badge, as a dimension resource.
      *
-     * Non readable property. Wraps the [BadgeStyle.withPaddingLeftRightRes] method.
+     * Non-readable property. Wraps the [BadgeStyle.withPaddingLeftRightRes] method.
      */
     public var paddingHorizontalRes: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             style.withPaddingLeftRightRes(value)
@@ -233,13 +233,13 @@ public class BadgeKt(text: String) {
     /**
      * The padding of the left and right sides of the badge, in dps.
      *
-     * Non readable property. Wraps the [BadgeStyle.withPaddingLeftRightDp] method.
+     * Non-readable property. Wraps the [BadgeStyle.withPaddingLeftRightDp] method.
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             replaceWith = ReplaceWith("paddingHorizontalDp"),
             message = "Use paddingHorizontalDp instead")
     public var paddingLeftRightDp: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             style.withPaddingLeftRightDp(value)
@@ -248,13 +248,13 @@ public class BadgeKt(text: String) {
     /**
      * The padding of the left and right sides of the badge, in pixels.
      *
-     * Non readable property. Wraps the [BadgeStyle.withPaddingLeftRightPx] method.
+     * Non-readable property. Wraps the [BadgeStyle.withPaddingLeftRightPx] method.
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             replaceWith = ReplaceWith("paddingHorizontalPx"),
             message = "Use paddingHorizontalPx instead")
     public var paddingLeftRightPx: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             style.withPaddingLeftRightPx(value)
@@ -263,10 +263,10 @@ public class BadgeKt(text: String) {
     /**
      * The padding of all sides of the badge, in pixels.
      *
-     * Non readable property. Wraps the [BadgeStyle.withPadding] method.
+     * Non-readable property. Wraps the [BadgeStyle.withPadding] method.
      */
     public var paddingPx: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             style.withPadding(value)
@@ -275,10 +275,10 @@ public class BadgeKt(text: String) {
     /**
      * The padding of all sides of the badge, as a dimension resource.
      *
-     * Non readable property. Wraps the [BadgeStyle.withPadding] method.
+     * Non-readable property. Wraps the [BadgeStyle.withPadding] method.
      */
     public var paddingRes: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             paddingHorizontalRes = value
@@ -288,13 +288,13 @@ public class BadgeKt(text: String) {
     /**
      * The padding of the top and bottom of the badge, in dps.
      *
-     * Non readable property. Wraps the [BadgeStyle.withPaddingTopBottomDp] method.
+     * Non-readable property. Wraps the [BadgeStyle.withPaddingTopBottomDp] method.
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             replaceWith = ReplaceWith("paddingVerticalDp"),
             message = "Use paddingVerticalDp instead")
     public var paddingTopBottomDp: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             style.withPaddingTopBottomDp(value)
@@ -303,13 +303,13 @@ public class BadgeKt(text: String) {
     /**
      * The padding of the top and bottom of the badge, in pixels.
      *
-     * Non readable property. Wraps the [BadgeStyle.withPaddingTopBottomPx] method.
+     * Non-readable property. Wraps the [BadgeStyle.withPaddingTopBottomPx] method.
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             replaceWith = ReplaceWith("paddingVerticalPx"),
             message = "Use paddingVerticalPx instead")
     public var paddingTopBottomPx: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             style.withPaddingTopBottomPx(value)
@@ -320,10 +320,10 @@ public class BadgeKt(text: String) {
      *
      * Replacement for paddingTopBottomDp.
      *
-     * Non readable property. Wraps the [BadgeStyle.withPaddingTopBottomDp] method.
+     * Non-readable property. Wraps the [BadgeStyle.withPaddingTopBottomDp] method.
      */
     public var paddingVerticalDp: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             style.withPaddingTopBottomDp(value)
@@ -334,10 +334,10 @@ public class BadgeKt(text: String) {
      *
      * Replacement for paddingTopBottomPx.
      *
-     * Non readable property. Wraps the [BadgeStyle.withPaddingTopBottomPx] method.
+     * Non-readable property. Wraps the [BadgeStyle.withPaddingTopBottomPx] method.
      */
     public var paddingVerticalPx: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             style.withPaddingTopBottomPx(value)
@@ -346,10 +346,10 @@ public class BadgeKt(text: String) {
     /**
      * The vertical padding of the badge, as a dimension resource.
      *
-     * Non readable property. Wraps the [BadgeStyle.withPaddingTopBottomRes] method.
+     * Non-readable property. Wraps the [BadgeStyle.withPaddingTopBottomRes] method.
      */
     public var paddingVerticalRes: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             style.withPaddingTopBottomRes(value)
@@ -358,10 +358,10 @@ public class BadgeKt(text: String) {
     /**
      * The text of the badge as a String.
      *
-     * Non readable property. Wraps the [com.mikepenz.materialdrawer.model.interfaces.Badgeable.withBadge] method.
+     * Non-readable property. Wraps the [com.mikepenz.materialdrawer.model.interfaces.Badgeable.withBadge] method.
      */
     public var text: String
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             holder = StringHolder(value)
@@ -370,10 +370,10 @@ public class BadgeKt(text: String) {
     /**
      * The color of the badge's text, as an argb Long.
      *
-     * Non readable property. Wraps the [BadgeStyle.withTextColor] method.
+     * Non-readable property. Wraps the [BadgeStyle.withTextColor] method.
      */
     public var textColor: Long
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             style.withTextColor(value.toInt())
@@ -382,10 +382,10 @@ public class BadgeKt(text: String) {
     /**
      * The color of the badge's text, as a color resource.
      *
-     * Non readable property. Wraps the [BadgeStyle.withTextColorRes] method.
+     * Non-readable property. Wraps the [BadgeStyle.withTextColorRes] method.
      */
     public var textColorRes: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             style.withTextColorRes(value)
@@ -394,10 +394,10 @@ public class BadgeKt(text: String) {
     /**
      * The text of the badge as a String resource.
      *
-     * Non readable property. Wraps the [com.mikepenz.materialdrawer.model.interfaces.Badgeable.withBadge] method.
+     * Non-readable property. Wraps the [com.mikepenz.materialdrawer.model.interfaces.Badgeable.withBadge] method.
      */
     public var textRes: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             holder.textRes = value

@@ -215,7 +215,7 @@ primaryItem("Item name") {
  
 Calls to `.withXyz()` functions are replaced with properties that you can set. For a complete reference of the wrapper methods and properties, see the [list in the wiki](https://github.com/zsmb13/MaterialDrawerKt/wiki/Wrappers). 
 
-Very few of these are readable. If you want to read these at build time for some reason, check the documentation. Non readable properties should be deprecated and not compile, but if they do, they will throw a `NonReadablePropertyException` if you attempt to read their value.
+Very few of these are readable. If you want to read these at build time for some reason, check the documentation. Non-readable properties should be deprecated and not compile, but if they do, they will throw a `NonReadablePropertyException` if you attempt to read their value.
 
 For an example...
 
