@@ -5,6 +5,7 @@ package co.zsmb.materialdrawerkt.draweritems.switchable
 import android.widget.CompoundButton
 import co.zsmb.materialdrawerkt.draweritems.base.BaseDescribeableDrawerItemKt
 import co.zsmb.materialdrawerkt.nonReadable
+import com.mikepenz.materialdrawer.interfaces.OnCheckedChangeListener
 import com.mikepenz.materialdrawer.model.AbstractSwitchableDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 
@@ -31,12 +32,12 @@ public abstract class AbstractSwitchableDrawerItemKt<out T : AbstractSwitchableD
      * Whether the drawer item's switch is currently in its "on" state.
      * Default value is false.
      *
-     * Wraps the [AbstractSwitchableDrawerItem.withChecked] and [AbstractSwitchableDrawerItem.isChecked] methods.
+     * Wraps the [AbstractSwitchableDrawerItem.isChecked] property.
      */
     public var checked: Boolean
         get() = item.isChecked
         set(value) {
-            item.withChecked(value)
+            item.isChecked = value
         }
 
     /**
@@ -51,8 +52,12 @@ public abstract class AbstractSwitchableDrawerItemKt<out T : AbstractSwitchableD
     @Deprecated(level = DeprecationLevel.ERROR,
             replaceWith = ReplaceWith("onSwitchChanged(handler)"),
             message = "Use onSwitchChanged instead.")
-    public fun onCheckedChange(handler: (drawerItem: IDrawerItem<*, *>, button: CompoundButton, isChecked: Boolean) -> Unit) {
-        item.withOnCheckedChangeListener(handler)
+    public fun onCheckedChange(handler: (drawerItem: IDrawerItem<*>, buttonView: CompoundButton, isChecked: Boolean) -> Unit) {
+        item.withOnCheckedChangeListener(object : OnCheckedChangeListener {
+            override fun onCheckedChanged(drawerItem: IDrawerItem<*>, buttonView: CompoundButton, isChecked: Boolean) {
+                handler(drawerItem, buttonView, isChecked)
+            }
+        })
     }
 
     /**
@@ -64,8 +69,13 @@ public abstract class AbstractSwitchableDrawerItemKt<out T : AbstractSwitchableD
      * @param button The CompoundButton View whose state has changed
      * @param isEnabled True if the switch is now in an "on" state
      */
-    public fun onSwitchChanged(handler: (drawerItem: IDrawerItem<*, *>, button: CompoundButton, isEnabled: Boolean) -> Unit) {
-        item.withOnCheckedChangeListener(handler)
+    @Suppress("MemberVisibilityCanBePrivate")
+    public fun onSwitchChanged(handler: (drawerItem: IDrawerItem<*>, buttonView: CompoundButton, isEnabled: Boolean) -> Unit) {
+        item.withOnCheckedChangeListener(object : OnCheckedChangeListener {
+            override fun onCheckedChanged(drawerItem: IDrawerItem<*>, buttonView: CompoundButton, isChecked: Boolean) {
+                handler(drawerItem, buttonView, isChecked)
+            }
+        })
     }
 
     /**
@@ -78,22 +88,23 @@ public abstract class AbstractSwitchableDrawerItemKt<out T : AbstractSwitchableD
      * @param isEnabled True if the switch is now in an "on" state
      */
     public fun onToggled(handler: (isEnabled: Boolean) -> Unit) {
-        item.withOnCheckedChangeListener { _, _, isEnabled ->
-            handler(isEnabled)
-        }
+        item.withOnCheckedChangeListener(object : OnCheckedChangeListener {
+            override fun onCheckedChanged(drawerItem: IDrawerItem<*>, buttonView: CompoundButton, isChecked: Boolean) {
+                handler(isChecked)
+            }
+        })
     }
 
     /**
      * Whether the drawer item's switch can be toggled by the user.
      * Default value is true.
      *
-     * Wraps the [AbstractSwitchableDrawerItem.withSwitchEnabled] and [AbstractSwitchableDrawerItem.isSwitchEnabled]
-     * methods.
+     * Wraps the [AbstractSwitchableDrawerItem.isSwitchEnabled] property.
      */
     public var switchEnabled: Boolean
         get() = item.isSwitchEnabled
         set(value) {
-            item.withSwitchEnabled(value)
+            item.isSwitchEnabled = value
         }
 
 }

@@ -2,6 +2,6 @@
 
 package co.zsmb.materialdrawerkt
 
-class NonReadablePropertyException : Exception()
+class NonReadablePropertyException : UnsupportedOperationException()
 
 fun nonReadable(): Nothing = throw NonReadablePropertyException()

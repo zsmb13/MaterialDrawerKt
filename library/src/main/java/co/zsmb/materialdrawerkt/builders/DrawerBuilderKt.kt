@@ -38,7 +38,8 @@ public fun Activity.drawer(setup: DrawerBuilderKt.() -> Unit = {}): Drawer {
  * @return The created Drawer instance
  */
 public fun Fragment.drawer(setup: DrawerBuilderKt.() -> Unit = {}): Drawer {
-    val fragmentActivity = activity ?: throw IllegalStateException("Fragment is not attached to an Activity")
+    val fragmentActivity = activity
+            ?: throw IllegalStateException("Fragment is not attached to an Activity")
     val builder = DrawerBuilderKt(fragmentActivity)
     builder.setup()
     return builder.buildForFragment()
@@ -90,7 +91,7 @@ public class DrawerBuilderKt(val activity: Activity) : Builder {
     }
 
     @Suppress("OverridingDeprecatedMember")
-    public override fun attachItem(item: IDrawerItem<*, *>) {
+    public override fun attachItem(item: IDrawerItem<*>) {
         builder.addDrawerItems(item)
     }
 
@@ -228,7 +229,7 @@ public class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * Non readable property. Wraps the [DrawerBuilder.withAdapter] method.
      */
-    public var adapter: FastAdapter<IDrawerItem<out Any?, out RecyclerView.ViewHolder>>
+    public var adapter: FastAdapter<IDrawerItem<out RecyclerView.ViewHolder>>
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
@@ -727,7 +728,11 @@ public class DrawerBuilderKt(val activity: Activity) : Builder {
      * @param position The position of the clicked item within the drawer
      */
     public fun onItemClick(handler: (position: Int) -> Boolean) {
-        builder.withOnDrawerItemClickListener { _, position, _ -> handler(position) }
+        builder.withOnDrawerItemClickListener(object : Drawer.OnDrawerItemClickListener {
+            override fun onItemClick(view: View?, position: Int, drawerItem: IDrawerItem<*>): Boolean {
+                return handler(position)
+            }
+        })
     }
 
     /**
@@ -742,8 +747,12 @@ public class DrawerBuilderKt(val activity: Activity) : Builder {
      * @param position The position of the clicked item within the drawer
      * @param drawerItem The clicked drawer item
      */
-    public fun onItemClick(handler: (view: View?, position: Int, drawerItem: IDrawerItem<*, *>) -> Boolean) {
-        builder.withOnDrawerItemClickListener(handler)
+    public fun onItemClick(handler: (view: View?, position: Int, drawerItem: IDrawerItem<*>) -> Boolean) {
+        builder.withOnDrawerItemClickListener(object : Drawer.OnDrawerItemClickListener {
+            override fun onItemClick(view: View?, position: Int, drawerItem: IDrawerItem<*>): Boolean {
+                return handler(view, position, drawerItem)
+            }
+        })
     }
 
     /**
@@ -756,7 +765,11 @@ public class DrawerBuilderKt(val activity: Activity) : Builder {
      * @param position The position of the clicked item within the drawer
      */
     public fun onItemLongClick(handler: (position: Int) -> Boolean) {
-        builder.withOnDrawerItemLongClickListener { _, position, _ -> handler(position) }
+        builder.withOnDrawerItemLongClickListener(object : Drawer.OnDrawerItemLongClickListener {
+            override fun onItemLongClick(view: View, position: Int, drawerItem: IDrawerItem<*>): Boolean {
+                return handler(position)
+            }
+        })
     }
 
     /**
@@ -771,8 +784,12 @@ public class DrawerBuilderKt(val activity: Activity) : Builder {
      * @param position The position of the clicked item within the drawer
      * @param drawerItem The clicked drawer item
      */
-    public fun onItemLongClick(handler: (view: View, position: Int, drawerItem: IDrawerItem<*, *>) -> Boolean) {
-        builder.withOnDrawerItemLongClickListener(handler)
+    public fun onItemLongClick(handler: (view: View, position: Int, drawerItem: IDrawerItem<*>) -> Boolean) {
+        builder.withOnDrawerItemLongClickListener(object : Drawer.OnDrawerItemLongClickListener {
+            override fun onItemLongClick(view: View, position: Int, drawerItem: IDrawerItem<*>): Boolean {
+                return handler(view, position, drawerItem)
+            }
+        })
     }
 
     /**
@@ -782,8 +799,12 @@ public class DrawerBuilderKt(val activity: Activity) : Builder {
      *
      * @param handler the handler to call on navigation. Should return true if the event has been handled.
      */
-    public fun onNavigation(handler: (view: View) -> Boolean) {
-        builder.withOnDrawerNavigationListener(handler)
+    public fun onNavigation(handler: (clickedView: View) -> Boolean) {
+        builder.withOnDrawerNavigationListener(object : Drawer.OnDrawerNavigationListener {
+            override fun onNavigationClickListener(clickedView: View): Boolean {
+                return handler(clickedView)
+            }
+        })
     }
 
     /**

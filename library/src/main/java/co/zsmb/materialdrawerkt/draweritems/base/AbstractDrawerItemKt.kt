@@ -2,11 +2,16 @@
 
 package co.zsmb.materialdrawerkt.draweritems.base
 
+import android.graphics.Typeface
 import android.view.View
 import co.zsmb.materialdrawerkt.DrawerMarker
 import co.zsmb.materialdrawerkt.builders.Builder
+import co.zsmb.materialdrawerkt.nonReadable
+import com.mikepenz.materialdrawer.Drawer
+import com.mikepenz.materialdrawer.holder.ColorHolder
 import com.mikepenz.materialdrawer.model.AbstractDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
+import com.mikepenz.materialdrawer.model.interfaces.OnPostBindViewListener
 
 @DrawerMarker
 public abstract class AbstractDrawerItemKt<out T : AbstractDrawerItem<*, *>>(protected val item: T) : Builder {
@@ -14,8 +19,8 @@ public abstract class AbstractDrawerItemKt<out T : AbstractDrawerItem<*, *>>(pro
     //region Builder basics
 
     @Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE", "OverridingDeprecatedMember")
-    public override fun attachItem(subItem: IDrawerItem<*, *>) {
-        item.withSubItems(subItem)
+    public override fun attachItem(subItem: IDrawerItem<*>) {
+        item.subItems.add(subItem)
     }
 
     internal fun build(): T = item
@@ -23,38 +28,72 @@ public abstract class AbstractDrawerItemKt<out T : AbstractDrawerItem<*, *>>(pro
     //endregion
 
     //region AbstractDrawerItem methods
+    /**
+     * Defines the content description of the item.
+     *
+     * Wraps the [AbstractDrawerItem.contentDescription] property.
+     */
+    public var contentDescription: String?
+        get() = item.contentDescription
+        set(value) {
+            item.contentDescription = value
+        }
+
+    /**
+     * The color of the drawer item's text when it's disabled, as an argb Long.
+     *
+     * Non readable property. Wraps the [AbstractDrawerItem.disabledTextColor] property.
+     */
+    public var disabledTextColor: Long
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        get() = nonReadable()
+        set(value) {
+            item.disabledTextColor = ColorHolder.fromColor(value.toInt())
+        }
+
+    /**
+     * The color of the drawer item's text when it's disabled, as a color resource.
+     *
+     * Non readable property. Wraps the [AbstractDrawerItem.disabledTextColor] property.
+     */
+    public var disabledTextColorRes: Int
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        get() = nonReadable()
+        set(value) {
+            item.disabledTextColor = ColorHolder.fromColorRes(value)
+        }
 
     /**
      * Whether the drawer item is enabled (clickable, etc.).
      *
-     * Wraps the [AbstractDrawerItem.withEnabled] and [AbstractDrawerItem.isEnabled] methods.
+     * Wraps the [AbstractDrawerItem.isEnabled] property.
      */
     public var enabled: Boolean
         get() = item.isEnabled
         set(value) {
-            item.withEnabled(value)
+            item.isEnabled = value
         }
 
     /**
      * The identifier of the drawer item. Default value is -1L.
      *
-     * Wraps the [AbstractDrawerItem.withIdentifier] and [AbstractDrawerItem.getIdentifier] methods.
+     * Wraps the [AbstractDrawerItem.identifier] property.
      */
     public var identifier: Long
         get() = item.identifier
         set(value) {
-            item.withIdentifier(value)
+            item.identifier = value
         }
 
     /**
      * Whether the subitems of this item are visible.
      *
-     * Wraps the [AbstractDrawerItem.withIsExpanded] and [AbstractDrawerItem.isExpanded] methods.
+     * Wraps the [AbstractDrawerItem.isExpanded] property.
      */
     public var isExpanded: Boolean
         get() = item.isExpanded
         set(value) {
-            item.withIsExpanded(value)
+            item.isExpanded = value
         }
 
     /**
@@ -66,8 +105,12 @@ public abstract class AbstractDrawerItemKt<out T : AbstractDrawerItem<*, *>>(pro
      * @param drawerItem The drawer item itself
      * @param view The view which has been created for the drawer item
      */
-    public fun onBindView(handler: (drawerItem: IDrawerItem<*, *>, view: View) -> Unit) {
-        item.withPostOnBindViewListener(handler)
+    public fun onBindView(handler: (drawerItem: IDrawerItem<*>, view: View) -> Unit) {
+        item.withPostOnBindViewListener(object : OnPostBindViewListener {
+            override fun onBindView(drawerItem: IDrawerItem<*>, view: View) {
+                handler(drawerItem, view)
+            }
+        })
     }
 
     /**
@@ -78,7 +121,11 @@ public abstract class AbstractDrawerItemKt<out T : AbstractDrawerItem<*, *>>(pro
      * Wraps the [AbstractDrawerItem.withOnDrawerItemClickListener] method.
      */
     public fun onClick(handler: (view: View?) -> Boolean) {
-        item.withOnDrawerItemClickListener { view, _, _ -> handler(view) }
+        item.withOnDrawerItemClickListener(object : Drawer.OnDrawerItemClickListener {
+            override fun onItemClick(view: View?, position: Int, drawerItem: IDrawerItem<*>): Boolean {
+                return handler(view)
+            }
+        })
     }
 
     /**
@@ -92,71 +139,141 @@ public abstract class AbstractDrawerItemKt<out T : AbstractDrawerItem<*, *>>(pro
      * @param position The position of the item within the drawer
      * @param drawerItem The drawer item itself
      */
-    public fun onClick(handler: (view: View?, position: Int, drawerItem: IDrawerItem<*, *>) -> Boolean) {
-        item.withOnDrawerItemClickListener(handler)
+    public fun onClick(handler: (view: View?, position: Int, drawerItem: IDrawerItem<*>) -> Boolean) {
+        item.withOnDrawerItemClickListener(object : Drawer.OnDrawerItemClickListener {
+            override fun onItemClick(view: View?, position: Int, drawerItem: IDrawerItem<*>): Boolean {
+                return handler(view, position, drawerItem)
+            }
+        })
     }
 
     /**
      * Whether the drawer item is selectable.
      *
-     * Wraps the [AbstractDrawerItem.withSelectable] and [AbstractDrawerItem.isSelectable] methods.
+     * Wraps the [AbstractDrawerItem.isSelectable] property.
      */
     public var selectable: Boolean
         get() = item.isSelectable
         set(value) {
-            item.withSelectable(value)
+            item.isSelectable = value
         }
 
     /**
      * Whether the drawer item is selected.
      *
-     * Convenience for [setSelected]. Wraps the [AbstractDrawerItem.withSetSelected] and [AbstractDrawerItem.isSelected]
-     * methods.
+     * Wraps the [AbstractDrawerItem.isSelected] property.
      */
     public var selected: Boolean
         get() = item.isSelected
         set(value) {
-            item.withSetSelected(value)
+            item.isSelected = value
         }
 
     /**
      * Whether the drawer item's background should have a fade animation between the selected and unselected states.
      *
-     * Wraps the [AbstractDrawerItem.withSelectedBackgroundAnimated] and
-     * [AbstractDrawerItem.isSelectedBackgroundAnimated] methods.
+     * Wraps the [AbstractDrawerItem.isSelectedBackgroundAnimated] property.
      */
     public var selectedBackgroundAnimated: Boolean
         get() = item.isSelectedBackgroundAnimated
         set(value) {
-            item.withSelectedBackgroundAnimated(value)
+            item.isSelectedBackgroundAnimated = value
         }
 
     /**
-     * Whether the drawer item should be set as selected.
+     * The color of the profile item in the profile switcher list when it's selected, as an argb Long.
      *
-     * See [selected] as an alternative.
-     *
-     * Wraps the [AbstractDrawerItem.withSetSelected] and [AbstractDrawerItem.isSelected] methods.
+     * Non readable property. Wraps the [AbstractDrawerItem.selectedColor] property.
      */
-    @Deprecated(level = DeprecationLevel.WARNING,
-            message = "Alternatives are available, check the documentation.")
-    public var setSelected: Boolean
-        get() = item.isSelected
+    public var selectedColor: Long
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        get() = nonReadable()
         set(value) {
-            item.withSetSelected(value)
+            item.selectedColor = ColorHolder.fromColor(value.toInt())
+        }
+
+    /**
+     * The color of the profile item in the profile switcher list when it's selected, as a color resource.
+     *
+     * Non readable property. Wraps the [AbstractDrawerItem.selectedColor] property.
+     */
+    public var selectedColorRes: Int
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        get() = nonReadable()
+        set(value) {
+            item.selectedColor = ColorHolder.fromColorRes(value)
+        }
+
+    /**
+     * The color of the profile item's text in the profile switcher list when it's selected, as an argb Long.
+     *
+     * Non readable property. Wraps the [AbstractDrawerItem.selectedTextColor] property.
+     */
+    public var selectedTextColor: Long
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        get() = nonReadable()
+        set(value) {
+            item.selectedTextColor = ColorHolder.fromColor(value.toInt())
+        }
+
+    /**
+     * The color of the profile item's text in the profile switcher list when it's selected, as a color resource.
+     *
+     * Non readable property. Wraps the [AbstractDrawerItem.selectedTextColor] property.
+     */
+    public var selectedTextColorRes: Int
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        get() = nonReadable()
+        set(value) {
+            item.selectedTextColor = ColorHolder.fromColorRes(value)
         }
 
     /**
      * An arbitrary object you can attach to the drawer item.
      *
-     * Wraps the [AbstractDrawerItem.withTag] and [AbstractDrawerItem.getTag] methods.
+     * Wraps the [AbstractDrawerItem.tag] property.
      */
     public var tag: Any?
         get() = item.tag
         set(value) {
-            item.withTag(value)
+            item.tag = value
         }
 
+    /**
+     * The color of the drawer item's text, as an argb Long.
+     *
+     * Non readable property. Wraps the [AbstractDrawerItem.textColor] property.
+     */
+    public var textColor: Long
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        get() = nonReadable()
+        set(value) {
+            item.textColor = ColorHolder.fromColor(value.toInt())
+        }
+
+    /**
+     * The color of the drawer item's text, as a color resource.
+     *
+     * Non readable property. Wraps the [AbstractDrawerItem.textColor] property.
+     */
+    public var textColorRes: Int
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        get() = nonReadable()
+        set(value) {
+            item.textColor = ColorHolder.fromColorRes(value)
+        }
+
+    /**
+     * The typeface to use for the profile item's text.
+     *
+     * Non readable property. Wraps the [AbstractDrawerItem.typeface] property.
+     */
+    public var typeface: Typeface
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        get() = nonReadable()
+        set(value) {
+            item.typeface = value
+        }
     //endregion
 
 }

@@ -11,6 +11,8 @@ interface BadgeableKt {
      * The text of the displayed badge, as a StringHolder.
      *
      * Non readable property. Wraps the [com.mikepenz.materialdrawer.model.interfaces.Badgeable.withBadge] method.
+     *
+     * You should use [co.zsmb.materialdrawerkt.draweritems.badge] instead.
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "This property is for internal use. Use the badgeRes property or the badge method instead.")

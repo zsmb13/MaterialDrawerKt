@@ -28,18 +28,18 @@ fun Builder.overflowMenuItem(
 // Wrapper class for nice DSL access
 class OverflowMenuDrawerItemKt : BaseDescribeableDrawerItemKt<OverflowMenuDrawerItem>(OverflowMenuDrawerItem()) {
 
-    var menu
+    var menuRes: Int
         get() = item.menu
         set(value) {
-            item.menu = value
+            item.withMenu(value)
         }
 
     fun onDismiss(handler: (PopupMenu) -> Unit) {
-        item.onDismissListener = PopupMenu.OnDismissListener { handler(it) }
+        item.withOnDismissListener(PopupMenu.OnDismissListener { handler(it) })
     }
 
     fun onMenuItemClick(handler: (MenuItem) -> Boolean) {
-        item.onMenuItemClickListener = PopupMenu.OnMenuItemClickListener { handler(it) }
+        item.withOnMenuItemClickListener(PopupMenu.OnMenuItemClickListener { handler(it) })
     }
 
 }

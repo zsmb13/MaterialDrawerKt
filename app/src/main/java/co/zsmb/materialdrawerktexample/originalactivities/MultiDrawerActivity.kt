@@ -11,7 +11,7 @@ import co.zsmb.materialdrawerkt.draweritems.badgeable.secondaryItem
 import co.zsmb.materialdrawerkt.draweritems.sectionHeader
 import co.zsmb.materialdrawerktexample.R
 import co.zsmb.materialdrawerktexample.utils.toast
-import com.mikepenz.fontawesome_typeface_library.FontAwesome
+import com.mikepenz.iconics.typeface.library.fonrawesome.FontAwesome
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.Badgeable
@@ -73,7 +73,7 @@ class MultiDrawerActivity : AppCompatActivity() {
 
             onItemClick { _, _, drawerItem ->
                 if (drawerItem is Nameable<*>) {
-                    toast(drawerItem.name.getText(this@MultiDrawerActivity))
+                    toast(drawerItem.name!!.getText(this@MultiDrawerActivity))
                 }
                 if (drawerItem is Badgeable<*>) {
                     drawerItem.badge?.let {
@@ -86,7 +86,7 @@ class MultiDrawerActivity : AppCompatActivity() {
 
             onItemLongClick { _, _, drawerItem ->
                 if (drawerItem is SecondaryDrawerItem) {
-                    toast(drawerItem.name.getText(this@MultiDrawerActivity))
+                    toast(drawerItem.name!!.getText(this@MultiDrawerActivity))
                 }
                 false
             }
@@ -112,7 +112,7 @@ class MultiDrawerActivity : AppCompatActivity() {
 
             onItemClick { _, _, drawerItem ->
                 if (drawerItem is Nameable<*>) {
-                    toast(drawerItem.name.getText(this@MultiDrawerActivity))
+                    toast(drawerItem.name!!.getText(this@MultiDrawerActivity))
                 }
                 false
             }
@@ -127,7 +127,7 @@ class MultiDrawerActivity : AppCompatActivity() {
                 else -> super.onOptionsItemSelected(item)
             }
 
-    override fun onSaveInstanceState(outState: Bundle?) {
+    override fun onSaveInstanceState(outState: Bundle) {
         result.saveInstanceState(outState)
         resultAppended.saveInstanceState(outState)
         super.onSaveInstanceState(outState)

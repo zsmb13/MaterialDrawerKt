@@ -3,13 +3,15 @@
 package co.zsmb.materialdrawerkt.draweritems.profile
 
 import android.graphics.Bitmap
-import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import android.net.Uri
 import co.zsmb.materialdrawerkt.builders.AccountHeaderBuilderKt
 import co.zsmb.materialdrawerkt.draweritems.base.AbstractDrawerItemKt
 import co.zsmb.materialdrawerkt.nonReadable
 import com.mikepenz.iconics.typeface.IIcon
+import com.mikepenz.materialdrawer.holder.ColorHolder
+import com.mikepenz.materialdrawer.holder.ImageHolder
+import com.mikepenz.materialdrawer.holder.StringHolder
 import com.mikepenz.materialdrawer.model.ProfileSettingDrawerItem
 
 /**
@@ -71,25 +73,25 @@ public class ProfileSettingDrawerItemKt : AbstractDrawerItemKt<ProfileSettingDra
     /**
      * The color of the profile setting item's description, as an argb Long.
      *
-     * Non readable property. Wraps the [ProfileSettingDrawerItem.withDescriptionTextColor] method.
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.descriptionTextColor] property.
      */
     public var descriptionTextColor: Long
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            item.withDescriptionTextColor(value.toInt())
+            item.descriptionTextColor = ColorHolder.fromColor(value.toInt())
         }
 
     /**
      * The color of the profile setting item's description, as a color resource.
      *
-     * Non readable property. Wraps the [ProfileSettingDrawerItem.withDescriptionTextColor] method.
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.descriptionTextColor] property.
      */
     public var descriptionTextColorRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            item.withDescriptionTextColorRes(value)
+            item.descriptionTextColor = ColorHolder.fromColorRes(value)
         }
 
     /**
@@ -99,72 +101,72 @@ public class ProfileSettingDrawerItemKt : AbstractDrawerItemKt<ProfileSettingDra
      */
     @Deprecated(level = DeprecationLevel.ERROR,
             replaceWith = ReplaceWith("description"),
-            message = "Only here for discoverability. Use the description property instead")
+            message = "Only here for discoverability. Use the description properties instead")
     public var email: String
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            item.withEmail(value)
+            item.email = StringHolder(value)
         }
 
     /**
      * The icon of the profile setting, as a drawable resource.
      *
-     * Convenience for [iconRes]. Non readable property. Wraps the [ProfileSettingDrawerItem.withIcon] method.
+     * Convenience for [iconRes]. Non readable property. Wraps the [ProfileSettingDrawerItem.icon] property.
      */
     public var icon: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            item.withIcon(value)
+            item.icon = ImageHolder(value)
         }
 
     /**
      * The icon of the profile setting, as a Bitmap.
      *
-     * Non readable property. Wraps the [ProfileSettingDrawerItem.withIcon] method.
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.icon] property.
      */
     public var iconBitmap: Bitmap
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            item.withIcon(value)
+            item.icon = ImageHolder(value)
         }
 
     /**
      * The color of the profile setting item's icon, as an argb Long.
      *
-     * Non readable property. Wraps the [ProfileSettingDrawerItem.withIconColor] method.
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.iconColor] property.
      */
     public var iconColor: Long
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            item.withIconColor(value.toInt())
+            item.iconColor = ColorHolder.fromColor(value.toInt())
         }
 
     /**
      * The color of the profile setting item's icon, as a color resource.
      *
-     * Non readable property. Wraps the [ProfileSettingDrawerItem.withIconColor] method.
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.iconColor] property.
      */
     public var iconColorRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            item.withIconColorRes(value)
+            item.iconColor = ColorHolder.fromColorRes(value)
         }
 
     /**
      * The icon of the profile setting, as a Drawable.
      *
-     * Non readable property. Wraps the [ProfileSettingDrawerItem.withIcon] method.
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.icon] property.
      */
     public var iconDrawable: Drawable
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            item.withIcon(value)
+            item.icon = ImageHolder(value)
         }
 
     /**
@@ -172,7 +174,7 @@ public class ProfileSettingDrawerItemKt : AbstractDrawerItemKt<ProfileSettingDra
      *
      * See [icon] as an alternative.
      *
-     * Non readable property. Wraps the [ProfileSettingDrawerItem.withIcon] method.
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.icon] property.
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "Alternatives are available, check the documentation.")
@@ -180,43 +182,43 @@ public class ProfileSettingDrawerItemKt : AbstractDrawerItemKt<ProfileSettingDra
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            item.withIcon(value)
+            item.icon = ImageHolder(value)
         }
 
     /**
      * The icon of the profile setting, as an Uri.
      *
-     * Non readable property. Wraps the [ProfileSettingDrawerItem.withIcon] method.
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.icon] property.
      */
     public var iconUri: Uri
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            item.withIcon(value)
+            item.icon = ImageHolder(value)
         }
 
     /**
      * The icon of the profile setting, as a url String.
      *
-     * Non readable property. Wraps the [ProfileSettingDrawerItem.withIcon] method.
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.icon] property.
      */
     public var iconUrl: String
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            item.withIcon(value)
+            item.icon = ImageHolder(value)
         }
 
     /**
      * The icon of the profile setting, as an IIcon.
      *
-     * Non readable property. Wraps the [ProfileSettingDrawerItem.withIcon] method.
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.icon] property.
      */
     public var iicon: IIcon
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            item.withIcon(value)
+            item.icon = ImageHolder(value)
         }
 
     /**
@@ -224,96 +226,36 @@ public class ProfileSettingDrawerItemKt : AbstractDrawerItemKt<ProfileSettingDra
      * false, your icon will always be displayed with its default colors.
      * Default value is false.
      *
-     * Wraps the [ProfileSettingDrawerItem.withIconTinted] and [ProfileSettingDrawerItem.isIconTinted] methods.
+     * Wraps the [ProfileSettingDrawerItem.isIconTinted] property.
      */
     public var iconTinted: Boolean
         get() = item.isIconTinted
         set(value) {
-            item.withIconTinted(value)
+            item.isIconTinted = value
         }
 
     /**
      * The name of the profile setting.
      *
-     * Non readable property. Wraps the [ProfileSettingDrawerItem.withName] method.
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.name] property.
      */
     public var name: CharSequence
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            item.withName(value)
+            item.name = StringHolder(value)
         }
 
     /**
      * The name of the profile setting, as a String resource.
      *
-     * Non readable property. Wraps the [ProfileSettingDrawerItem.withName] method.
+     * Non readable property. Wraps the [ProfileSettingDrawerItem.name] property.
      */
     public var nameRes: Int
         @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
         get() = nonReadable()
         set(value) {
-            item.withName(value)
-        }
-
-    /**
-     * The color of the profile setting item in the profile switcher list when it's selected, as an argb Long.
-     *
-     * Non readable property. Wraps the [ProfileSettingDrawerItem.withSelectedColor] method.
-     */
-    public var selectedColor: Long
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
-        get() = nonReadable()
-        set(value) {
-            item.withSelectedColor(value.toInt())
-        }
-
-    /**
-     * The color of the profile setting item in the profile switcher list when it's selected, as a color resource.
-     *
-     * Non readable property. Wraps the [ProfileSettingDrawerItem.withSelectedColorRes] method.
-     */
-    public var selectedColorRes: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
-        get() = nonReadable()
-        set(value) {
-            item.withSelectedColorRes(value)
-        }
-
-    /**
-     *The color of the profile setting item's text in the profile switcher list, as an argb Long.
-     *
-     * Non readable property. Wraps the [ProfileSettingDrawerItem.withTextColor] method.
-     */
-    public var textColor: Long
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
-        get() = nonReadable()
-        set(value) {
-            item.withTextColor(value.toInt())
-        }
-
-    /**
-     * The color of the profile setting item's text in the profile switcher list, as a color resource.
-     *
-     * Non readable property. Wraps the [ProfileSettingDrawerItem.withTextColorRes] method.
-     */
-    public var textColorRes: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
-        get() = nonReadable()
-        set(value) {
-            item.withTextColorRes(value)
-        }
-
-    /**
-     * The typeface to use for the profile setting item's text.
-     *
-     * Non readable property. Wraps the [ProfileSettingDrawerItem.withTypeface] method.
-     */
-    public var typeface: Typeface
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
-        get() = nonReadable()
-        set(value) {
-            item.withTypeface(value)
+            item.name = StringHolder(value)
         }
 
 }

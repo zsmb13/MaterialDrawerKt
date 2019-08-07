@@ -370,7 +370,11 @@ public class AccountHeaderBuilderKt(activity: Activity) {
      * @param current Whether the clicked profile is the currently selected one
      */
     fun onItemLongClick(handler: (view: View, profile: IProfile<*>, current: Boolean) -> Boolean) {
-        builder.withOnAccountHeaderItemLongClickListener(handler)
+        builder.withOnAccountHeaderItemLongClickListener(object : AccountHeader.OnAccountHeaderItemLongClickListener {
+            override fun onProfileLongClick(view: View, profile: IProfile<*>, current: Boolean): Boolean {
+                return handler(view, profile, current)
+            }
+        })
     }
 
     /**
@@ -411,8 +415,12 @@ public class AccountHeaderBuilderKt(activity: Activity) {
      * @param profile The profile that was clicked
      * @param current Whether the clicked profile is the currently selected one
      */
-    fun onProfileChanged(handler: (view: View, profile: IProfile<*>, current: Boolean) -> Boolean) {
-        builder.withOnAccountHeaderListener(handler)
+    fun onProfileChanged(handler: (view: View?, profile: IProfile<*>, current: Boolean) -> Boolean) {
+        builder.withOnAccountHeaderListener(object : AccountHeader.OnAccountHeaderListener {
+            override fun onProfileChanged(view: View?, profile: IProfile<*>, current: Boolean): Boolean {
+                return handler(view, profile, current)
+            }
+        })
     }
 
     /**
@@ -454,7 +462,11 @@ public class AccountHeaderBuilderKt(activity: Activity) {
      * @param profile The currently selected profile
      */
     fun onSelectionViewClick(handler: (view: View, profile: IProfile<*>) -> Boolean) {
-        builder.withOnAccountHeaderSelectionViewClickListener(handler)
+        builder.withOnAccountHeaderSelectionViewClickListener(object : AccountHeader.OnAccountHeaderSelectionViewClickListener {
+            override fun onClick(view: View, profile: IProfile<*>): Boolean {
+                return handler(view, profile)
+            }
+        })
     }
 
     /**

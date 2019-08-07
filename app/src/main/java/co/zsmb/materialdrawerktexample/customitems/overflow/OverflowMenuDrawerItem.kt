@@ -5,48 +5,74 @@ import android.widget.ImageButton
 import androidx.annotation.LayoutRes
 import androidx.appcompat.widget.PopupMenu
 import co.zsmb.materialdrawerktexample.R
-import com.mikepenz.google_material_typeface_library.GoogleMaterial
+import com.mikepenz.iconics.IconicsColor.Companion.colorInt
 import com.mikepenz.iconics.IconicsDrawable
+import com.mikepenz.iconics.IconicsSize.Companion.dp
+import com.mikepenz.iconics.typeface.library.googlematerial.GoogleMaterial
 import com.mikepenz.materialdrawer.model.BaseDescribeableDrawerItem
 import com.mikepenz.materialdrawer.model.BaseViewHolder
-import kotlinx.android.synthetic.main.material_drawer_item_overflow_menu_primary.view.*
 
-// Regular class that overrides the base library item
+/**
+ * Created by mikepenz on 03.02.15.
+ */
 class OverflowMenuDrawerItem : BaseDescribeableDrawerItem<OverflowMenuDrawerItem, OverflowMenuDrawerItem.ViewHolder>() {
+    var menu: Int = 0
+        private set
 
-    internal var menu: Int = 0
-    internal var onMenuItemClickListener: PopupMenu.OnMenuItemClickListener? = null
-    internal var onDismissListener: PopupMenu.OnDismissListener? = null
+    var onMenuItemClickListener: PopupMenu.OnMenuItemClickListener? = null
+        private set
 
-    @LayoutRes
-    override fun getLayoutRes() = R.layout.material_drawer_item_overflow_menu_primary
+    var onDismissListener: PopupMenu.OnDismissListener? = null
+        private set
 
-    override fun getType() = R.id.material_drawer_item_overflow_menu
+    override val type: Int
+        get() = R.id.material_drawer_item_overflow_menu
 
-    override fun bindView(viewHolder: ViewHolder, payloads: List<*>?) {
-        super.bindView(viewHolder, payloads)
-        bindViewHelper(viewHolder)
+    override val layoutRes: Int
+        @LayoutRes
+        get() = R.layout.material_drawer_item_overflow_menu_primary
 
-        viewHolder.menu.setOnClickListener { view ->
-            with(PopupMenu(view.context, view)) {
-                menuInflater.inflate(this@OverflowMenuDrawerItem.menu, menu)
+    fun withMenu(menu: Int): OverflowMenuDrawerItem {
+        this.menu = menu
+        return this
+    }
 
-                onMenuItemClickListener?.let { setOnMenuItemClickListener(it) }
-                onDismissListener?.let { setOnDismissListener(it) }
+    fun withOnMenuItemClickListener(onMenuItemClickListener: PopupMenu.OnMenuItemClickListener): OverflowMenuDrawerItem {
+        this.onMenuItemClickListener = onMenuItemClickListener
+        return this
+    }
 
-                show()
-            }
+
+    fun withOnDismissListener(onDismissListener: PopupMenu.OnDismissListener): OverflowMenuDrawerItem {
+        this.onDismissListener = onDismissListener
+        return this
+    }
+
+    override fun bindView(holder: ViewHolder, payloads: MutableList<Any>) {
+        super.bindView(holder, payloads)
+
+        val ctx = holder.itemView.context
+
+        //bind the basic view parts
+        bindViewHelper(holder)
+
+        //handle menu click
+        holder.menu.setOnClickListener { view ->
+            val popup = PopupMenu(view.context, view)
+            val inflater = popup.menuInflater
+            inflater.inflate(menu, popup.menu)
+
+            popup.setOnMenuItemClickListener(onMenuItemClickListener)
+            popup.setOnDismissListener(onDismissListener)
+
+            popup.show()
         }
 
-        val ctx = viewHolder.itemView.context
-        viewHolder.menu.setImageDrawable(
-                IconicsDrawable(ctx, GoogleMaterial.Icon.gmd_more_vert)
-                        .sizeDp(12)
-                        .color(getIconColor(ctx))
-        )
+        //handle image
+        holder.menu.setImageDrawable(IconicsDrawable(ctx, GoogleMaterial.Icon.gmd_more_vert).size(dp(12)).color(colorInt(getIconColor(ctx))))
 
-        //call the onPostBindView method to trigger post bind view actions
-        onPostBindView(this, viewHolder.itemView)
+        //call the onPostBindView method to trigger post bind view actions (like the listener to modify the item if required)
+        onPostBindView(this, holder.itemView)
     }
 
     override fun getViewHolder(v: View): ViewHolder {
@@ -54,11 +80,7 @@ class OverflowMenuDrawerItem : BaseDescribeableDrawerItem<OverflowMenuDrawerItem
     }
 
     class ViewHolder(view: View) : BaseViewHolder(view) {
-        // Conventional lookup
-        //internal val menu: ImageButton = view.findViewById(R.id.material_drawer_menu_overflow) as ImageButton
-
-        // Kotlin Android Extensions
-        internal val menu: ImageButton = view.material_drawer_menu_overflow
+        //protected ImageButton ibOverflow;
+        internal val menu: ImageButton = view.findViewById<ImageButton>(R.id.material_drawer_menu_overflow)
     }
-
 }
