@@ -11,8 +11,8 @@ import co.zsmb.materialdrawerkt.draweritems.profile.profile
 import co.zsmb.materialdrawerkt.draweritems.profile.profileSetting
 import co.zsmb.materialdrawerkt.draweritems.sectionHeader
 import co.zsmb.materialdrawerktexample.R
-import com.mikepenz.fontawesome_typeface_library.FontAwesome
-import com.mikepenz.google_material_typeface_library.GoogleMaterial
+import com.mikepenz.iconics.typeface.library.fonrawesome.FontAwesome
+import com.mikepenz.iconics.typeface.library.googlematerial.GoogleMaterial
 import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.model.interfaces.Nameable
@@ -103,7 +103,7 @@ class CompactHeaderDrawerActivity : AppCompatActivity() {
 
             onItemClick { _, _, drawerItem ->
                 if (drawerItem is Nameable<*>) {
-                    supportActionBar?.title = drawerItem.name.getText(this@CompactHeaderDrawerActivity)
+                    supportActionBar?.title = drawerItem.name!!.getText(this@CompactHeaderDrawerActivity)
                 }
                 false
             }
@@ -114,7 +114,7 @@ class CompactHeaderDrawerActivity : AppCompatActivity() {
         }
     }
 
-    override fun onSaveInstanceState(outState: Bundle?) {
+    override fun onSaveInstanceState(outState: Bundle) {
         result.saveInstanceState(outState)
         headerResult.saveInstanceState(outState)
         super.onSaveInstanceState(outState)

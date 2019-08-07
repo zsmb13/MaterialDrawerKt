@@ -15,12 +15,12 @@ import co.zsmb.materialdrawerkt.draweritems.switchable.switchItem
 import co.zsmb.materialdrawerkt.draweritems.toggleable.toggleItem
 import co.zsmb.materialdrawerktexample.R
 import co.zsmb.materialdrawerktexample.utils.toast
-import com.mikepenz.fontawesome_typeface_library.FontAwesome
-import com.mikepenz.google_material_typeface_library.GoogleMaterial
+import com.mikepenz.iconics.typeface.library.fonrawesome.FontAwesome
+import com.mikepenz.iconics.typeface.library.googlematerial.GoogleMaterial
+import com.mikepenz.iconics.typeface.library.octicons.Octicons
 import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem
-import com.mikepenz.octicons_typeface_library.Octicons
 import kotlinx.android.synthetic.main.activity_embedded.*
 
 class EmbeddedDrawerActivity : AppCompatActivity() {
@@ -120,7 +120,7 @@ class EmbeddedDrawerActivity : AppCompatActivity() {
                 else -> super.onOptionsItemSelected(item)
             }
 
-    override fun onSaveInstanceState(outState: Bundle?) {
+    override fun onSaveInstanceState(outState: Bundle) {
         result.saveInstanceState(outState)
         headerResult.saveInstanceState(outState)
         super.onSaveInstanceState(outState)

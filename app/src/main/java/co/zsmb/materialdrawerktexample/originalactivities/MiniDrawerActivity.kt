@@ -19,12 +19,12 @@ import co.zsmb.materialdrawerktexample.utils.toast
 import com.mikepenz.crossfader.Crossfader
 import com.mikepenz.crossfader.util.UIUtils
 import com.mikepenz.crossfader.view.CrossFadeSlidingPaneLayout
-import com.mikepenz.fontawesome_typeface_library.FontAwesome
-import com.mikepenz.google_material_typeface_library.GoogleMaterial
+import com.mikepenz.iconics.typeface.library.fonrawesome.FontAwesome
+import com.mikepenz.iconics.typeface.library.googlematerial.GoogleMaterial
+import com.mikepenz.iconics.typeface.library.octicons.Octicons
 import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem
-import com.mikepenz.octicons_typeface_library.Octicons
 import kotlinx.android.synthetic.main.activity_mini_drawer.*
 
 class MiniDrawerActivity : AppCompatActivity() {
@@ -104,7 +104,7 @@ class MiniDrawerActivity : AppCompatActivity() {
             }
         }
 
-        val miniResult = result.miniDrawer
+        val miniResult = result.miniDrawer!!
         val firstWidth = UIUtils.convertDpToPixel(300f, this).toInt()
         val secondWidth = UIUtils.convertDpToPixel(72f, this).toInt()
 
@@ -132,7 +132,7 @@ class MiniDrawerActivity : AppCompatActivity() {
                 else -> super.onOptionsItemSelected(item)
             }
 
-    override fun onSaveInstanceState(outState: Bundle?) {
+    override fun onSaveInstanceState(outState: Bundle) {
         headerResult.saveInstanceState(outState)
         result.saveInstanceState(outState)
         resultAppended.saveInstanceState(outState)

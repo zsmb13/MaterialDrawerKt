@@ -1,7 +1,9 @@
 package co.zsmb.materialdrawerktexample.customitems.customprimary;
 
-import com.mikepenz.materialdrawer.holder.ColorHolder;
+import androidx.annotation.NonNull;
+
 import com.mikepenz.materialdrawer.model.AbstractBadgeableDrawerItem;
+import com.mikepenz.materialize.holder.ColorHolder;
 
 import java.util.List;
 
@@ -20,7 +22,7 @@ public class CustomPrimaryDrawerItem extends AbstractBadgeableDrawerItem<CustomP
     }
 
     @Override
-    public void bindView(ViewHolder holder, List payloads) {
+    public void bindView(@NonNull ViewHolder holder, @NonNull List<Object> payloads) {
         super.bindView(holder, payloads);
 
         if (background != null) {

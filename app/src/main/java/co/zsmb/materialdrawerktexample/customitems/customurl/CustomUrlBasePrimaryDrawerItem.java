@@ -2,28 +2,30 @@ package co.zsmb.materialdrawerktexample.customitems.customurl;
 
 import android.content.Context;
 import android.net.Uri;
+
 import androidx.annotation.ColorInt;
 import androidx.annotation.ColorRes;
 import androidx.annotation.StringRes;
 import androidx.recyclerview.widget.RecyclerView;
-import com.mikepenz.materialdrawer.holder.ColorHolder;
+
 import com.mikepenz.materialdrawer.holder.ImageHolder;
 import com.mikepenz.materialdrawer.holder.StringHolder;
 import com.mikepenz.materialdrawer.model.BaseDrawerItem;
 import com.mikepenz.materialdrawer.util.DrawerImageLoader;
 import com.mikepenz.materialdrawer.util.DrawerUIUtils;
+import com.mikepenz.materialize.holder.ColorHolder;
 import com.mikepenz.materialize.util.UIUtils;
 
 abstract class CustomUrlBasePrimaryDrawerItem<T, VH extends RecyclerView.ViewHolder>
         extends BaseDrawerItem<T, VH> {
 
     public T withIcon(String url) {
-        this.icon = new ImageHolder(url);
+        this.setIcon(new ImageHolder(url));
         return (T) this;
     }
 
     public T withIcon(Uri uri) {
-        this.icon = new ImageHolder(uri);
+        this.setIcon(new ImageHolder(uri));
         return (T) this;
     }
 
@@ -97,13 +99,14 @@ abstract class CustomUrlBasePrimaryDrawerItem<T, VH extends RecyclerView.ViewHol
         }
 
         //we make sure we reset the image first before setting the new one in case there is an empty one
-        DrawerImageLoader.getInstance().cancelImage(viewHolder.icon);
+
+        DrawerImageLoader.Companion.getInstance().cancelImage(viewHolder.icon);
         viewHolder.icon.setImageBitmap(null);
         //get the drawables for our icon and set it
-        ImageHolder.applyTo(icon, viewHolder.icon, "customUrlItem");
+        ImageHolder.applyTo(getIcon(), viewHolder.icon, "customUrlItem");
 
         //for android API 17 --> Padding not applied via xml
-        DrawerUIUtils.setDrawerVerticalPadding(viewHolder.view);
+        DrawerUIUtils.INSTANCE.setDrawerVerticalPadding(viewHolder.view);
     }
 
 }

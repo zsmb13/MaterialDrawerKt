@@ -9,7 +9,7 @@ import co.zsmb.materialdrawerkt.draweritems.badgeable.primaryItem
 import co.zsmb.materialdrawerkt.draweritems.switchable.switchItem
 import co.zsmb.materialdrawerkt.draweritems.toggleable.toggleItem
 import co.zsmb.materialdrawerktexample.R
-import com.mikepenz.fontawesome_typeface_library.FontAwesome
+import com.mikepenz.iconics.typeface.library.fonrawesome.FontAwesome
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.model.interfaces.Nameable
 import kotlinx.android.synthetic.main.activity_sample_logging.*
@@ -80,7 +80,7 @@ class ListenersActivity : AppCompatActivity() {
                 else -> super.onOptionsItemSelected(item)
             }
 
-    override fun onSaveInstanceState(outState: Bundle?) {
+    override fun onSaveInstanceState(outState: Bundle) {
         result.saveInstanceState(outState)
         super.onSaveInstanceState(outState)
     }

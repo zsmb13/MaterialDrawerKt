@@ -18,8 +18,16 @@ import co.zsmb.materialdrawerktexample.customitems.customprimary.CustomPrimaryDr
 import co.zsmb.materialdrawerktexample.customitems.customurl.CustomUrlPrimaryDrawerItem
 import co.zsmb.materialdrawerktexample.customitems.overflow.overflowMenuItem
 import co.zsmb.materialdrawerktexample.utils.toast
-import com.mikepenz.fontawesome_typeface_library.FontAwesome.Icon.*
-import com.mikepenz.google_material_typeface_library.GoogleMaterial.Icon
+import com.mikepenz.iconics.typeface.library.fonrawesome.FontAwesome.Icon.faw_bullhorn
+import com.mikepenz.iconics.typeface.library.fonrawesome.FontAwesome.Icon.faw_cog
+import com.mikepenz.iconics.typeface.library.fonrawesome.FontAwesome.Icon.faw_gamepad
+import com.mikepenz.iconics.typeface.library.fonrawesome.FontAwesome.Icon.faw_github
+import com.mikepenz.iconics.typeface.library.fonrawesome.FontAwesome.Icon.faw_home
+import com.mikepenz.iconics.typeface.library.fonrawesome.FontAwesome.Icon.faw_question
+import com.mikepenz.iconics.typeface.library.googlematerial.GoogleMaterial.Icon.gmd_add
+import com.mikepenz.iconics.typeface.library.googlematerial.GoogleMaterial.Icon.gmd_android
+import com.mikepenz.iconics.typeface.library.googlematerial.GoogleMaterial.Icon.gmd_filter_center_focus
+import com.mikepenz.iconics.typeface.library.googlematerial.GoogleMaterial.Icon.gmd_settings
 import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem
@@ -63,7 +71,7 @@ class AdvancedDrawerActivity : AppCompatActivity() {
                     icon = R.drawable.profile5
                 }
                 profileSetting("Add account", "Add new GitHub Account") {
-                    iicon = Icon.gmd_add
+                    iicon = gmd_add
                     onClick { _ ->
                         val newProfile = ProfileDrawerItem()
                                 .withNameShown(true)
@@ -77,15 +85,15 @@ class AdvancedDrawerActivity : AppCompatActivity() {
                     }
                 }
                 profileSetting("Manage Account") {
-                    iicon = Icon.gmd_settings
+                    iicon = gmd_settings
                 }
             }
 
             primaryItem(R.string.drawer_item_home) { iicon = faw_home }
 
             overflowMenuItem(R.string.drawer_item_menu_drawer_item, R.string.drawer_item_menu_drawer_item_desc) {
-                iicon = Icon.gmd_filter_center_focus
-                menu = R.menu.fragment_menu
+                iicon = gmd_filter_center_focus
+                menuRes = R.menu.fragment_menu
                 onMenuItemClick {
                     toast(it.title)
                     false
@@ -137,7 +145,7 @@ class AdvancedDrawerActivity : AppCompatActivity() {
         }
     }
 
-    override fun onSaveInstanceState(outState: Bundle?) {
+    override fun onSaveInstanceState(outState: Bundle) {
         result.saveInstanceState(outState)
         headerResult.saveInstanceState(outState)
         super.onSaveInstanceState(outState)
@@ -159,17 +167,17 @@ class AdvancedDrawerActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean =
             when (item.itemId) {
                 R.id.menu_1 -> {
-                    val profile2 = headerResult.profiles[1]
-                    profile2.withIcon(Icon.gmd_android)
+                    val profile2 = headerResult.profiles!![1]
+                    profile2.withIcon(gmd_android)
                     headerResult.updateProfile(profile2)
                     true
                 }
                 R.id.menu_2 -> {
-                    result.actionBarDrawerToggle.isDrawerIndicatorEnabled = false
+                    result.actionBarDrawerToggle?.isDrawerIndicatorEnabled = false
                     true
                 }
                 R.id.menu_3 -> {
-                    result.actionBarDrawerToggle.isDrawerIndicatorEnabled = true
+                    result.actionBarDrawerToggle?.isDrawerIndicatorEnabled = true
                     true
                 }
                 else -> super.onOptionsItemSelected(item)

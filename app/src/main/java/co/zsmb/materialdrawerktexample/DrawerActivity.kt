@@ -21,15 +21,29 @@ import co.zsmb.materialdrawerkt.draweritems.switchable.secondarySwitchItem
 import co.zsmb.materialdrawerkt.draweritems.switchable.switchItem
 import co.zsmb.materialdrawerkt.draweritems.toggleable.secondaryToggleItem
 import co.zsmb.materialdrawerkt.draweritems.toggleable.toggleItem
-import co.zsmb.materialdrawerktexample.newactivities.*
-import co.zsmb.materialdrawerktexample.originalactivities.*
-import com.mikepenz.fontawesome_typeface_library.FontAwesome
-import com.mikepenz.google_material_typeface_library.GoogleMaterial
-import com.mikepenz.material_design_iconic_typeface_library.MaterialDesignIconic
+import co.zsmb.materialdrawerktexample.newactivities.AccountHeaderActivity
+import co.zsmb.materialdrawerktexample.newactivities.BadgesActivity
+import co.zsmb.materialdrawerktexample.newactivities.DrawerItemTypesActivity
+import co.zsmb.materialdrawerktexample.newactivities.HeaderFooterActivity
+import co.zsmb.materialdrawerktexample.newactivities.ListenersActivity
+import co.zsmb.materialdrawerktexample.originalactivities.ActionBarActivity
+import co.zsmb.materialdrawerktexample.originalactivities.AdvancedDrawerActivity
+import co.zsmb.materialdrawerktexample.originalactivities.CompactHeaderDrawerActivity
+import co.zsmb.materialdrawerktexample.originalactivities.CustomContainerActivity
+import co.zsmb.materialdrawerktexample.originalactivities.EmbeddedDrawerActivity
+import co.zsmb.materialdrawerktexample.originalactivities.FragmentDrawerActivity
+import co.zsmb.materialdrawerktexample.originalactivities.FullscreenDrawerActivity
+import co.zsmb.materialdrawerktexample.originalactivities.MenuDrawerActivity
+import co.zsmb.materialdrawerktexample.originalactivities.MiniDrawerActivity
+import co.zsmb.materialdrawerktexample.originalactivities.MultiDrawerActivity
+import co.zsmb.materialdrawerktexample.originalactivities.NonTranslucentDrawerActivity
+import com.mikepenz.iconics.typeface.library.fonrawesome.FontAwesome
+import com.mikepenz.iconics.typeface.library.googlematerial.GoogleMaterial
+import com.mikepenz.iconics.typeface.library.materialdesigniconic.MaterialDesignIconic
+import com.mikepenz.iconics.typeface.library.octicons.Octicons
 import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem
-import com.mikepenz.octicons_typeface_library.Octicons
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.reflect.KClass
 
@@ -50,7 +64,6 @@ class DrawerActivity : AppCompatActivity() {
             showOnFirstLaunch = true
 
             headerResult = accountHeader {
-                background = R.drawable.header
                 savedInstance = savedInstanceState
                 translucentStatusBar = true
 
@@ -89,7 +102,7 @@ class DrawerActivity : AppCompatActivity() {
 
                 onProfileChanged { _, profile, _ ->
                     if (profile.identifier == 100_000L) {
-                        val size = headerResult.profiles.size
+                        val size = headerResult.profiles?.size ?: 0
                         val newProfile = ProfileDrawerItem()
                                 .withName("New Batman ${size - 1}")
                                 .withNameShown(true)
@@ -127,7 +140,7 @@ class DrawerActivity : AppCompatActivity() {
                 onClick(openActivity(BadgesActivity::class))
             }
 
-            sectionHeader("Original demo activities")
+            sectionHeader("Original demo Activities")
 
             primaryItem(R.string.drawer_item_compact_header, R.string.drawer_item_compact_header_desc) {
                 iicon = GoogleMaterial.Icon.gmd_brightness_5
@@ -221,7 +234,7 @@ class DrawerActivity : AppCompatActivity() {
                 }
             }
 
-            expandableItem("Collapsable Badge") {
+            expandableItem("Collapsable") {
                 iicon = MaterialDesignIconic.Icon.gmi_collection_case_play
                 identifier = 19
                 selectable = false
@@ -287,7 +300,7 @@ class DrawerActivity : AppCompatActivity() {
         false
     }
 
-    override fun onSaveInstanceState(outState: Bundle?) {
+    override fun onSaveInstanceState(outState: Bundle) {
         result.saveInstanceState(outState)
         headerResult.saveInstanceState(outState)
         super.onSaveInstanceState(outState)

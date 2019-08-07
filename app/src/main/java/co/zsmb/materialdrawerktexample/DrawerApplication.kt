@@ -11,13 +11,13 @@ class DrawerApplication : Application() {
 
         drawerImageLoader {
             set { imageView, uri, placeholder, _ ->
-                Picasso.with(imageView.context)
+                Picasso.get()
                         .load(uri)
                         .placeholder(placeholder)
                         .into(imageView)
             }
             cancel { imageView ->
-                Picasso.with(imageView.context)
+                Picasso.get()
                         .cancelRequest(imageView)
             }
         }

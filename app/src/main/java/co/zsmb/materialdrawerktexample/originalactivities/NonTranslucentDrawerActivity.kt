@@ -9,7 +9,7 @@ import co.zsmb.materialdrawerkt.draweritems.badgeable.secondaryItem
 import co.zsmb.materialdrawerkt.draweritems.sectionHeader
 import co.zsmb.materialdrawerktexample.R
 import co.zsmb.materialdrawerktexample.utils.toast
-import com.mikepenz.fontawesome_typeface_library.FontAwesome
+import com.mikepenz.iconics.typeface.library.fonrawesome.FontAwesome
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.model.interfaces.Nameable
 import kotlinx.android.synthetic.main.activity_sample.*
@@ -41,7 +41,7 @@ class NonTranslucentDrawerActivity : AppCompatActivity() {
 
             onItemClick { _, _, drawerItem ->
                 if (drawerItem is Nameable<*>) {
-                    toast(drawerItem.name.getText(this@NonTranslucentDrawerActivity))
+                    toast(drawerItem.name!!.getText(this@NonTranslucentDrawerActivity))
                 }
                 false
             }
@@ -56,7 +56,7 @@ class NonTranslucentDrawerActivity : AppCompatActivity() {
                 else -> super.onOptionsItemSelected(item)
             }
 
-    override fun onSaveInstanceState(outState: Bundle?) {
+    override fun onSaveInstanceState(outState: Bundle) {
         result.saveInstanceState(outState)
         super.onSaveInstanceState(outState)
     }

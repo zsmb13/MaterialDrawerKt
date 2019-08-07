@@ -28,14 +28,14 @@ class MenuDrawerActivity : AppCompatActivity() {
 
             onItemClick { _, _, drawerItem ->
                 if (drawerItem is Nameable<*>) {
-                    toast(drawerItem.name.getText(this@MenuDrawerActivity))
+                    toast(drawerItem.name!!.getText(this@MenuDrawerActivity))
                 }
                 false
             }
         }
     }
 
-    override fun onSaveInstanceState(outState: Bundle?) {
+    override fun onSaveInstanceState(outState: Bundle) {
         result.saveInstanceState(outState)
         super.onSaveInstanceState(outState)
     }
