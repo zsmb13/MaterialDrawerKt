@@ -14,8 +14,8 @@ public abstract class AbstractDrawerItemKt<out T : AbstractDrawerItem<*, *>>(pro
     //region Builder basics
 
     @Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE", "OverridingDeprecatedMember")
-    public override fun attachItem(subItem: IDrawerItem<*, *>) {
-        item.withSubItems(subItem)
+    public override fun attachItem(subItem: IDrawerItem<*>) {
+        item.subItems.add(subItem)
     }
 
     internal fun build(): T = item
