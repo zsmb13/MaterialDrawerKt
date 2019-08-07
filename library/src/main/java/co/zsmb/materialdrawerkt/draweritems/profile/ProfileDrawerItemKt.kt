@@ -48,10 +48,10 @@ public class ProfileDrawerItemKt : AbstractDrawerItemKt<ProfileDrawerItem>(Profi
     /**
      * The email associated with the profile.
      *
-     * Non readable property. Wraps the [ProfileDrawerItem.email] property.
+     * Non-readable property. Wraps the [ProfileDrawerItem.email] property.
      */
     public var email: String
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.email = StringHolder(value)
@@ -60,10 +60,10 @@ public class ProfileDrawerItemKt : AbstractDrawerItemKt<ProfileDrawerItem>(Profi
     /**
      * The email associated with the profile, as a String resource.
      *
-     * Non readable property. Wraps the [ProfileDrawerItem.email] property.
+     * Non-readable property. Wraps the [ProfileDrawerItem.email] property.
      */
     public var emailRes: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.email = StringHolder(value)
@@ -72,10 +72,10 @@ public class ProfileDrawerItemKt : AbstractDrawerItemKt<ProfileDrawerItem>(Profi
     /**
      * The icon of the profile, as a drawable resource.
      *
-     * Convenience for [iconRes]. Non readable property. Wraps the [ProfileDrawerItem.icon] property.
+     * Convenience for [iconRes]. Non-readable property. Wraps the [ProfileDrawerItem.icon] property.
      */
     public var icon: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.icon = ImageHolder(value)
@@ -84,10 +84,10 @@ public class ProfileDrawerItemKt : AbstractDrawerItemKt<ProfileDrawerItem>(Profi
     /**
      * The icon of the profile, as a Bitmap.
      *
-     * Non readable property. Wraps the [ProfileDrawerItem.icon] property.
+     * Non-readable property. Wraps the [ProfileDrawerItem.icon] property.
      */
     public var iconBitmap: Bitmap
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.icon = ImageHolder(value)
@@ -96,10 +96,10 @@ public class ProfileDrawerItemKt : AbstractDrawerItemKt<ProfileDrawerItem>(Profi
     /**
      * The icon of the profile, as a Drawable.
      *
-     * Non readable property. Wraps the [ProfileDrawerItem.icon] property.
+     * Non-readable property. Wraps the [ProfileDrawerItem.icon] property.
      */
     public var iconDrawable: Drawable
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.icon = ImageHolder(value)
@@ -110,24 +110,24 @@ public class ProfileDrawerItemKt : AbstractDrawerItemKt<ProfileDrawerItem>(Profi
      *
      * See [icon] as an alternative.
      *
-     * Non readable property. Wraps the [ProfileDrawerItem.icon] property.
+     * Non-readable property. Wraps the [ProfileDrawerItem.icon] property.
      */
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "Alternatives are available, check the documentation.")
     public var iconRes: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.icon = ImageHolder(value)
         }
 
     /**
-     * The icon of the profile, as an Uri.
+     * The icon of the profile, as a Uri.
      *
-     * Non readable property. Wraps the [ProfileDrawerItem.icon] property.
+     * Non-readable property. Wraps the [ProfileDrawerItem.icon] property.
      */
     public var iconUri: Uri
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.icon = ImageHolder(value)
@@ -136,10 +136,10 @@ public class ProfileDrawerItemKt : AbstractDrawerItemKt<ProfileDrawerItem>(Profi
     /**
      * The icon of the profile, as a url String.
      *
-     * Non readable property. Wraps the [ProfileDrawerItem.icon] property.
+     * Non-readable property. Wraps the [ProfileDrawerItem.icon] property.
      */
     public var iconUrl: String
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.icon = ImageHolder(value)
@@ -148,10 +148,10 @@ public class ProfileDrawerItemKt : AbstractDrawerItemKt<ProfileDrawerItem>(Profi
     /**
      * The icon of the profile, as an IIcon.
      *
-     * Non readable property. Wraps the [ProfileDrawerItem.icon] property.
+     * Non-readable property. Wraps the [ProfileDrawerItem.icon] property.
      */
     public var iicon: IIcon
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.icon = ImageHolder(value)
@@ -160,10 +160,10 @@ public class ProfileDrawerItemKt : AbstractDrawerItemKt<ProfileDrawerItem>(Profi
     /**
      * The name of the profile.
      *
-     * Non readable property. Wraps the [ProfileDrawerItem.name] property.
+     * Non-readable property. Wraps the [ProfileDrawerItem.name] property.
      */
     public var name: CharSequence
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.name = StringHolder(value)
@@ -172,10 +172,10 @@ public class ProfileDrawerItemKt : AbstractDrawerItemKt<ProfileDrawerItem>(Profi
     /**
      * The name of the profile, as a String resource.
      *
-     * Non readable property. Wraps the [ProfileDrawerItem.name] property.
+     * Non-readable property. Wraps the [ProfileDrawerItem.name] property.
      */
     public var nameRes: Int
-        @Deprecated(level = DeprecationLevel.ERROR, message = "Non readable property.")
+        @Deprecated(level = DeprecationLevel.ERROR, message = "Non-readable property.")
         get() = nonReadable()
         set(value) {
             item.name = StringHolder(value)
