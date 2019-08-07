@@ -38,7 +38,7 @@ if (secretPropsFile.exists()) {
 
 nexusStaging {
     packageGroup = PUBLISH_GROUP_ID
-    stagingProfileId = 'caceeedcae039c'
+    stagingProfileId = '98e6900916ded2'
     username = ossrhUsername
     password = ossrhPassword
 }
