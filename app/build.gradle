@@ -6,7 +6,6 @@ apply from: '../testformatter.gradle'
 
 android {
     compileSdkVersion 29
-    buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId "co.zsmb.materialdrawerktexample"
         minSdkVersion 14
