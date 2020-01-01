@@ -23,20 +23,22 @@ You can find the sample app [in the Play Store](https://play.google.com/store/ap
 
 # Setup
 
-The library is hosted on jcenter. To use it, add the following to your module level `build.gradle` file's dependencies:
+The library is hosted on `mavenCentral()`. To use it, add the following to your module level `build.gradle` file's dependencies:
  
 ```gradle
-implementation 'co.zsmb:materialdrawer-kt:2.0.1'
+implementation 'co.zsmb:materialdrawer-kt:3.0.0'
 
-//required support lib modules
-implementation "androidx.appcompat:appcompat:${versions.androidX}"
-implementation "androidx.recyclerview:recyclerview:${versions.androidX}"
-implementation "androidx.annotation:annotation:${versions.androidX}"
-implementation "com.google.android.material:material:${versions.androidX}"
+// required support lib modules
+implementation "androidx.appcompat:appcompat:${versions.appcompat}"
+implementation "androidx.recyclerview:recyclerview:${versions.recyclerView}"
+implementation "androidx.annotation:annotation:${versions.annotation}"
+implementation "com.google.android.material:material:${versions.material}"
 implementation "androidx.constraintlayout:constraintlayout:${versions.constraintLayout}"
 ```
 
-In general, you don't have to include the original library separately. (See the note in the FAQ.)
+In general, you don't have to include the original library separately. (See the note in the [FAQ](#faq).)
+
+***If you want to use the pre-Kotlin version of the base library for some reason, you can use the last 2.x release of the library found [here](https://github.com/zsmb13/MaterialDrawerKt/releases/tag/2.0.1).***
 
 ***If you're not using AndroidX yet, you can use the last 1.x release of the library found [here](https://github.com/zsmb13/MaterialDrawerKt/releases/tag/1.3.7).***
 
