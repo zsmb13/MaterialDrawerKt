@@ -5,12 +5,12 @@ apply plugin: 'kotlin-android-extensions'
 apply from: '../testformatter.gradle'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
     buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId "co.zsmb.materialdrawerktexample"
         minSdkVersion 14
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode 4
         versionName "2.0.0"
     }
