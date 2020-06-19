@@ -72,7 +72,7 @@ publishing {
                 scm {
                     connection = 'scm:git:github.com/zsmb13/MaterialDrawerKt.git'
                     developerConnection = 'scm:git:ssh://github.com/zsmb13/MaterialDrawerKt.git'
-                    url = 'https://github.com/zsmb13/MaterialDrawerKt/tree/master'
+                    url = 'https://github.com/zsmb13/MaterialDrawerKt/tree/main'
                 }
                 withXml {
                     def dependenciesNode = asNode().appendNode('dependencies')
