@@ -22,7 +22,7 @@ debug build:
   script:
     - ./gradlew assembleDebug
   except:
-    - master
+    - main
 
 library release build:
   stage: build
@@ -34,7 +34,7 @@ library release build:
     paths:
       - library/build*
   only:
-    - master
+    - main
 
 library upload to MavenCentral:
   stage: release
@@ -47,5 +47,5 @@ library upload to MavenCentral:
   dependencies:
     - library release build
   only:
-    - master
+    - main
   when: manual

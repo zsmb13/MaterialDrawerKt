@@ -1,11 +1,11 @@
 # MaterialDrawerKt 
 
-[![Build Status](https://travis-ci.org/zsmb13/MaterialDrawerKt.svg?branch=master)](https://travis-ci.org/zsmb13/MaterialDrawerKt)
+[![Build Status](https://travis-ci.org/zsmb13/MaterialDrawerKt.svg?branch=main)](https://travis-ci.org/zsmb13/MaterialDrawerKt)
 [![Bintray](https://img.shields.io/bintray/v/zsmb13/MaterialDrawerKt/MaterialDrawerKt.svg?maxAge=86400)](https://bintray.com/zsmb13/MaterialDrawerKt/MaterialDrawerKt)
 [![Awesome Kotlin Badge](https://kotlin.link/awesome-kotlin.svg)](https://github.com/KotlinBy/awesome-kotlin)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-MaterialDrawerKt-orange.svg?style=flat)](https://android-arsenal.com/details/1/5693) 
 
-<img src="https://raw.githubusercontent.com/zsmb13/MaterialDrawerKt/master/docs/github-banner.png">
+<img src="https://raw.githubusercontent.com/zsmb13/MaterialDrawerKt/main/docs/github-banner.png">
 
 Create navigation drawers in your Activities and Fragments without having to write any XML, in pure Kotlin code, with access to all the features of the original library: all sorts of menu items, badges, account headers, and more.
 
@@ -17,9 +17,9 @@ This library is a Kotlin DSL wrapper around the [mikepenz/MaterialDrawer](https:
 
 # Sample app
 
-You can find the sample app [in the Play Store](https://play.google.com/store/apps/details?id=co.zsmb.materialdrawerktexample), and its source code in the [app module](https://github.com/zsmb13/MaterialDrawerKt/tree/master/app) of the project.
+You can find the sample app [in the Play Store](https://play.google.com/store/apps/details?id=co.zsmb.materialdrawerktexample), and its source code in the [app module](https://github.com/zsmb13/MaterialDrawerKt/tree/main/app) of the project.
 
-<img src="https://raw.githubusercontent.com/zsmb13/MaterialDrawerKt/master/docs/github-screens.png">
+<img src="https://raw.githubusercontent.com/zsmb13/MaterialDrawerKt/main/docs/github-screens.png">
 
 # Setup
 
